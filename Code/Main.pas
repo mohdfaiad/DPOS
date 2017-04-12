@@ -43,12 +43,39 @@ type
     btn_Close: TVrDemoButton;
     btn_Reports: TVrDemoButton;
     ADOConnection: TADOConnection;
+    mn_CustomerGroupDef: TMenuItem;
+    mn_CurrencyDef: TMenuItem;
+    mn_ItemCategoryDef: TMenuItem;
+    mn_ItemColorDef: TMenuItem;
+    mn_ItemGroupSectionef: TMenuItem;
+    mn_ItemPoliciesDef: TMenuItem;
+    mn_ItemSizeDef: TMenuItem;
+    mn_ItemTypeDef: TMenuItem;
+    mn_ItemUnitDef: TMenuItem;
+    mn_WareHouseDef: TMenuItem;
+    mn_VendorGroupDef: TMenuItem;
+    mn_UserGroupsDef: TMenuItem;
+    mn_CustomerDef: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mnExitClick(Sender: TObject);
     procedure btn_CloseClick(Sender: TObject);
     procedure mn_CompanyDefClick(Sender: TObject);
     procedure mn_BackUpClick(Sender: TObject);
+    procedure mn_BranchesDefClick(Sender: TObject);
+    procedure mn_CustomerGroupDefClick(Sender: TObject);
+    procedure mn_CurrencyDefClick(Sender: TObject);
+    procedure mn_ItemCategoryDefClick(Sender: TObject);
+    procedure mn_ItemColorDefClick(Sender: TObject);
+    procedure mn_ItemGroupSectionefClick(Sender: TObject);
+    procedure mn_ItemPoliciesDefClick(Sender: TObject);
+    procedure mn_ItemSizeDefClick(Sender: TObject);
+    procedure mn_ItemTypeDefClick(Sender: TObject);
+    procedure mn_ItemUnitDefClick(Sender: TObject);
+    procedure mn_WareHouseDefClick(Sender: TObject);
+    procedure mn_VendorGroupDefClick(Sender: TObject);
+    procedure mn_UserGroupsDefClick(Sender: TObject);
+    procedure mn_CustomerDefClick(Sender: TObject);
   private
     { Private declarations }
     LastUserAccess , LicenseNo , BiosID : String;
@@ -60,10 +87,14 @@ type
 var
   fmMainForm: TfmMainForm;
 
+
 implementation
 
 uses  Login, GVariable,
-   License,  BackUp, lkp_Company;
+   License,  BackUp, lkp_Company, lkp_Branch, lkp_CustomerGroup,
+  lkp_Currency, lkp_ItemCategory, lkp_ItemColor, lkp_ItemGroupSections,
+  lkp_ItemPolicies, lkp_ItemSize, lkp_ItemType, lkp_ItemUnit,
+  lkp_WareHouse, lkp_VendorGroup, lkp_UserGroups, lkp_Customers;
 
 {$R *.dfm}
 
@@ -100,7 +131,9 @@ begin
          strDBName := ReadString('ERP_Option', 'DB_Name', '');
          strDriverName := ReadString('ERP_Option', 'DriverName', '');
          LastUserAccess := ReadString('ERP_Option', 'LastUserAccess', '');
-         LicenseNo := ReadString('ERP_Option', 'LicenseNo', '');         
+         LicenseNo := ReadString('ERP_Option', 'LicenseNo', '');
+         DCompany :=ReadString('ERP_Option', 'DCompany', '');
+         DBranch := ReadString('ERP_Option', 'DBranch', '');
      end;
      vIni.Free;
      MainConnection.Connected := False;
@@ -225,6 +258,100 @@ procedure TfmMainForm.mn_BackUpClick(Sender: TObject);
 begin
   Application.CreateForm(TfmBackUp, fmBackUp);
   fmBackUp.ShowModal;
+end;
+
+procedure TfmMainForm.mn_BranchesDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmBranch, fmBranch);
+  fmBranch.ShowModal;
+end;
+
+procedure TfmMainForm.mn_CustomerGroupDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmCustomerGroup, fmCustomerGroup);
+  fmCustomerGroup.ShowModal;
+end;
+
+procedure TfmMainForm.mn_CurrencyDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmCurrency, fmCurrency);
+  fmCurrency.ShowModal;
+end;
+
+procedure TfmMainForm.mn_ItemCategoryDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmItemCategory, fmItemCategory);
+  fmItemCategory.ShowModal;
+end;
+
+procedure TfmMainForm.mn_ItemColorDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmItemColor, fmItemColor);
+  fmItemColor.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_ItemGroupSectionefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmItemGroupSections, fmItemGroupSections);
+  fmItemGroupSections.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_ItemPoliciesDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmItemPolicies, fmItemPolicies);
+  fmItemPolicies.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_ItemSizeDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmItemSize, fmItemSize);
+  fmItemSize.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_ItemTypeDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmItemType, fmItemType);
+  fmItemType.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_ItemUnitDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmItemUnit, fmItemUnit);
+  fmItemUnit.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_WareHouseDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmWareHouse, fmWareHouse);
+  fmWareHouse.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_VendorGroupDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmVendorGroup, fmVendorGroup);
+  fmVendorGroup.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_UserGroupsDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmUserGroups, fmUserGroups);
+  fmUserGroups.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_CustomerDefClick(Sender: TObject);
+begin
+Application.CreateForm(TfmCustomers, fmCustomers);
+  fmCustomers.ShowModal;
+
 end;
 
 end.
