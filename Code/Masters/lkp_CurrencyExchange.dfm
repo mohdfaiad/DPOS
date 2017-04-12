@@ -1,8 +1,8 @@
-object fmItemType: TfmItemType
+object fmCurrencyExchange: TfmCurrencyExchange
   Left = 192
   Top = 124
   BorderStyle = bsDialog
-  Caption = #1571#1606#1608#1575#1593' '#1575#1604#1571#1589#1606#1575#1601
+  Caption = #1571#1587#1593#1575#1585' '#1575#1604#1593#1605#1604#1575#1578
   ClientHeight = 499
   ClientWidth = 1016
   Color = clBtnFace
@@ -14,6 +14,7 @@ object fmItemType: TfmItemType
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
@@ -24,7 +25,7 @@ object fmItemType: TfmItemType
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1571#1606#1608#1575#1593' '#1575#1604#1571#1589#1606#1575#1601
+    Caption = #1571#1587#1593#1575#1585' '#1575#1604#1593#1605#1604#1575#1578
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -47,12 +48,12 @@ object fmItemType: TfmItemType
         441
         335)
       object Label2: TLabel
-        Left = 360
-        Top = 80
-        Width = 65
+        Left = 345
+        Top = 81
+        Width = 83
         Height = 19
         Anchors = []
-        Caption = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610' '
+        Caption = #1575#1604#1593#1605#1604#1577' '#1575#1604#1571#1587#1575#1587#1610#1577
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -61,12 +62,12 @@ object fmItemType: TfmItemType
         ParentFont = False
       end
       object Label1: TLabel
-        Left = 396
+        Left = 393
         Top = 36
-        Width = 29
+        Width = 32
         Height = 19
         Anchors = []
-        Caption = #1575#1604#1585#1605#1586
+        Caption = #1575#1604#1593#1605#1604#1577
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -75,12 +76,12 @@ object fmItemType: TfmItemType
         ParentFont = False
       end
       object Label3: TLabel
-        Left = 352
-        Top = 126
-        Width = 73
+        Left = 365
+        Top = 130
+        Width = 65
         Height = 19
         Anchors = []
-        Caption = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
+        Caption = #1587#1593#1585' '#1575#1604#1578#1581#1608#1610#1604
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -88,29 +89,13 @@ object fmItemType: TfmItemType
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object edtName: TDBEdit
-        Left = 32
-        Top = 76
-        Width = 315
+      object EdtPrice: TDBEdit
+        Left = 152
+        Top = 128
+        Width = 188
         Height = 27
         Anchors = []
-        DataField = 'ItemTypeNameAr'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 1
-      end
-      object edtCode: TDBEdit
-        Left = 226
-        Top = 32
-        Width = 121
-        Height = 27
-        Anchors = []
-        DataField = 'ItemTypeCode'
+        DataField = 'ExchangeRate'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -120,19 +105,39 @@ object fmItemType: TfmItemType
         ParentFont = False
         TabOrder = 0
       end
-      object DBEdit1: TDBEdit
-        Left = 32
-        Top = 122
-        Width = 315
+      object Co_Currency: TDBLookupComboBox
+        Left = 152
+        Top = 32
+        Width = 188
         Height = 27
-        Anchors = []
-        DataField = 'ItemTypeNameEn'
+        DataField = 'CurrencyCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
+        Font.Color = clBlack
         Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = []
+        KeyField = 'CurrencyCode'
+        ListField = 'CurrencyNameA'
+        ListSource = DS_Currency1
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Co_BaseCurrency: TDBLookupComboBox
+        Left = 152
+        Top = 80
+        Width = 188
+        Height = 27
+        DataField = 'BaseCurrencyCode'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        KeyField = 'CurrencyCode'
+        ListField = 'CurrencyNameA'
+        ListSource = DS_Currency2
         ParentFont = False
         TabOrder = 2
       end
@@ -273,30 +278,30 @@ object fmItemType: TfmItemType
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_ItemType'
+    DataSet.CommandText = 'Select * From tbl_CurrencyExch'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
     BeforePost = SDS_HeaderBeforePost
     Left = 24
     Top = 16
-    object SDS_HeaderItemTypeCode: TStringField
-      DisplayLabel = #1575#1604#1585#1605#1586
-      FieldName = 'ItemTypeCode'
+    object SDS_HeaderCurrencyCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1593#1605#1604#1577
+      FieldName = 'CurrencyCode'
       Required = True
+      Size = 3
+    end
+    object SDS_HeaderBaseCurrencyCode: TStringField
+      DisplayLabel = #1575#1604#1593#1605#1604#1577' '#1575#1604#1571#1587#1575#1587#1610#1577
+      FieldName = 'BaseCurrencyCode'
+      Required = True
+      Size = 3
+    end
+    object SDS_HeaderExchangeRate: TFMTBCDField
+      DisplayLabel = #1587#1593#1585' '#1575#1604#1578#1581#1608#1610#1604
+      FieldName = 'ExchangeRate'
+      Precision = 18
       Size = 6
-    end
-    object SDS_HeaderItemTypeNameAr: TStringField
-      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
-      DisplayWidth = 20
-      FieldName = 'ItemTypeNameAr'
-      Size = 255
-    end
-    object SDS_HeaderItemTypeNameEn: TStringField
-      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 20
-      FieldName = 'ItemTypeNameEn'
-      Size = 255
     end
     object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
@@ -309,5 +314,83 @@ object fmItemType: TfmItemType
     DataSet = SDS_Header
     Left = 64
     Top = 16
+  end
+  object SDS_Currency2: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_Currency'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    BeforePost = SDS_HeaderBeforePost
+    Left = 536
+    Top = 224
+    object StringField1: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'CurrencyCode'
+      Required = True
+      Size = 3
+    end
+    object SDS_HeaderCurrencyNameA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'CurrencyNameA'
+      Size = 25
+    end
+    object SDS_HeaderCurrencyNameE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'CurrencyNameE'
+      Size = 25
+    end
+    object StringField2: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Size = 4
+    end
+  end
+  object DS_Currency2: TDataSource
+    DataSet = SDS_Currency2
+    Left = 576
+    Top = 216
+  end
+  object SDS_Currency1: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_Currency'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    BeforePost = SDS_HeaderBeforePost
+    Left = 552
+    Top = 168
+    object StringField3: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'CurrencyCode'
+      Required = True
+      Size = 3
+    end
+    object StringField4: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'CurrencyNameA'
+      Size = 25
+    end
+    object StringField5: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'CurrencyNameE'
+      Size = 25
+    end
+    object StringField6: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Size = 4
+    end
+  end
+  object DS_Currency1: TDataSource
+    DataSet = SDS_Currency1
+    Left = 592
+    Top = 168
   end
 end

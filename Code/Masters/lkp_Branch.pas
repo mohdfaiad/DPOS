@@ -31,7 +31,7 @@ type
     SDS_HeaderBranchCode: TStringField;
     SDS_HeaderBranchNameAr: TStringField;
     SDS_HeaderBranchNameEn: TStringField;
-    Button1: TButton;
+    BtnShow: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -41,7 +41,7 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
-    procedure Button1Click(Sender: TObject);
+    procedure BtnShowClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -70,7 +70,9 @@ begin
   BtnCancel.Enabled := False;
   btnDelete.Enabled := True;
   grpData.Enabled := False;
+  BtnShow.Enabled := True;
   EditMode := False;
+
 end;
 
 procedure TfmBranch.btnEditClick(Sender: TObject);
@@ -84,6 +86,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := False;
+  BtnShow.Enabled := False;
   EditMode := True;
 end;
 
@@ -117,7 +120,7 @@ begin
   end
   else Begin
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
-  end; 
+  end;
 end;
 
 procedure TfmBranch.BtnCancelClick(Sender: TObject);
@@ -158,7 +161,7 @@ begin
   except
       ShowMessage('ÕœÀ Œÿ√ √À‰«¡ „”Õ «·»Ì«‰«  , ·« Ì„ﬂ‰ Õ–› »Ì«‰«  „” Œœ„…');
       BtnOpenClick(Sender);
-  end;      
+  end;
 end;
 
 procedure TfmBranch.FormCreate(Sender: TObject);
@@ -169,7 +172,8 @@ Begin
   Top := (Screen.Height - Height) div 2;
   }
   BtnOpenClick(Sender);
-  
+  BtnShow.Enabled := False;
+
 end;
 
 procedure TfmBranch.FormKeyPress(Sender: TObject; var Key: Char);
@@ -190,6 +194,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := True;
+  BtnShow.Enabled := False;
   edtCode.SetFocus;
   EditMode := False;
 end;
@@ -199,7 +204,7 @@ begin
  SDS_HeaderCompanyCode.Value := DCompany;
 end;
 
-procedure TfmBranch.Button1Click(Sender: TObject);
+procedure TfmBranch.BtnShowClick(Sender: TObject);
 var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);

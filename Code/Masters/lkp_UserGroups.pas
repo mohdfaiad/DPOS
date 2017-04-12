@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,
-  VrControls, VrButtons, ExtCtrls;
+  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
+  VrControls, VrButtons, Buttons, ExtCtrls;
 
 type
   TfmUserGroups = class(TForm)
@@ -18,13 +18,6 @@ type
     edtCode: TDBEdit;
     Label1: TLabel;
     DBGrid1: TDBGrid;
-    GroupBox2: TGroupBox;
-    BtnOpen: TButton;
-    btnAdd: TButton;
-    btnEdit: TButton;
-    btnDelete: TButton;
-    btnSave: TButton;
-    BtnCancel: TButton;
     Label3: TLabel;
     DBEdit1: TDBEdit;
     SDS_HeaderGroupCode: TStringField;
@@ -32,6 +25,14 @@ type
     SDS_HeaderGroupNameE: TStringField;
     SDS_HeaderGroupStatus: TStringField;
     GP_Status: TDBRadioGroup;
+    GroupBox2: TGroupBox;
+    BtnOpen: TButton;
+    btnAdd: TButton;
+    btnEdit: TButton;
+    btnDelete: TButton;
+    btnSave: TButton;
+    BtnCancel: TButton;
+    BtnShow: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -40,6 +41,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
+    procedure BtnShowClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -67,6 +69,7 @@ begin
   BtnCancel.Enabled := False;
   btnDelete.Enabled := True;
   grpData.Enabled := False;
+  BtnShow.Enabled := True;
   EditMode := False;
 end;
 
@@ -81,6 +84,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := False;
+  BtnShow.Enabled := False;
   EditMode := True;
 end;
 
@@ -165,6 +169,7 @@ Begin
   Top := (Screen.Height - Height) div 2;
   }
   BtnOpenClick(Sender);
+  BtnShow.Enabled := False;
 end;
 
 procedure TfmUserGroups.FormKeyPress(Sender: TObject; var Key: Char);
@@ -177,6 +182,7 @@ end;
 procedure TfmUserGroups.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
+  SDS_HeaderGroupStatus.Value := '1';
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -186,7 +192,15 @@ begin
   grpData.Enabled := True;
   edtCode.Enabled := True;
   edtCode.SetFocus;
+  BtnShow.Enabled := False;
   EditMode := False;
+end;
+
+procedure TfmUserGroups.BtnShowClick(Sender: TObject);
+var lkp : Tlkp;
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
 end;
 
 end.

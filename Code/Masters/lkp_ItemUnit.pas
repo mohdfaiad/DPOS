@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,
-  VrControls, VrButtons;
+  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
+  VrControls, VrButtons, Buttons;
 
 type
   TfmItemUnit = class(TForm)
@@ -18,13 +18,6 @@ type
     edtCode: TDBEdit;
     Label1: TLabel;
     DBGrid1: TDBGrid;
-    GroupBox2: TGroupBox;
-    BtnOpen: TButton;
-    btnAdd: TButton;
-    btnEdit: TButton;
-    btnDelete: TButton;
-    btnSave: TButton;
-    BtnCancel: TButton;
     Label3: TLabel;
     DBEdit1: TDBEdit;
     SDS_HeaderCompanyCode: TStringField;
@@ -33,6 +26,23 @@ type
     SDS_HeaderItemUnitDescE: TStringField;
     SDS_HeaderUnitTransCode: TStringField;
     SDS_HeaderUnitTransValue: TFMTBCDField;
+    GroupBox2: TGroupBox;
+    BtnOpen: TButton;
+    btnAdd: TButton;
+    btnEdit: TButton;
+    btnDelete: TButton;
+    btnSave: TButton;
+    BtnCancel: TButton;
+    BtnShow: TButton;
+    Label4: TLabel;
+    DBEdit2: TDBEdit;
+    Label5: TLabel;
+    Co_UnitTransCode: TDBLookupComboBox;
+    SDS_UnitTransCode: TSimpleDataSet;
+    DS_UnitTransCode: TDataSource;
+    SDS_UnitTransCodeItemUnitCode: TStringField;
+    SDS_UnitTransCodeItemUnitDescA: TStringField;
+    SDS_UnitTransCodeItemUnitDescE: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -42,6 +52,8 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
+    procedure BtnShowClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -69,6 +81,7 @@ begin
   BtnCancel.Enabled := False;
   btnDelete.Enabled := True;
   grpData.Enabled := False;
+  BtnShow.Enabled := True;
   EditMode := False;
 end;
 
@@ -83,6 +96,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := False;
+  BtnShow.Enabled := False;
   EditMode := True;
 end;
 
@@ -103,7 +117,7 @@ begin
      Exit;
   end;
 
-  IsDuplicated := RepeatedKey('tbl_ItemUnitCode', ' ItemUnitCode = ''' + SDS_HeaderItemUnitCode.AsString + '''  ');
+  IsDuplicated := RepeatedKey('tbl_ItemUnit', ' ItemUnitCode = ''' + SDS_HeaderItemUnitCode.AsString + '''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
@@ -116,7 +130,7 @@ begin
   end
   else Begin
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
-  end; 
+  end;
 end;
 
 procedure TfmItemUnit.BtnCancelClick(Sender: TObject);
@@ -157,7 +171,7 @@ begin
   except
       ShowMessage('ÕœÀ Œÿ√ √À‰«¡ „”Õ «·»Ì«‰«  , ·« Ì„ﬂ‰ Õ–› »Ì«‰«  „” Œœ„…');
       BtnOpenClick(Sender);
-  end;      
+  end;
 end;
 
 procedure TfmItemUnit.FormCreate(Sender: TObject);
@@ -167,6 +181,9 @@ Begin
   Top := (Screen.Height - Height) div 2;
   }
   BtnOpenClick(Sender);
+  BtnShow.Enabled := False;
+  SDS_UnitTransCode.Open;
+
 end;
 
 procedure TfmItemUnit.FormKeyPress(Sender: TObject; var Key: Char);
@@ -187,6 +204,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := True;
+  BtnShow.Enabled := False;
   edtCode.SetFocus;
   EditMode := False;
 end;
@@ -194,6 +212,18 @@ end;
 procedure TfmItemUnit.SDS_HeaderBeforePost(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
+end;
+
+procedure TfmItemUnit.BtnShowClick(Sender: TObject);
+var lkp : Tlkp;
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
+end;
+
+procedure TfmItemUnit.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  SDS_UnitTransCode.Close;
 end;
 
 end.

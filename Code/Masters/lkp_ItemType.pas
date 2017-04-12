@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,
-  VrControls, VrButtons;
+  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
+  VrControls, VrButtons, Buttons;
 
 type
   TfmItemType = class(TForm)
@@ -18,6 +18,12 @@ type
     edtCode: TDBEdit;
     Label1: TLabel;
     DBGrid1: TDBGrid;
+    Label3: TLabel;
+    DBEdit1: TDBEdit;
+    SDS_HeaderCompanyCode: TStringField;
+    SDS_HeaderItemTypeCode: TStringField;
+    SDS_HeaderItemTypeNameAr: TStringField;
+    SDS_HeaderItemTypeNameEn: TStringField;
     GroupBox2: TGroupBox;
     BtnOpen: TButton;
     btnAdd: TButton;
@@ -25,12 +31,7 @@ type
     btnDelete: TButton;
     btnSave: TButton;
     BtnCancel: TButton;
-    Label3: TLabel;
-    DBEdit1: TDBEdit;
-    SDS_HeaderCompanyCode: TStringField;
-    SDS_HeaderItemTypeCode: TStringField;
-    SDS_HeaderItemTypeNameAr: TStringField;
-    SDS_HeaderItemTypeNameEn: TStringField;
+    BtnShow: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -40,6 +41,7 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
+    procedure BtnShowClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -67,6 +69,7 @@ begin
   BtnCancel.Enabled := False;
   btnDelete.Enabled := True;
   grpData.Enabled := False;
+  BtnShow.Enabled := True;
   EditMode := False;
 end;
 
@@ -81,6 +84,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := False;
+  BtnShow.Enabled := False;
   EditMode := True;
 end;
 
@@ -114,7 +118,7 @@ begin
   end
   else Begin
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
-  end; 
+  end;
 end;
 
 procedure TfmItemType.BtnCancelClick(Sender: TObject);
@@ -155,7 +159,7 @@ begin
   except
       ShowMessage('ÕœÀ Œÿ√ √À‰«¡ „”Õ «·»Ì«‰«  , ·« Ì„ﬂ‰ Õ–› »Ì«‰«  „” Œœ„…');
       BtnOpenClick(Sender);
-  end;      
+  end;
 end;
 
 procedure TfmItemType.FormCreate(Sender: TObject);
@@ -165,6 +169,7 @@ Begin
   Top := (Screen.Height - Height) div 2;
   }
   BtnOpenClick(Sender);
+  BtnShow.Enabled := False;
 end;
 
 procedure TfmItemType.FormKeyPress(Sender: TObject; var Key: Char);
@@ -185,6 +190,7 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := True;
+  BtnShow.Enabled := False;
   edtCode.SetFocus;
   EditMode := False;
 end;
@@ -192,6 +198,13 @@ end;
 procedure TfmItemType.SDS_HeaderBeforePost(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
+end;
+
+procedure TfmItemType.BtnShowClick(Sender: TObject);
+var lkp : Tlkp;
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
 end;
 
 end.

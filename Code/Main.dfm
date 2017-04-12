@@ -12715,6 +12715,7 @@ object fmMainForm: TfmMainForm
       'MSSQL TransIsolation=ReadCommited'
       'OS Authentication=False')
     VendorLib = 'oledb'
+    Connected = True
     Left = 280
     Top = 40
   end
@@ -12808,6 +12809,30 @@ object fmMainForm: TfmMainForm
       object mn_CustomerDef: TMenuItem
         Caption = #1575#1604#1593#1605#1604#1575#1569
         OnClick = mn_CustomerDefClick
+      end
+      object mn_CurrencyExchangeDef: TMenuItem
+        Caption = #1571#1587#1593#1575#1585' '#1575#1604#1593#1605#1604#1575#1578
+        OnClick = mn_CurrencyExchangeDefClick
+      end
+      object mn_ItemGroupsDef: TMenuItem
+        Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1589#1606#1575#1601
+        OnClick = mn_ItemGroupsDefClick
+      end
+      object mn_VendoersDef: TMenuItem
+        Caption = #1575#1604#1605#1608#1585#1583#1610#1606
+        OnClick = mn_VendoersDefClick
+      end
+      object mn_UserDef: TMenuItem
+        Caption = #1575#1604#1605#1587#1578#1582#1583#1605#1610#1606
+        OnClick = mn_UserDefClick
+      end
+      object mn_OperatorsDef: TMenuItem
+        Caption = #1575#1604#1605#1588#1594#1604#1610#1606
+        OnClick = mn_OperatorsDefClick
+      end
+      object mn_POSDef: TMenuItem
+        Caption = #1578#1593#1585#1610#1601' '#1606#1602#1591#1577' '#1575#1604#1576#1610#1593
+        OnClick = mn_POSDefClick
       end
     end
     object mn_PosTransactions: TMenuItem

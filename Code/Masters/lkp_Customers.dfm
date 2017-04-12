@@ -14,6 +14,7 @@ object fmCustomers: TfmCustomers
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
@@ -47,8 +48,8 @@ object fmCustomers: TfmCustomers
         441
         335)
       object Label2: TLabel
-        Left = 363
-        Top = 94
+        Left = 360
+        Top = 84
         Width = 65
         Height = 19
         Anchors = []
@@ -75,8 +76,8 @@ object fmCustomers: TfmCustomers
         ParentFont = False
       end
       object Label3: TLabel
-        Left = 357
-        Top = 152
+        Left = 352
+        Top = 135
         Width = 73
         Height = 19
         Anchors = []
@@ -89,8 +90,8 @@ object fmCustomers: TfmCustomers
         ParentFont = False
       end
       object Label4: TLabel
-        Left = 377
-        Top = 205
+        Left = 372
+        Top = 184
         Width = 53
         Height = 19
         Anchors = []
@@ -103,12 +104,12 @@ object fmCustomers: TfmCustomers
         ParentFont = False
       end
       object edtName: TDBEdit
-        Left = 40
-        Top = 92
+        Left = 32
+        Top = 80
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CustomerGroupNameAr'
+        DataField = 'CustomerNameAr'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -120,7 +121,7 @@ object fmCustomers: TfmCustomers
       end
       object edtCode: TDBEdit
         Left = 226
-        Top = 34
+        Top = 32
         Width = 121
         Height = 27
         Anchors = []
@@ -135,12 +136,12 @@ object fmCustomers: TfmCustomers
         TabOrder = 0
       end
       object DBEdit1: TDBEdit
-        Left = 42
-        Top = 150
+        Left = 32
+        Top = 131
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CustomerGroupNameEn'
+        DataField = 'CustomerNameEn'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -151,8 +152,8 @@ object fmCustomers: TfmCustomers
         TabOrder = 2
       end
       object Co_CustomerGroup: TDBLookupComboBox
-        Left = 40
-        Top = 200
+        Left = 26
+        Top = 180
         Width = 321
         Height = 27
         DataField = 'CustomerGroupCode'
@@ -197,9 +198,9 @@ object fmCustomers: TfmCustomers
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 734
-      Top = 12
-      Width = 127
+      Left = 626
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1601#1578#1581
       Font.Charset = DEFAULT_CHARSET
@@ -212,9 +213,9 @@ object fmCustomers: TfmCustomers
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 590
-      Top = 12
-      Width = 127
+      Left = 503
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1573#1590#1575#1601#1577
       Font.Charset = DEFAULT_CHARSET
@@ -227,9 +228,9 @@ object fmCustomers: TfmCustomers
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 447
+      Left = 379
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1578#1593#1583#1610#1600#1600#1604
       Font.Charset = DEFAULT_CHARSET
@@ -244,7 +245,7 @@ object fmCustomers: TfmCustomers
     object btnDelete: TButton
       Left = 11
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1584#1601
       Font.Charset = DEFAULT_CHARSET
@@ -257,9 +258,9 @@ object fmCustomers: TfmCustomers
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 305
+      Left = 254
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1601#1600#1600#1600#1600#1600#1592
       Font.Charset = DEFAULT_CHARSET
@@ -272,9 +273,9 @@ object fmCustomers: TfmCustomers
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 158
+      Left = 132
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1573#1604#1594#1575#1569
       Font.Charset = DEFAULT_CHARSET
@@ -285,6 +286,21 @@ object fmCustomers: TfmCustomers
       ParentFont = False
       TabOrder = 4
       OnClick = BtnCancelClick
+    end
+    object BtnShow: TButton
+      Left = 750
+      Top = 13
+      Width = 115
+      Height = 35
+      Caption = #1593#1585#1590
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 6
+      OnClick = BtnShowClick
     end
   end
   object SDS_Header: TSimpleDataSet
@@ -303,16 +319,16 @@ object fmCustomers: TfmCustomers
       Required = True
       Size = 6
     end
-    object SDS_HeaderCustomerGroupNameAr: TStringField
+    object SDS_HeaderCustomerNameAr: TStringField
       DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
       DisplayWidth = 20
-      FieldName = 'CustomerGroupNameAr'
+      FieldName = 'CustomerNameAr'
       Size = 255
     end
-    object SDS_HeaderCustomerGroupNameEn: TStringField
+    object SDS_HeaderCustomerNameEn: TStringField
       DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
       DisplayWidth = 20
-      FieldName = 'CustomerGroupNameEn'
+      FieldName = 'CustomerNameEn'
       Size = 255
     end
     object SDS_HeaderCustomerGroupCode: TStringField
@@ -323,6 +339,7 @@ object fmCustomers: TfmCustomers
     object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
+      Visible = False
       Size = 4
     end
   end
@@ -339,8 +356,8 @@ object fmCustomers: TfmCustomers
     DataSet.Params = <>
     Params = <>
     BeforePost = SDS_HeaderBeforePost
-    Left = 32
-    Top = 104
+    Left = 592
+    Top = 360
     object SDS_CustomerGroupStringField1: TStringField
       DisplayLabel = #1575#1604#1585#1605#1586
       FieldName = 'CustomerGroupCode'
@@ -359,15 +376,10 @@ object fmCustomers: TfmCustomers
       FieldName = 'CustomerGroupNameEn'
       Size = 255
     end
-    object SDS_CustomerGroupStringField4: TStringField
-      FieldName = 'CompanyCode'
-      Required = True
-      Size = 4
-    end
   end
   object DS_CustomerGroup: TDataSource
     DataSet = SDS_CustomerGroup
-    Left = 72
-    Top = 104
+    Left = 632
+    Top = 360
   end
 end

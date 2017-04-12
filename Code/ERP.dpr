@@ -10,8 +10,8 @@ uses
   License in 'SystemManager\License.pas' {fmLicense},
   Login in 'SystemManager\Login.pas' {fmLogin},
   lkp_VendorGroup in 'Masters\lkp_VendorGroup.pas' {fmVendorGroup},
-  lkp_Currency in 'Masters\lkp_Currency.pas' {fmCurrency},
-  lkp_UserGroups in 'Masters\lkp_UserGroups.pas' {fmUserGroups},
+  lkp_CurrencyExchange in 'Masters\lkp_CurrencyExchange.pas' {fmCurrencyExchange},
+  lkp_Users in 'Masters\lkp_Users.pas' {fmUsers},
   lkp_ItemColor in 'Masters\lkp_ItemColor.pas' {fmItemColor},
   lkp_ItemGroupSections in 'Masters\lkp_ItemGroupSections.pas' {fmItemGroupSections},
   lkp_ItemPolicies in 'Masters\lkp_ItemPolicies.pas' {fmItemPolicies},
@@ -20,18 +20,27 @@ uses
   lkp_ItemUnit in 'Masters\lkp_ItemUnit.pas' {fmItemUnit},
   lkp_WareHouse in 'Masters\lkp_WareHouse.pas' {fmWareHouse},
   lkp_Branch in 'Masters\lkp_Branch.pas' {fmBranch},
-  lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers},
+  lkp_ItemGroups in 'Masters\lkp_ItemGroups.pas' {fmItemGroups},
   lkp_Company in 'Masters\lkp_Company.pas' {fmCompany},
   BackUp in 'SystemManager\BackUp.pas' {fmBackUp},
   lkp_CustomerGroup in 'Masters\lkp_CustomerGroup.pas' {fmCustomerGroup},
-  LookUp in 'SystemManager\LookUp.pas' {Lkp};
-
+  LookUp in 'SystemManager\LookUp.pas' {Lkp},
+  lkp_Currency in 'Masters\lkp_Currency.pas' {fmCurrency},
+  lkp_Vendors in 'Masters\lkp_Vendors.pas' {fmVendors},
+  lkp_Operators in 'Masters\lkp_Operators.pas' {fmOperators},
+  lkp_UserGroups in 'Masters\lkp_UserGroups.pas' {fmUserGroups},
+  lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TfmMainForm, fmMainForm);
+  Application.CreateForm(TfmCurrency, fmCurrency);
+  Application.CreateForm(TfmVendors, fmVendors);
+  Application.CreateForm(TfmOperators, fmOperators);
+  Application.CreateForm(TfmUserGroups, fmUserGroups);
+  Application.CreateForm(TfmCustomers, fmCustomers);
   {
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);

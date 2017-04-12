@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,
-  VrControls, VrButtons;
+  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
+  VrControls, VrButtons, Buttons;
 
 type
   TfmItemGroupSections = class(TForm)
@@ -18,13 +18,6 @@ type
     edtCode: TDBEdit;
     Label1: TLabel;
     DBGrid1: TDBGrid;
-    GroupBox2: TGroupBox;
-    BtnOpen: TButton;
-    btnAdd: TButton;
-    btnEdit: TButton;
-    btnDelete: TButton;
-    btnSave: TButton;
-    BtnCancel: TButton;
     Label3: TLabel;
     DBEdit1: TDBEdit;
     SDS_HeaderCompanyCode: TStringField;
@@ -34,6 +27,14 @@ type
     SDS_HeaderPrinterPath: TStringField;
     DBEdit2: TDBEdit;
     Label4: TLabel;
+    GroupBox2: TGroupBox;
+    BtnOpen: TButton;
+    btnAdd: TButton;
+    btnEdit: TButton;
+    btnDelete: TButton;
+    btnSave: TButton;
+    BtnCancel: TButton;
+    BtnShow: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
+    procedure BtnShowClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -104,7 +106,7 @@ begin
      Exit;
   end;
 
-  IsDuplicated := RepeatedKey('tbl_Section', ' SectionCode = ''' + SDS_HeaderSectionCode.AsString + '''  ');
+  IsDuplicated := RepeatedKey('tbl_ItemGroupSections', ' SectionCode = ''' + SDS_HeaderSectionCode.AsString + '''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
@@ -195,6 +197,13 @@ end;
 procedure TfmItemGroupSections.SDS_HeaderBeforePost(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
+end;
+
+procedure TfmItemGroupSections.BtnShowClick(Sender: TObject);
+var lkp : Tlkp;
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
 end;
 
 end.

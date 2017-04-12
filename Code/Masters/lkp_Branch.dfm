@@ -47,7 +47,7 @@ object fmBranch: TfmBranch
         441
         335)
       object Label2: TLabel
-        Left = 363
+        Left = 360
         Top = 94
         Width = 65
         Height = 19
@@ -75,7 +75,7 @@ object fmBranch: TfmBranch
         ParentFont = False
       end
       object Label3: TLabel
-        Left = 357
+        Left = 352
         Top = 152
         Width = 73
         Height = 19
@@ -89,8 +89,8 @@ object fmBranch: TfmBranch
         ParentFont = False
       end
       object edtName: TDBEdit
-        Left = 40
-        Top = 92
+        Left = 32
+        Top = 90
         Width = 315
         Height = 27
         Anchors = []
@@ -106,7 +106,7 @@ object fmBranch: TfmBranch
       end
       object edtCode: TDBEdit
         Left = 226
-        Top = 34
+        Top = 32
         Width = 121
         Height = 27
         Anchors = []
@@ -121,8 +121,8 @@ object fmBranch: TfmBranch
         TabOrder = 0
       end
       object DBEdit1: TDBEdit
-        Left = 42
-        Top = 150
+        Left = 32
+        Top = 148
         Width = 315
         Height = 27
         Anchors = []
@@ -165,9 +165,9 @@ object fmBranch: TfmBranch
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 734
-      Top = 12
-      Width = 127
+      Left = 626
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1601#1578#1581
       Font.Charset = DEFAULT_CHARSET
@@ -180,9 +180,9 @@ object fmBranch: TfmBranch
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 590
-      Top = 12
-      Width = 127
+      Left = 503
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1573#1590#1575#1601#1577
       Font.Charset = DEFAULT_CHARSET
@@ -195,9 +195,9 @@ object fmBranch: TfmBranch
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 447
+      Left = 379
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1578#1593#1583#1610#1600#1600#1604
       Font.Charset = DEFAULT_CHARSET
@@ -212,7 +212,7 @@ object fmBranch: TfmBranch
     object btnDelete: TButton
       Left = 11
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1584#1601
       Font.Charset = DEFAULT_CHARSET
@@ -225,9 +225,9 @@ object fmBranch: TfmBranch
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 305
+      Left = 254
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1601#1600#1600#1600#1600#1600#1592
       Font.Charset = DEFAULT_CHARSET
@@ -240,9 +240,9 @@ object fmBranch: TfmBranch
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 158
+      Left = 132
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1573#1604#1594#1575#1569
       Font.Charset = DEFAULT_CHARSET
@@ -254,15 +254,21 @@ object fmBranch: TfmBranch
       TabOrder = 4
       OnClick = BtnCancelClick
     end
-  end
-  object Button1: TButton
-    Left = 248
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 2
-    OnClick = Button1Click
+    object BtnShow: TButton
+      Left = 750
+      Top = 13
+      Width = 115
+      Height = 35
+      Caption = #1593#1585#1590
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 6
+      OnClick = BtnShowClick
+    end
   end
   object SDS_Header: TSimpleDataSet
     Aggregates = <>

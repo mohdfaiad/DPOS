@@ -42,8 +42,6 @@ type
     QryCustomerGroupCustomerGroupNameEn: TStringField;
     QryCustomersCustomerCode: TStringField;
     QryCustomersCustomerGroupCode: TStringField;
-    QryCustomersCustomerGroupNameAr: TStringField;
-    QryCustomersCustomerGroupNameEn: TStringField;
     QryItemCategoryItemCategoryCode: TStringField;
     QryItemCategoryItemCategoryNameAr: TStringField;
     QryItemCategoryItemCategoryNameEn: TStringField;
@@ -86,6 +84,8 @@ type
     QryWareHouseWareHouseCode: TStringField;
     QryWareHouseWareHouseNameAr: TStringField;
     QryWareHouseWareHouseNameEn: TStringField;
+    QryCustomersCustomerNameAr: TStringField;
+    QryCustomersCustomerNameEn: TStringField;
     procedure btnCloseClick(Sender: TObject);
   private
     { Private declarations }

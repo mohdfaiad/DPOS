@@ -1,4 +1,4 @@
-unit lkp_Customers;
+unit lkp_Operators;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   VrControls, VrButtons, Buttons;
 
 type
-  TfmCustomers = class(TForm)
+  TfmOperators = class(TForm)
     grp_Content: TGroupBox;
     SDS_Header: TSimpleDataSet;
     DS_Header: TDataSource;
@@ -20,18 +20,10 @@ type
     DBGrid1: TDBGrid;
     Label3: TLabel;
     DBEdit1: TDBEdit;
-    SDS_HeaderCompanyCode: TStringField;
-    SDS_HeaderCustomerCode: TStringField;
-    SDS_HeaderCustomerGroupCode: TStringField;
-    Co_CustomerGroup: TDBLookupComboBox;
-    SDS_CustomerGroupStringField1: TStringField;
-    SDS_CustomerGroupStringField2: TStringField;
-    SDS_CustomerGroupStringField3: TStringField;
-    DS_CustomerGroup: TDataSource;
-    SDS_CustomerGroup: TSimpleDataSet;
+    Co_Users: TDBLookupComboBox;
+    DS_Users: TDataSource;
+    SDS_Users: TSimpleDataSet;
     Label4: TLabel;
-    SDS_HeaderCustomerNameAr: TStringField;
-    SDS_HeaderCustomerNameEn: TStringField;
     GroupBox2: TGroupBox;
     BtnOpen: TButton;
     btnAdd: TButton;
@@ -40,6 +32,14 @@ type
     btnSave: TButton;
     BtnCancel: TButton;
     BtnShow: TButton;
+    SDS_HeaderCompanyCode: TStringField;
+    SDS_HeaderOperatorCode: TStringField;
+    SDS_HeaderOperatorNameAr: TStringField;
+    SDS_HeaderOperatorNameEn: TStringField;
+    SDS_HeaderUserID: TStringField;
+    SDS_UsersUserID: TStringField;
+    SDS_UsersFullNameA: TStringField;
+    SDS_UsersFullNameE: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -60,7 +60,7 @@ type
   end;
 
 var
-  fmCustomers: TfmCustomers;
+  fmOperators: TfmOperators;
 
 implementation
 
@@ -68,7 +68,7 @@ uses Main, GFunctions, GVariable;
 
 {$R *.dfm}
 
-procedure TfmCustomers.BtnOpenClick(Sender: TObject);
+procedure TfmOperators.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
   SDS_Header.Open;
@@ -83,7 +83,7 @@ begin
   EditMode := False;
 end;
 
-procedure TfmCustomers.btnEditClick(Sender: TObject);
+procedure TfmOperators.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
   btnEdit.Enabled := False;
@@ -98,33 +98,33 @@ begin
   EditMode := True;
 end;
 
-procedure TfmCustomers.btnSaveClick(Sender: TObject);
+procedure TfmOperators.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
 begin
-  If SDS_HeaderCustomerCode.AsString = '' Then
+  If SDS_HeaderOperatorCode.AsString = '' Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·—„“  ﬁ»· «·Õ›Ÿ');
      edtCode.SetFocus;
      Exit;
   end;
 
-  If (SDS_HeaderCustomerNameAr.AsString = '') AND (SDS_HeaderCustomerNameEn.AsString = '')  Then
+  If (SDS_HeaderOperatorNameAr.AsString = '') AND (SDS_HeaderOperatorNameEn.AsString = '')  Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·«”„ ﬁ»· «·Õ›Ÿ');
      edtName.SetFocus;
      Exit;
   end;
 
-  IsDuplicated := RepeatedKey('tbl_Cutomers', ' CustomerCode = ''' + SDS_HeaderCustomerCode.AsString + '''  ');
+  IsDuplicated := RepeatedKey('tbl_Operators', ' OperatorCode = ''' + SDS_HeaderOperatorCode.AsString + '''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
      Exit;
   end;
 
-  if SDS_HeaderCustomerGroupCode.AsString = '' Then Begin
-     ShowMessage('ÌÃ» ≈Œ Ì«— „Ã„Ê⁄… «·⁄„Ì·');
-     Co_CustomerGroup.SetFocus;
+  if SDS_HeaderUserID.AsString = '' Then Begin
+     ShowMessage('ÌÃ» ≈Œ Ì«— «·ﬂ«‘Ì—');
+     Co_Users.SetFocus;
      Exit;
   end;
 
@@ -139,7 +139,7 @@ begin
 
 end;
 
-procedure TfmCustomers.BtnCancelClick(Sender: TObject);
+procedure TfmOperators.BtnCancelClick(Sender: TObject);
 Var
   buttonSelected : Integer;
 begin
@@ -155,7 +155,7 @@ begin
 
 end;
 
-procedure TfmCustomers.btnDeleteClick(Sender: TObject);
+procedure TfmOperators.btnDeleteClick(Sender: TObject);
 Var
   buttonSelected : Integer;
 begin
@@ -181,7 +181,7 @@ begin
   end;
 end;
 
-procedure TfmCustomers.FormCreate(Sender: TObject);
+procedure TfmOperators.FormCreate(Sender: TObject);
 Begin
   {
   Left := (Screen.Width - Width) div 2;
@@ -189,17 +189,17 @@ Begin
   }
   BtnOpenClick(Sender);
   BtnShow.Enabled := False;
-  SDS_CustomerGroup.Open;
+  SDS_Users.Open;
 end;
 
-procedure TfmCustomers.FormKeyPress(Sender: TObject; var Key: Char);
+procedure TfmOperators.FormKeyPress(Sender: TObject; var Key: Char);
 begin
     If Key = #13 Then Begin
        SendMessage( handle, WM_NEXTDLGCTL, 0, 0 );
     end;
 end;
 
-procedure TfmCustomers.btnAddClick(Sender: TObject);
+procedure TfmOperators.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
   btnEdit.Enabled := False;
@@ -215,12 +215,12 @@ begin
   EditMode := False;
 end;
 
-procedure TfmCustomers.SDS_HeaderBeforePost(DataSet: TDataSet);
+procedure TfmOperators.SDS_HeaderBeforePost(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
 end;
 
-procedure TfmCustomers.Button1Click(Sender: TObject);
+procedure TfmOperators.Button1Click(Sender: TObject);
 var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
@@ -228,17 +228,17 @@ begin
 
 end;
 
-procedure TfmCustomers.BtnShowClick(Sender: TObject);
+procedure TfmOperators.BtnShowClick(Sender: TObject);
 var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
 end;
 
-procedure TfmCustomers.FormClose(Sender: TObject;
+procedure TfmOperators.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  SDS_CustomerGroup.Close;
+  SDS_Users.Close;
 end;
 
 end.

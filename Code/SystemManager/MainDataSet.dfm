@@ -266,21 +266,27 @@ object fmMainDataSet: TfmMainDataSet
     Params = <>
     Left = 160
     object QryCustomersCustomerCode: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
       FieldName = 'CustomerCode'
       Required = True
       Size = 6
     end
+    object QryCustomersCustomerNameAr: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'CustomerNameAr'
+      Size = 255
+    end
+    object QryCustomersCustomerNameEn: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'CustomerNameEn'
+      Size = 255
+    end
     object QryCustomersCustomerGroupCode: TStringField
+      DisplayLabel = #1575#1604#1605#1580#1605#1608#1593#1577
       FieldName = 'CustomerGroupCode'
       Size = 6
-    end
-    object QryCustomersCustomerGroupNameAr: TStringField
-      FieldName = 'CustomerGroupNameAr'
-      Size = 255
-    end
-    object QryCustomersCustomerGroupNameEn: TStringField
-      FieldName = 'CustomerGroupNameEn'
-      Size = 255
     end
   end
   object QryItemPolicies: TSimpleDataSet
@@ -312,15 +318,20 @@ object fmMainDataSet: TfmMainDataSet
     Params = <>
     Left = 120
     object QryCustomerGroupCustomerGroupCode: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
       FieldName = 'CustomerGroupCode'
       Required = True
       Size = 6
     end
     object QryCustomerGroupCustomerGroupNameAr: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
       FieldName = 'CustomerGroupNameAr'
       Size = 255
     end
     object QryCustomerGroupCustomerGroupNameEn: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1604#1575#1578#1610#1606#1610
+      DisplayWidth = 20
       FieldName = 'CustomerGroupNameEn'
       Size = 255
     end

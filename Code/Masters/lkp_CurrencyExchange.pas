@@ -1,4 +1,4 @@
-unit lkp_Customers;
+unit lkp_CurrencyExchange;
 
 interface
 
@@ -8,30 +8,16 @@ uses
   VrControls, VrButtons, Buttons;
 
 type
-  TfmCustomers = class(TForm)
+  TfmCurrencyExchange = class(TForm)
     grp_Content: TGroupBox;
     SDS_Header: TSimpleDataSet;
     DS_Header: TDataSource;
     grpData: TGroupBox;
-    edtName: TDBEdit;
     Label2: TLabel;
-    edtCode: TDBEdit;
     Label1: TLabel;
     DBGrid1: TDBGrid;
     Label3: TLabel;
-    DBEdit1: TDBEdit;
-    SDS_HeaderCompanyCode: TStringField;
-    SDS_HeaderCustomerCode: TStringField;
-    SDS_HeaderCustomerGroupCode: TStringField;
-    Co_CustomerGroup: TDBLookupComboBox;
-    SDS_CustomerGroupStringField1: TStringField;
-    SDS_CustomerGroupStringField2: TStringField;
-    SDS_CustomerGroupStringField3: TStringField;
-    DS_CustomerGroup: TDataSource;
-    SDS_CustomerGroup: TSimpleDataSet;
-    Label4: TLabel;
-    SDS_HeaderCustomerNameAr: TStringField;
-    SDS_HeaderCustomerNameEn: TStringField;
+    EdtPrice: TDBEdit;
     GroupBox2: TGroupBox;
     BtnOpen: TButton;
     btnAdd: TButton;
@@ -40,6 +26,24 @@ type
     btnSave: TButton;
     BtnCancel: TButton;
     BtnShow: TButton;
+    SDS_HeaderCompanyCode: TStringField;
+    SDS_HeaderCurrencyCode: TStringField;
+    SDS_HeaderBaseCurrencyCode: TStringField;
+    SDS_HeaderExchangeRate: TFMTBCDField;
+    Co_Currency: TDBLookupComboBox;
+    Co_BaseCurrency: TDBLookupComboBox;
+    SDS_Currency2: TSimpleDataSet;
+    StringField1: TStringField;
+    SDS_HeaderCurrencyNameA: TStringField;
+    SDS_HeaderCurrencyNameE: TStringField;
+    StringField2: TStringField;
+    DS_Currency2: TDataSource;
+    SDS_Currency1: TSimpleDataSet;
+    StringField3: TStringField;
+    StringField4: TStringField;
+    StringField5: TStringField;
+    StringField6: TStringField;
+    DS_Currency1: TDataSource;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -49,7 +53,6 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
-    procedure Button1Click(Sender: TObject);
     procedure BtnShowClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
@@ -60,7 +63,7 @@ type
   end;
 
 var
-  fmCustomers: TfmCustomers;
+  fmCurrencyExchange: TfmCurrencyExchange;
 
 implementation
 
@@ -68,7 +71,7 @@ uses Main, GFunctions, GVariable;
 
 {$R *.dfm}
 
-procedure TfmCustomers.BtnOpenClick(Sender: TObject);
+procedure TfmCurrencyExchange.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
   SDS_Header.Open;
@@ -83,7 +86,7 @@ begin
   EditMode := False;
 end;
 
-procedure TfmCustomers.btnEditClick(Sender: TObject);
+procedure TfmCurrencyExchange.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
   btnEdit.Enabled := False;
@@ -93,41 +96,40 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := False;
+  Co_Currency.Enabled := False;
+  Co_BaseCurrency.Enabled := False;
   BtnShow.Enabled := False;
-  EditMode := True;
+  Co_Currency.Enabled := True;
+  Co_BaseCurrency.Enabled := True;
 end;
 
-procedure TfmCustomers.btnSaveClick(Sender: TObject);
+procedure TfmCurrencyExchange.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
 begin
-  If SDS_HeaderCustomerCode.AsString = '' Then
-  Begin
-     ShowMessage('ÌÃ»  ÕœÌœ «·—„“  ﬁ»· «·Õ›Ÿ');
-     edtCode.SetFocus;
+  if SDS_HeaderCurrencyCode.AsString = '' Then Begin
+     ShowMessage('ÌÃ» ≈Œ Ì«— «·⁄„·…');
+     Co_Currency.SetFocus;
+     Exit;
+  end;
+  if SDS_HeaderBaseCurrencyCode.AsString = '' Then Begin
+     ShowMessage('ÌÃ» ≈Œ »«— «·⁄„·Â «·√”«”Ì…');
+     Co_BaseCurrency.SetFocus;
      Exit;
   end;
 
-  If (SDS_HeaderCustomerNameAr.AsString = '') AND (SDS_HeaderCustomerNameEn.AsString = '')  Then
+  If SDS_HeaderExchangeRate.AsString = ''  Then
   Begin
-     ShowMessage('ÌÃ»  ÕœÌœ «·«”„ ﬁ»· «·Õ›Ÿ');
-     edtName.SetFocus;
+     ShowMessage('ÌÃ»  ÕœÌœ ”⁄— «· ÕÊÌ·');
+     EdtPrice.SetFocus;
      Exit;
   end;
 
-  IsDuplicated := RepeatedKey('tbl_Cutomers', ' CustomerCode = ''' + SDS_HeaderCustomerCode.AsString + '''  ');
+  IsDuplicated := RepeatedKey('tbl_CurrencyExch', ' CurrencyCode = ''' + SDS_HeaderCurrencyCode.AsString + ''' and BaseCurrencyCode = ''' + SDS_HeaderBaseCurrencyCode.AsString + '''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
-     edtCode.SetFocus;
+     Co_Currency.SetFocus;
      Exit;
   end;
-
-  if SDS_HeaderCustomerGroupCode.AsString = '' Then Begin
-     ShowMessage('ÌÃ» ≈Œ Ì«— „Ã„Ê⁄… «·⁄„Ì·');
-     Co_CustomerGroup.SetFocus;
-     Exit;
-  end;
-
 
   if SDS_Header.ApplyUpdates(0) = 0 then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
@@ -136,10 +138,9 @@ begin
   else Begin
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
   end;
-
 end;
 
-procedure TfmCustomers.BtnCancelClick(Sender: TObject);
+procedure TfmCurrencyExchange.BtnCancelClick(Sender: TObject);
 Var
   buttonSelected : Integer;
 begin
@@ -152,10 +153,9 @@ begin
      SDS_Header.CancelUpdates;
       BtnOpenClick(Sender);
   end;
-
 end;
 
-procedure TfmCustomers.btnDeleteClick(Sender: TObject);
+procedure TfmCurrencyExchange.btnDeleteClick(Sender: TObject);
 Var
   buttonSelected : Integer;
 begin
@@ -181,7 +181,7 @@ begin
   end;
 end;
 
-procedure TfmCustomers.FormCreate(Sender: TObject);
+procedure TfmCurrencyExchange.FormCreate(Sender: TObject);
 Begin
   {
   Left := (Screen.Width - Width) div 2;
@@ -189,17 +189,19 @@ Begin
   }
   BtnOpenClick(Sender);
   BtnShow.Enabled := False;
-  SDS_CustomerGroup.Open;
+
+  SDS_Currency1.Open;
+  SDS_Currency2.Open;
 end;
 
-procedure TfmCustomers.FormKeyPress(Sender: TObject; var Key: Char);
+procedure TfmCurrencyExchange.FormKeyPress(Sender: TObject; var Key: Char);
 begin
     If Key = #13 Then Begin
        SendMessage( handle, WM_NEXTDLGCTL, 0, 0 );
     end;
 end;
 
-procedure TfmCustomers.btnAddClick(Sender: TObject);
+procedure TfmCurrencyExchange.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
   btnEdit.Enabled := False;
@@ -209,36 +211,30 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := True;
-  edtCode.SetFocus;
+  Co_Currency.Enabled := TRue;
+  Co_BaseCurrency.Enabled := True;
   BtnShow.Enabled := False;
+  Co_Currency.SetFocus;
   EditMode := False;
 end;
 
-procedure TfmCustomers.SDS_HeaderBeforePost(DataSet: TDataSet);
+procedure TfmCurrencyExchange.SDS_HeaderBeforePost(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
 end;
 
-procedure TfmCustomers.Button1Click(Sender: TObject);
-var lkp : Tlkp;
-begin
-    lkp := Tlkp.Create(SDS_Header,nil);
-    lkp.ShowModal;
-
-end;
-
-procedure TfmCustomers.BtnShowClick(Sender: TObject);
+procedure TfmCurrencyExchange.BtnShowClick(Sender: TObject);
 var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
 end;
 
-procedure TfmCustomers.FormClose(Sender: TObject;
+procedure TfmCurrencyExchange.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  SDS_CustomerGroup.Close;
+  SDS_Currency1.Open;
+  SDS_Currency2.Open;
 end;
 
 end.

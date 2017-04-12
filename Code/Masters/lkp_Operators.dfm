@@ -1,8 +1,8 @@
-object fmItemType: TfmItemType
-  Left = 192
-  Top = 124
+object fmOperators: TfmOperators
+  Left = 223
+  Top = 121
   BorderStyle = bsDialog
-  Caption = #1571#1606#1608#1575#1593' '#1575#1604#1571#1589#1606#1575#1601
+  Caption = #1575#1604#1605#1588#1594#1604#1610#1606
   ClientHeight = 499
   ClientWidth = 1016
   Color = clBtnFace
@@ -14,6 +14,7 @@ object fmItemType: TfmItemType
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
@@ -24,7 +25,7 @@ object fmItemType: TfmItemType
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1571#1606#1608#1575#1593' '#1575#1604#1571#1589#1606#1575#1601
+    Caption = #1575#1604#1605#1588#1594#1604#1610#1606
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -48,7 +49,7 @@ object fmItemType: TfmItemType
         335)
       object Label2: TLabel
         Left = 360
-        Top = 80
+        Top = 84
         Width = 65
         Height = 19
         Anchors = []
@@ -76,7 +77,7 @@ object fmItemType: TfmItemType
       end
       object Label3: TLabel
         Left = 352
-        Top = 126
+        Top = 135
         Width = 73
         Height = 19
         Anchors = []
@@ -88,13 +89,27 @@ object fmItemType: TfmItemType
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label4: TLabel
+        Left = 377
+        Top = 184
+        Width = 48
+        Height = 19
+        Anchors = []
+        Caption = #1575#1604#1605#1587#1578#1582#1583#1605
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object edtName: TDBEdit
         Left = 32
-        Top = 76
+        Top = 80
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'ItemTypeNameAr'
+        DataField = 'OperatorNameAr'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -110,7 +125,7 @@ object fmItemType: TfmItemType
         Width = 121
         Height = 27
         Anchors = []
-        DataField = 'ItemTypeCode'
+        DataField = 'OperatorCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -122,11 +137,11 @@ object fmItemType: TfmItemType
       end
       object DBEdit1: TDBEdit
         Left = 32
-        Top = 122
+        Top = 131
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'ItemTypeNameEn'
+        DataField = 'OperatorNameEn'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -135,6 +150,24 @@ object fmItemType: TfmItemType
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+      end
+      object Co_Users: TDBLookupComboBox
+        Left = 32
+        Top = 180
+        Width = 315
+        Height = 27
+        DataField = 'UserID'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        KeyField = 'UserID'
+        ListField = 'FullNameA'
+        ListSource = DS_Users
+        ParentFont = False
+        TabOrder = 3
       end
     end
     object DBGrid1: TDBGrid
@@ -273,41 +306,82 @@ object fmItemType: TfmItemType
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_ItemType'
+    DataSet.CommandText = 'Select * From tbl_operators'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
     BeforePost = SDS_HeaderBeforePost
     Left = 24
     Top = 16
-    object SDS_HeaderItemTypeCode: TStringField
-      DisplayLabel = #1575#1604#1585#1605#1586
-      FieldName = 'ItemTypeCode'
-      Required = True
-      Size = 6
-    end
-    object SDS_HeaderItemTypeNameAr: TStringField
-      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
-      DisplayWidth = 20
-      FieldName = 'ItemTypeNameAr'
-      Size = 255
-    end
-    object SDS_HeaderItemTypeNameEn: TStringField
-      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 20
-      FieldName = 'ItemTypeNameEn'
-      Size = 255
-    end
     object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
       Visible = False
       Size = 4
     end
+    object SDS_HeaderOperatorCode: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'OperatorCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_HeaderOperatorNameAr: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'OperatorNameAr'
+      Size = 255
+    end
+    object SDS_HeaderOperatorNameEn: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'OperatorNameEn'
+      Size = 255
+    end
+    object SDS_HeaderUserID: TStringField
+      DisplayLabel = #1575#1604#1605#1587#1578#1582#1583#1605
+      DisplayWidth = 10
+      FieldName = 'UserID'
+      Size = 75
+    end
   end
   object DS_Header: TDataSource
     DataSet = SDS_Header
     Left = 64
     Top = 16
+  end
+  object SDS_Users: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_Users'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    BeforePost = SDS_HeaderBeforePost
+    Left = 592
+    Top = 360
+    object SDS_UsersUserID: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      DisplayWidth = 10
+      FieldName = 'UserID'
+      Required = True
+      Size = 75
+    end
+    object SDS_UsersFullNameA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'FullNameA'
+      Size = 250
+    end
+    object SDS_UsersFullNameE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'FullNameE'
+      Size = 250
+    end
+  end
+  object DS_Users: TDataSource
+    DataSet = SDS_Users
+    Left = 632
+    Top = 360
   end
 end
