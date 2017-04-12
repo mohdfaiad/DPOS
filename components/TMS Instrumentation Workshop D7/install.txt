@@ -1,0 +1,106 @@
+Installation of the TMS Instrumentation Workshop
+------------------------------------------------
+
+To be able to use the components they have to be added in the IDE.
+
+Adding the components 
+
+Delphi 5
+1. Run Delphi 5 and select the FILE / OPEN menu item 
+2. Open the file Vcwd5.dpk and click Install.
+
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+Delphi 6
+1. Run Delphi 6 and select the FILE / OPEN menu item 
+2. Open the file Vcwd6.dpk and click Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+Delphi 7
+1. Run Delphi 7 and select the FILE / OPEN menu item 
+2. Open the file Vcwd7.dpk and click Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+Delphi 2005
+1. Run Delphi 2005 and select the FILE / OPEN menu item 
+2. Open the file Vcwd2005.bdsproj and from the Project Manager, rightclick and choose Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+Delphi 2006 / C++Builder 2006 trial version
+1. Close BDS 2006 
+2. Run setup.exe
+3. Start BDS 2006
+
+Delphi 2007 / C++Builder 2007 trial version
+1. Close BDS 2007 
+2. Run setup.exe
+3. Start BDS 2007
+
+Delphi 2006 / C++Builder 2006 registered version
+1. Run BDS 2006 with all personalities and select the FILE / OPEN menu item 
+2. Open the file Vcwd2006.bdsproj and from the Project Manager, rightclick and choose Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+Delphi 2007  registered version
+1. Run Delphi 2007 and select the FILE / OPEN menu item 
+2. Open the file Vcwd2007.dproj and from the Project Manager, rightclick and choose Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+C++Builder 5
+1. Run BCB 5 and select the FILE / OPEN menu item 
+2. Open the file Vcwb5.bpk and click Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+C++Builder 6
+1. Run BCB 6 and select the FILE / OPEN menu item 
+2. Open the file Vcwb6.bpk and click Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+C++Builder 2007  registered version
+1. Run Delphi 2007 and select the FILE / OPEN menu item 
+2. Open the file Vcwd2007.cbproj and from the Project Manager, rightclick and choose Install.
+3. Choose Environment options from the Tools menu.
+4. Add the folder of vcl to the library path.
+
+
+ 
+The TMS Instrumentation Workshop pages will appear at the end of the current palette divided in 5 tabs
+
+
+
+Demo applications :
+-------------------
+Demo applications with full sources, including a main EXE demo can be downloaded
+from http://www.tmssoftware.com/tiwdemos.zip
+
+
+Help files :
+------------
+
+For Delphi 5,6,7 & C++Builder 5,6
+help is available in TMSIW.HLP & TMSIW12.HLP
+
+For Delphi 2005
+help is available in TMSIW.HLP
+and by installing online help via:
+RegHelp2 /i TIWdBds3W.hxx
+
+For Delphi 2006
+help is available via the standalone help file TMSIW.HLP
+and by installing online help via:
+RegHelp2 /i TIWdBds4W.hxx
+
+For Delphi 2007
+help is available in TMSIW.HLP
+and by installing online help via:
+RegHelp2 /i TIWdBds5W.hxx
+
+ 

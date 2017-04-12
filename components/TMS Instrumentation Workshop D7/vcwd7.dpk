@@ -1,0 +1,109 @@
+package Vcwd7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TMS Instrumentation Workshop'}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl,
+  designide;
+
+contains
+  VrBlotter in 'VrBlotter.pas',
+  VrClasses in 'VrClasses.pas',
+  VrSpectrum in 'VrSpectrum.pas',
+  VrGradient in 'VrGradient.pas',
+  VrRaster in 'VrRaster.pas',
+  VrMatrix in 'VrMatrix.pas',
+  VrGauge in 'VrGauge.pas',
+  VrArrow in 'VrArrow.pas',
+  VrLeds in 'VrLeds.pas',
+  VrLights in 'VrLights.pas',
+  VrSysUtils in 'VrSysUtils.pas',
+  VrCheckLed in 'VrCheckLed.pas',
+  VrJoypad in 'VrJoypad.pas',
+  VrLcd in 'VrLcd.pas',
+  VrAnalog in 'VrAnalog.pas',
+  VrDigit in 'VrDigit.pas',
+  VrImageLed in 'VrImageLed.pas',
+  VrLabel in 'VrLabel.pas',
+  VrMeter in 'VrMeter.pas',
+  VrNavigator in 'VrNavigator.pas',
+  VrSpinner in 'VrSpinner.pas',
+  VrTrayGauge in 'VrTrayGauge.pas',
+  VrPaletteDlg in 'VrPaletteDlg.pas' {VrPaletteDlg},
+  VrScale in 'VrScale.pas',
+  VrBorder in 'VrBorder.pas',
+  VrCalendar in 'VrCalendar.pas',
+  VrReg in 'VrReg.pas',
+  VrProgressBar in 'VrProgressBar.pas',
+  VrHyperCtrls in 'VrHyperCtrls.pas',
+  VrBanner in 'VrBanner.pas',
+  VrControls in 'VrControls.pas',
+  VrDeskTop in 'VrDeskTop.pas',
+  VrTrackBar in 'VrTrackBar.pas',
+  VrSwitch in 'VrSwitch.pas',
+  VrSystem in 'VrSystem.pas',
+  VrBitmapsDlg in 'VrBitmapsDlg.pas' {VrBitmapListDialog},
+  VrPropEdit in 'VrPropEdit.pas',
+  VrLevelBar in 'VrLevelBar.pas',
+  VrDesign in 'VrDesign.pas',
+  VrAnimate in 'VrAnimate.pas',
+  VrUpDown in 'VrUpDown.pas',
+  VrThreads in 'VrThreads.pas',
+  VrSlideShow in 'VrSlideShow.pas',
+  VrFormShape in 'VrFormShape.pas',
+  VrCompass in 'VrCompass.pas',
+  VrSlider in 'VrSlider.pas',
+  VrButtons in 'VrButtons.pas',
+  VrAudio in 'VrAudio.pas',
+  VrWaveDlg in 'VrWaveDlg.pas' {VrWaveSoundDialog},
+  VrDisplay in 'VrDisplay.pas',
+  VrEdit in 'VrEdit.pas',
+  VrBitmapDial in 'VrBitmapDial.pas',
+  VrCounter in 'VrCounter.pas',
+  VrPowerMeter in 'VrPowerMeter.pas',
+  VrScope in 'VrScope.pas',
+  VrRocker in 'VrRocker.pas',
+  VrPieGraph in 'VrPieGraph.pas',
+  VrGraphs in 'VrGraphs.pas',
+  VrAngularMeter in 'VrAngularMeter.pas',
+  VrScanner in 'VrScanner.pas',
+  VrWheel in 'VrWheel.pas',
+  VrInterface in 'VrInterface.pas',
+  VrKeyPad in 'VrKeyPad.pas',
+  VrJogMeter in 'VrJogMeter.pas',
+  vrLineMeter in 'vrLineMeter.pas',
+  VrThermoMeter in 'VrThermoMeter.pas',
+  vrTypemeter in 'vrTypemeter.pas',
+  VrBlinkLed in 'VrBlinkLed.pas',
+  VrRotarySwitch in 'VrRotarySwitch.pas',
+  VrTank in 'VrTank.pas',
+  VrHPTimerFunc in 'VrHPTimerFunc.pas',
+  VrHPTimer in 'VrHPTimer.pas',
+  vrLedClock in 'vrLedClock.pas',
+  VrMatrixLabel in 'VrMatrixLabel.pas',
+  VrScrollText in 'VrScrollText.pas';
+
+end.

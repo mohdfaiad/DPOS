@@ -1,0 +1,85 @@
+TMS Instrumentation Workshop v1.4.2.0 release Aug 7, 2007
+----------------------------------------------------------
+- Improved painting in vrScope
+- Improved property persistence of vrLineMeter
+- Added support for C++Builder 2007
+
+TMS Instrumentation Workshop v1.4.1.0 release Apr 11, 2007
+----------------------------------------------------------
+- Added support for Delphi 2007
+
+TMS Instrumentation Workshop v1.4.1.0 release Feb 27, 2007
+----------------------------------------------------------
+- Improved : MouseDown / MouseUp event handling in TVrRocker
+- Improved : painting of TVrPowerMeter
+
+TMS Instrumentation Workshop v1.4 release Oct 25, 2005
+------------------------------------------------------
+- Added Delphi & C++Builder 2006 support
+
+TMS Instrumentation Workshop v1.4 release Dec 13, 2004
+------------------------------------------------------
+- Added Delphi 2005 support
+
+TMS Instrumentation Workshop v1.3 release Sep 10, 2002
+------------------------------------------------------
+
+- Added Delphi 7 support
+
+TMS Instrumentation Workshop v1.3 release Aug 14, 2002
+------------------------------------------------------
+
+- Added TVrScrollText component
+  smooth scrolling text label with fading edges
+- Extended TVrMatrix and TVrMatrixLabel character set for foreign characters
+- Extended TVrScope with SetData, AddData methods to update scope without OnNeedData event
+
+
+TMS Instrumentation Workshop v1.3 release June 10, 2002
+-------------------------------------------------------
+
+- Added VrLedClock component : 
+  digital led clock
+- Added VrMatrixLabel :
+  label in matrix led style
+- Added VrHPTimeBase :
+  High precision timebase
+- Added VrHPTimer :
+  High precision timer
+- Added VrHPDelay :
+  High precision delay
+- Improved VrScope :
+  New Visible property per channel added
+
+
+TMS Instrumentation Workshop v1.2 release March 27, 2002
+--------------------------------------------------------
+
+- Added TVrTank :
+  tank control with support for different shapes
+  
+- Added TvrRotarySwitch
+  rotary swicth with built-in labels for each switch position
+ 
+- Added TVrBlinkLed
+  multi color led control with built-in blinking support
+
+- Improved : C++Builder 6 support
+
+- New sample app for TVrBlinkLed, TVrRotarySwitch, TVrTank
+
+
+TMS Instrumentation Workshop v1.1 release Februari 21, 2002
+-----------------------------------------------------------
+
+- Added TVrJogMeter control : 
+  a rotating meter control 
+- Added TVrLineMeter control : 
+  a highly configurable meter control with Min Peak/Max Peak/SetPoint and Current Value indicators, 
+  Linear & Logarithmic scale, color regions
+- Added TVrThermoMeter control :
+  a thermometer control with Min Peak/Max Peak/SetPoint and Current Value indicators, 
+  Linear & Logarithmic scale
+- Added TVrKeypad : numeric keypad for touch screen applications with cell phone or 
+  bank code numeric keypad styles
+- Added C++Builder 6 support
