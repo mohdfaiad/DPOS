@@ -255,6 +255,15 @@ object fmBranch: TfmBranch
       OnClick = BtnCancelClick
     end
   end
+  object Button1: TButton
+    Left = 248
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection

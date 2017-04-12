@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,
-  VrControls, VrButtons;
+  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids, LookUp,
+  VrControls, VrButtons, Buttons;
 
 type
   TfmBranch = class(TForm)
@@ -31,6 +31,7 @@ type
     SDS_HeaderBranchCode: TStringField;
     SDS_HeaderBranchNameAr: TStringField;
     SDS_HeaderBranchNameEn: TStringField;
+    Button1: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -40,10 +41,12 @@ type
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
   public
+
     { Public declarations }
   end;
 
@@ -159,12 +162,14 @@ begin
 end;
 
 procedure TfmBranch.FormCreate(Sender: TObject);
+var lkp:Tlkp;
 Begin
   {
   Left := (Screen.Width - Width) div 2;
   Top := (Screen.Height - Height) div 2;
   }
   BtnOpenClick(Sender);
+  
 end;
 
 procedure TfmBranch.FormKeyPress(Sender: TObject; var Key: Char);
@@ -192,6 +197,13 @@ end;
 procedure TfmBranch.SDS_HeaderBeforePost(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
+end;
+
+procedure TfmBranch.Button1Click(Sender: TObject);
+var lkp : Tlkp;
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
 end;
 
 end.
