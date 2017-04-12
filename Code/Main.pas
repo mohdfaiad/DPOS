@@ -8,7 +8,7 @@ uses
   DBXpress, SqlExpr, SimpleDS, FMTBcd,  Grids, DBGrids, ADODB, jpeg,
   IniFiles, Buttons, Registry, ActnMan, ActnList, ActnCtrls, IdBaseComponent,
   Provider,  IdComponent, IdTCPClient, IdTCPConnection,
-  Activex, VrControls, VrButtons ,ComObj, VrDesign ;
+  Activex, VrControls, VrButtons ,ComObj, VrDesign  ;
      
 type
   TfmMainForm = class(TForm)

@@ -12715,7 +12715,6 @@ object fmMainForm: TfmMainForm
       'MSSQL TransIsolation=ReadCommited'
       'OS Authentication=False')
     VendorLib = 'oledb'
-    Connected = True
     Left = 280
     Top = 40
   end

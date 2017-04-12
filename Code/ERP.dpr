@@ -23,7 +23,9 @@ uses
   lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers},
   lkp_Company in 'Masters\lkp_Company.pas' {fmCompany},
   BackUp in 'SystemManager\BackUp.pas' {fmBackUp},
-  lkp_CustomerGroup in 'Masters\lkp_CustomerGroup.pas' {fmCustomerGroup};
+  lkp_CustomerGroup in 'Masters\lkp_CustomerGroup.pas' {fmCustomerGroup},
+  LookUp in 'SystemManager\LookUp.pas' {Lkp};
+
 
 {$R *.res}
 
@@ -32,6 +34,8 @@ begin
   Application.CreateForm(TfmMainForm, fmMainForm);
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);
+
+  {Application.CreateForm(TLkp, Lkp);
   Application.CreateForm(TfmVendorGroup, fmVendorGroup);
   Application.CreateForm(TfmCurrency, fmCurrency);
   Application.CreateForm(TfmUserGroups, fmUserGroups);
@@ -47,5 +51,6 @@ begin
   Application.CreateForm(TfmCompany, fmCompany);
   Application.CreateForm(TfmBackUp, fmBackUp);
   Application.CreateForm(TfmCustomerGroup, fmCustomerGroup);
+  }
   Application.Run;
 end.
