@@ -1,9 +1,9 @@
-object fmCompany: TfmCompany
-  Left = 192
-  Top = 124
+object fmUserGroups: TfmUserGroups
+  Left = 291
+  Top = 151
   BorderStyle = bsDialog
-  Caption = #1575#1604#1588#1585#1603#1575#1578
-  ClientHeight = 499
+  Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1605#1587#1578#1582#1583#1605#1610#1606
+  ClientHeight = 491
   ClientWidth = 1016
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,7 +24,7 @@ object fmCompany: TfmCompany
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1575#1604#1588#1585#1603#1575#1578
+    Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1605#1587#1578#1582#1583#1605#1610#1606
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -94,7 +94,7 @@ object fmCompany: TfmCompany
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameAr'
+        DataField = 'GroupNameA'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -110,7 +110,7 @@ object fmCompany: TfmCompany
         Width = 121
         Height = 27
         Anchors = []
-        DataField = 'CompanyCode'
+        DataField = 'GroupCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -126,7 +126,7 @@ object fmCompany: TfmCompany
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameEn'
+        DataField = 'GroupNameE'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -135,6 +135,29 @@ object fmCompany: TfmCompany
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+      end
+      object GP_Status: TDBRadioGroup
+        Left = 40
+        Top = 192
+        Width = 321
+        Height = 41
+        Caption = #1575#1604#1581#1575#1604#1577
+        Columns = 2
+        DataField = 'GroupStatus'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        Items.Strings = (
+          #1606#1588#1591
+          #1605#1608#1602#1608#1601)
+        ParentFont = False
+        TabOrder = 3
+        Values.Strings = (
+          '1'
+          '0')
       end
     end
     object DBGrid1: TDBGrid
@@ -258,29 +281,37 @@ object fmCompany: TfmCompany
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_Company'
+    DataSet.CommandText = 'Select * From tbl_UserGroup'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
     Left = 24
     Top = 16
-    object SDS_HeaderCompanyCode: TStringField
+    object SDS_HeaderGroupCode: TStringField
       DisplayLabel = #1575#1604#1585#1605#1586
-      FieldName = 'CompanyCode'
+      DisplayWidth = 5
+      FieldName = 'GroupCode'
       Required = True
-      Size = 4
+      Size = 10
     end
-    object SDS_HeaderCompanyNameAr: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610
+    object SDS_HeaderGroupNameA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
       DisplayWidth = 20
-      FieldName = 'CompanyNameAr'
-      Size = 250
+      FieldName = 'GroupNameA'
+      Size = 75
     end
-    object SDS_HeaderCompanyNameEn: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 15
-      FieldName = 'CompanyNameEn'
-      Size = 250
+    object SDS_HeaderGroupNameE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1604#1575#1578#1610#1606#1610
+      DisplayWidth = 20
+      FieldName = 'GroupNameE'
+      Size = 75
+    end
+    object SDS_HeaderGroupStatus: TStringField
+      DisplayLabel = #1575#1604#1581#1575#1604#1577
+      DisplayWidth = 5
+      FieldName = 'GroupStatus'
+      FixedChar = True
+      Size = 1
     end
   end
   object DS_Header: TDataSource

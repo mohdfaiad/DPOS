@@ -1,8 +1,8 @@
-object fmCompany: TfmCompany
-  Left = 192
-  Top = 124
+object fmCustomers: TfmCustomers
+  Left = 223
+  Top = 121
   BorderStyle = bsDialog
-  Caption = #1575#1604#1588#1585#1603#1575#1578
+  Caption = #1575#1604#1593#1605#1604#1575#1569
   ClientHeight = 499
   ClientWidth = 1016
   Color = clBtnFace
@@ -24,7 +24,7 @@ object fmCompany: TfmCompany
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1575#1604#1588#1585#1603#1575#1578
+    Caption = #1575#1604#1593#1605#1604#1575#1569
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -88,13 +88,27 @@ object fmCompany: TfmCompany
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label4: TLabel
+        Left = 377
+        Top = 205
+        Width = 53
+        Height = 19
+        Anchors = []
+        Caption = #1575#1604#1605#1580#1605#1608#1593#1577
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object edtName: TDBEdit
         Left = 40
         Top = 92
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameAr'
+        DataField = 'CustomerGroupNameAr'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -110,7 +124,7 @@ object fmCompany: TfmCompany
         Width = 121
         Height = 27
         Anchors = []
-        DataField = 'CompanyCode'
+        DataField = 'CustomerCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -126,7 +140,7 @@ object fmCompany: TfmCompany
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameEn'
+        DataField = 'CustomerGroupNameEn'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -135,6 +149,24 @@ object fmCompany: TfmCompany
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+      end
+      object Co_CustomerGroup: TDBLookupComboBox
+        Left = 40
+        Top = 200
+        Width = 321
+        Height = 27
+        DataField = 'CustomerGroupCode'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        KeyField = 'CustomerGroupCode'
+        ListField = 'CustomerGroupNameAr'
+        ListSource = DS_CustomerGroup
+        ParentFont = False
+        TabOrder = 3
       end
     end
     object DBGrid1: TDBGrid
@@ -258,34 +290,84 @@ object fmCompany: TfmCompany
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_Company'
+    DataSet.CommandText = 'Select * From tbl_Cutomers'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
+    BeforePost = SDS_HeaderBeforePost
     Left = 24
     Top = 16
-    object SDS_HeaderCompanyCode: TStringField
+    object SDS_HeaderCustomerCode: TStringField
       DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'CustomerCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_HeaderCustomerGroupNameAr: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'CustomerGroupNameAr'
+      Size = 255
+    end
+    object SDS_HeaderCustomerGroupNameEn: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'CustomerGroupNameEn'
+      Size = 255
+    end
+    object SDS_HeaderCustomerGroupCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1605#1580#1605#1608#1593#1577' '#1575#1604#1593#1605#1610#1604
+      FieldName = 'CustomerGroupCode'
+      Size = 6
+    end
+    object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
       Size = 4
-    end
-    object SDS_HeaderCompanyNameAr: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610
-      DisplayWidth = 20
-      FieldName = 'CompanyNameAr'
-      Size = 250
-    end
-    object SDS_HeaderCompanyNameEn: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 15
-      FieldName = 'CompanyNameEn'
-      Size = 250
     end
   end
   object DS_Header: TDataSource
     DataSet = SDS_Header
     Left = 64
     Top = 16
+  end
+  object SDS_CustomerGroup: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_CustomerGroup'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    BeforePost = SDS_HeaderBeforePost
+    Left = 32
+    Top = 104
+    object SDS_CustomerGroupStringField1: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'CustomerGroupCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_CustomerGroupStringField2: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'CustomerGroupNameAr'
+      Size = 255
+    end
+    object SDS_CustomerGroupStringField3: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'CustomerGroupNameEn'
+      Size = 255
+    end
+    object SDS_CustomerGroupStringField4: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Size = 4
+    end
+  end
+  object DS_CustomerGroup: TDataSource
+    DataSet = SDS_CustomerGroup
+    Left = 72
+    Top = 104
   end
 end

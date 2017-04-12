@@ -1,8 +1,8 @@
-object fmCompany: TfmCompany
+object fmItemCategory: TfmItemCategory
   Left = 192
   Top = 124
   BorderStyle = bsDialog
-  Caption = #1575#1604#1588#1585#1603#1575#1578
+  Caption = #1601#1574#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
   ClientHeight = 499
   ClientWidth = 1016
   Color = clBtnFace
@@ -24,7 +24,7 @@ object fmCompany: TfmCompany
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1575#1604#1588#1585#1603#1575#1578
+    Caption = #1601#1574#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -94,7 +94,7 @@ object fmCompany: TfmCompany
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameAr'
+        DataField = 'ItemCategoryNameAr'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -110,7 +110,7 @@ object fmCompany: TfmCompany
         Width = 121
         Height = 27
         Anchors = []
-        DataField = 'CompanyCode'
+        DataField = 'ItemCategoryCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -126,7 +126,7 @@ object fmCompany: TfmCompany
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameEn'
+        DataField = 'ItemCategoryNameEn'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -258,29 +258,34 @@ object fmCompany: TfmCompany
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_Company'
+    DataSet.CommandText = 'Select * From tbl_ItemCategory'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
+    BeforePost = SDS_HeaderBeforePost
     Left = 24
     Top = 16
-    object SDS_HeaderCompanyCode: TStringField
+    object SDS_HeaderItemCategoryCode: TStringField
       DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'ItemCategoryCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_HeaderItemCategoryNameAr: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'ItemCategoryNameAr'
+      Size = 255
+    end
+    object SDS_HeaderItemCategoryNameEn: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      FieldName = 'ItemCategoryNameEn'
+      Size = 255
+    end
+    object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
       Size = 4
-    end
-    object SDS_HeaderCompanyNameAr: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610
-      DisplayWidth = 20
-      FieldName = 'CompanyNameAr'
-      Size = 250
-    end
-    object SDS_HeaderCompanyNameEn: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 15
-      FieldName = 'CompanyNameEn'
-      Size = 250
     end
   end
   object DS_Header: TDataSource

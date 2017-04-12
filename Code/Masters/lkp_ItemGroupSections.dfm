@@ -1,8 +1,8 @@
-object fmCompany: TfmCompany
+object fmItemGroupSections: TfmItemGroupSections
   Left = 192
   Top = 124
   BorderStyle = bsDialog
-  Caption = #1575#1604#1588#1585#1603#1575#1578
+  Caption = #1571#1602#1587#1575#1605' '#1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
   ClientHeight = 499
   ClientWidth = 1016
   Color = clBtnFace
@@ -24,7 +24,7 @@ object fmCompany: TfmCompany
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1575#1604#1588#1585#1603#1575#1578
+    Caption = #1571#1602#1587#1575#1605' '#1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -88,13 +88,27 @@ object fmCompany: TfmCompany
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label4: TLabel
+        Left = 361
+        Top = 208
+        Width = 69
+        Height = 19
+        Anchors = []
+        Caption = #1605#1587#1575#1585' '#1575#1604#1591#1575#1576#1593#1577
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object edtName: TDBEdit
         Left = 40
         Top = 92
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameAr'
+        DataField = 'SectionNameA'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -110,7 +124,7 @@ object fmCompany: TfmCompany
         Width = 121
         Height = 27
         Anchors = []
-        DataField = 'CompanyCode'
+        DataField = 'SectionCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -126,7 +140,7 @@ object fmCompany: TfmCompany
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'CompanyNameEn'
+        DataField = 'SectionNameE'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -135,6 +149,22 @@ object fmCompany: TfmCompany
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+      end
+      object DBEdit2: TDBEdit
+        Left = 42
+        Top = 206
+        Width = 315
+        Height = 27
+        Anchors = []
+        DataField = 'PrinterPath'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
       end
     end
     object DBGrid1: TDBGrid
@@ -258,29 +288,40 @@ object fmCompany: TfmCompany
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_Company'
+    DataSet.CommandText = 'Select * From tbl_ItemGroupSections'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
+    BeforePost = SDS_HeaderBeforePost
     Left = 24
     Top = 16
-    object SDS_HeaderCompanyCode: TStringField
+    object SDS_HeaderSectionCode: TStringField
       DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'SectionCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_HeaderSectionNameA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'SectionNameA'
+      Size = 75
+    end
+    object SDS_HeaderSectionNameE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'SectionNameE'
+      Size = 75
+    end
+    object SDS_HeaderPrinterPath: TStringField
+      DisplayLabel = #1605#1587#1575#1585' '#1575#1604#1591#1575#1576#1593#1577
+      FieldName = 'PrinterPath'
+      Size = 200
+    end
+    object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
       Size = 4
-    end
-    object SDS_HeaderCompanyNameAr: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610
-      DisplayWidth = 20
-      FieldName = 'CompanyNameAr'
-      Size = 250
-    end
-    object SDS_HeaderCompanyNameEn: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 15
-      FieldName = 'CompanyNameEn'
-      Size = 250
     end
   end
   object DS_Header: TDataSource
