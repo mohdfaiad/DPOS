@@ -1,6 +1,6 @@
 object fmMainForm: TfmMainForm
-  Left = -6
-  Top = 69
+  Left = 223
+  Top = 117
   BorderStyle = bsSingle
   Caption = #1573#1583#1575#1585#1577' '#1606#1602#1575#1591' '#1575#1604#1576#1610#1593
   ClientHeight = 587
@@ -12704,8 +12704,8 @@ object fmMainForm: TfmMainForm
     LibraryName = 'dbexpmss.dll'
     LoginPrompt = False
     Params.Strings = (
-      'DriverName=DESKTOP-TDTLF43'
-      'HostName=DESKTOP-TDTLF43'
+      'DriverName=.'
+      'HostName=.'
       'DataBase=WMAPOS'
       'User_Name=sa'
       'Password=Xyz789'
@@ -12821,6 +12821,8 @@ object fmMainForm: TfmMainForm
     end
   end
   object ADOConnection: TADOConnection
+    CommandTimeout = 300
+    ConnectionTimeout = 300
     LoginPrompt = False
     Left = 314
     Top = 37

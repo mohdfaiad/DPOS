@@ -32,10 +32,10 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TfmMainForm, fmMainForm);
+  {
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);
-
-  {Application.CreateForm(TLkp, Lkp);
+  Application.CreateForm(TLkp, Lkp);
   Application.CreateForm(TfmVendorGroup, fmVendorGroup);
   Application.CreateForm(TfmCurrency, fmCurrency);
   Application.CreateForm(TfmUserGroups, fmUserGroups);
