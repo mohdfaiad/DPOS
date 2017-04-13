@@ -56,6 +56,7 @@ type
     mn_VendorGroupDef: TMenuItem;
     mn_UserGroupsDef: TMenuItem;
     mn_CustomerDef: TMenuItem;
+    mn_CashBankDef: TMenuItem;
     mn_CurrencyExchangeDef: TMenuItem;
     mn_ItemGroupsDef: TMenuItem;
     mn_VendoersDef: TMenuItem;
@@ -82,6 +83,9 @@ type
     procedure mn_VendorGroupDefClick(Sender: TObject);
     procedure mn_UserGroupsDefClick(Sender: TObject);
     procedure mn_CustomerDefClick(Sender: TObject);
+    procedure mn_CashBankDefClick(Sender: TObject);
+    procedure mn_DailyCloseClick(Sender: TObject);
+    procedure btn_DailyCloseClick(Sender: TObject);
     procedure mn_CurrencyExchangeDefClick(Sender: TObject);
     procedure mn_ItemGroupsDefClick(Sender: TObject);
     procedure mn_VendoersDefClick(Sender: TObject);
@@ -107,6 +111,7 @@ uses  Login, GVariable,
   lkp_Currency, lkp_ItemCategory, lkp_ItemColor, lkp_ItemGroupSections,
   lkp_ItemPolicies, lkp_ItemSize, lkp_ItemType, lkp_ItemUnit,
   lkp_WareHouse, lkp_VendorGroup, lkp_UserGroups, lkp_Customers,
+  lkp_CashBank, PosClose,
   lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
   lkp_Operators, lkp_POSDefinition;
 
@@ -363,9 +368,27 @@ end;
 
 procedure TfmMainForm.mn_CustomerDefClick(Sender: TObject);
 begin
-Application.CreateForm(TfmCustomers, fmCustomers);
+  Application.CreateForm(TfmCustomers, fmCustomers);
   fmCustomers.ShowModal;
 
+end;
+
+procedure TfmMainForm.mn_CashBankDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmCashBank, fmCashBank);
+  fmCashBank.ShowModal;
+end;
+
+procedure TfmMainForm.mn_DailyCloseClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPosClose, fmPosClose);
+  fmPosClose.ShowModal;
+end;
+
+procedure TfmMainForm.btn_DailyCloseClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPosClose, fmPosClose);
+  fmPosClose.ShowModal;
 end;
 
 procedure TfmMainForm.mn_CurrencyExchangeDefClick(Sender: TObject);

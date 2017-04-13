@@ -6178,6 +6178,7 @@ object fmMainForm: TfmMainForm
         Caption = #1573#1594#1604#1575#1602' '#1606#1602#1600#1600#1591#1577' '#1575#1604#1576#1610#1600#1593
         ParentBiDiMode = False
         TabOrder = 0
+        OnClick = btn_DailyCloseClick
       end
     end
     object GroupBox7: TGroupBox
@@ -12708,7 +12709,7 @@ object fmMainForm: TfmMainForm
       'HostName=.'
       'DataBase=WMAPOS'
       'User_Name=sa'
-      'Password=Xyz789'
+      'Password=123456'
       'BlobSize=-1'
       'ErrorResourceFile='
       'LocaleCode=0000'
@@ -12810,6 +12811,10 @@ object fmMainForm: TfmMainForm
         Caption = #1575#1604#1593#1605#1604#1575#1569
         OnClick = mn_CustomerDefClick
       end
+      object mn_CashBankDef: TMenuItem
+        Caption = #1575#1604#1589#1606#1575#1583#1610#1602' '#1608#1575#1604#1576#1606#1608#1603
+        OnClick = mn_CashBankDefClick
+      end
       object mn_CurrencyExchangeDef: TMenuItem
         Caption = #1571#1587#1593#1575#1585' '#1575#1604#1593#1605#1604#1575#1578
         OnClick = mn_CurrencyExchangeDefClick
@@ -12842,6 +12847,7 @@ object fmMainForm: TfmMainForm
       end
       object mn_DailyClose: TMenuItem
         Caption = #1573#1594#1600#1600#1600#1604#1575#1602' '#1606#1602#1591#1600#1600#1600#1577' '#1576#1610#1600#1600#1600#1593
+        OnClick = mn_DailyCloseClick
       end
     end
   end
