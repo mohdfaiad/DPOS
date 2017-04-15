@@ -57,12 +57,6 @@ type
     mn_UserGroupsDef: TMenuItem;
     mn_CustomerDef: TMenuItem;
     mn_CashBankDef: TMenuItem;
-    mn_CurrencyExchangeDef: TMenuItem;
-    mn_ItemGroupsDef: TMenuItem;
-    mn_VendoersDef: TMenuItem;
-    mn_UserDef: TMenuItem;
-    mn_OperatorsDef: TMenuItem;
-    mn_POSDef: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mnExitClick(Sender: TObject);
@@ -86,12 +80,6 @@ type
     procedure mn_CashBankDefClick(Sender: TObject);
     procedure mn_DailyCloseClick(Sender: TObject);
     procedure btn_DailyCloseClick(Sender: TObject);
-    procedure mn_CurrencyExchangeDefClick(Sender: TObject);
-    procedure mn_ItemGroupsDefClick(Sender: TObject);
-    procedure mn_VendoersDefClick(Sender: TObject);
-    procedure mn_UserDefClick(Sender: TObject);
-    procedure mn_OperatorsDefClick(Sender: TObject);
-    procedure mn_POSDefClick(Sender: TObject);
   private
     { Private declarations }
     LastUserAccess , LicenseNo , BiosID : String;
@@ -111,9 +99,7 @@ uses  Login, GVariable,
   lkp_Currency, lkp_ItemCategory, lkp_ItemColor, lkp_ItemGroupSections,
   lkp_ItemPolicies, lkp_ItemSize, lkp_ItemType, lkp_ItemUnit,
   lkp_WareHouse, lkp_VendorGroup, lkp_UserGroups, lkp_Customers,
-  lkp_CashBank, PosClose,
-  lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
-  lkp_Operators, lkp_POSDefinition;
+  lkp_CashBank, PosClose, GFunctions;
 
 {$R *.dfm}
 
@@ -153,6 +139,8 @@ begin
          LicenseNo := ReadString('ERP_Option', 'LicenseNo', '');
          DCompany :=ReadString('ERP_Option', 'DCompany', '');
          DBranch := ReadString('ERP_Option', 'DBranch', '');
+         DPOS_Code := ReadString('ERP_Option', 'DPOS_Code', '');
+         If DPOS_Code = '' Then DPOS_Code :=  GetDBValue(' Top 1 POSCode' , 'tbl_POS_Definition' , ' And CompanyCode = ''' + DCompany + '''  ') ;
      end;
      vIni.Free;
      MainConnection.Connected := False;
@@ -389,49 +377,6 @@ procedure TfmMainForm.btn_DailyCloseClick(Sender: TObject);
 begin
   Application.CreateForm(TfmPosClose, fmPosClose);
   fmPosClose.ShowModal;
-end;
-
-procedure TfmMainForm.mn_CurrencyExchangeDefClick(Sender: TObject);
-begin
-Application.CreateForm(TfmCurrencyExchange, fmCurrencyExchange);
-  fmCurrencyExchange.ShowModal;
-
-end;
-
-procedure TfmMainForm.mn_ItemGroupsDefClick(Sender: TObject);
-begin
-Application.CreateForm(TfmItemGroups, fmItemGroups);
-  fmItemGroups.ShowModal;
-
-end;
-
-procedure TfmMainForm.mn_VendoersDefClick(Sender: TObject);
-begin
-Application.CreateForm(TfmVendors, fmVendors);
-  fmVendors.ShowModal;
-
-end;
-
-procedure TfmMainForm.mn_UserDefClick(Sender: TObject);
-begin
-Application.CreateForm(TfmUsers, fmUsers);
-  fmUsers.ShowModal;
-
-end;
-
-procedure TfmMainForm.mn_OperatorsDefClick(Sender: TObject);
-begin
-Application.CreateForm(TfmOperators, fmOperators);
-  fmOperators.ShowModal;
-
-end;
-
-procedure TfmMainForm.mn_POSDefClick(Sender: TObject);
-begin
-
-Application.CreateForm(TfmPOSDefinition, fmPOSDefinition);
-  fmPOSDefinition.ShowModal;
-
 end;
 
 end.

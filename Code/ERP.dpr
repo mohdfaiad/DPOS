@@ -19,12 +19,14 @@ uses
   lkp_ItemType in 'Masters\lkp_ItemType.pas' {fmItemType},
   lkp_ItemUnit in 'Masters\lkp_ItemUnit.pas' {fmItemUnit},
   lkp_WareHouse in 'Masters\lkp_WareHouse.pas' {fmWareHouse},
-  lkp_Branch in 'Masters\lkp_Branch.pas' {fmBranch},
+  lkp_CashBank in 'Masters\lkp_CashBank.pas' {fmCashBank},
   lkp_ItemGroups in 'Masters\lkp_ItemGroups.pas' {fmItemGroups},
   lkp_Company in 'Masters\lkp_Company.pas' {fmCompany},
   BackUp in 'SystemManager\BackUp.pas' {fmBackUp},
   lkp_CustomerGroup in 'Masters\lkp_CustomerGroup.pas' {fmCustomerGroup},
   LookUp in 'SystemManager\LookUp.pas' {Lkp},
+  PosClose in 'Transactions\PosClose.pas' {fmPosClose},
+  lkp_Branch in 'Masters\lkp_Branch.pas' {fmBranch},
   lkp_Currency in 'Masters\lkp_Currency.pas' {fmCurrency},
   lkp_Vendors in 'Masters\lkp_Vendors.pas' {fmVendors},
   lkp_Operators in 'Masters\lkp_Operators.pas' {fmOperators},
@@ -36,11 +38,8 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TfmMainForm, fmMainForm);
-  Application.CreateForm(TfmCurrency, fmCurrency);
-  Application.CreateForm(TfmVendors, fmVendors);
-  Application.CreateForm(TfmOperators, fmOperators);
-  Application.CreateForm(TfmUserGroups, fmUserGroups);
-  Application.CreateForm(TfmCustomers, fmCustomers);
+  Application.CreateForm(TfmLicense, fmLicense);
+  Application.CreateForm(TfmLogin, fmLogin);
   {
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);

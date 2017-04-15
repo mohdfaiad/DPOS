@@ -1,6 +1,6 @@
 object fmMainForm: TfmMainForm
-  Left = -6
-  Top = 69
+  Left = 1
+  Top = 100
   BorderStyle = bsSingle
   Caption = #1573#1583#1575#1585#1577' '#1606#1602#1575#1591' '#1575#1604#1576#1610#1593
   ClientHeight = 587
@@ -1728,7 +1728,7 @@ object fmMainForm: TfmMainForm
       TabOrder = 1
       object btn_POS: TVrDemoButton
         Left = 3
-        Top = 7
+        Top = 11
         Width = 164
         Height = 104
         FontEnter.Charset = DEFAULT_CHARSET
@@ -6178,6 +6178,7 @@ object fmMainForm: TfmMainForm
         Caption = #1573#1594#1604#1575#1602' '#1606#1602#1600#1600#1591#1577' '#1575#1604#1576#1610#1600#1593
         ParentBiDiMode = False
         TabOrder = 0
+        OnClick = btn_DailyCloseClick
       end
     end
     object GroupBox7: TGroupBox
@@ -12704,17 +12705,18 @@ object fmMainForm: TfmMainForm
     LibraryName = 'dbexpmss.dll'
     LoginPrompt = False
     Params.Strings = (
-      'DriverName=DESKTOP-TDTLF43'
-      'HostName=DESKTOP-TDTLF43'
+      'DriverName=.'
+      'HostName=.'
       'DataBase=WMAPOS'
       'User_Name=sa'
-      'Password=Xyz789'
+      'Password=123456'
       'BlobSize=-1'
       'ErrorResourceFile='
       'LocaleCode=0000'
       'MSSQL TransIsolation=ReadCommited'
       'OS Authentication=False')
     VendorLib = 'oledb'
+    Connected = True
     Left = 280
     Top = 40
   end
@@ -12724,15 +12726,15 @@ object fmMainForm: TfmMainForm
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 376
+    Left = 416
     Top = 40
   end
   object MainMenu: TMainMenu
     BiDiMode = bdRightToLeft
     OwnerDraw = True
     ParentBiDiMode = False
-    Left = 344
-    Top = 40
+    Left = 360
+    Top = 48
     object mnSystem: TMenuItem
       Caption = #1575#1604#1606#1592#1600#1600#1600#1600#1600#1600#1600#1600#1600#1575#1605
       object mn_BackUp: TMenuItem
@@ -12809,6 +12811,10 @@ object fmMainForm: TfmMainForm
         Caption = #1575#1604#1593#1605#1604#1575#1569
         OnClick = mn_CustomerDefClick
       end
+      object mn_CashBankDef: TMenuItem
+        Caption = #1575#1604#1589#1606#1575#1583#1610#1602' '#1608#1575#1604#1576#1606#1608#1603
+        OnClick = mn_CashBankDefClick
+      end
     end
     object mn_PosTransactions: TMenuItem
       Caption = #1575#1604#1605#1593#1600#1575#1605#1600#1600#1600#1600#1600#1600#1600#1600#1600#1604#1575#1578
@@ -12817,10 +12823,13 @@ object fmMainForm: TfmMainForm
       end
       object mn_DailyClose: TMenuItem
         Caption = #1573#1594#1600#1600#1600#1604#1575#1602' '#1606#1602#1591#1600#1600#1600#1577' '#1576#1610#1600#1600#1600#1593
+        OnClick = mn_DailyCloseClick
       end
     end
   end
   object ADOConnection: TADOConnection
+    CommandTimeout = 300
+    ConnectionTimeout = 300
     LoginPrompt = False
     Left = 314
     Top = 37

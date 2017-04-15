@@ -4,7 +4,7 @@ interface
 
 Var
  gUserName , gLicenseNo , gDBName : String;
- DCompany, DBranch : String;
+ DCompany, DBranch , DPOS_Code : String;
  
 implementation
 

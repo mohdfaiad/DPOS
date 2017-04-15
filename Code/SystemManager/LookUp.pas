@@ -24,6 +24,7 @@ type
       Shift: TShiftState);
     procedure LkpGridKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure LkpGridDblClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -116,6 +117,11 @@ begin
      EdtSearch.SetFocus;
     if(Key = VK_RETURN) then
      Close;
+end;
+
+procedure TLkp.LkpGridDblClick(Sender: TObject);
+begin
+  Close;
 end;
 
 end.

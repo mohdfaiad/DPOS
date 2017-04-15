@@ -197,7 +197,7 @@ object fmCashBank: TfmCashBank
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 755
+      Left = 614
       Top = 12
       Width = 112
       Height = 35
@@ -212,7 +212,7 @@ object fmCashBank: TfmCashBank
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 636
+      Left = 495
       Top = 12
       Width = 112
       Height = 35
@@ -227,7 +227,7 @@ object fmCashBank: TfmCashBank
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 517
+      Left = 376
       Top = 13
       Width = 112
       Height = 35
@@ -242,7 +242,7 @@ object fmCashBank: TfmCashBank
       OnClick = btnEditClick
     end
     object btnDelete: TButton
-      Left = 161
+      Left = 20
       Top = 13
       Width = 112
       Height = 35
@@ -257,7 +257,7 @@ object fmCashBank: TfmCashBank
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 400
+      Left = 259
       Top = 13
       Width = 112
       Height = 35
@@ -272,7 +272,7 @@ object fmCashBank: TfmCashBank
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 279
+      Left = 138
       Top = 13
       Width = 112
       Height = 35
@@ -287,11 +287,11 @@ object fmCashBank: TfmCashBank
       OnClick = BtnCancelClick
     end
     object Button1: TButton
-      Left = 16
-      Top = 15
+      Left = 733
+      Top = 13
       Width = 133
       Height = 32
-      Caption = #1576#1581#1600#1600#1600#1579
+      Caption = #1593#1600#1600#1600#1585#1590
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16

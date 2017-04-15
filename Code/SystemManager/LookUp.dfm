@@ -1,6 +1,6 @@
 object Lkp: TLkp
-  Left = 317
-  Top = 254
+  Left = 378
+  Top = 145
   Width = 637
   Height = 539
   BiDiMode = bdRightToLeft
@@ -14,13 +14,14 @@ object Lkp: TLkp
   KeyPreview = True
   OldCreateOrder = False
   ParentBiDiMode = False
+  Position = poScreenCenter
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object LkpGrid: TDBGrid
     Left = 0
-    Top = 30
+    Top = 31
     Width = 621
     Height = 470
     Align = alBottom
@@ -36,6 +37,7 @@ object Lkp: TLkp
     TitleFont.Height = -11
     TitleFont.Name = 'MS Sans Serif'
     TitleFont.Style = []
+    OnDblClick = LkpGridDblClick
     OnKeyDown = LkpGridKeyDown
   end
   object EdtSearch: TEdit
