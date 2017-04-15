@@ -18,16 +18,8 @@ type
     edtCode: TDBEdit;
     Label1: TLabel;
     DBGrid1: TDBGrid;
-    GroupBox2: TGroupBox;
-    BtnOpen: TButton;
-    btnAdd: TButton;
-    btnEdit: TButton;
-    btnDelete: TButton;
-    btnSave: TButton;
-    BtnCancel: TButton;
     Label3: TLabel;
     DBEdit1: TDBEdit;
-    Button1: TButton;
     qry_Type: TSimpleDataSet;
     DS_Type: TDataSource;
     qry_TypeValue: TStringField;
@@ -40,6 +32,14 @@ type
     qry_TypeNameE: TStringField;
     Cb_Type: TDBLookupComboBox;
     Label4: TLabel;
+    GroupBox2: TGroupBox;
+    BtnOpen: TButton;
+    btnAdd: TButton;
+    btnEdit: TButton;
+    btnDelete: TButton;
+    btnSave: TButton;
+    BtnCancel: TButton;
+    BtnShow: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -50,6 +50,7 @@ type
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderBeforePost(DataSet: TDataSet);
     procedure Button1Click(Sender: TObject);
+    procedure BtnShowClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -211,6 +212,12 @@ end;
 
 procedure TfmCashBank.Button1Click(Sender: TObject);
 var lkp : Tlkp;
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
+end;
+
+procedure TfmCashBank.BtnShowClick(Sender: TObject);
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;

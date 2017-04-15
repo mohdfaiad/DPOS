@@ -197,9 +197,9 @@ object fmCashBank: TfmCashBank
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 614
-      Top = 12
-      Width = 112
+      Left = 626
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1601#1578#1581
       Font.Charset = DEFAULT_CHARSET
@@ -212,9 +212,9 @@ object fmCashBank: TfmCashBank
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 495
-      Top = 12
-      Width = 112
+      Left = 503
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1573#1590#1575#1601#1577
       Font.Charset = DEFAULT_CHARSET
@@ -227,9 +227,9 @@ object fmCashBank: TfmCashBank
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 376
+      Left = 379
       Top = 13
-      Width = 112
+      Width = 115
       Height = 35
       Caption = #1578#1593#1583#1610#1600#1600#1604
       Font.Charset = DEFAULT_CHARSET
@@ -242,9 +242,9 @@ object fmCashBank: TfmCashBank
       OnClick = btnEditClick
     end
     object btnDelete: TButton
-      Left = 20
+      Left = 11
       Top = 13
-      Width = 112
+      Width = 115
       Height = 35
       Caption = #1581#1584#1601
       Font.Charset = DEFAULT_CHARSET
@@ -257,9 +257,9 @@ object fmCashBank: TfmCashBank
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 259
+      Left = 254
       Top = 13
-      Width = 112
+      Width = 115
       Height = 35
       Caption = #1581#1601#1600#1600#1600#1600#1600#1592
       Font.Charset = DEFAULT_CHARSET
@@ -272,9 +272,9 @@ object fmCashBank: TfmCashBank
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 138
+      Left = 132
       Top = 13
-      Width = 112
+      Width = 115
       Height = 35
       Caption = #1573#1604#1594#1575#1569
       Font.Charset = DEFAULT_CHARSET
@@ -286,24 +286,23 @@ object fmCashBank: TfmCashBank
       TabOrder = 4
       OnClick = BtnCancelClick
     end
-    object Button1: TButton
-      Left = 733
+    object BtnShow: TButton
+      Left = 750
       Top = 13
-      Width = 133
-      Height = 32
-      Caption = #1593#1600#1600#1600#1585#1590
+      Width = 115
+      Height = 35
+      Caption = #1593#1585#1590
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clBlack
       Font.Height = -16
       Font.Name = 'Times New Roman'
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
       TabOrder = 6
-      OnClick = Button1Click
+      OnClick = BtnShowClick
     end
   end
   object SDS_Header: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_CashBank'

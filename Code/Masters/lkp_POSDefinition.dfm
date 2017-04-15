@@ -1,6 +1,6 @@
 object fmPOSDefinition: TfmPOSDefinition
-  Left = 223
-  Top = 121
+  Left = 255
+  Top = 60
   BorderStyle = bsDialog
   Caption = #1578#1593#1585#1610#1601' '#1606#1602#1591#1577' '#1575#1604#1576#1610#1593
   ClientHeight = 499
@@ -119,7 +119,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object Label6: TLabel
         Left = 339
-        Top = 270
+        Top = 274
         Width = 86
         Height = 19
         Anchors = []
@@ -137,7 +137,7 @@ object fmPOSDefinition: TfmPOSDefinition
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'OperatorNameAr'
+        DataField = 'POSNameAr'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -153,7 +153,7 @@ object fmPOSDefinition: TfmPOSDefinition
         Width = 121
         Height = 27
         Anchors = []
-        DataField = 'OperatorCode'
+        DataField = 'POSCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -169,7 +169,7 @@ object fmPOSDefinition: TfmPOSDefinition
         Width = 315
         Height = 27
         Anchors = []
-        DataField = 'OperatorNameEn'
+        DataField = 'POSNameEn'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -184,44 +184,44 @@ object fmPOSDefinition: TfmPOSDefinition
         Top = 179
         Width = 315
         Height = 27
-        DataField = 'UserID'
+        DataField = 'CashCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = []
-        KeyField = 'UserID'
-        ListField = 'FullNameA'
-        ListSource = DS_Users
+        KeyField = 'CB_Code'
+        ListField = 'CB_NameA'
+        ListSource = DS_Cash
         ParentFont = False
         TabOrder = 3
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object CO_Bank: TDBLookupComboBox
         Left = 21
         Top = 224
         Width = 315
         Height = 27
-        DataField = 'UserID'
+        DataField = 'BankCode'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = []
-        KeyField = 'UserID'
-        ListField = 'FullNameA'
-        ListSource = DS_Users
+        KeyField = 'CB_Code'
+        ListField = 'CB_NameA'
+        ListSource = DS_Bank
         ParentFont = False
         TabOrder = 4
       end
       object DBEdit2: TDBEdit
-        Left = 21
-        Top = 266
-        Width = 315
+        Left = 144
+        Top = 270
+        Width = 192
         Height = 27
         Anchors = []
-        DataField = 'OperatorNameEn'
+        DataField = 'OpenBalance'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -413,6 +413,7 @@ object fmPOSDefinition: TfmPOSDefinition
       DisplayLabel = #1575#1604#1585#1589#1610#1583' '#1575#1604#1573#1601#1578#1578#1575#1581#1610
       FieldName = 'OpenBalance'
       Precision = 18
+      Size = 8
     end
   end
   object DS_Header: TDataSource
@@ -420,20 +421,94 @@ object fmPOSDefinition: TfmPOSDefinition
     Left = 64
     Top = 16
   end
-  object SDS_Users: TSimpleDataSet
+  object SDS_Cash: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_Users'
+    DataSet.CommandText = 'Select * From tbl_CashBank Where CB_Type ='#39'C'#39
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
     BeforePost = SDS_HeaderBeforePost
     Left = 528
     Top = 291
+    object SDS_CashCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_CashCB_Code: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'CB_Code'
+      Required = True
+      Size = 4
+    end
+    object SDS_CashCB_Type: TStringField
+      FieldName = 'CB_Type'
+      Required = True
+      Visible = False
+      FixedChar = True
+      Size = 1
+    end
+    object SDS_CashCB_NameA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      FieldName = 'CB_NameA'
+      Size = 100
+    end
+    object SDS_CashCB_NameE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1604#1575#1578#1610#1606#1610
+      FieldName = 'CB_NameE'
+      Size = 100
+    end
   end
-  object DS_Users: TDataSource
-    DataSet = SDS_Users
+  object DS_Cash: TDataSource
+    DataSet = SDS_Cash
     Left = 568
     Top = 291
+  end
+  object SDS_Bank: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_CashBank Where CB_Type ='#39'B'#39
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    BeforePost = SDS_HeaderBeforePost
+    Left = 536
+    Top = 339
+    object SDS_BankCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_BankCB_Code: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'CB_Code'
+      Required = True
+      Size = 4
+    end
+    object SDS_BankCB_Type: TStringField
+      FieldName = 'CB_Type'
+      Required = True
+      Visible = False
+      FixedChar = True
+      Size = 1
+    end
+    object SDS_BankCB_NameA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      FieldName = 'CB_NameA'
+      Size = 100
+    end
+    object SDS_BankCB_NameE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1604#1575#1578#1610#1606#1610
+      FieldName = 'CB_NameE'
+      Size = 100
+    end
+  end
+  object DS_Bank: TDataSource
+    DataSet = SDS_Bank
+    Left = 576
+    Top = 339
   end
 end

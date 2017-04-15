@@ -21,8 +21,8 @@ type
     Label3: TLabel;
     DBEdit1: TDBEdit;
     Co_Cash: TDBLookupComboBox;
-    DS_Users: TDataSource;
-    SDS_Users: TSimpleDataSet;
+    DS_Cash: TDataSource;
+    SDS_Cash: TSimpleDataSet;
     Label4: TLabel;
     GroupBox2: TGroupBox;
     BtnOpen: TButton;
@@ -40,9 +40,21 @@ type
     SDS_HeaderBankCode: TStringField;
     SDS_HeaderOpenBalance: TFMTBCDField;
     Label5: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    CO_Bank: TDBLookupComboBox;
     Label6: TLabel;
     DBEdit2: TDBEdit;
+    SDS_Bank: TSimpleDataSet;
+    DS_Bank: TDataSource;
+    SDS_CashCompanyCode: TStringField;
+    SDS_CashCB_Code: TStringField;
+    SDS_CashCB_Type: TStringField;
+    SDS_CashCB_NameA: TStringField;
+    SDS_CashCB_NameE: TStringField;
+    SDS_BankCompanyCode: TStringField;
+    SDS_BankCB_Code: TStringField;
+    SDS_BankCB_Type: TStringField;
+    SDS_BankCB_NameA: TStringField;
+    SDS_BankCB_NameE: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -104,33 +116,38 @@ end;
 procedure TfmPOSDefinition.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
 begin
-  If SDS_HeaderOperatorCode.AsString = '' Then
+  If SDS_HeaderPOSCode.AsString = '' Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·—„“  ﬁ»· «·Õ›Ÿ');
      edtCode.SetFocus;
      Exit;
   end;
 
-  If (SDS_HeaderOperatorNameAr.AsString = '') AND (SDS_HeaderOperatorNameEn.AsString = '')  Then
+  If (SDS_HeaderPOSNameAr.AsString = '') AND (SDS_HeaderPOSNameEn.AsString = '')  Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·«”„ ﬁ»· «·Õ›Ÿ');
      edtName.SetFocus;
      Exit;
   end;
 
-  IsDuplicated := RepeatedKey('tbl_Operators', ' OperatorCode = ''' + SDS_HeaderOperatorCode.AsString + '''  ');
+  IsDuplicated := RepeatedKey('tbl_POS_Definition', ' POSCODE = ''' + SDS_HeaderPOSCode.AsString + '''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
      Exit;
   end;
 
-  if SDS_HeaderUserID.AsString = '' Then Begin
-     ShowMessage('ÌÃ» ≈Œ Ì«— «·ﬂ«‘Ì—');
-     Co_Users.SetFocus;
+  if SDS_HeaderBankCode.AsString = '' Then Begin
+     ShowMessage('ÌÃ» ≈Œ Ì«— «·»‰ﬂ');
+     CO_Bank.SetFocus;
      Exit;
   end;
 
+  if SDS_HeaderCashCode.AsString = '' Then Begin
+     ShowMessage('ÌÃ» ≈Œ Ì«— «·’‰œÊﬁ');
+     Co_Cash.SetFocus;
+     Exit;
+  end;
 
   if SDS_Header.ApplyUpdates(0) = 0 then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
@@ -192,7 +209,8 @@ Begin
   }
   BtnOpenClick(Sender);
   BtnShow.Enabled := False;
-  SDS_Users.Open;
+  SDS_Bank.Open;
+  SDS_Cash.Open;
 end;
 
 procedure TfmPOSDefinition.FormKeyPress(Sender: TObject; var Key: Char);
@@ -241,7 +259,8 @@ end;
 procedure TfmPOSDefinition.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  SDS_Users.Close;
+  SDS_Bank.Close;
+  SDS_Cash.Close;
 end;
 
 end.

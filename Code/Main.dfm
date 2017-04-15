@@ -1,10 +1,10 @@
 object fmMainForm: TfmMainForm
-  Left = 1
-  Top = 100
+  Left = -7
+  Top = 89
   BorderStyle = bsSingle
   Caption = #1573#1583#1575#1585#1577' '#1606#1602#1575#1591' '#1575#1604#1576#1610#1593
   ClientHeight = 587
-  ClientWidth = 1366
+  ClientWidth = 1362
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -6178,7 +6178,6 @@ object fmMainForm: TfmMainForm
         Caption = #1573#1594#1604#1575#1602' '#1606#1602#1600#1600#1591#1577' '#1575#1604#1576#1610#1600#1593
         ParentBiDiMode = False
         TabOrder = 0
-        OnClick = btn_DailyCloseClick
       end
     end
     object GroupBox7: TGroupBox
@@ -7321,14 +7320,14 @@ object fmMainForm: TfmMainForm
   object GroupBox8: TGroupBox
     Left = 178
     Top = 5
-    Width = 1188
+    Width = 1184
     Height = 577
     Align = alClient
     TabOrder = 2
     object imgBG: TImage
       Left = 2
       Top = 15
-      Width = 1184
+      Width = 1180
       Height = 560
       Align = alClient
       Picture.Data = {
@@ -12682,7 +12681,7 @@ object fmMainForm: TfmMainForm
   object Panel4: TPanel
     Left = 0
     Top = 0
-    Width = 1366
+    Width = 1362
     Height = 5
     Align = alTop
     Color = clBackground
@@ -12692,7 +12691,7 @@ object fmMainForm: TfmMainForm
   object Panel5: TPanel
     Left = 0
     Top = 582
-    Width = 1366
+    Width = 1362
     Height = 5
     Align = alBottom
     Color = clBackground
@@ -12709,13 +12708,14 @@ object fmMainForm: TfmMainForm
       'HostName=.'
       'DataBase=WMAPOS'
       'User_Name=sa'
-      'Password=123456'
+      'Password=Xyz789'
       'BlobSize=-1'
       'ErrorResourceFile='
       'LocaleCode=0000'
       'MSSQL TransIsolation=ReadCommited'
       'OS Authentication=False')
     VendorLib = 'oledb'
+    Connected = True
     Left = 280
     Top = 40
   end
@@ -12736,6 +12736,28 @@ object fmMainForm: TfmMainForm
     Top = 48
     object mnSystem: TMenuItem
       Caption = #1575#1604#1606#1592#1600#1600#1600#1600#1600#1600#1600#1600#1600#1575#1605
+      object mn_CompanyDef: TMenuItem
+        Caption = #1575#1604#1588#1600#1585#1603#1600#1600#1600#1600#1600#1600#1600#1600#1600#1575#1578
+        OnClick = mn_CompanyDefClick
+      end
+      object mn_BranchesDef: TMenuItem
+        Caption = #1575#1604#1601#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1585#1608#1593
+        OnClick = mn_BranchesDefClick
+      end
+      object N31: TMenuItem
+        Caption = '-'
+      end
+      object mn_UserGroupsDef: TMenuItem
+        Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1605#1587#1578#1582#1583#1605#1610#1606
+        OnClick = mn_UserGroupsDefClick
+      end
+      object mn_UserDef: TMenuItem
+        Caption = #1575#1604#1605#1587#1578#1582#1583#1605#1610#1606
+        OnClick = mn_UserDefClick
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
       object mn_BackUp: TMenuItem
         Caption = #1575#1604#1606#1587#1600#1600#1600#1600#1600#1582' '#1575#1604#1575#1581#1578#1610#1575#1591#1600#1600#1600#1610
         OnClick = mn_BackUpClick
@@ -12750,79 +12772,120 @@ object fmMainForm: TfmMainForm
     end
     object mn_posMasters: TMenuItem
       Caption = #1575#1604#1576#1610#1575#1606#1600#1575#1578' '#1575#1604#1571#1587#1575#1587#1610#1600#1600#1600#1600#1577
-      object mn_CompanyDef: TMenuItem
-        Caption = #1575#1604#1588#1600#1585#1603#1600#1600#1600#1600#1600#1600#1600#1600#1600#1575#1578
-        OnClick = mn_CompanyDefClick
-      end
-      object mn_BranchesDef: TMenuItem
-        Caption = #1575#1604#1601#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1585#1608#1593
-        OnClick = mn_BranchesDefClick
-      end
-      object mn_CustomerGroupDef: TMenuItem
-        Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1593#1605#1604#1575#1569
-        OnClick = mn_CustomerGroupDefClick
-      end
       object mn_CurrencyDef: TMenuItem
         Caption = #1575#1604#1593#1605#1604#1575#1578
         OnClick = mn_CurrencyDefClick
       end
-      object mn_ItemCategoryDef: TMenuItem
-        Caption = #1601#1574#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemCategoryDefClick
-      end
-      object mn_ItemColorDef: TMenuItem
-        Caption = #1571#1604#1608#1575#1606' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemColorDefClick
-      end
-      object mn_ItemGroupSectionef: TMenuItem
-        Caption = #1571#1602#1587#1575#1605' '#1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemGroupSectionefClick
-      end
-      object mn_ItemPoliciesDef: TMenuItem
-        Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemPoliciesDefClick
-      end
-      object mn_ItemSizeDef: TMenuItem
-        Caption = #1605#1602#1575#1587#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemSizeDefClick
-      end
-      object mn_ItemTypeDef: TMenuItem
-        Caption = #1571#1606#1608#1575#1593' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemTypeDefClick
-      end
-      object mn_ItemUnitDef: TMenuItem
-        Caption = #1608#1581#1583#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
-        OnClick = mn_ItemUnitDefClick
-      end
-      object mn_WareHouseDef: TMenuItem
-        Caption = #1575#1604#1605#1587#1578#1608#1583#1593#1575#1578
-        OnClick = mn_WareHouseDefClick
-      end
-      object mn_VendorGroupDef: TMenuItem
-        Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1605#1608#1585#1583#1610#1606
-        OnClick = mn_VendorGroupDefClick
-      end
-      object mn_UserGroupsDef: TMenuItem
-        Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1605#1587#1578#1582#1583#1605#1610#1606
-        OnClick = mn_UserGroupsDefClick
-      end
-      object mn_CustomerDef: TMenuItem
-        Caption = #1575#1604#1593#1605#1604#1575#1569
-        OnClick = mn_CustomerDefClick
+      object mn_CurrencyExchangeDef: TMenuItem
+        Caption = #1571#1587#1593#1575#1585' '#1575#1604#1593#1605#1604#1575#1578
+        OnClick = mn_CurrencyExchangeDefClick
       end
       object mn_CashBankDef: TMenuItem
         Caption = #1575#1604#1589#1606#1575#1583#1610#1602' '#1608#1575#1604#1576#1606#1608#1603
         OnClick = mn_CashBankDefClick
       end
     end
+    object N4: TMenuItem
+      Caption = #1575#1604#1605#1582#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1575#1586#1606
+      object N5: TMenuItem
+        Caption = #1605#1604#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1601
+        object mn_ItemDef: TMenuItem
+          Caption = #1575#1604#1571#1589#1606#1575#1601' '#1575#1604#1605#1582#1586#1606#1610#1577
+          OnClick = mn_ItemDefClick
+        end
+        object mn_WareHouseDef: TMenuItem
+          Caption = #1575#1604#1605#1587#1578#1608#1583#1593#1575#1578
+          OnClick = mn_WareHouseDefClick
+        end
+        object N30: TMenuItem
+          Caption = '-'
+        end
+        object mn_ItemCategoryDef: TMenuItem
+          Caption = #1601#1574#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
+          OnClick = mn_ItemCategoryDefClick
+        end
+        object mn_ItemColorDef: TMenuItem
+          Caption = #1571#1604#1608#1575#1606' '#1575#1604#1571#1589#1606#1575#1601
+          OnClick = mn_ItemColorDefClick
+        end
+        object mn_ItemTypeDef: TMenuItem
+          Caption = #1571#1606#1608#1575#1593' '#1575#1604#1571#1589#1606#1575#1601
+          OnClick = mn_ItemTypeDefClick
+        end
+        object mn_ItemUnitDef: TMenuItem
+          Caption = #1608#1581#1583#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
+          OnClick = mn_ItemUnitDefClick
+        end
+        object mn_ItemSizeDef: TMenuItem
+          Caption = #1605#1602#1575#1587#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
+          OnClick = mn_ItemSizeDefClick
+        end
+        object mn_ItemGroupsDef: TMenuItem
+          Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1589#1606#1575#1601
+          OnClick = mn_ItemGroupsDefClick
+        end
+        object mn_ItemGroupSectionDef: TMenuItem
+          Caption = #1571#1602#1587#1575#1605' '#1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
+          OnClick = mn_ItemGroupSectionDefClick
+        end
+      end
+    end
+    object N15: TMenuItem
+      Caption = #1575#1604#1605#1588#1578#1585#1610#1600#1600#1600#1600#1600#1575#1578
+      object N18: TMenuItem
+        Caption = #1605#1604#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1601
+        object mn_VendoersDef: TMenuItem
+          Caption = #1575#1604#1605#1608#1585#1583#1610#1606
+          OnClick = mn_VendoersDefClick
+        end
+        object mn_VendorGroupDef: TMenuItem
+          Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1605#1608#1585#1583#1610#1606
+          OnClick = mn_VendorGroupDefClick
+        end
+      end
+    end
+    object N16: TMenuItem
+      Caption = #1575#1604#1605#1576#1610#1593#1600#1600#1600#1600#1600#1575#1578
+      object mn_ItemPoliciesDef: TMenuItem
+        Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1578#1587#1593#1610#1585
+        OnClick = mn_ItemPoliciesDefClick
+      end
+      object N25: TMenuItem
+        Caption = '-'
+      end
+      object N17: TMenuItem
+        Caption = #1605#1604#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1601
+        object mn_CustomerDef: TMenuItem
+          Caption = #1575#1604#1593#1605#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1604#1575#1569
+          OnClick = mn_CustomerDefClick
+        end
+        object mn_CustomerGroupDef: TMenuItem
+          Caption = #1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1593#1605#1604#1575#1569
+          OnClick = mn_CustomerGroupDefClick
+        end
+      end
+    end
     object mn_PosTransactions: TMenuItem
-      Caption = #1575#1604#1605#1593#1600#1575#1605#1600#1600#1600#1600#1600#1600#1600#1600#1600#1604#1575#1578
+      Caption = #1606#1602#1600#1600#1600#1575#1591' '#1575#1604#1576#1610#1600#1600#1600#1600#1593
       object mn_POS: TMenuItem
         Caption = #1606#1602#1591#1600#1600#1600#1600#1600#1577' '#1575#1604#1576#1610#1600#1600#1600#1600#1600#1600#1600#1600#1600#1593
       end
       object mn_DailyClose: TMenuItem
         Caption = #1573#1594#1600#1600#1600#1604#1575#1602' '#1606#1602#1591#1600#1600#1600#1577' '#1576#1610#1600#1600#1600#1593
-        OnClick = mn_DailyCloseClick
+      end
+      object N19: TMenuItem
+        Caption = '-'
+      end
+      object N20: TMenuItem
+        Caption = #1605#1604#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1601
+        object mn_OperatorsDef: TMenuItem
+          Caption = #1575#1604#1605#1588#1594#1604#1610#1606
+          OnClick = mn_OperatorsDefClick
+        end
+        object mn_POSDef: TMenuItem
+          Caption = #1578#1593#1585#1610#1601' '#1606#1602#1591#1577' '#1575#1604#1576#1610#1593
+          OnClick = mn_POSDefClick
+        end
       end
     end
   end

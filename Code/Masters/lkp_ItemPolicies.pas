@@ -17,7 +17,6 @@ type
     Label2: TLabel;
     edtCode: TDBEdit;
     Label1: TLabel;
-    DBGrid1: TDBGrid;
     GroupBox2: TGroupBox;
     BtnOpen: TButton;
     btnAdd: TButton;
@@ -31,6 +30,17 @@ type
     SDS_HeaderPolicyCode: TStringField;
     SDS_HeaderPolicyNameAr: TStringField;
     SDS_HeaderPolicyNameEn: TStringField;
+    grd_Brcodes: TDBGrid;
+    SDS_ItemPrices: TSimpleDataSet;
+    DS_ItemPrices: TDataSource;
+    SDS_ItemPricesCompanyCode: TStringField;
+    SDS_ItemPricesItemService: TStringField;
+    SDS_ItemPricesItemCode: TStringField;
+    SDS_ItemPricesPolicyCode: TStringField;
+    SDS_ItemPricesItemUnit: TStringField;
+    SDS_ItemPricesPriceValue: TFMTBCDField;
+    SDS_ItemPricesPriceRatio: TFMTBCDField;
+    SDS_ItemPricesDiscountRatio: TFMTBCDField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -39,7 +49,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
-    procedure SDS_HeaderBeforePost(DataSet: TDataSet);
+    procedure SDS_HeaderNewRecord(DataSet: TDataSet);
+    procedure SDS_ItemPricesNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -189,9 +200,16 @@ begin
   EditMode := False;
 end;
 
-procedure TfmItemPolicies.SDS_HeaderBeforePost(DataSet: TDataSet);
+procedure TfmItemPolicies.SDS_HeaderNewRecord(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
+end;
+
+procedure TfmItemPolicies.SDS_ItemPricesNewRecord(DataSet: TDataSet);
+begin
+   SDS_ItemPricesCompanyCode.Value := DCompany;
+   SDS_ItemPricesItemService.Value := 'IVI';
+   SDS_ItemPricesPolicyCode.Value := SDS_HeaderPolicyCode.AsString;
 end;
 
 end.

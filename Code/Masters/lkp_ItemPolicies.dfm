@@ -1,8 +1,8 @@
 object fmItemPolicies: TfmItemPolicies
-  Left = 192
-  Top = 124
+  Left = 400
+  Top = 147
   BorderStyle = bsDialog
-  Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
+  Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1578#1587#1593#1610#1585
   ClientHeight = 499
   ClientWidth = 1016
   Color = clBtnFace
@@ -24,7 +24,7 @@ object fmItemPolicies: TfmItemPolicies
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
+    Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1578#1587#1593#1610#1585
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -37,18 +37,18 @@ object fmItemPolicies: TfmItemPolicies
       873
       382)
     object grpData: TGroupBox
-      Left = 424
+      Left = 16
       Top = 26
-      Width = 441
+      Width = 849
       Height = 335
       Anchors = []
       TabOrder = 0
       DesignSize = (
-        441
+        849
         335)
       object Label2: TLabel
-        Left = 363
-        Top = 94
+        Left = 739
+        Top = 56
         Width = 65
         Height = 19
         Anchors = []
@@ -61,8 +61,8 @@ object fmItemPolicies: TfmItemPolicies
         ParentFont = False
       end
       object Label1: TLabel
-        Left = 396
-        Top = 36
+        Left = 775
+        Top = 22
         Width = 29
         Height = 19
         Anchors = []
@@ -75,8 +75,8 @@ object fmItemPolicies: TfmItemPolicies
         ParentFont = False
       end
       object Label3: TLabel
-        Left = 357
-        Top = 152
+        Left = 331
+        Top = 56
         Width = 73
         Height = 19
         Anchors = []
@@ -89,8 +89,8 @@ object fmItemPolicies: TfmItemPolicies
         ParentFont = False
       end
       object edtName: TDBEdit
-        Left = 40
-        Top = 92
+        Left = 415
+        Top = 52
         Width = 315
         Height = 27
         Anchors = []
@@ -105,8 +105,8 @@ object fmItemPolicies: TfmItemPolicies
         TabOrder = 1
       end
       object edtCode: TDBEdit
-        Left = 226
-        Top = 34
+        Left = 609
+        Top = 18
         Width = 121
         Height = 27
         Anchors = []
@@ -121,8 +121,8 @@ object fmItemPolicies: TfmItemPolicies
         TabOrder = 0
       end
       object DBEdit1: TDBEdit
-        Left = 42
-        Top = 150
+        Left = 9
+        Top = 54
         Width = 315
         Height = 27
         Anchors = []
@@ -136,26 +136,26 @@ object fmItemPolicies: TfmItemPolicies
         ParentFont = False
         TabOrder = 2
       end
-    end
-    object DBGrid1: TDBGrid
-      Left = 9
-      Top = 33
-      Width = 407
-      Height = 327
-      DataSource = DS_Header
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -19
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 1
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clNavy
-      TitleFont.Height = -21
-      TitleFont.Name = 'Times New Roman'
-      TitleFont.Style = []
+      object grd_Brcodes: TDBGrid
+        Left = 2
+        Top = 112
+        Width = 845
+        Height = 221
+        Align = alBottom
+        DataSource = DS_ItemPrices
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clNavy
+        Font.Height = -19
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clNavy
+        TitleFont.Height = -21
+        TitleFont.Name = 'Times New Roman'
+        TitleFont.Style = []
+      end
     end
   end
   object GroupBox2: TGroupBox
@@ -262,7 +262,7 @@ object fmItemPolicies: TfmItemPolicies
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    BeforePost = SDS_HeaderBeforePost
+    OnNewRecord = SDS_HeaderNewRecord
     Left = 24
     Top = 16
     object SDS_HeaderPolicyCode: TStringField
@@ -289,5 +289,69 @@ object fmItemPolicies: TfmItemPolicies
     DataSet = SDS_Header
     Left = 64
     Top = 16
+  end
+  object SDS_ItemPrices: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemPrices'#13#10
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    OnNewRecord = SDS_ItemPricesNewRecord
+    Left = 48
+    Top = 272
+    object SDS_ItemPricesCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_ItemPricesItemService: TStringField
+      FieldName = 'ItemService'
+      Required = True
+      Visible = False
+      Size = 3
+    end
+    object SDS_ItemPricesItemCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1589#1606#1601
+      DisplayWidth = 10
+      FieldName = 'ItemCode'
+      Required = True
+    end
+    object SDS_ItemPricesPolicyCode: TStringField
+      FieldName = 'PolicyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_ItemPricesItemUnit: TStringField
+      DisplayLabel = #1608#1581#1583#1577' '#1575#1604#1589#1606#1601
+      FieldName = 'ItemUnit'
+      Required = True
+      Size = 6
+    end
+    object SDS_ItemPricesPriceValue: TFMTBCDField
+      DisplayLabel = #1575#1604#1587#1593#1585
+      DisplayWidth = 6
+      FieldName = 'PriceValue'
+      Precision = 18
+    end
+    object SDS_ItemPricesPriceRatio: TFMTBCDField
+      DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1587#1593#1585
+      DisplayWidth = 6
+      FieldName = 'PriceRatio'
+      Precision = 18
+    end
+    object SDS_ItemPricesDiscountRatio: TFMTBCDField
+      DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1582#1589#1605
+      DisplayWidth = 6
+      FieldName = 'DiscountRatio'
+      Precision = 18
+    end
+  end
+  object DS_ItemPrices: TDataSource
+    DataSet = SDS_ItemPrices
+    Left = 88
+    Top = 272
   end
 end
