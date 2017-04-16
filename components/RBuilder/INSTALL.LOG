@@ -1,0 +1,2173 @@
+***  Installation Started 05/27/08 11:10  ***
+Title: ReportBuilder Enterprise 10.02 for Delphi 7
+Source: E:\micro_projects\micro_doc\Components\Report Builder Enterprise 10\rbent7\rbent7.exe
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\RB Enterprise License.txt
+File Copy: C:\WINDOWS\system32\rbDB107.bpl
+File Copy: C:\WINDOWS\system32\rbBDE107.bpl
+File Copy: C:\WINDOWS\system32\rbRCL107.bpl
+File Copy: C:\WINDOWS\system32\rbIDE107.bpl
+File Copy: C:\WINDOWS\system32\rbUSER107.bpl
+File Copy: C:\WINDOWS\system32\rbUSERDesign107.bpl
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Lib
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbDB107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbBDE107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbRCL107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbIDE107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbUSER107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbUSERDesign107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBU107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBU107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppIDEBmp.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPrvBmp.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\tbx_glyphs.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppAbout.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppASDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBPsDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChDPEdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppClcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCOrDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDatDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDemo.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDrlDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDsgner.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDsgWin.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFldEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFLnkEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFmtDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppGrdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppGrpDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppLWzDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMemDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppNewDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppNoDataDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppParametersEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPgNDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPgSDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPosDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPrvDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRichEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRstDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRWzDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppShfDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTmDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTmEDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppToolbars.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTxtDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppVarDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppAbout.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppArchiv.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppASCtrl.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppASDlg.dcu
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppASDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppASField.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppAttribTreeNode.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppAvIntl.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppAvStd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBandEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBands.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarCod.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarCodDrwCmd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBPsDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCache.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCDShow.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppClass.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppClasUt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppClcDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCmpReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCollectionBase.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppComm.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCOrDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCtrls.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDatDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDBArchiv.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDBBDE.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDBJIT.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDBPipe.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDBStorageSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDemo.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignControls.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignControlsEx.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignerInterface.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignerForms.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignerTools.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignerWorkspace.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDetailBandEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDevice.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDisplayFormat.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDrlDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDrwCmd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDsgner.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDsgWin.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDsIntf.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEnum.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFilDev.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFileUtils.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFldEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFLnkEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFmtDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppForms.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppFormWrapper.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppGIFImage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppGIF.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppGrdDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppGrpDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppHorizontalBandEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppIfDef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppIniStorage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppInspector.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJPEG.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppLabelDef.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppLabWiz.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppLWzDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMath.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMemDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMemo.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMetaAL.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMetaBitmap.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMetaRW.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppModule.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppNewDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppNoDataDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineReportSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPageBreak.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppParameter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppParametersEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPgNDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPgSDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPlainText.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPopupMenus.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPosDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPreview.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPreviewFormSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPreviewIcons.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPrintr.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPrnabl.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPrnDev.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppProd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPropEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPrvDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRegion.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRegPro.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRelatv.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppReport.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRichEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRichTx.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRichTxDrwCmd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRotatedText.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRptWiz.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRstDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRTTI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRuler.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRWzDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppShfDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppStrtch.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppStrUtils.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSubRpt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTmDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTmEDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTmplat.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppToolbars.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppToolWn.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTreeNode.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTreeVw.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTxPipe.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTxtDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTypes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppUndo.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppUtils.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppVar.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppVarDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppVerticalBandEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppViewr.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppWizard.dcu
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppParametersEd.dcu
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppParametersEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppZLib.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarCode2D.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarCode2DDrawCmd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSt2DBarC.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBarCode2DDesign.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignControllers.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignControllerBase.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignDialogController.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignDocumentController.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignSelectionController.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignWorkspaceController.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignObserver.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignToolManagerTBX.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignToolActions.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignToolWindow.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignToolBar.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignToolItemsTBX.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignToolbarsTBX.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignSelection.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignWorkspaceView.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignPreview.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignLayoutManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignLayoutMenu.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppToolWnTBX.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTabbedNoteBook.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPopupMenuBase.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppMulticast.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDesignEventHub.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppToolResources.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppToolbarTBX.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2MRU.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Toolbar.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Dock.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2ToolWindow.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Common.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Consts.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2ExtItems.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Hook.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Item.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Acc.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Version.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTB2Anim.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBX.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXDefaultTheme.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXOffice2003Theme.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXOfficeXPTheme.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXWhidbeyTheme.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXAluminumTheme.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXrmkThemes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXDkPanels.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXThemes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXUtils.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXUxThemes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXLists.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXExtItems.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXPanel.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTBXToolPals.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCheckTreeView.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCheckTreeView.res
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTreeNode.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutline.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineDrawCommand.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineGroupNodeCreator.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineNode.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineNodeCreator.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineParticipant.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineReportNodeCreator.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineSettingsDialog.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineSettingsDialog.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineSettingsPreviewThread.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppOutlineViewer.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchCustomEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchCustomPreview.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchDrawCommandHighlighter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchDrawCommandHighlightRegistry.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchHighlighter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchRichTextHighlighter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchOccurrence.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchSelectionHighlighter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchPage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchPageList.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchRegistration.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchError.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchPreview.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchPreviewIcons.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchEngineRegistry.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchRichTextEngine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchSettingsDialog.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchSettingsDialog.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppTextSearchToolbox.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppScrollbox.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppAutosearchRTTI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppReportTemplateRTTI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundPrintThread.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundPrintQueue.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundPrintManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundPrintRequest.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundPrintSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundReportGenerator.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundContainerAdapter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppBackgroundThreadSync.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFCatalog.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFContent.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererCustomText.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFDevice.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFFont.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFFontDescriptor.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFFontManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFFontWidths.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFGState.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFImage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererImage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFImageManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFInfo.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererLine.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFObject.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFPage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFPageTree.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFProcSet.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRenderer.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererGeneric.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererShape.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererStandardText.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererText.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFUtils.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFRendererWrappedText.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFXObject.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppPDFXRef.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmail.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmailSettings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmailDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmailDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmailLoginDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmailLoginDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSMTPCustom.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSMTPMapi.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSMTPOutlook.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSMTPIndy.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppSMTPIndy10.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEmailMessage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJCLBase.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJCLLogic.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJCLResources.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJCLRTTI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJCLStrings.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJvTabBar.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJvInspector.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppJvInspExtraEditors.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\myReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\MyChkBox.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\myChkBoxDesign.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\MyChkBox.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\MyChkDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\MyChkDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRegPro.dcr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppDsgnDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppEndUsr.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppExpFrm.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppExpFrm.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppExpDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppExpDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRptExpCommon.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppRptExp.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBE107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBE107.dcp
+File Copy: C:\WINDOWS\system32\rbCIDE107.bpl
+File Copy: C:\WINDOWS\system32\rbCT107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbCIDE107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbCT107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTCell.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTCtrl.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTDsgn.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTEng.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTMain.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTRend.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCTWiz.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCWzDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppCWzDlg.dfm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\dclRBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\dclRBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTCUI107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTCUI107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTDBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTDBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrtUI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrtDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrtDP.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChDPEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\TeeBmps.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\dclRBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\dclRBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTCUI107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTCUI107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTDBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTDBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrtUI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrtDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrtDP.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChDPEdDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChDPEdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\TeeBmps.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\dclRBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\dclRBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTCUI107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTCUI107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTDBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTDBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrtUI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrtDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrtDP.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChDPEdDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChDPEdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\TeeBmps.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\dclRBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\dclRBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTCUI107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTCUI107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTDBC107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTDBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrtUI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrtDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrtDP.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChDPEdDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChDPEdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChDPEd.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChrt.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChrtDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChrtDP.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppChrtUI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbTC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbTCUI107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbTDBC107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBC107.bpl
+File Copy: C:\WINDOWS\system32\rbTC107.bpl
+File Copy: C:\WINDOWS\system32\rbTCUI107.bpl
+File Copy: C:\WINDOWS\system32\rbTDBC107.bpl
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder TeeChart Components
+RegDB Name: $(DELPHI)\RBuilder\Lib\dclRBC107.bpl
+RegDB Root: 1
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\dclDAD107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\dclDAD107.dcp
+File Copy: C:\WINDOWS\system32\rbDAD107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbDAD107.dcp
+File Copy: C:\WINDOWS\system32\rbDIDE107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbDIDE107.dcp
+File Copy: C:\WINDOWS\system32\rbDBDE107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbDBDE107.dcp
+File Copy: C:\WINDOWS\system32\rbADO107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbADO107.dcp
+File Copy: C:\WINDOWS\system32\rbDBE107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbDBE107.dcp
+File Copy: C:\WINDOWS\system32\rbIBE107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbIBE107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daIDEBmp.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daADO.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataDictionaryBuilder.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataDictionaryBuilder.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDatMan.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataModule.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDatMod.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataSettingDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataSettingDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataVw.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataView.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataViewToolWin.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataViewToolWin.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataWizard.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDataWizardManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDesignToolResources.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDB.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDBBDE.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daForms.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daDBExpress.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daIBExpress.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daIDE.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daJoinPanel.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daJoinTableDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daJoinTableDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daLinkBroker.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daLinkDataViewDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daLinkDataViewDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daLinkManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daMetaBitmaps.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daMetaData.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daMetaDataManager.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daMetaDataDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daMetaDataDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daPreviewDataDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daPreviewDataDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryDataView.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryDesigner.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryDesigner.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryWizard.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryWizard.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryWizardCalcDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryWizardCalcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryWizardCriteriaDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQueryWizardCriteriaDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daSQL.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daSQLBuilder.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daMagicSQL.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daSQLReservedWords.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQClass.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daQuery.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daVisualLink.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daVisualLinkHint.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\daVisualLinkHint.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\dclRAP107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\dclRAP107.dcp
+File Copy: C:\WINDOWS\system32\rbRAP107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbRAP107.dcp
+File Copy: C:\WINDOWS\system32\rbRIDE107.bpl
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\LIB\rbRIDE107.dcp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raClsVal.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raClcDlg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raClcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raClsMan.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raClass.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raCodMod.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raComm.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raConst.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raEdit.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raEvent.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raExpr.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raFunc.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raIDE.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raLngInf.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raObjectRTTI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raParser.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raRelatv.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raStatem.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raTreeVw.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raTypes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raValue.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditTextBuffer.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditKbdHandler.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditKeyConst.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditTypes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditMiscProcs.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditStrConst.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynHighlighterPas.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEdit.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynTextDrawer.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditHighlighter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditSearch.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditKeyCmds.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEditMiscClasses.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\raSynEdit.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower\Readme.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower\rbIP107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower\rbIP107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower\ppWWRichEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower\BuildIP.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\InfoPower\BuildIP.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbIDE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbPrint.RES
+File Copy: C:\WINDOWS\system32\rbIDE.eng
+File Copy: C:\WINDOWS\system32\rbPrint.eng
+File Copy: C:\WINDOWS\system32\rbIDE.cst
+File Copy: C:\WINDOWS\system32\rbPrint.cst
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Languages
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\CreateResFromRC.bat
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\CreateDLLFromRes.bat
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\CopyDLLToLib.bat
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbIDE.cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbIDE.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbIDE.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbIDE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbPrint.cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbPrint.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbPrint.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbPrint.RES
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbIDE.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbIDE.eng
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbIDE.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbIDE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbPrint.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbPrint.eng
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbPrint.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbPrint.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbDADE.RES
+File Copy: C:\WINDOWS\system32\rbDADE.eng
+File Copy: C:\WINDOWS\system32\rbDADE.cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbDADE.cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbDADE.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbDADE.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbDADE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbDADE.eng
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbDADE.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbDADE.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbDADE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Lib\rbRAP.RES
+File Copy: C:\WINDOWS\system32\rbRAP.eng
+File Copy: C:\WINDOWS\system32\rbRAP.cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbRAP.cst
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbRAP.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbRAP.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Cst\rbRAP.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbRAP.eng
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbRAP.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbRAP.rc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Languages\Eng\rbRAP.RES
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Source
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDB107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDB107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbBDE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbBDE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbRCL107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbRCL107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppAbout.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppArchiv.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppASCtrl.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppASDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppASField.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppAttribTreeNode.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppAvIntl.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppAvStd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBands.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppHorizontalBandEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDetailBandEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBandEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppVerticalBandEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarCod.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarCodDrwCmd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBPsDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCache.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCDShow.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppClass.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppClasUt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppClcDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCmpReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCollectionBase.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppComm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCOrDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCtrls.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDatDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDBArchiv.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDBBDE.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDBJIT.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDBPipe.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDemo.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignControls.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignControlsEx.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignerForms.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignerInterface.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignerTools.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignerWorkspace.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDevice.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDisplayFormat.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDrlDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDrwCmd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDsgner.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDsgWin.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDsIntf.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFilDev.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFileUtils.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFldEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFlnkEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFmtDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppForms.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFormWrapper.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppGIFImage.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppGIF.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppGrdDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppGrpDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppIfDef.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Lib\ppIfDef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppIniStorage.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppInspector.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJPEG.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppLabelDef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppLabWiz.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppLWzDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMath.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMemDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMemo.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMetaAL.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMetaBitmap.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMetaRW.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppModule.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppNewDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppNoDataDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineReportSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPageBreak.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppParameter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppParametersEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPgNDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPgSDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPlainText.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPopupMenus.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPosDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPrintr.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPrnabl.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPrnDev.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppProd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPropEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPreview.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPreviewFormSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPreviewIcons.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPrvDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRegion.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRelatv.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppReport.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDBStorageSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRichEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRichTx.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRichTxDrwCmd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRotatedText.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRptWiz.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRstDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRuler.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRWzDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppShfDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppStrtch.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppStrUtils.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSubRpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTmDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTmEDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTmplat.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppToolbars.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppToolWn.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTreeVw.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTxPipe.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTxtDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTypes.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppUndo.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppUtils.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppVar.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppVarDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppViewr.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppWizard.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppZLib.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\myReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\MyChkBox.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\myChkBoxDesign.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\MyChkBox.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\MyChkDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\MyChkDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRTTI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEnum.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarCode2D.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarCode2DDrawCmd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSt2DBarC.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarCode2DDesign.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignControllers.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignControllerBase.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignDialogController.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignDocumentController.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignSelectionController.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignWorkspaceController.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignObserver.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignToolManagerTBX.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignToolActions.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignToolWindow.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignToolBar.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignToolItemsTBX.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignToolbarsTBX.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignSelection.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignWorkspaceView.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignPreview.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignLayoutManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignLayoutMenu.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppToolWnTBX.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTabbedNoteBook.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPopupMenuBase.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMulticast.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDesignEventHub.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppToolResources.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppToolbarTBX.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2MRU.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Toolbar.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Dock.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2ToolWindow.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Common.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Consts.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2ExtItems.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Hook.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Item.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Acc.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Version.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Anim.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBX.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXDefaultTheme.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXOffice2003Theme.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXOfficeXPTheme.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXWhidbeyTheme.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXAluminumTheme.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXrmkThemes.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXDkPanels.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXThemes.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXUtils.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXUxThemes.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXLists.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXExtItems.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXPanel.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBXToolPals.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCheckTreeView.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTreeNode.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutline.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineDrawCommand.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineGroupNodeCreator.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineNode.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineNodeCreator.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineParticipant.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineReportNodeCreator.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineSettingsDialog.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineSettingsPreviewThread.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineViewer.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchCustomEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchCustomPreview.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchDrawCommandHighlighter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchDrawCommandHighlightRegistry.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchHighlighter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchRichTextHighlighter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchOccurrence.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchSelectionHighlighter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchPage.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchPageList.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchRegistration.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchError.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchPreview.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchPreviewIcons.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchEngineRegistry.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchRichTextEngine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchSettingsDialog.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchToolbox.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppScrollbox.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppAutosearchRTTI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppReportTemplateRTTI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundPrintThread.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundPrintQueue.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundPrintManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundPrintRequest.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundPrintSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundReportGenerator.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundContainerAdapter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBackgroundThreadSync.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFCatalog.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFContent.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererCustomText.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFDevice.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFFont.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFFontDescriptor.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFFontManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFFontWidths.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFGState.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFImage.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererImage.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFImageManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFInfo.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererLine.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFObject.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFPage.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFPageTree.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFProcSet.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRenderer.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererGeneric.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererShape.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererStandardText.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererText.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFUtils.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFRendererWrappedText.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFXObject.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDFXRef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmail.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailSettings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailLoginDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailLoginDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSMTPCustom.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSMTPMapi.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSMTPOutlook.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSMTPIndy.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppSMTPIndy10.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailMessage.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJCLBase.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJCLLogic.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJCLResources.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJCLRTTI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJCLStrings.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJvTabBar.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJvInspector.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppJvInspExtraEditors.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTB2Ver.inc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTBX.inc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\deflate.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\inflate.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\inftrees.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\trees.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\adler32.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\infblock.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\infcodes.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\infutil.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\inffast.obj
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbIDE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbIDE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRegPro.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDsgnDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEndUsr.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppExpFrm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppExpDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRptExpCommon.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRptExp.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\dclRBE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\dclRBE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\BuildEnt.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\BuildEnt.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbCIDE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbCIDE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbCT107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbCT107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTCell.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTCtrl.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTDsgn.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTEng.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTRend.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTWiz.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCWzDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\dclRBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\dclRBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTCUI107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTCUI107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTDBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\rbTDBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrtUI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrtDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChrtDP.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\ppChDPEd.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee404\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\dclRBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\dclRBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTCUI107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTCUI107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTDBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\rbTDBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppIfDef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrtUI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrtDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChrtDP.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChDPEdDlg.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\ppChDPEdDlg.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee503\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\dclRBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\dclRBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTCUI107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTCUI107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTDBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\rbTDBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppIfDef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrtUI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrtDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChrtDP.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChDPEdDlg.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\ppChDPEdDlg.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee600\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\dclRBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\dclRBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTCUI107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTCUI107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTDBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\rbTDBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppIfDef.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrtUI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrtDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChrtDP.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChDPEdDlg.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\ppChDPEdDlg.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\TeeChart\Tee706\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChDPEd.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChrt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChrtDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChrtDP.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChrtUI.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\dclRBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbTC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbTCUI107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbTDBC107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\dclRBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbTC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbTCUI107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbTDBC107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\dclDAD107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\dclDAD107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbADO107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDBE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDBE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbIBE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbIBE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDAD107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDAD107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDIDE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDIDE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDBDE107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDBDE107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daADO.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataDictionaryBuilder.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDatMan.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataModule.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDatMod.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataSettingDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataVw.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataView.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataViewToolWin.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataWizard.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataWizardManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDesignToolResources.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDBBDE.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daForms.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDBExpress.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daIBExpress.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daIDE.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daJoinPanel.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daJoinTableDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daLinkBroker.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daLinkDataViewDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daLinkManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daMetaBitmaps.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daMetaData.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daMetaDataManager.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daMetaDataDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daPreviewDataDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryDataView.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryDesigner.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryWizard.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryWizardCalcDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryWizardCriteriaDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daSQL.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daSQLBuilder.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daMagicSQL.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQClass.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQuery.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daSQLReservedWords.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daVisualLink.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daVisualLinkHint.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRegPro.dcr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataDictionaryBuilder.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataSettingDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daDataViewToolWin.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daJoinTableDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daLinkDataViewDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daMetaDataDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daPreviewDataDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryDesigner.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryWizard.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryWizardCalcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daQueryWizardCriteriaDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daVisualLinkHint.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\MyChkDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppAbout.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppASDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBarDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppBPsDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppChDPEdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppClcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCOrDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCTDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCWzDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDatDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDemo.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDrlDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDsgner.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppDsgWin.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailDlg.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppEmailLoginDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppExpDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppExpFrm.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFldEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFLnkEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppFmtDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppGrdDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppGrpDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppLWzDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppMemDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppNewDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppNoDataDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppOutlineSettingsDialog.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppParametersEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPgNDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPgSDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPosDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPrvDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRichEd.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRstDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppRWzDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppShfDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTextSearchSettingsDialog.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTmDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTmEDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppToolbars.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppTxtDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppVarDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raClcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\daIDEBmp.res
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\MyChkBox.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppCheckTreeView.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppIDEBmp.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\ppPrvBmp.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEdit.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbDADE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbIDE.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbPrint.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\rbRAP.RES
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\tbx_glyphs.res
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\TeeBmps.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raClass.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raClcDlg.dcu
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\raClcDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raClsMan.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raClsVal.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raCodMod.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raComm.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raConst.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raEdit.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raEvent.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raExpr.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raFunc.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raIDE.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raLngInf.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raObjectRTTI.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raParser.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raRelatv.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raStatem.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEdit.dcu
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEdit.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditHighlighter.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditKbdHandler.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditKeyCmds.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditKeyConst.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditMiscClasses.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditMiscProcs.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditSearch.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditStrConst.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditTextBuffer.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynEditTypes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynHighlighterPas.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raSynTextDrawer.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raTreeVw.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raTypes.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Source\raValue.dcu
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\1. AutoSearch Field to SQL Params
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\1. AutoSearch Field to SQL Params\AutoSearchFieldsToSQLParams.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\1. AutoSearch Field to SQL Params\AutoSearchFieldsToSQLParams.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\1. AutoSearch Field to SQL Params\SQLParams.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\1. AutoSearch Field to SQL Params\SQLParams.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\2. AutoSearch Field to Table Filter
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\2. AutoSearch Field to Table Filter\AutoSearchFieldsToTableFilter.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\2. AutoSearch Field to Table Filter\AutoSearchFieldsToTableFilter.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\2. AutoSearch Field to Table Filter\TableFilter.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\2. AutoSearch Field to Table Filter\TableFilter.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\3. AutoSearch Field to SQL Where Clause
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\3. AutoSearch Field to SQL Where Clause\AutoSearchFieldsToSQLWhereClause.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\3. AutoSearch Field to SQL Where Clause\AutoSearchFieldsToSQLWhereClause.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\3. AutoSearch Field to SQL Where Clause\SQLWhereClause.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\3. AutoSearch Field to SQL Where Clause\SQLWhereClause.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\AutoSearchFieldsToSQLWhereClause.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\AutoSearchFieldsToSQLWhereClause.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\CustomAutoSearchDialog.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\CustomAutoSearchDialog.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\myASDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\myASDlg.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\AutoSearchFieldsToSQLWhereClause.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\AutoSearchFieldsToSQLWhereClause.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\myASDlg.dfm
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\myASDlg.pas
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\CustomAutoSearchDialog.dpr
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\4. Custom AutoSearch Dialog\CustomAutoSearchDialog.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\5. Build Description of AutoSearch Settings
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\5. Build Description of AutoSearch Settings\AutoSearchFieldsToSQLWhereClause.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\5. Build Description of AutoSearch Settings\AutoSearchFieldsToSQLWhereClause.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\5. Build Description of AutoSearch Settings\AutoSearchDescription.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\5. Build Description of AutoSearch Settings\AutoSearchDescription.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\6. Set End-User Search Criteria in Code
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\6. Set End-User Search Criteria in Code\autosearch.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\6. Set End-User Search Criteria in Code\EndUserSearchCriteria.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\6. Set End-User Search Criteria in Code\EndUserSearchCriteria.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\6. Set End-User Search Criteria in Code\EndUserSearchCriteriaProj.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\6. Set End-User Search Criteria in Code\EndUserSearchCriteriaProj.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\7. Create EndUser AutoSearch Fields
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\7. Create EndUser AutoSearch Fields\CreateEndUserAutoSearchFields.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\7. Create EndUser AutoSearch Fields\CreateEndUserAutoSearchFields.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\7. Create EndUser AutoSearch Fields\CreateEndUserAutoSearchFieldsProj.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\5. AutoSearch\7. Create EndUser AutoSearch Fields\CreateEndUserAutoSearchFieldsProj.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\dclRBU107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\dclRBU107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\rbUSER107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\rbUSER107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\rbUSERDesign107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\rbUSERDesign107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\myReg.dcu
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\myReg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\MyChkBox.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\MyChkBox.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\myChkboxDesign.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\MyChkDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\6. RCL\MyChkDlg.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\CallDLL.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\CallDLL.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\RptDLL.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\RptDLL.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\FormDLL.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\FormDLL.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\TestDLL.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\7. DLL\TestDLL.dfm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Demo.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Demo.mb
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Demo.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\VendOrd.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\VendOrd.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\VendOrd.xG0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\VendOrd.YG0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Customer.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Order.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0131.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0132.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0133.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0134.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\rbuilder.gif
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\TypedFile.typ
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0011.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0012.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0016.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0017.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0023.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0024.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0025.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0026.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0033.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\dm0091.raf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\ArchiveItems.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\ArchiveItems.MB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Archives\ArchiveItems.PX
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5160.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5164.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5196.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5261.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5267.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5366.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry5660.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Avry6490.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Template\Items.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Demo.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\Demo.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmMain.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmLevels.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmLevels.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmPrvw.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmPrvw.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmUtil.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmEvents.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dmEvents.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0011.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0011.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0012.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0012.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0013.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0013.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0014.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0014.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0015.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0015.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0016.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0016.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0017.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0017.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0018.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0018.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0021.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0021.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0022.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0022.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0023.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0023.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0024.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0024.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0025.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0025.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0026.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0026.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0027.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0027.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0028.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0028.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0029.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0029.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0031.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0031.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0032.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0032.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0033.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0033.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0041.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0041.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0042.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0042.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0051.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0051.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0052.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0052.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0061.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0061.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0062.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0062.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0063.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0063.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0064.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0064.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0071.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0071.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0072.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0072.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0073.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0073.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0081.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0081.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0082.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0082.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0083.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0083.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0084.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0084.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0085.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0085.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0091.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0091.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0092.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0092.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0101.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0101.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0102.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0102.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0103.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0103.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0104.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0104.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0105.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0105.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0106.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0106.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0107.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0107.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0108.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0108.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0109.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0109.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0110.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0110.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0111.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0111.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0112.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0112.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0113.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0113.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0114.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0114.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0115.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0115.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0116.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0116.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0121.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0121.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0122.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0122.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0123.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0123.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0124.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0124.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0131.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0131.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0132.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0132.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0133.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0133.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0134.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0134.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0135.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0135.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0136.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0136.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0137.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0137.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0138.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0138.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0139.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0139.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0140.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0140.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0141.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0141.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0142.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0142.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0143.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0143.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0144.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0144.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0145.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0145.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0146.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0146.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0147.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0147.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0148.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0148.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0149.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0149.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0151.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0151.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0152.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0152.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0153.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0153.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0154.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0154.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0155.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\1. Reports\dm0155.dfm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbFolder.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbfolder.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbFolder.xg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbFolder.yg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbItem.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbItem.mb
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbItem.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbItem.xg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbItem.yg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbTable.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbTable.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbField.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbField.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbJoin.DB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbJoin.PX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbJoin.XG0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\rbJoin.YG0
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbFolder.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbFolder.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbFolder.xg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbFolder.yg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbItem.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbItem.mb
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbItem.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbItem.xg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbItem.yg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbTable.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbTable.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbField.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbField.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbJoin.DB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbJoin.PX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbJoin.XG0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\EmptyDBs\rbJoin.YG0
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\1. Report Explorer
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\1. Report Explorer\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\1. Report Explorer\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\1. Report Explorer\MyEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\1. Report Explorer\MyEURpt.dfm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\MyEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\MyEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\MyDataVw.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\myQueryDatavw.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\dvDesign.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\2. Custom Data Views\dvDesign.dfm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\3. AutoJoins
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\3. AutoJoins\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\3. AutoJoins\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\3. AutoJoins\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\3. AutoJoins\myEURpt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI\mdiForm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI\mdiForm.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI\mdiChild.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI\mdiChild.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI\MDI.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\4. MDI\MDI.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\myDynamicLoadingSubReport.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\myFooterTemplate.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\myHeaderTemplate.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\mySettings.ini
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\mySubRptIcon.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\myTitleTemplate.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\3. EndUser\5. Dynamic Subreport Loading\EndUser.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbField.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbField.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbFolder.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbFolder.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbFolder.xg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbFolder.yg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbItem.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbItem.mb
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbItem.px
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbItem.xg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbItem.yg0
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbTable.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\Data\DSLData\rbTable.px
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DADE Plug-Ins.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\RBTables42.mdb
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\CreateEndUserTables.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\1. BDE\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\1. BDE\myEURpt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\2. ADO
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\2. ADO\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\2. ADO\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\2. ADO\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\2. ADO\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Access\2. ADO\myEURpt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\daADS.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbAds107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbAds107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbField.ADT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbFolder.ADT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbItem.ADM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbItem.ADT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbJoin.ADT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\rbTable.ADT
+File Overwrite: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Advantage\1. Native\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\daNexusDB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbNexusDB107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbNexusDB107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbField.nx1
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbFolder.nx1
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbItem.nx1
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbJoin.nx1
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\NexusDB\rbTable.nx1
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\daDBISAM.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\rbISAM107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\rbISAM107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\myEURpt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbField.DAT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbField.IDX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbFolder.DAT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbFolder.IDX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbItem.DAT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbItem.IDX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbItem.BLB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbJoin.DAT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbJoin.IDX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbTable.DAT
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\DBISAM\1. Native\Data\rbTable.IDX
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\CreateEndUserTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\1. BDE\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\2. dbExpress
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\2. dbExpress\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\2. dbExpress\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\2. dbExpress\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\2. dbExpress\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\2. dbExpress\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\3. IB Express
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\3. IB Express\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\3. IB Express\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\3. IB Express\myEUrpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\3. IB Express\myEUrpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\3. IB Express\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\daIBO.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\rbIBO107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\rbIBO107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\InterBase\4. IB Objects\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\CreateEndUserTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\1. BDE\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\2. dbExpress
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\2. dbExpress\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\2. dbExpress\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\2. dbExpress\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\2. dbExpress\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\2. dbExpress\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\daDOA.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\rbDOA107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\rbDOA107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Oracle\3. DOA\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox\1. BDE\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Paradox\1. BDE\EndUser.dpr
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\CreateEndUserTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\1. BDE\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\2. ADO
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\2. ADO\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\2. ADO\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\2. ADO\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\2. ADO\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Anywhere\2. ADO\myEURpt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\CreateEndUserTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\1. BDE\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\StoredProc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\StoredProc\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\StoredProc\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\StoredProc\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\StoredProc\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\SQL Server\2. ADO\StoredProc\myStoredProcDataView.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\CreateEndUserTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASA\1. BDE\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\CreateEndUserTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\1. BDE
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\1. BDE\EndUser.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\1. BDE\EndUser.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\1. BDE\myEURpt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\1. BDE\myEURpt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\4. EndUser Databases\Sybase ASE\1. BDE\ReadMe.doc
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ctLevels.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ctLevels.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ctMain.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ctMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ctRptFrm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\Demo.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\Demo.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\CrossTab.DB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\CrossTab.MB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\CrossTab.PX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct112.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct002.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct003.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct004.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct005.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct006.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct011.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct012.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct013.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct014.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct015.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct016.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct021.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct022.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct023.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct024.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct025.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct026.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct027.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct028.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct029.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct030.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct031.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct032.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct033.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct034.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct035.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct041.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct042.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct043.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct044.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct045.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct046.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct047.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct048.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct051.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct052.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct053.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct054.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct055.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct056.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct057.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct058.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct061.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct062.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct063.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct064.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct065.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct066.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct067.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct068.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct071.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct072.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct073.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct074.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct075.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct076.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct077.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct078.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct081.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct082.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct083.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct084.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct085.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct086.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct087.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct088.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct091.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct092.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct093.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct094.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct095.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct096.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct097.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct098.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct101.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct102.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct103.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct104.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct105.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct106.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct107.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct108.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct111.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct001.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct113.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct114.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct115.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct116.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct117.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct118.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct119.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct120.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct121.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct121.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct122.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct122.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct123.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct123.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct124.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct124.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct125.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct125.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct126.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct126.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct127.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct127.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct131.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct132.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct133.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct134.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct135.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\2. CrossTabs\ct136.rtm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\RAP.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\RAP.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rpLevels.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rpLevels.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rpMain.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rpMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myUserInputForm.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myUserInputForm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myRapFuncs0031.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myRapFuncs0032.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myRapFuncs0033.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myRapFuncs0034.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myRapFuncs0035.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\myRapFuncs0036.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0041.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0041.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0042.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0042.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap.DB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap.MB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap.PX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0001.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0002.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0003.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0004.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0005.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0006.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0011.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0012.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0013.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0014.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0015.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0016.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0017.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0017.bmp
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0017.RTF
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0017.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0021.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0022.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0023.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0031.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0032.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0033.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0034.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0035.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\1. Main\rap0036.rtm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\CSandRAP.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\CSandRAP.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\raCSFuncs.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rpLevels.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rpLevels.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rpMain.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rpMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\dclRBCS107.dpk
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\dclRBCS107.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\ReadMe.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap.DB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap.MB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap.PX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap0001.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap0002.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap0003.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\2. CodeSite\rap0004.rtm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\rapTutorials.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\rapTutorials.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutLevels.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutLevels.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutMain.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\myRapClass.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\myRapFuncs.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\myRapFuncsForm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\myUserInputForm.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\myUserInputForm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\Tutor.db
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\Tutor.MB
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\Tutor.PX
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0001.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0002.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0003.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0004.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0005.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0006.rtm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Demos\0. RAP\3. Tutorials\raTutor0007.rtm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Customer.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\MMLetter.RTF
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\stock.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\w2.wmf
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\01. Report via the Data Tree
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\01. Report via the Data Tree\rbViaDT.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\01. Report via the Data Tree\rbViaDT.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\02. Report via the Report Wizard
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\02. Report via the Report Wizard\CustTab.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\02. Report via the Report Wizard\CustVert.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\02. Report via the Report Wizard\rbViaWiz.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\02. Report via the Report Wizard\rbViaWiz.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\03. Simple Report the Hard Way
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\03. Simple Report the Hard Way\rbCust.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\03. Simple Report the Hard Way\rbCust.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\03. Simple Report the Hard Way\stock.RTM
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\04. Groups, Calculations, Summary
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\04. Groups, Calculations, Summary\rbStock.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\04. Groups, Calculations, Summary\rbStock.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\05. Using Regions
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\05. Using Regions\rbRegion.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\05. Using Regions\rbRegion.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\06. Forms Emulation using WMF
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\06. Forms Emulation using WMF\rbFormE.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\06. Forms Emulation using WMF\rbFormE.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\06. Forms Emulation using WMF\w2.wmf
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\07. Master - Detail Report
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\07. Master - Detail Report\MD.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\07. Master - Detail Report\rbMD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\07. Master - Detail Report\rbMD.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\08. Master - Detail - Detail Report
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\08. Master - Detail - Detail Report\rbMDD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\08. Master - Detail - Detail Report\rbMDD.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\09. Drill Down SubReports
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\09. Drill Down SubReports\rbDrillD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\09. Drill Down SubReports\rbDrillD.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\10. Section Style SubReports
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\10. Section Style SubReports\rbSectSR.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\10. Section Style SubReports\rbSectSR.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\11. Mailing Labels
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\11. Mailing Labels\rbMailL.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\11. Mailing Labels\rbMailL.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\12. Print to Text File
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\12. Print to Text File\Customer.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\12. Print to Text File\rbToTxt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\12. Print to Text File\rbToTxt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\13. Print from Text File
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\13. Print from Text File\Customer.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\13. Print from Text File\rbFrmTxt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\13. Print from Text File\rbFrmTxt.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\14. Using the JITPipeline
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\14. Using the JITPipeline\Customer.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\14. Using the JITPipeline\rbFrmJIT.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\14. Using the JITPipeline\rbFrmJIT.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\15. MailMerge with RichText
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\15. MailMerge with RichText\MMLetter.RTF
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\15. MailMerge with RichText\rbMailM.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\15. MailMerge with RichText\rbMailM.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbStock.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\CustTab.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\CustVert.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\MMLetter.RTF
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbClass.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbCust.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbCust.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbDrillD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbDrillD.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbFormE.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbFormE.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbFrmJIT.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbFrmJIT.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbFrmTxt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbFrmTxt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMailL.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMailL.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMailM.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMailM.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMain.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMain.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMainPj.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMainPj.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMD.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMDD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbMDD.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbPrvDlg.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbPrvDlg.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbRegion.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbRegion.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbSectSR.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbSectSR.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbStock.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\Customer.txt
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbToTxt.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbToTxt.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbViaDT.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbViaDT.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbViaWiz.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\rbViaWiz.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\stock.RTM
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\01. Reporting\w2.wmf
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\16. Cross Tab
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\16. Cross Tab\rbCross.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\I. Reports\16. Cross Tab\rbCross.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\DataDictTables.sql
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\ExploreTables.sql
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\02. End-User Reporting
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\02. End-User Reporting\rbEndUsr.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\02. End-User Reporting\rbEndUsr.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\02. End-User Reporting\rbEUProj.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\02. End-User Reporting\rbEUProj.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\03. End-User with Data Dictionary
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\03. End-User with Data Dictionary\rbDDProj.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\03. End-User with Data Dictionary\rbDDProj.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\03. End-User with Data Dictionary\rbEUDD.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\03. End-User with Data Dictionary\rbEUDD.pas
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer\rbREProj.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer\rbREProj.res
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer\rbExpFrm.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer\rbExpFrm.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer\rbEndUsr.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\04. End-User with Custom Explorer\rbEndUsr.dfm
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase\DataDictTables.sql
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase\ExploreTables.sql
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase\rbEndUIB.dfm
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase\rbEndUIB.pas
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase\rbEUIB.dpr
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Tutorials\Complete\II. Applications\05. End-User with Interbase\rbEUIB.res
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Help
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Help\RBUILDER.HLP
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Help\rbuilder.CNT
+File Copy: C:\Program Files\Borland\Delphi7\Help\rbuilder.CNT
+File Copy: C:\Program Files\Borland\Delphi7\Help\RBUILDER.HLP
+Made Dir: C:\Program Files\Borland\Delphi7\RBuilder\Developer's Guide
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Developer's Guide\RBuilder.pdf
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Help\RAP.HLP
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Help\RAP.CNT
+File Copy: C:\Program Files\Borland\Delphi7\Help\RAP.CNT
+File Copy: C:\Program Files\Borland\Delphi7\Help\RAP.HLP
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Data Access Environment
+RegDB Name: $(DELPHI)\RBuilder\Lib\dclDAD107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Sample Components
+RegDB Name: $(DELPHI)\RBuilder\Lib\dclRBU107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Data Access for BDE
+RegDB Name: C:\WINDOWS\system32\rbDBDE107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Data Access for ADO
+RegDB Name: C:\WINDOWS\system32\rbADO107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Data Access for DB Express
+RegDB Name: C:\WINDOWS\system32\rbDBE107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Data Access for Interbase Express
+RegDB Name: C:\WINDOWS\system32\rbIBE107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\ReportBuilder
+RegDB Val: C:\Program Files\Borland\Delphi7\RBuilder
+RegDB Name: RootDir
+RegDB Root: 2
+RegDB Key: Software\Borland\Delphi\7.0\ReportBuilder
+RegDB Val: RBE
+RegDB Name: Version
+RegDB Root: 2
+RegDB Key: Software\Borland\Delphi\7.0\ReportBuilder
+RegDB Val: 10.02
+RegDB Name: VersionNo
+RegDB Root: 2
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder Enterprise
+RegDB Name: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRBE107.bpl
+RegDB Root: 1
+RegDB Key: Software\Borland\Delphi\7.0\Known Packages
+RegDB Val: ReportBuilder RAP Language
+RegDB Name: C:\Program Files\Borland\Delphi7\RBuilder\Lib\dclRAP107.bpl
+RegDB Root: 1
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\Release.doc
+File Copy: C:\Program Files\Borland\Delphi7\RBuilder\UNWISE.EXE
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\ReportBuilder Enterprise 10.02 for Delphi 7
+RegDB Val: ReportBuilder Enterprise 10.02 for Delphi 7
+RegDB Name: DisplayName
+RegDB Root: 2
+RegDB Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\ReportBuilder Enterprise 10.02 for Delphi 7
+RegDB Val: C:\PROGRA~1\Borland\Delphi7\RBuilder\UNWISE.EXE C:\PROGRA~1\Borland\Delphi7\RBuilder\INSTALL.LOG
+RegDB Name: UninstallString
+RegDB Root: 2
+Delete in-use files: On

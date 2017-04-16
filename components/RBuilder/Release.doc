@@ -1,0 +1,227 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\nowidctlpar\tx360\b\f0\fs32 ReportBuilder for Delphi 7\par
+Enterprise Edition\par
+Release Notes\par
+\pard\nowidctlpar\fs20\par
+\b0\f1\fs24 Digital Metaphors Corporation\par
+4126 Avondale Ave., #B\par
+Dallas, Texas 75219\par
+\pard\nowidctlpar\tx1800\par
+\pard\nowidctlpar\tx1440 E-Mail: \tab support@digital-metaphors.com\par
+Telephone:\tab 214.239.9471\par
+Facsimile:\tab 267.501.5740\par
+\pard\nowidctlpar Web-Site:\tab www.digital-metaphors.com\par
+\pard\nowidctlpar\tx360\b\f0\fs20\par
+\pard\nowidctlpar\qr\tx360\par
+\pard\nowidctlpar\tx360\b0\fs32 Version 10.02\fs24\par
+\f1 For information regarding what's new for this version, please see the 'What's New' section of the on-line help.\par
+\par
+\pard\nowidctlpar\b\fs28 TeeChart Support\par
+\b0\fs24 TeeChart 7 is supported for Delphi 6, 7, 2005, and 2006. \cf1 Please see the TeeChart topic in RBuilder.hlp for more details.\cf0\fs20\par
+\pard\nowidctlpar\tx360\par
+\pard\nowidctlpar\b\fs28 Prior installations\par
+\b0\fs24 The installation program will automatically detect and delete any existing version of ReportBuilder for Delphi 7 installed on your system.  The entire root directory in which ReportBuilder is installed will be deleted.  It is therefore imperative that you backup any custom work that may reside in this directory before installing this version. The default install directory is now:\par
+\par
+\pard\nowidctlpar\li720 $(DELPHI)\\RBuilder\par
+\pard\nowidctlpar\par
+This directory is used regardless of whether you are installing ReportBuilder Standard, Professional, or Enterprise.\par
+\par
+\pard\nowidctlpar\tx360\f0\fs32 Delphi 7 Release Notes:\b\fs24\par
+\f1\fs28\par
+1. dbExpress support\par
+\b0\fs24\par
+ReportBuilder can be used with the dbExpress TSQLClientDataSet component. ReportBuilder does NOT support undirectional datasets and therefore cannot be used with TSQLDataSet, TSQLQuery, TSQLStoredProc, and TSQLTable.\par
+\par
+When using a TSQLClientDataSet with a ReportBuilder report, simply connect a DBPipeline to a standard Delphi DataSource component.\par
+\par
+In order to use the query tools available in the Data workspace of the Report Designer, the Designer component must be configured as shown in the end-user database example in: ...\\RBuilder\\Demos\\EndUser Databases\\Interbase\\dbExpress.\par
+\par
+\b\fs28 2. Issues with Frames\f0\fs20\par
+\b0\f1\fs24\par
+Frames (TFrame) in Delphi are containers that enable collections of components to be visually configured and re-used. Unlike form inheritance, however, Delphi does not permit new components to be added to frame descendants (i.e. frames embedded on forms or other frames). \par
+\par
+Therefore, if a Report object is placed on a frame, the report layout must be maintained entirely in the top level ancestor. You cannot access a form containing the frame and add report components, nor can new report layouts be loaded from templates. \par
+\par
+ReportBuilder's DBPipeline and BDEPipeline components cannot currently be used with frames. Both of these components automatically create Field components (i.e. AutoCreateFields) when a dataset is opened. This behavior will cause access violations if a data pipeline is placed in a descendant frame.\par
+\par
+\f0\fs32\par
+Installation Notes\b\fs20\par
+\b0\par
+\cf1\b\f1\fs28 1. Install ReportBuilder\f0\fs20\par
+\b0\f1\fs24 The installation program will copy files into the ...\\RBuilder directory, add the ReportBuilder components to a 'RBuilder' tab of the Delphi component palette, install the ReportBuilder help into the Delphi help system, and install TeeChart support (if you have TeeChart installed). \par
+\par
+If after installing ReportBuilder and launching Delphi, you do not see the RBuilder tab on the Delphi component palette, access the Component | Install Packages menu option, go to the bottom of the package list, and check each of the ReportBuilder packages.  If the packages are already checked, access the Component | Configure Palette\'85 menu option and move the RBuilder tab up the list, positioning it right before the 'Data Controls' tab.  This will allow you to see the RBuilder tab without scrolling right on the Delphi component palette.\par
+\f0\par
+\b\f1\fs28 2. Review the on-line help\f0\fs20\par
+\b0\f1\fs24 If it appears that ReportBuilder is not installed correctly, use the information in the on-line help to troubleshoot your installation.  The on-line help is located in the RBuilder.hlp file in the RBuilder\\Help directory.  From the table of contents, select 'Installing ReportBuilder'.\par
+\b\f0  \par
+\f1\fs28 3. Convert Reports\f0\fs20\par
+\b0\f1\fs24 ReportBuilder will convert reports that were created with previous versions. Please back-up your existing reports before beginning the conversion process.  Reports converted to the current version will not be useable by previous versions of ReportBuilder.\par
+\par
+The first time you open your reports, a conversion routine will run, assigning the values of discontinued properties to their new counterparts.  Simply opening and closing a form (and saying Yes to the Save Changes? dialog) is enough to convert the reports contained therein to the current format.  If you have reports in RTM files, load the RTMs into a report object at Delphi design-time and then save the RTM to file. Due to the nature of the conversion routine, it will take at least 1-2 seconds for the routine to run when converting reports created with a version previous to ReportBuilder 4.0.\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 10.02 - 03/16/2006\par
+\par
+\f1 Designer Enhancements\f0\par
+\f1\fs24  \bullet  new TppDesignerWindow.MenuDock property (can be used to move menu to a parent form)\f0\fs28\par
+\pard\nowidctlpar\tx360\tx720\f1\fs24  \bullet  added ShowComponents support for PageBreak and 2dBarCode components\par
+ \bullet  modified Paste so that it does not apply an offset when pasting to a different report\par
+\par
+\fs28 Dade Enhancements\fs24\par
+\pard\nowidctlpar\tx360  \bullet  improved generation of linking SQL (i.e. magic sql) to work for more complex cases\par
+\ul\f0\fs28\par
+Fixes\par
+\par
+\ulnone Version 10.02 - 03/16/2006\par
+\par
+\f1 Designer Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  changing Language did not update the interface immediately, a shut down was required\par
+ \bullet  menu short cuts did not work for international installations\par
+ \bullet  ShowComponents feature was not working\par
+ \bullet  closing Designer from the Preview workspace, did not support close query (i.e. ask user to save changes)\par
+ \bullet  importing a template file, did not support close query (for end-user applications)\par
+ \bullet  snap to grid support for sizing controls is sometimes one pixel off\par
+ \bullet  align toolbar options for Space Horizontally and Space Vertically did not work properly\par
+ \bullet  align top sometimes changes the z-order of the components\par
+\pard\nowidctlpar\tx360  \bullet  closing designer while subreport selected and then loading a new report, did not update workspace correctly\par
+\par
+\fs28 DataPipeline Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  an AV can sometimes occur when a DBPipeline is destroyed and FreeBookmark is called\par
+ \bullet  added support for Delphi 2006 TWideMemoField datatype\par
+ \bullet  fixed an issue with storing a template to an "ntext" field in SQL Server for Delphi D2006\par
+\pard\nowidctlpar\tx360\fs28\par
+Report Component Library (RCL) Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed 2DBarCode PDF417 numerical encoding for sequences of digits longer than 13.\par
+\pard\nowidctlpar\tx360  \bullet  fixed 2DBarCode sizing calculations so that screen display and printing match\fs28\par
+\par
+Report Output Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  printer defaults for properties other than PrinterSetup (such as Quality) were not always used\par
+\pard\nowidctlpar\tx360  \bullet  cancel button was disabled when the viewer was busy calculating the first pass of a report\par
+ \bullet  fix for case in which autosearch defaults to an empty report\par
+ \bullet  when detail is zero height, the preview workspace does not get activated properly\par
+ \bullet  when report is two pass, sometimes switching back to calc or design causes an AV\par
+\par
+\fs28 Engine Fixes\par
+\fs24  \bullet  updated internal event notification related to freeing bookmarks when a datapipeline is closed\fs28\par
+\par
+Dade Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  Query Designer 'Edit SQL as Text' feature was not working properly\par
+\pard\nowidctlpar\tx360  \bullet  when visual data link deleted, the underlying field links were not always removed\fs28\par
+\par
+End User Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed issues with IBExpress demo\par
+\pard\nowidctlpar\tx360  \bullet  fixed ReportExplorer MergeMenu to work with new MenuBar class\par
+ \bullet  added Menubar and Toolbar properties to the ReportExplorerForm class\fs28\par
+\par
+Rap Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed Rap Interface Option hiding the Calc tab (riNotebookTab)\par
+\pard\nowidctlpar\tx360  \bullet  RAP Editor was incorrectly highlighting "//" as a comment (RAP compiler does not support this)\par
+ \bullet  fixed issued related to switching from a subreport Calc workspace to Preview, and then to Design\fs28\par
+\fs24\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\ulnone Version 10.01 - 02/24/2006\par
+\par
+\f1 Designer Enhancements\f0\par
+\f1\fs24  \bullet  added Theme support for Designer Notebook Tabs\f0\fs28\par
+\pard\nowidctlpar\tx360\tx720\f1\fs24  \bullet  Save/Restore Design selection when switch tabs\par
+ \bullet  added snap to grid support for Sizing a control\par
+\par
+\fs28 Report Component Library (RCL) Enhancements\fs24\par
+\pard\nowidctlpar\tx360  \bullet  PrintHumanReadable property added to the 2DBarCode component\par
+\par
+\fs28 String Translator Application\par
+\fs24  \bullet  updated for RB 10 strings\ul\f0\fs28\par
+\par
+Fixes\par
+\par
+\ulnone Version 10.01 - 02/24/2006\par
+\par
+\f1 Designer Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  edit toolbar now supports multi-selection  (edit box, combo boxes)\par
+ \bullet  ToolWindows now restore docked width\par
+ \bullet  sort field alias list that is displayed in the edit toolbar\par
+ \bullet  sort field alias list that is displayed in the report wizard\par
+ \bullet  edit toolbar combo boxes now support auto completion (i.e. Pipeline list, Field list).\par
+ \bullet  format toolbar buttons for center and right justify were switched\par
+ \bullet  improved Design Preview exception handling (exceptions that occur during report generation)\par
+ \bullet  when switching to subreport tabs in the designer, sometimes an AV occurs\par
+\pard\nowidctlpar\tx360  \bullet  fixed registration of rbIDE resource file used for international language support\par
+\pard\nowidctlpar\tx360\tx720  \bullet  TppDesigner.OnTabChange event passed incorrect NewTab value\par
+ \bullet  when using XPMan the spin controls did not look quite correct\par
+ \bullet  designer.MergeMenu did not properly clone Separator items\par
+ \bullet  past undo support was not working correctly\par
+ \bullet  group Header/footer menu does not display group dialog\par
+ \bullet  snap to grid for y pos is only accurate for the header band\par
+ \bullet  grid options Size does not immediately change the workspace\par
+ \bullet  rulers do not always stay in sync - when scrollable area changes\par
+\pard\nowidctlpar\tx360  \bullet  when workspace gets focus, it incorrectly auto scrolls to the top\fs28\par
+\par
+Report Component Library (RCL) Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  renamed Toolbar resource file to ensure uniqueness\par
+ \bullet  TmyCheckbox .dcu files were not installed correctly\par
+ \bullet  2DBarCode fix for PDF417 encoding in which Data contains a sequence of more than 13 digits\par
+\pard\nowidctlpar\tx360  \bullet  2DBarCode BarWidth and BarHeight changes are rendered correctly\fs28\par
+\par
+Report Output Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  fixed issue where shapes were filling with a black background color if a brush pattern was used\par
+\pard\nowidctlpar\tx360  \bullet  fixed issue where Right aligned text was being cut off when not autosized in PDF\fs28\par
+\par
+Dade Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  when using PostgreSQL database type, modified to use the AS operator for field aliasing\par
+\pard\nowidctlpar\tx360  \bullet  fix for case in which a query contains a field with the same name from two tables and both are used for autosearch\fs28\par
+\par
+End User Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  Advantage EndUser example update\par
+\pard\nowidctlpar\tx360  \bullet  modified Dynamic Load Subreport demo to suppress report explorer locate record event while loading the subreport template\fs28\par
+\par
+Rap Fixes\par
+\pard\nowidctlpar\tx360\tx720\fs24  \bullet  RAP calc dialog was not initialized properly\par
+\pard\nowidctlpar\tx360  \bullet  Renamed RAP Editor resource file\par
+\par
+\par
+\ul\f0\fs28 Enhancements\par
+\par
+\pard\nowidctlpar\tx360\tx720\ulnone Version 10.0 - 02/09/2006\b\f1\par
+\par
+\b0 Designer Enhancements\par
+\fs24  \bullet  new internal architecture - extensive rewrite\par
+ \bullet  new XP style toolbars (supports themes)\par
+ \bullet  new XP style menus (support themes)\par
+ \bullet  new XP style popup menu (supports themes)\par
+ \bullet  new XP style tabbed notebook\par
+ \bullet  new XP style dockable tool windows\par
+ \bullet  new XP style icons\par
+ \bullet  enhanced Object Inspector to support multi-selection\par
+ \bullet  enhanced popup menus to support multi-selection\par
+ \bullet  new RAP Code Editor\par
+\fs28\par
+Report Component Library (RCL) Enhancements\par
+ \fs24\bullet  new 2D BarCode component: PDF417 and MaxiCode\par
+ \bullet  support for TeeChart 7.06 (Delphi 2006, Delphi 2005, Delphi 7)\par
+ \bullet  enhanced shape and line alignment\par
+\fs28\par
+Report Output Enhancements\par
+\fs24  \bullet  XP style Previewer\par
+ \bullet  new built-in Email capability w/plug-in architecture including Outlook, MAPI, Indy plug-ins\par
+ \bullet  enhanced PDFDevice archtitecture to support registering "Renderer" classes for each DrawCommand class\par
+\par
+\fs28 Report Explorer Enhancements\par
+\fs24  \bullet  new XP style toolbars, menus, popup menus, icons\par
+ \bullet  optimized performance (new ItemTemplatePipeline property)\par
+ \bullet  enhanced to support Report Designer MRU (most recently used) Items\par
+\par
+\fs28 Visual Data Access Enhancements\par
+\fs24  \bullet  new XP style tabs, toolbars, tool windows, menus, popup menus, icons\par
+ \bullet  enhanced scrollable work space\par
+ \bullet  new stored procedure custom DataView example (RBuilder\\Demos\\EndUser Databases\\SQL Server\\ADO\\Stored Procedures)\par
+\fs28\par
+RAP Enhancements\par
+\fs24  \bullet  new XP style tabs, menus, popup menus, icons\par
+\pard\nowidctlpar\tx360  \bullet  new professional style RAP code editor\f0\fs28\par
+}
+ 
