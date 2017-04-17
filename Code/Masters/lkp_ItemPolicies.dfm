@@ -1,6 +1,6 @@
 object fmItemPolicies: TfmItemPolicies
-  Left = 400
-  Top = 147
+  Left = 187
+  Top = 151
   BorderStyle = bsDialog
   Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1578#1587#1593#1610#1585
   ClientHeight = 499
@@ -165,9 +165,9 @@ object fmItemPolicies: TfmItemPolicies
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 734
-      Top = 12
-      Width = 127
+      Left = 626
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1601#1578#1581
       Font.Charset = DEFAULT_CHARSET
@@ -180,9 +180,9 @@ object fmItemPolicies: TfmItemPolicies
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 590
-      Top = 12
-      Width = 127
+      Left = 503
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1573#1590#1575#1601#1577
       Font.Charset = DEFAULT_CHARSET
@@ -195,9 +195,9 @@ object fmItemPolicies: TfmItemPolicies
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 447
+      Left = 379
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1578#1593#1583#1610#1600#1600#1604
       Font.Charset = DEFAULT_CHARSET
@@ -212,7 +212,7 @@ object fmItemPolicies: TfmItemPolicies
     object btnDelete: TButton
       Left = 11
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1584#1601
       Font.Charset = DEFAULT_CHARSET
@@ -225,9 +225,9 @@ object fmItemPolicies: TfmItemPolicies
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 305
+      Left = 254
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1601#1600#1600#1600#1600#1600#1592
       Font.Charset = DEFAULT_CHARSET
@@ -240,9 +240,9 @@ object fmItemPolicies: TfmItemPolicies
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 158
+      Left = 132
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1573#1604#1594#1575#1569
       Font.Charset = DEFAULT_CHARSET
@@ -254,6 +254,21 @@ object fmItemPolicies: TfmItemPolicies
       TabOrder = 4
       OnClick = BtnCancelClick
     end
+    object BtnShow: TButton
+      Left = 750
+      Top = 13
+      Width = 115
+      Height = 35
+      Caption = #1593#1585#1590
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 6
+      OnClick = BtnShowClick
+    end
   end
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
@@ -262,6 +277,7 @@ object fmItemPolicies: TfmItemPolicies
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
+    AfterScroll = SDS_HeaderAfterScroll
     OnNewRecord = SDS_HeaderNewRecord
     Left = 24
     Top = 16
@@ -318,6 +334,16 @@ object fmItemPolicies: TfmItemPolicies
       FieldName = 'ItemCode'
       Required = True
     end
+    object SDS_ItemPricesItemNameAr: TStringField
+      DisplayLabel = #1573#1587#1605' '#1575#1604#1589#1606#1601
+      FieldKind = fkLookup
+      FieldName = 'ItemNameAr'
+      LookupDataSet = SDS_ItemDef
+      LookupKeyFields = 'ItemCode'
+      LookupResultField = 'ItemNameAr'
+      KeyFields = 'ItemCode'
+      Lookup = True
+    end
     object SDS_ItemPricesPolicyCode: TStringField
       FieldName = 'PolicyCode'
       Required = True
@@ -330,28 +356,120 @@ object fmItemPolicies: TfmItemPolicies
       Required = True
       Size = 6
     end
+    object SDS_ItemPricesItemUnitAr: TStringField
+      DisplayLabel = #1575#1604#1608#1589#1601
+      FieldKind = fkLookup
+      FieldName = 'ItemUnitDescAr'
+      LookupDataSet = SDS_ItemUnit
+      LookupKeyFields = 'ItemUnitCode'
+      LookupResultField = 'ItemUnitDescA'
+      KeyFields = 'ItemUnit'
+      Lookup = True
+    end
     object SDS_ItemPricesPriceValue: TFMTBCDField
       DisplayLabel = #1575#1604#1587#1593#1585
       DisplayWidth = 6
       FieldName = 'PriceValue'
       Precision = 18
+      Size = 8
     end
     object SDS_ItemPricesPriceRatio: TFMTBCDField
       DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1587#1593#1585
       DisplayWidth = 6
       FieldName = 'PriceRatio'
       Precision = 18
+      Size = 8
     end
     object SDS_ItemPricesDiscountRatio: TFMTBCDField
       DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1582#1589#1605
       DisplayWidth = 6
       FieldName = 'DiscountRatio'
       Precision = 18
+      Size = 8
     end
   end
   object DS_ItemPrices: TDataSource
     DataSet = SDS_ItemPrices
     Left = 88
     Top = 272
+  end
+  object SDS_ItemUnit: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemUnit'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 144
+    Top = 336
+    object SDS_HeaderItemUnitCode: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'ItemUnitCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_HeaderItemUnitDescA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'ItemUnitDescA'
+      Size = 75
+    end
+    object SDS_HeaderItemUnitDescE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'ItemUnitDescE'
+      Size = 75
+    end
+    object SDS_HeaderUnitTransCode: TStringField
+      DisplayLabel = #1575#1604#1608#1581#1583#1607' '#1575#1604#1605#1585#1578#1576#1591#1577
+      FieldName = 'UnitTransCode'
+      Size = 6
+    end
+    object SDS_HeaderUnitTransValue: TFMTBCDField
+      DisplayLabel = #1575#1604#1605#1593#1575#1605#1604
+      DisplayWidth = 5
+      FieldName = 'UnitTransValue'
+      Precision = 18
+      Size = 8
+    end
+    object StringField1: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+  end
+  object DS_ItemUnit: TDataSource
+    DataSet = SDS_ItemUnit
+    Left = 184
+    Top = 336
+  end
+  object SDS_ItemDef: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemDefinition'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 168
+    Top = 384
+    object SDS_ItemDefItemCode: TStringField
+      FieldName = 'ItemCode'
+      Required = True
+      Size = 25
+    end
+    object SDS_ItemDefItemNameAr: TStringField
+      FieldName = 'ItemNameAr'
+      Size = 255
+    end
+    object SDS_ItemDefItemNameEn: TStringField
+      FieldName = 'ItemNameEn'
+      Size = 255
+    end
+  end
+  object DS_ItemDef: TDataSource
+    DataSet = SDS_ItemDef
+    Left = 208
+    Top = 376
   end
 end

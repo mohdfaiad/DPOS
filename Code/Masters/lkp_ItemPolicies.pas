@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,
-  VrControls, VrButtons;
+  Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
+  VrControls, VrButtons, Buttons, ComCtrls;
 
 type
   TfmItemPolicies = class(TForm)
@@ -17,13 +17,6 @@ type
     Label2: TLabel;
     edtCode: TDBEdit;
     Label1: TLabel;
-    GroupBox2: TGroupBox;
-    BtnOpen: TButton;
-    btnAdd: TButton;
-    btnEdit: TButton;
-    btnDelete: TButton;
-    btnSave: TButton;
-    BtnCancel: TButton;
     Label3: TLabel;
     DBEdit1: TDBEdit;
     SDS_HeaderCompanyCode: TStringField;
@@ -41,6 +34,29 @@ type
     SDS_ItemPricesPriceValue: TFMTBCDField;
     SDS_ItemPricesPriceRatio: TFMTBCDField;
     SDS_ItemPricesDiscountRatio: TFMTBCDField;
+    SDS_ItemUnit: TSimpleDataSet;
+    SDS_HeaderItemUnitCode: TStringField;
+    SDS_HeaderItemUnitDescA: TStringField;
+    SDS_HeaderItemUnitDescE: TStringField;
+    SDS_HeaderUnitTransCode: TStringField;
+    SDS_HeaderUnitTransValue: TFMTBCDField;
+    StringField1: TStringField;
+    DS_ItemUnit: TDataSource;
+    SDS_ItemPricesItemUnitAr: TStringField;
+    SDS_ItemDef: TSimpleDataSet;
+    DS_ItemDef: TDataSource;
+    SDS_ItemDefItemCode: TStringField;
+    SDS_ItemDefItemNameAr: TStringField;
+    SDS_ItemDefItemNameEn: TStringField;
+    SDS_ItemPricesItemNameAr: TStringField;
+    GroupBox2: TGroupBox;
+    BtnOpen: TButton;
+    btnAdd: TButton;
+    btnEdit: TButton;
+    btnDelete: TButton;
+    btnSave: TButton;
+    BtnCancel: TButton;
+    BtnShow: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -51,6 +67,8 @@ type
     procedure btnAddClick(Sender: TObject);
     procedure SDS_HeaderNewRecord(DataSet: TDataSet);
     procedure SDS_ItemPricesNewRecord(DataSet: TDataSet);
+    procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
+    procedure BtnShowClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -71,6 +89,12 @@ procedure TfmItemPolicies.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
   SDS_Header.Open;
+  SDS_ItemPrices.Close;
+  SDS_ItemPrices.Open;
+  SDS_ItemUnit.Close;
+  SDS_ItemUnit.Open;
+  SDS_ItemDef.Close;
+  SDS_ItemDef.Open;
   btnEdit.Enabled := True;
   BtnOpen.Enabled := True;
   btnAdd.Enabled := True;
@@ -112,14 +136,14 @@ begin
      Exit;
   end;
 
-  IsDuplicated := RepeatedKey('tbl_PolicyCode', ' PolicyCodeCode = ''' + SDS_HeaderPolicyCode.AsString + '''  ');
+  IsDuplicated := RepeatedKey('tbl_ItemPolicies', ' PolicyCode = ''' + SDS_HeaderPolicyCode.AsString + '''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
      Exit;
   end;
 
-  if SDS_Header.ApplyUpdates(0) = 0 then Begin
+  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_ItemPrices.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
       BtnOpenClick(Sender);
   end
@@ -155,7 +179,7 @@ begin
     if buttonSelected = mrOK then
     Begin
         SDS_Header.Delete;
-        if SDS_Header.ApplyUpdates(0) = 0 then Begin
+        if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_ItemPrices.ApplyUpdates(0) = 0)) then Begin
            ShowMessage(' „ «·Õ–› »‰Ã«Õ');
            BtnOpenClick(Sender);
         end else Begin
@@ -210,6 +234,19 @@ begin
    SDS_ItemPricesCompanyCode.Value := DCompany;
    SDS_ItemPricesItemService.Value := 'IVI';
    SDS_ItemPricesPolicyCode.Value := SDS_HeaderPolicyCode.AsString;
+end;
+
+procedure TfmItemPolicies.SDS_HeaderAfterScroll(DataSet: TDataSet);
+begin
+SDS_ItemPrices.Close;
+SDS_ItemPrices.DataSet.CommandText := 'SELECT * from tbl_ItemPrices where PolicyCode='''+SDS_HeaderPolicyCode.AsString+'''  ';
+SDS_ItemPrices.Open;
+end;
+
+procedure TfmItemPolicies.BtnShowClick(Sender: TObject);
+begin
+    lkp := Tlkp.Create(SDS_Header,nil);
+    lkp.ShowModal;
 end;
 
 end.

@@ -203,14 +203,14 @@ object fmItemDefinition: TfmItemDefinition
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 2
       end
       object GroupBox1: TGroupBox
         Left = 481
         Top = 81
         Width = 404
         Height = 149
-        TabOrder = 2
+        TabOrder = 3
         DesignSize = (
           404
           149)
@@ -357,7 +357,7 @@ object fmItemDefinition: TfmItemDefinition
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 3
+        TabOrder = 4
       end
       object DBEdit3: TDBEdit
         Left = 18
@@ -373,7 +373,7 @@ object fmItemDefinition: TfmItemDefinition
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 4
+        TabOrder = 5
       end
       object DBEdit4: TDBEdit
         Left = 248
@@ -389,7 +389,7 @@ object fmItemDefinition: TfmItemDefinition
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 6
       end
       object DBEdit5: TDBEdit
         Left = 18
@@ -405,7 +405,7 @@ object fmItemDefinition: TfmItemDefinition
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 7
       end
       object DBEdit6: TDBEdit
         Left = 480
@@ -421,7 +421,7 @@ object fmItemDefinition: TfmItemDefinition
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 1
       end
       object DBEdit7: TDBEdit
         Left = 248
@@ -460,7 +460,7 @@ object fmItemDefinition: TfmItemDefinition
         Top = 240
         Width = 898
         Height = 199
-        ActivePage = TabSheet1
+        ActivePage = TabSheet2
         Align = alBottom
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
@@ -509,6 +509,34 @@ object fmItemDefinition: TfmItemDefinition
         object TabSheet2: TTabSheet
           Caption = #1605#1603#1608#1606#1575#1578' '#1575#1604#1589#1606#1601
           ImageIndex = 1
+          object GroupBox4: TGroupBox
+            Left = 0
+            Top = 16
+            Width = 890
+            Height = 149
+            Align = alBottom
+            TabOrder = 0
+            object frd_ItemSpec: TDBGrid
+              Left = 2
+              Top = 21
+              Width = 886
+              Height = 124
+              Align = alTop
+              DataSource = DS_ItemSpec
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clNavy
+              Font.Height = -19
+              Font.Name = 'Times New Roman'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Color = clNavy
+              TitleFont.Height = -21
+              TitleFont.Name = 'Times New Roman'
+              TitleFont.Style = []
+            end
+          end
         end
       end
     end
@@ -732,6 +760,7 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
+    AfterScroll = SDS_ItemGroupAfterScroll
     Left = 16
     Top = 80
     object SDS_ItemGroupItemGroupCode: TStringField
@@ -853,17 +882,16 @@ object fmItemDefinition: TfmItemDefinition
       Visible = False
       Size = 4
     end
-    object SDS_BarcodesItemCode: TStringField
-      FieldName = 'ItemCode'
-      Required = True
-      Visible = False
-      Size = 25
-    end
     object SDS_BarcodesItemService: TStringField
       FieldName = 'ItemService'
       Required = True
       Visible = False
       Size = 3
+    end
+    object SDS_BarcodesStatus: TStringField
+      FieldName = 'Status'
+      Visible = False
+      Size = 1
     end
     object SDS_BarcodesBarcode: TStringField
       DisplayLabel = #1575#1604#1576#1575#1585#1603#1608#1583
@@ -872,28 +900,56 @@ object fmItemDefinition: TfmItemDefinition
       Required = True
       Size = 30
     end
-    object SDS_BarcodesStatus: TStringField
-      FieldName = 'Status'
+    object SDS_BarcodesItemCode: TStringField
+      FieldName = 'ItemCode'
+      Required = True
       Visible = False
-      Size = 1
+      Size = 25
     end
     object SDS_BarcodesItemUnit: TStringField
-      DisplayLabel = #1608#1581#1583#1577' '#1575#1604#1589#1606#1601
-      FieldKind = fkLookup
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
       FieldName = 'ItemUnit'
+      Size = 6
+    end
+    object SDS_BarcodesItemUnitNameAr: TStringField
+      DisplayLabel = #1573#1587#1605' '#1575#1604#1608#1581#1583#1577
+      FieldKind = fkLookup
+      FieldName = 'ItemUnitNameAr'
       LookupDataSet = SDS_Itemunit
       LookupKeyFields = 'ItemUnitCode'
       LookupResultField = 'ItemUnitDescA'
       KeyFields = 'ItemUnit'
-      Size = 6
       Lookup = True
     end
-    object SDS_BarcodesUnitTransValue: TFMTBCDField
-      DisplayLabel = #1605#1593#1575#1605#1604' '#1575#1604#1608#1581#1583#1607
-      DisplayWidth = 6
-      FieldName = 'UnitTransValue'
-      Precision = 18
-      Size = 8
+    object SDS_BarcodesItemColorCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1604#1608#1606
+      FieldName = 'ItemColorCode'
+      Size = 6
+    end
+    object SDS_BarcodesItemColorNameAr: TStringField
+      DisplayLabel = #1575#1604#1604#1608#1606
+      FieldKind = fkLookup
+      FieldName = 'ItemColorNameAr'
+      LookupDataSet = SDS_ItemColor
+      LookupKeyFields = 'ItemColorCode'
+      LookupResultField = 'ItemColorNameAr'
+      KeyFields = 'ItemColorCode'
+      Lookup = True
+    end
+    object SDS_BarcodesItemSizeCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1605#1602#1575#1587
+      FieldName = 'ItemSizeCode'
+      Size = 6
+    end
+    object SDS_BarcodesItemSizeNameAr: TStringField
+      DisplayLabel = #1575#1604#1605#1602#1575#1587
+      FieldKind = fkLookup
+      FieldName = 'ItemSizeNameAr'
+      LookupDataSet = SDS_ItemSize
+      LookupKeyFields = 'ItemSizeCode'
+      LookupResultField = 'ItemSizeNameAr'
+      KeyFields = 'ItemSizeCode'
+      Lookup = True
     end
     object SDS_BarcodesPrice: TFMTBCDField
       DisplayLabel = #1575#1604#1587#1593#1585
@@ -901,28 +957,6 @@ object fmItemDefinition: TfmItemDefinition
       FieldName = 'Price'
       Precision = 18
       Size = 8
-    end
-    object SDS_BarcodesItemColorCode: TStringField
-      DisplayLabel = #1575#1604#1604#1608#1606
-      FieldKind = fkLookup
-      FieldName = 'ItemColorCode'
-      LookupDataSet = SDS_ItemColor
-      LookupKeyFields = 'ItemColorNameAr'
-      LookupResultField = 'ItemColorCode'
-      KeyFields = 'ItemColorCode'
-      Size = 6
-      Lookup = True
-    end
-    object SDS_BarcodesItemSizeCode: TStringField
-      DisplayLabel = #1575#1604#1605#1602#1575#1587
-      FieldKind = fkLookup
-      FieldName = 'ItemSizeCode'
-      LookupDataSet = SDS_ItemSize
-      LookupKeyFields = 'ItemSizeNameAr'
-      LookupResultField = 'ItemSizeCode'
-      KeyFields = 'ItemSizeCode'
-      Size = 6
-      Lookup = True
     end
     object SDS_BarcodesDiscountRatio: TFMTBCDField
       DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1582#1589#1605
@@ -935,6 +969,13 @@ object fmItemDefinition: TfmItemDefinition
       DisplayLabel = #1602#1610#1605#1577' '#1575#1604#1582#1589#1605
       DisplayWidth = 6
       FieldName = 'DiscountValue'
+      Precision = 18
+      Size = 8
+    end
+    object SDS_BarcodesUnitTransValue: TFMTBCDField
+      DisplayLabel = #1605#1593#1575#1605#1604' '#1575#1604#1608#1581#1583#1607
+      DisplayWidth = 6
+      FieldName = 'UnitTransValue'
       Precision = 18
       Size = 8
     end
@@ -999,5 +1040,115 @@ object fmItemDefinition: TfmItemDefinition
     DataSet = SDS_ItemColor
     Left = 232
     Top = 496
+  end
+  object SDS_ItemSpec: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemSpecification'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    OnNewRecord = SDS_ItemSpecNewRecord
+    Left = 112
+    Top = 400
+    object SDS_ItemSpecCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_ItemSpecItemCode: TStringField
+      FieldName = 'ItemCode'
+      Required = True
+      Visible = False
+      Size = 25
+    end
+    object SDS_ItemSpecItemService: TStringField
+      FieldName = 'ItemService'
+      Required = True
+      Visible = False
+      Size = 3
+    end
+    object SDS_ItemSpecDetailItemCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1589#1606#1601
+      DisplayWidth = 10
+      FieldName = 'DetailItemCode'
+      Required = True
+      Size = 25
+    end
+    object SDS_ItemSpecDetailItemNameAr: TStringField
+      DisplayLabel = #1575#1604#1589#1606#1601
+      FieldKind = fkLookup
+      FieldName = 'DetailItemNameAr'
+      LookupDataSet = SDS_ItemDef
+      LookupKeyFields = 'ItemCode'
+      LookupResultField = 'ItemNameAr'
+      KeyFields = 'DetailItemCode'
+      Lookup = True
+    end
+    object SDS_ItemSpecDetailItemUnit: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
+      FieldName = 'DetailItemUnit'
+      Size = 6
+    end
+    object SDS_ItemSpecDetailItemUnitAr: TStringField
+      DisplayLabel = #1575#1604#1608#1581#1583#1577
+      FieldKind = fkLookup
+      FieldName = 'DetailItemUnitAr'
+      LookupDataSet = SDS_Itemunit
+      LookupKeyFields = 'ItemUnitCode'
+      LookupResultField = 'ItemUnitDescA'
+      KeyFields = 'DetailItemUnit'
+      Lookup = True
+    end
+    object SDS_ItemSpecItemQuantity: TFMTBCDField
+      DisplayLabel = #1575#1604#1603#1605#1610#1577
+      FieldName = 'ItemQuantity'
+      Precision = 18
+    end
+    object SDS_ItemSpecUnitTransValue: TFMTBCDField
+      DisplayLabel = #1605#1593#1575#1605#1604' '#1575#1604#1608#1581#1583#1607
+      FieldName = 'UnitTransValue'
+      Precision = 18
+    end
+  end
+  object DS_ItemSpec: TDataSource
+    DataSet = SDS_ItemSpec
+    Left = 152
+    Top = 400
+  end
+  object DS_ItemDef: TDataSource
+    DataSet = SDS_ItemDef
+    Left = 248
+    Top = 448
+  end
+  object SDS_ItemDef: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemDefinition'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 208
+    Top = 448
+    object StringField2: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      DisplayWidth = 10
+      FieldName = 'ItemCode'
+      Required = True
+      Size = 25
+    end
+    object StringField4: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'ItemNameAr'
+      Size = 255
+    end
+    object StringField5: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'ItemNameEn'
+      Size = 255
+    end
   end
 end

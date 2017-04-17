@@ -95,11 +95,8 @@ type
     SDS_BarcodesItemService: TStringField;
     SDS_BarcodesBarcode: TStringField;
     SDS_BarcodesStatus: TStringField;
-    SDS_BarcodesItemUnit: TStringField;
     SDS_BarcodesUnitTransValue: TFMTBCDField;
     SDS_BarcodesPrice: TFMTBCDField;
-    SDS_BarcodesItemColorCode: TStringField;
-    SDS_BarcodesItemSizeCode: TStringField;
     SDS_BarcodesDiscountRatio: TFMTBCDField;
     SDS_BarcodesDiscountValue: TFMTBCDField;
     SDS_ItemSize: TSimpleDataSet;
@@ -112,6 +109,30 @@ type
     SDS_ItemColorItemColorCode: TStringField;
     SDS_ItemColorItemColorNameAr: TStringField;
     SDS_ItemColorItemColorNameEn: TStringField;
+    SDS_BarcodesItemUnit: TStringField;
+    SDS_BarcodesItemUnitNameAr: TStringField;
+    SDS_BarcodesItemColorCode: TStringField;
+    SDS_BarcodesItemSizeCode: TStringField;
+    SDS_BarcodesItemColorNameAr: TStringField;
+    SDS_BarcodesItemSizeNameAr: TStringField;
+    GroupBox4: TGroupBox;
+    frd_ItemSpec: TDBGrid;
+    SDS_ItemSpec: TSimpleDataSet;
+    DS_ItemSpec: TDataSource;
+    SDS_ItemSpecItemCode: TStringField;
+    SDS_ItemSpecItemService: TStringField;
+    SDS_ItemSpecDetailItemCode: TStringField;
+    SDS_ItemSpecDetailItemUnit: TStringField;
+    SDS_ItemSpecItemQuantity: TFMTBCDField;
+    SDS_ItemSpecUnitTransValue: TFMTBCDField;
+    SDS_ItemSpecCompanyCode: TStringField;
+    SDS_ItemSpecDetailItemUnitAr: TStringField;
+    DS_ItemDef: TDataSource;
+    SDS_ItemDef: TSimpleDataSet;
+    StringField2: TStringField;
+    StringField4: TStringField;
+    StringField5: TStringField;
+    SDS_ItemSpecDetailItemNameAr: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -125,6 +146,8 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SDS_BarcodesNewRecord(DataSet: TDataSet);
     procedure SDS_HeaderNewRecord(DataSet: TDataSet);
+    procedure SDS_ItemGroupAfterScroll(DataSet: TDataSet);
+    procedure SDS_ItemSpecNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -146,9 +169,6 @@ begin
   SDS_Header.Close;
   SDS_Header.DataSet.CommandText := 'Select * from tbl_ItemDefinition where CompanyCode = ''' + DCompany + ''' ';
   SDS_Header.Open;
-  SDS_Barcodes.Close;
-  SDS_Barcodes.DataSet.CommandText := 'Select * from tbl_Barcodes where CompanyCode = ''' + DCompany + ''' ';
-  SDS_Barcodes.Open;
   SDS_ItemGroup.Close;
   SDS_Itemunit.Close;
   SDS_ItemType.Close;
@@ -162,11 +182,11 @@ begin
   SDS_ItemType.Open;
   SDS_ItemCategory.Open;
   SDS_ItemColor.Close;
-  SDS_ItemColor.DataSet.CommandText := 'Select * from tbl_ItemColor where CompanyCode = ''' + DCompany + ''' ';
   SDS_ItemColor.Open;
   SDS_ItemSize.Close;
-  SDS_ItemSize.DataSet.CommandText := 'Select * from tbl_ItemSize where CompanyCode = ''' + DCompany + ''' ';
   SDS_ItemSize.Open;
+  SDS_ItemDef.Close;
+  SDS_ItemDef.Open;
 
 
   btnEdit.Enabled := True;
@@ -204,7 +224,7 @@ begin
   Co_ItemType.Enabled := True;
   Co_ItemUnit.Enabled := True;
   Co_ItemCategory.Enabled := True;
-  pg1.Enabled := False;
+  pg1.Enabled := True;
   EditMode := True;
 end;
 
@@ -249,7 +269,7 @@ begin
   end;
 
 
-  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0 )) then Begin
+  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0 )AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
       BtnOpenClick(Sender);
   end
@@ -288,7 +308,7 @@ begin
     if buttonSelected = mrOK then
     Begin
         SDS_Header.Delete;
-        if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0)) then Begin
+        if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0) AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )) then Begin
            ShowMessage(' „ «·Õ–› »‰Ã«Õ');
            BtnOpenClick(Sender);
         end else Begin
@@ -387,6 +407,25 @@ procedure TfmItemDefinition.SDS_HeaderNewRecord(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
  SDS_HeaderItemService.Value := 'IVI';
+end;
+
+procedure TfmItemDefinition.SDS_ItemGroupAfterScroll(DataSet: TDataSet);
+begin
+SDS_Barcodes.Close;
+SDS_Barcodes.DataSet.CommandText := 'Select * from Tbl_Barcodes Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+SDS_Barcodes.Open;
+SDS_ItemSpec.Close;
+SDS_ItemSpec.DataSet.CommandText := 'Select * from tbl_ItemSpecification Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+SDS_ItemSpec.Open;
+end;
+
+procedure TfmItemDefinition.SDS_ItemSpecNewRecord(DataSet: TDataSet);
+begin
+  SDS_ItemSpecCompanyCode.Value := DCompany;
+  SDS_ItemSpecItemCode.Value :=SDS_HeaderItemCode.Value;
+  SDS_ItemSpecItemService.Value := SDS_HeaderItemService.Value;
+
+
 end;
 
 end.

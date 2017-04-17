@@ -31,7 +31,9 @@ uses
   lkp_Vendors in 'Masters\lkp_Vendors.pas' {fmVendors},
   lkp_Operators in 'Masters\lkp_Operators.pas' {fmOperators},
   lkp_UserGroups in 'Masters\lkp_UserGroups.pas' {fmUserGroups},
-  lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers};
+  lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers},
+  lkp_POSDefinition in 'Masters\lkp_POSDefinition.pas' {fmPOSDefinition},
+  lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition};
 
 {$R *.res}
 
@@ -40,6 +42,8 @@ begin
   Application.CreateForm(TfmMainForm, fmMainForm);
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);
+  Application.CreateForm(TfmPOSDefinition, fmPOSDefinition);
+  Application.CreateForm(TfmItemDefinition, fmItemDefinition);
   {
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);

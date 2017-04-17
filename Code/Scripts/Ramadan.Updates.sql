@@ -125,3 +125,31 @@ ALTER TABLE [dbo].[tbl_PrTrxDetails] CHECK CONSTRAINT [FK_PrTrxDetails_PrTrxDeta
 GO
 
 -------------------------------------
+CREATE TABLE [dbo].[tbl_ItemSpecification](
+	[CompanyCode] [nvarchar](4) NOT NULL,
+	[ItemCode] [nvarchar](25) NOT NULL,
+	[ItemService] [nchar](3) NOT NULL,
+	[DetailItemCode] [nvarchar](25) NOT NULL,
+	[DetailItemUnit] [nvarchar](6) NULL,
+	[ItemQuantity] [decimal](18, 4) NULL,
+	[UnitTransValue] [decimal](18, 4) NULL,
+ CONSTRAINT [PK_tbl_ItemSpecification] PRIMARY KEY CLUSTERED 
+(
+	[CompanyCode] ASC,
+	[ItemCode] ASC,
+	[ItemService] ASC,
+	[DetailItemCode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[tbl_ItemSpecification]  WITH CHECK ADD  CONSTRAINT [FK_tbl_ItemSpecification_tbl_ItemSpecification] FOREIGN KEY([CompanyCode], [ItemCode], [ItemService], [DetailItemCode])
+REFERENCES [dbo].[tbl_ItemSpecification] ([CompanyCode], [ItemCode], [ItemService], [DetailItemCode])
+GO
+
+ALTER TABLE [dbo].[tbl_ItemSpecification] CHECK CONSTRAINT [FK_tbl_ItemSpecification_tbl_ItemSpecification]
+GO
+
+
+---------------------------------------------------------------------------------------
