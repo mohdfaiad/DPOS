@@ -422,7 +422,7 @@ end;
 procedure TfmMainForm.mn_ItemDefClick(Sender: TObject);
 begin
   Application.CreateForm(TfmItemDefinition, fmItemDefinition);
-  fmItemDefinition.ShowModal;
+   fmItemDefinition.ShowModal;
 
 end;
 

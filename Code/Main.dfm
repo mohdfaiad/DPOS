@@ -1727,7 +1727,7 @@ object fmMainForm: TfmMainForm
       Align = alTop
       TabOrder = 1
       object btn_POS: TVrDemoButton
-        Left = 3
+        Left = 5
         Top = 11
         Width = 164
         Height = 104
@@ -12725,8 +12725,8 @@ object fmMainForm: TfmMainForm
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 416
-    Top = 40
+    Left = 456
+    Top = 80
   end
   object MainMenu: TMainMenu
     BiDiMode = bdRightToLeft
