@@ -170,6 +170,7 @@ end;
 procedure TfmItemPolicies.btnDeleteClick(Sender: TObject);
 Var
   buttonSelected : Integer;
+  DeleteSQL : String;
 begin
   try
     // Show a confirmation dialog
@@ -178,14 +179,18 @@ begin
     // Show the button type selected
     if buttonSelected = mrOK then
     Begin
-        SDS_Header.Delete;
-        if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_ItemPrices.ApplyUpdates(0) = 0)) then Begin
-           ShowMessage(' „ «·Õ–› »‰Ã«Õ');
-           BtnOpenClick(Sender);
-        end else Begin
-         ShowMessage('ÕœÀ Œÿ√ √À‰«¡ Õ–› «·»Ì«‰« ') ;
-         BtnOpenClick(Sender);
-        end;
+      Try
+        DeleteSQL := 'Delete From Tbl_itemPrices where PolicyCode ='''+SDS_HeaderPolicyCode.AsString+''' and companyCode= '''+DCompany+''' ';
+        DeleteSQL := DeleteSQL + 'Delete From tbl_ItemPolicies where PolicyCode ='''+SDS_HeaderPolicyCode.AsString+''' and companyCode= '''+DCompany+''' ';
+        fmMainForm.MainConnection.ExecuteDirect(DeleteSQL);
+
+        SDS_ItemPrices.Refresh;
+        ShowMessage(' „ «·Õ–› »‰Ã«Õ');
+        BtnOpenClick(Sender);
+      Except
+        ShowMessage('ÕœÀ Œÿ√ √À‰«¡ Õ–› «·»Ì«‰« ') ;
+        BtnOpenClick(Sender);
+      End;
     end;
   except
       ShowMessage('ÕœÀ Œÿ√ √À‰«¡ „”Õ «·»Ì«‰«  , ·« Ì„ﬂ‰ Õ–› »Ì«‰«  „” Œœ„…');

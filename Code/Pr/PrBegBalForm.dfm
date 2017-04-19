@@ -1,8 +1,8 @@
-object fmPrTrxBaseForm: TfmPrTrxBaseForm
+object fmBegBalForm: TfmBegBalForm
   Left = 316
   Top = 6
   BorderStyle = bsDialog
-  Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
+  Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577' '#1604#1604#1605#1582#1575#1586#1606
   ClientHeight = 592
   ClientWidth = 1016
   Color = clBtnFace
@@ -24,7 +24,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Width = 921
     Height = 477
     BiDiMode = bdRightToLeft
-    Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
+    Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577' '#1604#1604#1605#1582#1575#1586#1606
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -88,55 +88,13 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label10: TLabel
-        Left = 807
-        Top = 175
-        Width = 80
-        Height = 19
-        Anchors = []
-        Caption = #1573#1580#1605#1575#1604#1610' '#1575#1604#1601#1575#1578#1608#1585#1607
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label11: TLabel
-        Left = 386
-        Top = 175
-        Width = 74
-        Height = 19
-        Anchors = []
-        Caption = #1573#1580#1605#1575#1604#1610' '#1575#1604#1582#1589#1605
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object Label12: TLabel
-        Left = 849
-        Top = 143
+        Left = 422
+        Top = 111
         Width = 38
         Height = 19
         Anchors = []
         Caption = #1575#1604#1605#1585#1580#1593
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label13: TLabel
-        Left = 368
-        Top = 143
-        Width = 92
-        Height = 19
-        Anchors = []
-        Caption = #1585#1602#1605' '#1601#1575#1578#1608#1585#1577' '#1575#1604#1605#1608#1585#1583
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -186,20 +144,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label16: TLabel
-        Left = 426
-        Top = 109
-        Width = 34
-        Height = 19
-        Anchors = []
-        Caption = #1575#1604#1605#1608#1585#1583
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object edtCode: TDBEdit
         Left = 679
         Top = 38
@@ -233,8 +177,8 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         TabOrder = 1
       end
       object DBEdit2: TDBEdit
-        Left = 480
-        Top = 139
+        Left = 24
+        Top = 107
         Width = 320
         Height = 27
         Anchors = []
@@ -247,56 +191,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Style = []
         ParentFont = False
         TabOrder = 2
-      end
-      object DBEdit3: TDBEdit
-        Left = 24
-        Top = 139
-        Width = 320
-        Height = 27
-        Anchors = []
-        DataField = 'VendoreInvoiceNumber'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 3
-      end
-      object DBEdit4: TDBEdit
-        Left = 480
-        Top = 171
-        Width = 320
-        Height = 27
-        Anchors = []
-        DataField = 'TrxAmount'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 4
-      end
-      object DBEdit5: TDBEdit
-        Left = 24
-        Top = 171
-        Width = 320
-        Height = 27
-        Anchors = []
-        DataField = 'TotalDiscount'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 5
       end
       object DBEdit6: TDBEdit
         Left = 480
@@ -312,7 +206,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 3
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 179
@@ -331,7 +225,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ListField = 'NameA'
         ListSource = DS_Type
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 4
       end
       object Co_WareHouse: TDBLookupComboBox
         Left = 480
@@ -349,25 +243,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ListField = 'WareHouseNameAr'
         ListSource = DS_WareHouse
         ParentFont = False
-        TabOrder = 8
-      end
-      object CO_Vendors: TDBLookupComboBox
-        Left = 24
-        Top = 105
-        Width = 320
-        Height = 27
-        DataField = 'VendoreCode'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        KeyField = 'VendoreCode'
-        ListField = 'VendoreNameAr'
-        ListSource = DS_Vendors
-        ParentFont = False
-        TabOrder = 9
+        TabOrder = 5
       end
     end
     object PG1: TPageControl
@@ -375,7 +251,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Top = 276
       Width = 917
       Height = 199
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
@@ -419,30 +295,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
             TitleFont.Name = 'Times New Roman'
             TitleFont.Style = []
           end
-        end
-      end
-      object TabSheet2: TTabSheet
-        Caption = #1575#1604#1583#1601#1593
-        ImageIndex = 1
-        object grd_Payment: TDBGrid
-          Left = 0
-          Top = 0
-          Width = 909
-          Height = 137
-          Align = alTop
-          DataSource = DS_Payment
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clNavy
-          Font.Height = -19
-          Font.Name = 'Times New Roman'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-          TitleFont.Charset = DEFAULT_CHARSET
-          TitleFont.Color = clNavy
-          TitleFont.Height = -21
-          TitleFont.Name = 'Times New Roman'
-          TitleFont.Style = []
         end
       end
     end
@@ -708,7 +560,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1575#1604#1603#1605#1610#1577
       DisplayWidth = 6
       FieldName = 'Quantity'
-      OnChange = SDS_DetailsQuantityChange
       Precision = 18
       Size = 8
     end
@@ -716,7 +567,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1575#1604#1578#1603#1604#1601#1577
       DisplayWidth = 6
       FieldName = 'CostPrice'
-      OnChange = SDS_DetailsCostPriceChange
+      Visible = False
       Precision = 18
       Size = 8
     end
@@ -724,7 +575,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1575#1604#1582#1589#1605
       DisplayWidth = 6
       FieldName = 'Discount'
-      OnChange = SDS_DetailsDiscountChange
+      Visible = False
       Precision = 18
       Size = 8
     end
@@ -732,6 +583,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1573#1580#1605#1575#1604#1610' '#1575#1604#1587#1593#1585
       DisplayWidth = 6
       FieldName = 'NetPrice'
+      Visible = False
       Precision = 18
       Size = 8
     end
@@ -937,130 +789,5 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     DataSet = SDS_ItemDef
     Left = 32
     Top = 464
-  end
-  object SDS_Payment: TSimpleDataSet
-    Aggregates = <>
-    Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_PrTrxPayment'
-    DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
-    Params = <>
-    OnNewRecord = SDS_PaymentNewRecord
-    Left = 8
-    Top = 512
-    object SDS_PaymentTrxLineNo: TStringField
-      FieldName = 'TrxLineNo'
-      Required = True
-      Visible = False
-      Size = 10
-    end
-    object SDS_PaymentPaymentType: TStringField
-      DisplayLabel = #1575#1604#1606#1608#1593
-      FieldName = 'PaymentType'
-      Visible = False
-      Size = 4
-    end
-    object SDS_PaymentPaymentDesc: TStringField
-      DisplayLabel = #1575#1604#1606#1608#1593
-      FieldKind = fkLookup
-      FieldName = 'PaymentDesc'
-      LookupDataSet = SDS_PaymentType
-      LookupKeyFields = 'Value'
-      LookupResultField = 'NameA'
-      KeyFields = 'PaymentType'
-      Lookup = True
-    end
-    object SDS_PaymentAmount: TFMTBCDField
-      DisplayLabel = #1575#1604#1602#1610#1605#1577
-      DisplayWidth = 6
-      FieldName = 'Amount'
-      Precision = 18
-    end
-    object SDS_PaymentTrxPaymentDescAr: TStringField
-      DisplayLabel = #1575#1604#1608#1589#1601
-      DisplayWidth = 50
-      FieldName = 'TrxPaymentDescAr'
-      Size = 75
-    end
-    object SDS_PaymentTrxPaymentDescEn: TStringField
-      FieldName = 'TrxPaymentDescEn'
-      Visible = False
-      Size = 75
-    end
-    object SDS_PaymentVendoreCode: TStringField
-      FieldName = 'VendoreCode'
-      Visible = False
-      Size = 6
-    end
-    object SDS_PaymentBalance: TFMTBCDField
-      FieldName = 'Balance'
-      Visible = False
-      Precision = 18
-    end
-    object SDS_PaymentCompanyCode: TStringField
-      FieldName = 'CompanyCode'
-      Required = True
-      Visible = False
-      Size = 4
-    end
-    object SDS_PaymentBranchCode: TStringField
-      FieldName = 'BranchCode'
-      Required = True
-      Visible = False
-      Size = 4
-    end
-    object SDS_PaymentTrxNo: TStringField
-      FieldName = 'TrxNo'
-      Required = True
-      Visible = False
-      Size = 10
-    end
-    object SDS_PaymentTrxType: TStringField
-      FieldName = 'TrxType'
-      Required = True
-      Visible = False
-      Size = 4
-    end
-  end
-  object DS_Payment: TDataSource
-    DataSet = SDS_Payment
-    Left = 32
-    Top = 512
-  end
-  object SDS_PaymentType: TSimpleDataSet
-    Active = True
-    Aggregates = <>
-    Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 
-      'Select Distinct Cast('#39'C'#39' As CHar(1)) As Value,  Cast('#39#1606#1602#1583#1610#39' As V' +
-      'arChar(15)) As NameA , Cast('#39'Cash'#39' As VarChar(15)) As NameE From' +
-      ' tbl_Company'#13#10' Union'#13#10' Select Distinct Cast('#39'D'#39' As CHar(1)),  Ca' +
-      'st('#39#1570#1580#1604#39' As VarChar(15)) , Cast('#39'Debit'#39' As VarChar(15)) As NameE' +
-      ' From tbl_Company'
-    DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
-    Params = <>
-    Left = 8
-    Top = 552
-    object StringField1: TStringField
-      FieldName = 'Value'
-      FixedChar = True
-      Size = 1
-    end
-    object StringField2: TStringField
-      FieldName = 'NameA'
-      FixedChar = True
-      Size = 15
-    end
-    object StringField3: TStringField
-      FieldName = 'NameE'
-      FixedChar = True
-      Size = 15
-    end
-  end
-  object DS_PaymentType: TDataSource
-    DataSet = SDS_PaymentType
-    Left = 48
-    Top = 552
   end
 end

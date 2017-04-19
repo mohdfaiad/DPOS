@@ -76,6 +76,8 @@ type
     mn_UserDef: TMenuItem;
     mn_CashBankDef: TMenuItem;
     mn_ItemDef: TMenuItem;
+    mn_PerchaseInvoice: TMenuItem;
+    mn_BegBalDef: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mnExitClick(Sender: TObject);
@@ -104,6 +106,8 @@ type
     procedure mn_POSDefClick(Sender: TObject);
     procedure mn_CashBankDefClick(Sender: TObject);
     procedure mn_ItemDefClick(Sender: TObject);
+    procedure mn_PerchaseInvoiceClick(Sender: TObject);
+    procedure mn_BegBalDefClick(Sender: TObject);
   private
     { Private declarations }
     LastUserAccess , LicenseNo , BiosID : String;
@@ -124,7 +128,8 @@ uses  Login, GVariable,
   lkp_ItemPolicies, lkp_ItemSize, lkp_ItemType, lkp_ItemUnit,
   lkp_WareHouse, lkp_VendorGroup, lkp_UserGroups, lkp_Customers,
   lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
-  lkp_Operators, lkp_POSDefinition, lkp_CashBank, lkp_ItemDefinition;
+  lkp_Operators, lkp_POSDefinition, lkp_CashBank, lkp_ItemDefinition,
+  PrTrxBaseForm, PrBegBalForm;
 
 {$R *.dfm}
 
@@ -423,6 +428,20 @@ procedure TfmMainForm.mn_ItemDefClick(Sender: TObject);
 begin
   Application.CreateForm(TfmItemDefinition, fmItemDefinition);
    fmItemDefinition.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_PerchaseInvoiceClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPrTrxBaseForm, fmPrTrxBaseForm);
+   fmPrTrxBaseForm.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_BegBalDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmBegBalForm, fmBegBalForm);
+   fmBegBalForm.ShowModal;
 
 end;
 

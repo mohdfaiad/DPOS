@@ -277,7 +277,7 @@ object fmBranch: TfmBranch
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    BeforePost = SDS_HeaderBeforePost
+    OnNewRecord = SDS_HeaderNewRecord
     Left = 24
     Top = 16
     object SDS_HeaderBranchCode: TStringField

@@ -14,7 +14,6 @@ object fmItemUnit: TfmItemUnit
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
-  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
@@ -193,7 +192,7 @@ object fmItemUnit: TfmItemUnit
         Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = []
-        KeyField = 'ItemUnitDescE'
+        KeyField = 'ItemUnitCode'
         ListField = 'ItemUnitDescA'
         ListSource = DS_UnitTransCode
         ParentFont = False
@@ -340,7 +339,8 @@ object fmItemUnit: TfmItemUnit
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    BeforePost = SDS_HeaderBeforePost
+    AfterScroll = SDS_HeaderAfterScroll
+    OnNewRecord = SDS_HeaderNewRecord
     Left = 24
     Top = 16
     object SDS_HeaderItemUnitCode: TStringField
@@ -392,7 +392,6 @@ object fmItemUnit: TfmItemUnit
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    BeforePost = SDS_HeaderBeforePost
     Left = 584
     Top = 376
     object SDS_UnitTransCodeItemUnitCode: TStringField

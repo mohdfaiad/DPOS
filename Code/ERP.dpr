@@ -33,17 +33,16 @@ uses
   lkp_UserGroups in 'Masters\lkp_UserGroups.pas' {fmUserGroups},
   lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers},
   lkp_POSDefinition in 'Masters\lkp_POSDefinition.pas' {fmPOSDefinition},
-  lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition};
+  lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition},
+  PrBegBalForm in 'Pr\PrBegBalForm.pas' {fmBegBalForm},
+  PrTrxBaseForm in 'Pr\PrTrxBaseForm.pas' {fmPrTrxBaseForm};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TfmMainForm, fmMainForm);
-  Application.CreateForm(TfmLicense, fmLicense);
-  Application.CreateForm(TfmLogin, fmLogin);
-  Application.CreateForm(TfmPOSDefinition, fmPOSDefinition);
-  Application.CreateForm(TfmItemDefinition, fmItemDefinition);
+  Application.CreateForm(TfmPrTrxBaseForm, fmPrTrxBaseForm);
   {
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);

@@ -51,9 +51,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
-    procedure SDS_HeaderBeforePost(DataSet: TDataSet);
     procedure BtnShowClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure SDS_HeaderNewRecord(DataSet: TDataSet);
+    procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -74,6 +74,8 @@ procedure TfmItemUnit.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
   SDS_Header.Open;
+  SDS_UnitTransCode.Open;
+  SDS_UnitTransCode.Close;
   btnEdit.Enabled := True;
   BtnOpen.Enabled := True;
   btnAdd.Enabled := True;
@@ -182,8 +184,6 @@ Begin
   }
   BtnOpenClick(Sender);
   BtnShow.Enabled := False;
-  SDS_UnitTransCode.Open;
-
 end;
 
 procedure TfmItemUnit.FormKeyPress(Sender: TObject; var Key: Char);
@@ -209,11 +209,6 @@ begin
   EditMode := False;
 end;
 
-procedure TfmItemUnit.SDS_HeaderBeforePost(DataSet: TDataSet);
-begin
- SDS_HeaderCompanyCode.Value := DCompany;
-end;
-
 procedure TfmItemUnit.BtnShowClick(Sender: TObject);
 var lkp : Tlkp;
 begin
@@ -221,9 +216,16 @@ begin
     lkp.ShowModal;
 end;
 
-procedure TfmItemUnit.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TfmItemUnit.SDS_HeaderNewRecord(DataSet: TDataSet);
+begin
+ SDS_HeaderCompanyCode.Value := DCompany;
+end;
+
+procedure TfmItemUnit.SDS_HeaderAfterScroll(DataSet: TDataSet);
 begin
   SDS_UnitTransCode.Close;
+  SDS_UnitTransCode.DataSet.CommandText := ' Select * From tbl_itemUnit Where ItemUnitCode ='''+SDS_HeaderUnitTransCode.AsString+''' ';
+  SDS_UnitTransCode.Open;
 end;
 
 end.

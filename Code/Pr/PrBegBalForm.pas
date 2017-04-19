@@ -1,4 +1,4 @@
-unit PrTrxBaseForm;
+unit PrBegBalForm;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   VrControls, VrButtons, Buttons, ComCtrls;
 
 type
-  TfmPrTrxBaseForm = class(TForm)
+  TfmBegBalForm = class(TForm)
     grp_Content: TGroupBox;
     SDS_Header: TSimpleDataSet;
     DS_Header: TDataSource;
@@ -26,22 +26,14 @@ type
     btnSave: TButton;
     BtnCancel: TButton;
     BtnShow: TButton;
-    Label10: TLabel;
-    Label11: TLabel;
     Label12: TLabel;
-    Label13: TLabel;
     DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
     DBEdit6: TDBEdit;
     Label14: TLabel;
     Label15: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
     Label4: TLabel;
     Co_WareHouse: TDBLookupComboBox;
-    CO_Vendors: TDBLookupComboBox;
-    Label16: TLabel;
     SDS_Details: TSimpleDataSet;
     DS_Details: TDataSource;
     SDS_DetailsCompanyCode: TStringField;
@@ -89,8 +81,6 @@ type
     TabSheet1: TTabSheet;
     GroupBox3: TGroupBox;
     grd_Details: TDBGrid;
-    TabSheet2: TTabSheet;
-    grd_Payment: TDBGrid;
     qry_Type: TSimpleDataSet;
     qry_TypeValue: TStringField;
     qry_TypeNameA: TStringField;
@@ -109,25 +99,6 @@ type
     SDS_DetailsItemNameAr2: TStringField;
     SDS_DetailsItemUnit: TStringField;
     SDS_DetailsItemUnitDescAr: TStringField;
-    SDS_Payment: TSimpleDataSet;
-    DS_Payment: TDataSource;
-    SDS_PaymentTrxLineNo: TStringField;
-    SDS_PaymentPaymentType: TStringField;
-    SDS_PaymentAmount: TFMTBCDField;
-    SDS_PaymentBalance: TFMTBCDField;
-    SDS_PaymentTrxPaymentDescAr: TStringField;
-    SDS_PaymentTrxPaymentDescEn: TStringField;
-    SDS_PaymentVendoreCode: TStringField;
-    SDS_PaymentCompanyCode: TStringField;
-    SDS_PaymentBranchCode: TStringField;
-    SDS_PaymentTrxNo: TStringField;
-    SDS_PaymentTrxType: TStringField;
-    SDS_PaymentType: TSimpleDataSet;
-    StringField1: TStringField;
-    StringField2: TStringField;
-    StringField3: TStringField;
-    DS_PaymentType: TDataSource;
-    SDS_PaymentPaymentDesc: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -141,10 +112,6 @@ type
     procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
     procedure SDS_DetailsNewRecord(DataSet: TDataSet);
     procedure SDS_DetailsItemCodeChange(Sender: TField);
-    procedure SDS_DetailsQuantityChange(Sender: TField);
-    procedure SDS_DetailsCostPriceChange(Sender: TField);
-    procedure SDS_DetailsDiscountChange(Sender: TField);
-    procedure SDS_PaymentNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -153,7 +120,7 @@ type
   end;
 
 var
-  fmPrTrxBaseForm: TfmPrTrxBaseForm;
+  fmBegBalForm: TfmBegBalForm;
 
 implementation
 
@@ -161,10 +128,10 @@ uses Main, GFunctions, GVariable;
 
 {$R *.dfm}
 
-procedure TfmPrTrxBaseForm.BtnOpenClick(Sender: TObject);
+procedure TfmBegBalForm.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
-  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' and TrxType =''PRIV'' ';
+  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' and TrxType =''IVBB'' ';
   SDS_Header.Open;
 
   SDS_WareHouse.Close;
@@ -175,8 +142,6 @@ begin
   SDS_ItemDef.open;
   SDS_Itemunit.Close;
   SDS_Itemunit.open;
-  SDS_PaymentType.Close;
-  SDS_PaymentType.Open;
 
   btnEdit.Enabled := True;
   BtnOpen.Enabled := True;
@@ -186,15 +151,13 @@ begin
   btnDelete.Enabled := True;
   grpData.Enabled := False;
   Co_WareHouse.Enabled := False;
-  CO_Vendors.Enabled := False;
-  grd_Payment.Enabled := False;
   grd_Details.Enabled := False;
 
   BtnShow.Enabled := True;
   EditMode := False;
 end;
 
-procedure TfmPrTrxBaseForm.btnEditClick(Sender: TObject);
+procedure TfmBegBalForm.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
   btnEdit.Enabled := False;
@@ -208,20 +171,15 @@ begin
   BtnShow.Enabled := True;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
-  DBEdit3.Enabled := True;
-  DBEdit4.Enabled := True;
-  DBEdit5.Enabled := True;
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
-  CO_Vendors.Enabled := True;
-  grd_Payment.Enabled := True;
   grd_Details.Enabled := true;
   EditMode := True;
 end;
 
-procedure TfmPrTrxBaseForm.btnSaveClick(Sender: TObject);
+procedure TfmBegBalForm.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
-TrxVal , TotalDiscount , TotalPayment : Real;
+TrxVal , TotalDiscount : Real;
 begin
   If SDS_HeaderTrxNo.AsString = '' Then
   Begin
@@ -237,14 +195,7 @@ begin
      Exit;
   end;
 
-  If (SDS_HeaderVendoreCode.AsString = '')  Then
-  Begin
-     ShowMessage('ÌÃ»  ÕœÌœ «·„Ê—œ');
-     CO_Vendors.SetFocus;
-     Exit;
-  end;
-
-  IsDuplicated := RepeatedKey('tbl_PrTrxHeader', ' TrxNo = ''' + SDS_HeaderTrxNo.AsString + ''' And CompanyCode = ''' + DCompany + ''' And TrxType = ''PRIV''  ');
+  IsDuplicated := RepeatedKey('tbl_PrTrxHeader', ' TrxNo = ''' + SDS_HeaderTrxNo.AsString + ''' And CompanyCode = ''' + DCompany + ''' And TrxType = ''IVBB''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
@@ -256,53 +207,23 @@ begin
        While Not Eof Do Begin
              Edit;
              SDS_DetailsTraLineNo.AsInteger := SDS_Details.RecNo;
-             TrxVal := TrxVal + SDS_DetailsNetPrice.AsFloat;
-             TotalDiscount := TotalDiscount + SDS_DetailsDiscount.AsFloat;
              SDS_Details.Next;
        end;
    end;
 
-   if SDS_Payment.RecordCount <= 0 Then begin
-     ShowMessage('Ì—ÃÌ ÷»ÿ «·œ›⁄« ');
-     Exit;
-   end;
-
-   With SDS_Payment do Begin
-       DisableControls;
-       First;
-       While Not Eof Do Begin
-             Edit;
-             SDS_PaymentTrxLineNo.AsInteger := SDS_Payment.RecNo;
-             TotalPayment := TotalPayment + SDS_PaymentAmount.AsFloat;
-             SDS_Payment.Next;
-       end;
-   end;
-
-   if SDS_PaymentAmount.AsFloat <>  TrxVal Then begin
-     ShowMessage('Ì—ÃÌ ÷»ÿ «·œ›⁄« ');
-     SDS_Payment.EnableControls;
-     SDS_Details.EnableControls;
-     grd_Payment.SetFocus;
-     Exit;
-   end;
-
-   SDS_HeaderTrxAmount.AsFloat := TrxVal;
-   SDS_HeaderTotalDiscount.AsFloat := TotalDiscount;
    SDS_HeaderTrxDate.AsDateTime := now;
 
-  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0) AND (SDS_Payment.ApplyUpdates(0) = 0)) then Begin
+  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
       BtnOpenClick(Sender);
   end
   else Begin
-   SDS_Payment.EnableControls;
-   SDS_Details.EnableControls;
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
   end;
 
 end;
 
-procedure TfmPrTrxBaseForm.BtnCancelClick(Sender: TObject);
+procedure TfmBegBalForm.BtnCancelClick(Sender: TObject);
 Var
   buttonSelected : Integer;
 begin
@@ -318,7 +239,7 @@ begin
 
 end;
 
-procedure TfmPrTrxBaseForm.btnDeleteClick(Sender: TObject);
+procedure TfmBegBalForm.btnDeleteClick(Sender: TObject);
 Var
   buttonSelected : Integer;
   DeleteSQL : String;
@@ -331,14 +252,12 @@ begin
     if buttonSelected = mrOK then
     Begin
         Try
-        DeleteSQL := 'Delete From Tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
-        DeleteSQL := DeleteSQL + 'Delete From tbl_PrTrxPayment where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
-        DeleteSQL := DeleteSQL + 'Delete From tbl_PrTrxHeader where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
+        DeleteSQL := 'Delete From Tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
+        DeleteSQL := DeleteSQL + 'Delete From tbl_PrTrxHeader where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
 
         fmMainForm.MainConnection.ExecuteDirect(DeleteSQL);
 
         SDS_Details.Refresh;
-        SDS_Payment.Refresh;
 
         ShowMessage(' „ «·Õ–› »‰Ã«Õ');
         BtnOpenClick(Sender);
@@ -353,7 +272,7 @@ begin
   end;
 end;
 
-procedure TfmPrTrxBaseForm.FormCreate(Sender: TObject);
+procedure TfmBegBalForm.FormCreate(Sender: TObject);
 Begin
   {
   Left := (Screen.Width - Width) div 2;
@@ -363,14 +282,14 @@ Begin
   BtnShow.Enabled := False;
 end;
 
-procedure TfmPrTrxBaseForm.FormKeyPress(Sender: TObject; var Key: Char);
+procedure TfmBegBalForm.FormKeyPress(Sender: TObject; var Key: Char);
 begin
     If Key = #13 Then Begin
        SendMessage( handle, WM_NEXTDLGCTL, 0, 0 );
     end;
 end;
 
-procedure TfmPrTrxBaseForm.btnAddClick(Sender: TObject);
+procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
   btnEdit.Enabled := False;
@@ -384,91 +303,56 @@ begin
   edtCode.SetFocus;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
-  DBEdit3.Enabled := True;
-  DBEdit4.Enabled := True;
-  DBEdit5.Enabled := True;
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
-  CO_Vendors.Enabled := True;
-  grd_Payment.Enabled := True;
   grd_Details.Enabled := true;
   BtnShow.Enabled := False;
   EditMode := False;
 end;
 
-procedure TfmPrTrxBaseForm.BtnShowClick(Sender: TObject);
+procedure TfmBegBalForm.BtnShowClick(Sender: TObject);
 var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
 end;
 
-procedure TfmPrTrxBaseForm.SDS_HeaderNewRecord(DataSet: TDataSet);
+procedure TfmBegBalForm.SDS_HeaderNewRecord(DataSet: TDataSet);
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
- SDS_HeaderTrxType.Value := 'PRIV';
+ SDS_HeaderTrxType.Value := 'IVBB';
  SDS_HeaderTrxStatus.Value := 'A';
  SDS_HeaderBranchCode.Value := DBranch;
 end;
 
-procedure TfmPrTrxBaseForm.SDS_HeaderAfterScroll(DataSet: TDataSet);
+procedure TfmBegBalForm.SDS_HeaderAfterScroll(DataSet: TDataSet);
 begin
 SDS_Details.Close;
-SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
+SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
 SDS_Details.Open;
-SDS_Payment.Close;
-SDS_Payment.DataSet.CommandText :='Select * From tbl_PrTrxPayment where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
-SDS_Payment.Open;
 end;
 
-procedure TfmPrTrxBaseForm.SDS_DetailsNewRecord(DataSet: TDataSet);
+procedure TfmBegBalForm.SDS_DetailsNewRecord(DataSet: TDataSet);
 begin
  SDS_DetailsCompanyCode.Value := DCompany;
- SDS_DetailsTrxType.Value := 'PRIV';
+ SDS_DetailsTrxType.Value := 'IVBB';
  SDS_DetailsBranchCode.Value := DBranch;
  SDS_DetailsTrxNo.Value := SDS_HeaderTrxNo.AsString;
  SDS_DetailsWareHouseCode.Value := SDS_HeaderWareHouseCode.AsString;
  SDS_DetailsVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
  SDS_DetailsTraLineNo.Value :=  'XX';
- SDS_DetailsQuantity.AsFloat := 0.0;
+ {SDS_DetailsQuantity.AsFloat := 0.0;
  SDS_DetailsCostPrice.AsFloat := 0.0;
  SDS_DetailsDiscount.AsFloat := 0.0;
- SDS_DetailsNetPrice.AsFloat := 0.0;
+ SDS_DetailsNetPrice.AsFloat := 0.0;}
 end;
 
-procedure TfmPrTrxBaseForm.SDS_DetailsItemCodeChange(Sender: TField);
+procedure TfmBegBalForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
   SDS_DetailsItemUnit.AsString := GetDBValue('ItemUnitCode','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
   SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
   SDS_DetailsItemService.AsString := GetDBValue('ItemService','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
-
-end;
-
-procedure TfmPrTrxBaseForm.SDS_DetailsQuantityChange(Sender: TField);
-begin
- SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
-end;
-
-procedure TfmPrTrxBaseForm.SDS_DetailsCostPriceChange(Sender: TField);
-begin
- SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
-end;
-
-procedure TfmPrTrxBaseForm.SDS_DetailsDiscountChange(Sender: TField);
-begin
- SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
-end;
-
-procedure TfmPrTrxBaseForm.SDS_PaymentNewRecord(DataSet: TDataSet);
-begin
- SDS_PaymentCompanyCode.Value := DCompany;
- SDS_PaymentTrxType.Value := 'PRIV';
- SDS_PaymentBranchCode.Value := DBranch;
- SDS_PaymentTrxNo.Value := SDS_HeaderTrxNo.AsString;
- SDS_PaymentVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
- SDS_PaymentTrxLineNo.Value :=  'XX';
- SDS_PaymentAmount.AsFloat := 0.0;
-
+  
 end;
 
 end.

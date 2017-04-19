@@ -309,7 +309,7 @@ object fmCashBank: TfmCashBank
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    BeforePost = SDS_HeaderBeforePost
+    OnNewRecord = SDS_HeaderNewRecord
     Left = 24
     Top = 16
     object SDS_HeaderCompanyCode: TStringField
@@ -361,7 +361,6 @@ object fmCashBank: TfmCashBank
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    BeforePost = SDS_HeaderBeforePost
     Left = 24
     Top = 56
     object qry_TypeValue: TStringField

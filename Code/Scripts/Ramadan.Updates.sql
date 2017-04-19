@@ -92,7 +92,7 @@ CREATE TABLE [dbo].[tbl_PrTrxDetails](
 	[TraLineNo] [nvarchar](10) NOT NULL,
 	[ItemService] [nvarchar](4) NULL,
 	[ItemCode] [nvarchar](25) NULL,
-	[ItemUnit] [nvarchar](4) NULL,
+	[ItemUnit] [nvarchar](6) NULL,
 	[CostPrice] [decimal](18, 4) NULL,
 	[Discount] [decimal](18, 4) NULL,
 	[NetPrice] [decimal](18, 4) NULL,

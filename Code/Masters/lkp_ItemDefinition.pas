@@ -65,11 +65,6 @@ type
     DBEdit6: TDBEdit;
     DBEdit7: TDBEdit;
     DBEdit8: TDBEdit;
-    PG1: TPageControl;
-    TabSheet1: TTabSheet;
-    TabSheet2: TTabSheet;
-    GroupBox3: TGroupBox;
-    grd_Brcodes: TDBGrid;
     SDS_ItemType: TSimpleDataSet;
     DS_ItemType: TDataSource;
     SDS_Itemunit: TSimpleDataSet;
@@ -115,8 +110,6 @@ type
     SDS_BarcodesItemSizeCode: TStringField;
     SDS_BarcodesItemColorNameAr: TStringField;
     SDS_BarcodesItemSizeNameAr: TStringField;
-    GroupBox4: TGroupBox;
-    frd_ItemSpec: TDBGrid;
     SDS_ItemSpec: TSimpleDataSet;
     DS_ItemSpec: TDataSource;
     SDS_ItemSpecItemCode: TStringField;
@@ -133,6 +126,13 @@ type
     StringField4: TStringField;
     StringField5: TStringField;
     SDS_ItemSpecDetailItemNameAr: TStringField;
+    PG1: TPageControl;
+    TabSheet1: TTabSheet;
+    GroupBox3: TGroupBox;
+    grd_Brcodes: TDBGrid;
+    TabSheet2: TTabSheet;
+    GroupBox4: TGroupBox;
+    grd_ItemSpec: TDBGrid;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -146,8 +146,10 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure SDS_BarcodesNewRecord(DataSet: TDataSet);
     procedure SDS_HeaderNewRecord(DataSet: TDataSet);
-    procedure SDS_ItemGroupAfterScroll(DataSet: TDataSet);
     procedure SDS_ItemSpecNewRecord(DataSet: TDataSet);
+    procedure SDS_BarcodesItemUnitChange(Sender: TField);
+    procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
+    procedure SDS_ItemSpecDetailItemUnitChange(Sender: TField);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -196,6 +198,8 @@ begin
   BtnCancel.Enabled := False;
   btnDelete.Enabled := True;
   grpData.Enabled := False;
+  grd_Brcodes.Enabled := False;
+  grd_ItemSpec.Enabled := False;
   BtnShow.Enabled := True;
   EditMode := False;
 end;
@@ -224,6 +228,8 @@ begin
   Co_ItemType.Enabled := True;
   Co_ItemUnit.Enabled := True;
   Co_ItemCategory.Enabled := True;
+  grd_Brcodes.Enabled := True;
+  grd_ItemSpec.Enabled := True;
   pg1.Enabled := True;
   EditMode := True;
 end;
@@ -267,7 +273,7 @@ begin
      Co_ItemUnit.SetFocus;
      Exit;
   end;
-
+      
 
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0 )AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
@@ -299,6 +305,7 @@ end;
 procedure TfmItemDefinition.btnDeleteClick(Sender: TObject);
 Var
   buttonSelected : Integer;
+  DeleteSQL : String;
 begin
   try
     // Show a confirmation dialog
@@ -307,14 +314,22 @@ begin
     // Show the button type selected
     if buttonSelected = mrOK then
     Begin
-        SDS_Header.Delete;
-        if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0) AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )) then Begin
-           ShowMessage(' „ «·Õ–› »‰Ã«Õ');
-           BtnOpenClick(Sender);
-        end else Begin
-         ShowMessage('ÕœÀ Œÿ√ √À‰«¡ Õ–› «·»Ì«‰« ') ;
-         BtnOpenClick(Sender);
-        end;
+        Try
+        DeleteSQL := 'Delete From Tbl_Barcodes where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';
+        DeleteSQL := DeleteSQL + 'Delete From tbl_ItemSpecification where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';;
+        DeleteSQL := DeleteSQL + 'Delete From tbl_ItemDefinition where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';
+        
+        fmMainForm.MainConnection.ExecuteDirect(DeleteSQL);
+
+        SDS_Barcodes.Refresh;
+        SDS_ItemSpec.Refresh;
+
+        ShowMessage(' „ «·Õ–› »‰Ã«Õ');
+        BtnOpenClick(Sender);
+      Except
+        ShowMessage('ÕœÀ Œÿ√ √À‰«¡ Õ–› «·»Ì«‰« ') ;
+        BtnOpenClick(Sender);
+      End;
     end;
   except
       ShowMessage('ÕœÀ Œÿ√ √À‰«¡ „”Õ «·»Ì«‰«  , ·« Ì„ﬂ‰ Õ–› »Ì«‰«  „” Œœ„…');
@@ -363,7 +378,8 @@ begin
   Co_ItemType.Enabled := True;
   Co_ItemUnit.Enabled := True;
   Co_ItemCategory.Enabled := True;
-  pg1.Enabled := True;
+  grd_Brcodes.Enabled := True;
+  grd_ItemSpec.Enabled := True;
   BtnShow.Enabled := False;
   EditMode := False;
 end;
@@ -409,23 +425,32 @@ begin
  SDS_HeaderItemService.Value := 'IVI';
 end;
 
-procedure TfmItemDefinition.SDS_ItemGroupAfterScroll(DataSet: TDataSet);
-begin
-SDS_Barcodes.Close;
-SDS_Barcodes.DataSet.CommandText := 'Select * from Tbl_Barcodes Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
-SDS_Barcodes.Open;
-SDS_ItemSpec.Close;
-SDS_ItemSpec.DataSet.CommandText := 'Select * from tbl_ItemSpecification Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
-SDS_ItemSpec.Open;
-end;
-
 procedure TfmItemDefinition.SDS_ItemSpecNewRecord(DataSet: TDataSet);
 begin
   SDS_ItemSpecCompanyCode.Value := DCompany;
   SDS_ItemSpecItemCode.Value :=SDS_HeaderItemCode.Value;
   SDS_ItemSpecItemService.Value := SDS_HeaderItemService.Value;
+end;
 
+procedure TfmItemDefinition.SDS_BarcodesItemUnitChange(Sender: TField);
+begin
+  SDS_BarcodesUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_BarcodesItemUnit.AsString + ''' ');
+end;
 
+procedure TfmItemDefinition.SDS_HeaderAfterScroll(DataSet: TDataSet);
+begin
+  SDS_Barcodes.Close;
+  SDS_Barcodes.DataSet.CommandText := 'Select * from Tbl_Barcodes Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+  SDS_Barcodes.Open;
+  SDS_ItemSpec.Close;
+  SDS_ItemSpec.DataSet.CommandText := 'Select * from tbl_ItemSpecification Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+  SDS_ItemSpec.Open;
+end;
+
+procedure TfmItemDefinition.SDS_ItemSpecDetailItemUnitChange(
+  Sender: TField);
+begin
+ SDS_BarcodesUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_ItemSpecDetailItemUnit.AsString + ''' ');
 end;
 
 end.

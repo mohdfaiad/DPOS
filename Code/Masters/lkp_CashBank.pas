@@ -48,9 +48,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure btnAddClick(Sender: TObject);
-    procedure SDS_HeaderBeforePost(DataSet: TDataSet);
-    procedure Button1Click(Sender: TObject);
     procedure BtnShowClick(Sender: TObject);
+    procedure SDS_HeaderNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -205,22 +204,16 @@ begin
   Cb_Type.KeyValue := qry_TypeValue.AsString;
 end;
 
-procedure TfmCashBank.SDS_HeaderBeforePost(DataSet: TDataSet);
-begin
- SDS_HeaderCompanyCode.Value := DCompany;
-end;
-
-procedure TfmCashBank.Button1Click(Sender: TObject);
-var lkp : Tlkp;
-begin
-    lkp := Tlkp.Create(SDS_Header,nil);
-    lkp.ShowModal;
-end;
-
 procedure TfmCashBank.BtnShowClick(Sender: TObject);
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
+end;
+
+procedure TfmCashBank.SDS_HeaderNewRecord(DataSet: TDataSet);
+begin
+ SDS_HeaderCompanyCode.Value := DCompany;
+ SDS_HeaderCB_Type.Value := 'C';
 end;
 
 end.

@@ -20,8 +20,8 @@ object fmItemDefinition: TfmItemDefinition
   PixelsPerInch = 96
   TextHeight = 13
   object grp_Content: TGroupBox
-    Left = 64
-    Top = 102
+    Left = 63
+    Top = 97
     Width = 921
     Height = 477
     BiDiMode = bdRightToLeft
@@ -39,17 +39,17 @@ object fmItemDefinition: TfmItemDefinition
       477)
     object grpData: TGroupBox
       Left = 11
-      Top = 22
+      Top = 30
       Width = 902
-      Height = 441
+      Height = 251
       Anchors = []
       TabOrder = 0
       DesignSize = (
         902
-        441)
+        251)
       object Label2: TLabel
         Left = 822
-        Top = 61
+        Top = 63
         Width = 65
         Height = 19
         Anchors = []
@@ -63,7 +63,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label1: TLabel
         Left = 858
-        Top = 29
+        Top = 27
         Width = 29
         Height = 19
         Anchors = []
@@ -77,7 +77,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label3: TLabel
         Left = 397
-        Top = 61
+        Top = 63
         Width = 73
         Height = 19
         Anchors = []
@@ -91,7 +91,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label8: TLabel
         Left = 379
-        Top = 157
+        Top = 169
         Width = 89
         Height = 19
         Anchors = []
@@ -105,7 +105,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label9: TLabel
         Left = 197
-        Top = 157
+        Top = 169
         Width = 47
         Height = 19
         Anchors = []
@@ -119,7 +119,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label10: TLabel
         Left = 426
-        Top = 123
+        Top = 134
         Width = 44
         Height = 19
         Anchors = []
@@ -133,7 +133,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label11: TLabel
         Left = 186
-        Top = 123
+        Top = 134
         Width = 58
         Height = 19
         Anchors = []
@@ -147,7 +147,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label12: TLabel
         Left = 374
-        Top = 91
+        Top = 100
         Width = 96
         Height = 19
         Anchors = []
@@ -161,7 +161,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label13: TLabel
         Left = 145
-        Top = 91
+        Top = 100
         Width = 99
         Height = 19
         Anchors = []
@@ -175,7 +175,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object edtCode: TDBEdit
         Left = 679
-        Top = 25
+        Top = 23
         Width = 121
         Height = 27
         Anchors = []
@@ -191,7 +191,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit1: TDBEdit
         Left = 16
-        Top = 57
+        Top = 59
         Width = 356
         Height = 27
         Anchors = []
@@ -345,7 +345,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit2: TDBEdit
         Left = 248
-        Top = 87
+        Top = 96
         Width = 124
         Height = 27
         Anchors = []
@@ -361,7 +361,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit3: TDBEdit
         Left = 18
-        Top = 87
+        Top = 96
         Width = 124
         Height = 27
         Anchors = []
@@ -377,7 +377,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit4: TDBEdit
         Left = 248
-        Top = 119
+        Top = 130
         Width = 124
         Height = 27
         Anchors = []
@@ -393,7 +393,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit5: TDBEdit
         Left = 18
-        Top = 119
+        Top = 130
         Width = 124
         Height = 27
         Anchors = []
@@ -409,7 +409,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit6: TDBEdit
         Left = 480
-        Top = 57
+        Top = 59
         Width = 320
         Height = 27
         Anchors = []
@@ -425,7 +425,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit7: TDBEdit
         Left = 248
-        Top = 153
+        Top = 165
         Width = 124
         Height = 27
         Anchors = []
@@ -441,7 +441,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit8: TDBEdit
         Left = 18
-        Top = 153
+        Top = 165
         Width = 124
         Height = 27
         Anchors = []
@@ -455,87 +455,87 @@ object fmItemDefinition: TfmItemDefinition
         ParentFont = False
         TabOrder = 9
       end
-      object PG1: TPageControl
-        Left = 2
-        Top = 240
-        Width = 898
-        Height = 199
-        ActivePage = TabSheet2
-        Align = alBottom
+    end
+    object PG1: TPageControl
+      Left = 2
+      Top = 276
+      Width = 917
+      Height = 199
+      ActivePage = TabSheet1
+      Align = alBottom
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      object TabSheet1: TTabSheet
+        Caption = #1575#1604#1576#1575#1585#1603#1608#1583
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
+        Font.Color = clBlack
         Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 10
-        object TabSheet1: TTabSheet
-          Caption = #1575#1604#1576#1575#1585#1603#1608#1583
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          ParentFont = False
-          object GroupBox3: TGroupBox
-            Left = 0
-            Top = 32
-            Width = 890
-            Height = 133
-            Align = alBottom
+        object GroupBox3: TGroupBox
+          Left = 0
+          Top = 32
+          Width = 909
+          Height = 133
+          Align = alBottom
+          TabOrder = 0
+          object grd_Brcodes: TDBGrid
+            Left = 2
+            Top = 21
+            Width = 905
+            Height = 105
+            Align = alTop
+            DataSource = DS_Barcodes
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clNavy
+            Font.Height = -19
+            Font.Name = 'Times New Roman'
+            Font.Style = []
+            ParentFont = False
             TabOrder = 0
-            object grd_Brcodes: TDBGrid
-              Left = 2
-              Top = 21
-              Width = 886
-              Height = 105
-              Align = alTop
-              DataSource = DS_Barcodes
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clNavy
-              Font.Height = -19
-              Font.Name = 'Times New Roman'
-              Font.Style = []
-              ParentFont = False
-              TabOrder = 0
-              TitleFont.Charset = DEFAULT_CHARSET
-              TitleFont.Color = clNavy
-              TitleFont.Height = -21
-              TitleFont.Name = 'Times New Roman'
-              TitleFont.Style = []
-            end
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clNavy
+            TitleFont.Height = -21
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = []
           end
         end
-        object TabSheet2: TTabSheet
-          Caption = #1605#1603#1608#1606#1575#1578' '#1575#1604#1589#1606#1601
-          ImageIndex = 1
-          object GroupBox4: TGroupBox
-            Left = 0
-            Top = 16
-            Width = 890
-            Height = 149
-            Align = alBottom
+      end
+      object TabSheet2: TTabSheet
+        Caption = #1605#1603#1608#1606#1575#1578' '#1575#1604#1589#1606#1601
+        ImageIndex = 1
+        object GroupBox4: TGroupBox
+          Left = 0
+          Top = 16
+          Width = 909
+          Height = 149
+          Align = alBottom
+          TabOrder = 0
+          object grd_ItemSpec: TDBGrid
+            Left = 2
+            Top = 21
+            Width = 905
+            Height = 124
+            Align = alTop
+            DataSource = DS_ItemSpec
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clNavy
+            Font.Height = -19
+            Font.Name = 'Times New Roman'
+            Font.Style = []
+            ParentFont = False
             TabOrder = 0
-            object frd_ItemSpec: TDBGrid
-              Left = 2
-              Top = 21
-              Width = 886
-              Height = 124
-              Align = alTop
-              DataSource = DS_ItemSpec
-              Font.Charset = DEFAULT_CHARSET
-              Font.Color = clNavy
-              Font.Height = -19
-              Font.Name = 'Times New Roman'
-              Font.Style = []
-              ParentFont = False
-              TabOrder = 0
-              TitleFont.Charset = DEFAULT_CHARSET
-              TitleFont.Color = clNavy
-              TitleFont.Height = -21
-              TitleFont.Name = 'Times New Roman'
-              TitleFont.Style = []
-            end
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clNavy
+            TitleFont.Height = -21
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = []
           end
         end
       end
@@ -660,9 +660,8 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
+    AfterScroll = SDS_HeaderAfterScroll
     OnNewRecord = SDS_HeaderNewRecord
-    Left = 24
-    Top = 16
     object SDS_HeaderCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
@@ -750,8 +749,7 @@ object fmItemDefinition: TfmItemDefinition
   end
   object DS_Header: TDataSource
     DataSet = SDS_Header
-    Left = 64
-    Top = 16
+    Left = 24
   end
   object SDS_ItemGroup: TSimpleDataSet
     Aggregates = <>
@@ -760,9 +758,8 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    AfterScroll = SDS_ItemGroupAfterScroll
-    Left = 16
-    Top = 80
+    Left = 584
+    Top = 224
     object SDS_ItemGroupItemGroupCode: TStringField
       FieldName = 'ItemGroupCode'
       Required = True
@@ -779,8 +776,8 @@ object fmItemDefinition: TfmItemDefinition
   end
   object DS_ItemGroup: TDataSource
     DataSet = SDS_ItemGroup
-    Left = 56
-    Top = 80
+    Left = 616
+    Top = 224
   end
   object SDS_ItemType: TSimpleDataSet
     Aggregates = <>
@@ -789,8 +786,8 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 16
-    Top = 112
+    Left = 584
+    Top = 256
     object SDS_ItemTypeItemTypeCode: TStringField
       FieldName = 'ItemTypeCode'
       Required = True
@@ -807,8 +804,8 @@ object fmItemDefinition: TfmItemDefinition
   end
   object DS_ItemType: TDataSource
     DataSet = SDS_ItemType
-    Left = 56
-    Top = 112
+    Left = 608
+    Top = 256
   end
   object SDS_Itemunit: TSimpleDataSet
     Aggregates = <>
@@ -817,8 +814,8 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 16
-    Top = 160
+    Left = 584
+    Top = 288
     object SDS_ItemunitItemUnitCode: TStringField
       FieldName = 'ItemUnitCode'
       Required = True
@@ -835,8 +832,8 @@ object fmItemDefinition: TfmItemDefinition
   end
   object DS_ItemUnit: TDataSource
     DataSet = SDS_Itemunit
-    Left = 56
-    Top = 160
+    Left = 608
+    Top = 288
   end
   object SDS_ItemCategory: TSimpleDataSet
     Aggregates = <>
@@ -845,8 +842,8 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 16
-    Top = 208
+    Left = 584
+    Top = 320
     object SDS_ItemCategoryItemCategoryCode: TStringField
       FieldName = 'ItemCategoryCode'
       Required = True
@@ -863,8 +860,8 @@ object fmItemDefinition: TfmItemDefinition
   end
   object DS_ItemCategory: TDataSource
     DataSet = SDS_ItemCategory
-    Left = 56
-    Top = 208
+    Left = 608
+    Top = 320
   end
   object SDS_Barcodes: TSimpleDataSet
     Aggregates = <>
@@ -874,8 +871,7 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.Params = <>
     Params = <>
     OnNewRecord = SDS_BarcodesNewRecord
-    Left = 96
-    Top = 480
+    Top = 392
     object SDS_BarcodesCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
@@ -909,6 +905,7 @@ object fmItemDefinition: TfmItemDefinition
     object SDS_BarcodesItemUnit: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
       FieldName = 'ItemUnit'
+      OnChange = SDS_BarcodesItemUnitChange
       Size = 6
     end
     object SDS_BarcodesItemUnitNameAr: TStringField
@@ -976,14 +973,15 @@ object fmItemDefinition: TfmItemDefinition
       DisplayLabel = #1605#1593#1575#1605#1604' '#1575#1604#1608#1581#1583#1607
       DisplayWidth = 6
       FieldName = 'UnitTransValue'
+      Visible = False
       Precision = 18
       Size = 8
     end
   end
   object DS_Barcodes: TDataSource
     DataSet = SDS_Barcodes
-    Left = 136
-    Top = 480
+    Left = 24
+    Top = 392
   end
   object SDS_ItemSize: TSimpleDataSet
     Aggregates = <>
@@ -1049,8 +1047,7 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.Params = <>
     Params = <>
     OnNewRecord = SDS_ItemSpecNewRecord
-    Left = 112
-    Top = 400
+    Top = 424
     object SDS_ItemSpecCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
@@ -1089,6 +1086,7 @@ object fmItemDefinition: TfmItemDefinition
     object SDS_ItemSpecDetailItemUnit: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
       FieldName = 'DetailItemUnit'
+      OnChange = SDS_ItemSpecDetailItemUnitChange
       Size = 6
     end
     object SDS_ItemSpecDetailItemUnitAr: TStringField
@@ -1105,22 +1103,25 @@ object fmItemDefinition: TfmItemDefinition
       DisplayLabel = #1575#1604#1603#1605#1610#1577
       FieldName = 'ItemQuantity'
       Precision = 18
+      Size = 8
     end
     object SDS_ItemSpecUnitTransValue: TFMTBCDField
       DisplayLabel = #1605#1593#1575#1605#1604' '#1575#1604#1608#1581#1583#1607
       FieldName = 'UnitTransValue'
+      Visible = False
       Precision = 18
+      Size = 8
     end
   end
   object DS_ItemSpec: TDataSource
     DataSet = SDS_ItemSpec
-    Left = 152
-    Top = 400
+    Left = 24
+    Top = 424
   end
   object DS_ItemDef: TDataSource
     DataSet = SDS_ItemDef
-    Left = 248
-    Top = 448
+    Left = 24
+    Top = 456
   end
   object SDS_ItemDef: TSimpleDataSet
     Aggregates = <>
@@ -1129,8 +1130,7 @@ object fmItemDefinition: TfmItemDefinition
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 208
-    Top = 448
+    Top = 456
     object StringField2: TStringField
       DisplayLabel = #1575#1604#1585#1605#1586
       DisplayWidth = 10

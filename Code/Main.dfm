@@ -12829,9 +12829,17 @@ object fmMainForm: TfmMainForm
           OnClick = mn_ItemGroupSectionDefClick
         end
       end
+      object mn_BegBalDef: TMenuItem
+        Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577
+        OnClick = mn_BegBalDefClick
+      end
     end
     object N15: TMenuItem
       Caption = #1575#1604#1605#1588#1578#1585#1610#1600#1600#1600#1600#1600#1575#1578
+      object mn_PerchaseInvoice: TMenuItem
+        Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
+        OnClick = mn_PerchaseInvoiceClick
+      end
       object N18: TMenuItem
         Caption = #1605#1604#1600#1600#1600#1600#1600#1600#1600#1600#1600#1600#1601
         object mn_VendoersDef: TMenuItem
