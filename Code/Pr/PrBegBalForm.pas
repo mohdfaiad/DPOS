@@ -297,7 +297,7 @@ end;
 procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
     SDS_Header.Append;
-  {SDS_Details.Append; }
+  grd_Details.Refresh;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -316,6 +316,7 @@ begin
   trxDate.DateTime := now;
   BtnShow.Enabled := False;
   EditMode := False;
+    SDS_HeaderTrxNo.AsString := GetDBValue(' Max(isnull(TrxNo,0)) + 1 ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''IVBB''');
 end;
 
 procedure TfmBegBalForm.BtnShowClick(Sender: TObject);

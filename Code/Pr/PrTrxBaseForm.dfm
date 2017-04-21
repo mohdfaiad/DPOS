@@ -384,7 +384,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Top = 276
       Width = 917
       Height = 199
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
@@ -436,10 +436,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ImageIndex = 1
         object grd_Payment: TDBGrid
           Left = 0
-          Top = 0
+          Top = 37
           Width = 909
-          Height = 152
-          Align = alTop
+          Height = 128
+          Align = alBottom
           DataSource = DS_Payment
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clNavy
@@ -453,6 +453,21 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
           TitleFont.Height = -21
           TitleFont.Name = 'Times New Roman'
           TitleFont.Style = []
+        end
+        object btn_adjust: TButton
+          Left = 780
+          Top = 7
+          Width = 115
+          Height = 24
+          Caption = #1590#1576#1591' '#1575#1604#1583#1601#1593#1575#1578
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Times New Roman'
+          Font.Style = [fsBold, fsItalic]
+          ParentFont = False
+          TabOrder = 1
+          OnClick = btn_adjustClick
         end
       end
     end
@@ -568,7 +583,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       TabOrder = 6
       OnClick = BtnShowClick
     end
-    object Button1: TButton
+    object btnPost: TButton
       Left = 5
       Top = 13
       Width = 115
@@ -664,6 +679,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
   end
   object SDS_Details: TSimpleDataSet
     Aggregates = <>
+    AutoCalcFields = False
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_PrTrxDetails'
     DataSet.MaxBlobSize = -1
@@ -870,7 +886,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Top = 208
   end
   object qry_Type: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 
@@ -906,7 +921,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Top = 168
   end
   object SDS_Itemunit: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_ItemUnit'
@@ -935,7 +949,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Top = 432
   end
   object SDS_ItemDef: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_ItemDefinition'
@@ -1055,7 +1068,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Top = 512
   end
   object SDS_PaymentType: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 

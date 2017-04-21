@@ -706,7 +706,6 @@ object fmBegBalForm: TfmBegBalForm
     Top = 208
   end
   object qry_Type: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 
@@ -742,7 +741,6 @@ object fmBegBalForm: TfmBegBalForm
     Top = 168
   end
   object SDS_Itemunit: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_ItemUnit'
@@ -771,7 +769,6 @@ object fmBegBalForm: TfmBegBalForm
     Top = 432
   end
   object SDS_ItemDef: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_ItemDefinition'

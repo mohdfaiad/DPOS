@@ -128,7 +128,8 @@ type
     DS_PaymentType: TDataSource;
     SDS_PaymentPaymentDesc: TStringField;
     trxDate: TDateTimePicker;
-    Button1: TButton;
+    btnPost: TButton;
+    btn_adjust: TButton;
     SDS_DetailsItemUnit: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
@@ -148,6 +149,7 @@ type
     procedure SDS_DetailsDiscountChange(Sender: TField);
     procedure SDS_PaymentNewRecord(DataSet: TDataSet);
     procedure SDS_DetailsItemUnitChange(Sender: TField);
+    procedure btn_adjustClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -257,6 +259,8 @@ begin
      edtCode.SetFocus;
      Exit;
   end;
+  TotalDiscount := 0;
+  TrxVal := 0;
    With SDS_Details do Begin
        DisableControls;
        First;
@@ -389,8 +393,8 @@ end;
 procedure TfmPrTrxBaseForm.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
-  {SDS_Details.Append;
-  SDS_Payment.Append;}
+  grd_Details.Refresh;
+  grd_Payment.Refresh;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -414,6 +418,7 @@ begin
   trxDate.DateTime := now;
   BtnShow.Enabled := False;
   EditMode := False;
+  SDS_HeaderTrxNo.AsString := GetDBValue(' Max(isnull(TrxNo,0)) + 1 ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''PRIV''');
 end;
 
 procedure TfmPrTrxBaseForm.BtnShowClick(Sender: TObject);
@@ -501,6 +506,48 @@ end;
 procedure TfmPrTrxBaseForm.SDS_DetailsItemUnitChange(Sender: TField);
 begin
   SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
+end;
+
+procedure TfmPrTrxBaseForm.btn_adjustClick(Sender: TObject);
+Var
+Total : Real;
+begin
+  If SDS_Details.State in [dsInsert, dsEdit] then SDS_Details.Post;
+  SDS_Payment.First ;
+    While Not SDS_Payment.Eof do SDS_Payment.Delete;
+
+    If SDS_Payment.Active And (SDS_Payment.RecordCount=0) then begin
+       If Not (SDS_Payment.State in [dsInsert]) then SDS_Payment.Append;
+       Total := 0;
+       With SDS_Details do Begin
+        First;
+        While Not Eof Do Begin
+           Total := Total + SDS_DetailsNetPrice.AsFloat;
+           SDS_Details.Next;
+        end;
+       end;
+
+       SDS_PaymentAmount.AsFloat := Total;
+
+       SDS_PaymentPaymentType.AsString :='C';
+          If SDS_HeaderVendoreCode.AsString='' then begin
+             ShowMessage('ÌÃ»  ÕœÌœ «·„Ê—œ');
+             CO_Vendors.SetFocus;
+             Exit;
+          end;
+          SDS_PaymentCompanyCode.Value := DCompany;
+          SDS_PaymentTrxType.Value := 'PRIV';
+          SDS_PaymentBranchCode.Value := DBranch;
+          SDS_PaymentTrxNo.Value := SDS_HeaderTrxNo.AsString;
+          SDS_PaymentVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
+          SDS_PaymentTrxLineNo.Value :=  '1';
+
+
+
+       SDS_Payment.Post ;
+    end;
+
+
 end;
 
 end.
