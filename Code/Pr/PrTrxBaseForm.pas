@@ -129,6 +129,7 @@ type
     DS_PaymentType: TDataSource;
     SDS_PaymentPaymentDesc: TStringField;
     trxDate: TDateTimePicker;
+    Button1: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -381,8 +382,8 @@ end;
 procedure TfmPrTrxBaseForm.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
-  SDS_Details.Append;
-  SDS_Payment.Append;
+  {SDS_Details.Append;
+  SDS_Payment.Append;}
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;

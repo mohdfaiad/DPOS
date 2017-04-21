@@ -19,7 +19,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
   PixelsPerInch = 96
   TextHeight = 13
   object grp_Content: TGroupBox
-    Left = 64
+    Left = 53
     Top = 102
     Width = 921
     Height = 477
@@ -457,13 +457,13 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     end
   end
   object GroupBox2: TGroupBox
-    Left = 88
+    Left = 17
     Top = 32
-    Width = 873
+    Width = 983
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 626
+      Left = 739
       Top = 13
       Width = 115
       Height = 35
@@ -478,7 +478,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 503
+      Left = 616
       Top = 13
       Width = 115
       Height = 35
@@ -493,7 +493,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 379
+      Left = 492
       Top = 13
       Width = 115
       Height = 35
@@ -508,7 +508,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       OnClick = btnEditClick
     end
     object btnDelete: TButton
-      Left = 11
+      Left = 124
       Top = 13
       Width = 115
       Height = 35
@@ -523,7 +523,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 254
+      Left = 367
       Top = 13
       Width = 115
       Height = 35
@@ -538,7 +538,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 132
+      Left = 245
       Top = 13
       Width = 115
       Height = 35
@@ -553,7 +553,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       OnClick = BtnCancelClick
     end
     object BtnShow: TButton
-      Left = 750
+      Left = 863
       Top = 13
       Width = 115
       Height = 35
@@ -566,6 +566,21 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       ParentFont = False
       TabOrder = 6
       OnClick = BtnShowClick
+    end
+    object Button1: TButton
+      Left = 5
+      Top = 13
+      Width = 115
+      Height = 35
+      Caption = #1578#1585#1581#1610#1604
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = btnDeleteClick
     end
   end
   object SDS_Header: TSimpleDataSet
