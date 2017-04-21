@@ -77,6 +77,8 @@ type
     mn_CashBankDef: TMenuItem;
     mn_ItemDef: TMenuItem;
     qry_Main2: TSimpleDataSet;
+    mn_PerchaseInvoice: TMenuItem;
+    mn_BegBalDef: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mnExitClick(Sender: TObject);
@@ -109,6 +111,8 @@ type
     procedure btn_POSClick(Sender: TObject);
     procedure mn_POSClick(Sender: TObject);
     procedure mn_DailyCloseClick(Sender: TObject);
+    procedure mn_PerchaseInvoiceClick(Sender: TObject);
+    procedure mn_BegBalDefClick(Sender: TObject);
   private
     { Private declarations }
     LastUserAccess , LicenseNo , BiosID : String;
@@ -130,7 +134,8 @@ uses  Login, GVariable,
   lkp_WareHouse, lkp_VendorGroup, lkp_UserGroups, lkp_Customers,
   lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
   lkp_Operators, lkp_POSDefinition, lkp_CashBank, lkp_ItemDefinition,
-  PosClose, PointOfSale;
+  PosClose, PointOfSale,
+  PrTrxBaseForm, PrBegBalForm;
 
 {$R *.dfm}
 
@@ -455,6 +460,20 @@ procedure TfmMainForm.mn_DailyCloseClick(Sender: TObject);
 begin
   Application.CreateForm(TfmPosClose, fmPosClose);
   fmPosClose.ShowModal;
+end;
+
+procedure TfmMainForm.mn_PerchaseInvoiceClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPrTrxBaseForm, fmPrTrxBaseForm);
+   fmPrTrxBaseForm.ShowModal;
+
+end;
+
+procedure TfmMainForm.mn_BegBalDefClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmBegBalForm, fmBegBalForm);
+   fmBegBalForm.ShowModal;
+
 end;
 
 end.

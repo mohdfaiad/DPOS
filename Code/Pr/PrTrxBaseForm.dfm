@@ -1,5 +1,5 @@
 object fmPrTrxBaseForm: TfmPrTrxBaseForm
-  Left = 316
+  Left = 334
   Top = 6
   BorderStyle = bsDialog
   Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
@@ -413,6 +413,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
             Top = 21
             Width = 905
             Height = 127
+            TabStop = False
             Align = alTop
             DataSource = DS_Details
             Font.Charset = DEFAULT_CHARSET
@@ -580,7 +581,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
       TabOrder = 7
-      OnClick = btnDeleteClick
     end
   end
   object SDS_Header: TSimpleDataSet
@@ -760,9 +760,9 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Size = 8
     end
     object SDS_DetailsItemUnit: TStringField
-      DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
+      DisplayLabel = #1585#1605#1586' '#1575#1604#1608#1581#1583#1577
+      DisplayWidth = 6
       FieldName = 'ItemUnit'
-      OnChange = SDS_DetailsItemUnitChange
       Size = 6
     end
     object SDS_DetailsItemUnitDescAr: TStringField

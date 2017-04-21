@@ -1,5 +1,5 @@
 object fmItemDefinition: TfmItemDefinition
-  Left = -4
+  Left = 0
   Top = 26
   BorderStyle = bsDialog
   Caption = #1575#1604#1571#1589#1606#1575#1601' '#1575#1604#1605#1582#1586#1606#1610#1577

@@ -107,7 +107,6 @@ type
     SDS_ItemDefItemNameAr: TStringField;
     SDS_ItemDefItemNameEn: TStringField;
     SDS_DetailsItemNameAr2: TStringField;
-    SDS_DetailsItemUnit: TStringField;
     SDS_DetailsItemUnitDescAr: TStringField;
     SDS_Payment: TSimpleDataSet;
     DS_Payment: TDataSource;
@@ -130,6 +129,7 @@ type
     SDS_PaymentPaymentDesc: TStringField;
     trxDate: TDateTimePicker;
     Button1: TButton;
+    SDS_DetailsItemUnit: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -262,6 +262,11 @@ begin
        First;
        While Not Eof Do Begin
              Edit;
+             SDS_DetailsCompanyCode.AsString := DCompany;
+             SDS_DetailsBranchCode.AsString := DBranch;
+             SDS_DetailsTrxNo.AsString := SDS_HeaderTrxNo.AsString;
+             SDS_DetailsVendoreCode.AsString := SDS_HeaderVendoreCode.AsString;
+             SDS_DetailsWareHouseCode.AsString := SDS_HeaderWareHouseCode.AsString;
              SDS_DetailsTraLineNo.AsInteger := SDS_Details.RecNo;
              TrxVal := TrxVal + SDS_DetailsNetPrice.AsFloat;
              TotalDiscount := TotalDiscount + SDS_DetailsDiscount.AsFloat;
@@ -279,6 +284,8 @@ begin
        First;
        While Not Eof Do Begin
              Edit;
+             SDS_PaymentTrxNo.Value := SDS_HeaderTrxNo.AsString;
+             SDS_PaymentVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
              SDS_PaymentTrxLineNo.AsInteger := SDS_Payment.RecNo;
              TotalPayment := TotalPayment + SDS_PaymentAmount.AsFloat;
              SDS_Payment.Next;
@@ -440,19 +447,20 @@ begin
  SDS_DetailsCompanyCode.Value := DCompany;
  SDS_DetailsTrxType.Value := 'PRIV';
  SDS_DetailsBranchCode.Value := DBranch;
- SDS_DetailsTrxNo.Value := SDS_HeaderTrxNo.AsString;
- SDS_DetailsWareHouseCode.Value := SDS_HeaderWareHouseCode.AsString;
- SDS_DetailsVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
- SDS_DetailsTraLineNo.Value :=  'XX';
- SDS_DetailsQuantity.AsFloat := 0.0;
- SDS_DetailsCostPrice.AsFloat := 0.0;
- SDS_DetailsDiscount.AsFloat := 0.0;
- SDS_DetailsNetPrice.AsFloat := 0.0;
+ SDS_DetailsTrxNo.Value := 'xx';
+ SDS_DetailsWareHouseCode.Value := 'xx';
+ SDS_DetailsVendoreCode.Value := 'xx';
+ SDS_DetailsTraLineNo.AsInteger :=  SDS_Details.RecNo;
+ SDS_DetailsQuantity.AsFloat := 1;
+ SDS_DetailsDiscount.AsFloat := 0;
+ SDS_DetailsCostPrice.AsFloat := 0;
+ SDS_DetailsNetPrice.AsFloat := 0;
 end;
 
 procedure TfmPrTrxBaseForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
   SDS_Itemunit.Close;
+  SDS_Itemunit.DataSet.Close;
   SDS_Itemunit.DataSet.CommandText := ' Select * from tbl_ItemUnit where CompanyCode = ''' + DCompany + ''' And '
                                      +' (ItemUnitCode in (select RelateUnitCode from tbl_ItemRelatedUnits where itemcode = ''' + SDS_DetailsItemCode.AsString + ''') '
                                      +' or ItemUnitCode = (select ItemUnitCode from tbl_ItemDefinition where itemcode = ''' + SDS_DetailsItemCode.AsString + ''')) ';
@@ -483,16 +491,16 @@ begin
  SDS_PaymentCompanyCode.Value := DCompany;
  SDS_PaymentTrxType.Value := 'PRIV';
  SDS_PaymentBranchCode.Value := DBranch;
- SDS_PaymentTrxNo.Value := SDS_HeaderTrxNo.AsString;
- SDS_PaymentVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
- SDS_PaymentTrxLineNo.Value :=  'XX';
- SDS_PaymentAmount.AsFloat := 0.0;
+ SDS_PaymentTrxNo.Value := 'xx';
+ SDS_PaymentVendoreCode.Value := 'xx';
+ SDS_PaymentTrxLineNo.AsInteger := SDS_Payment.RecNo ;
+ SDS_PaymentAmount.AsFloat := 0;
 
 end;
 
 procedure TfmPrTrxBaseForm.SDS_DetailsItemUnitChange(Sender: TField);
 begin
-SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
+  SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
 end;
 
 end.
