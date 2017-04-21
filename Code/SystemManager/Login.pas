@@ -54,15 +54,27 @@ begin
    ExistUser :=  GetDBValue('IsNull(Count(*),0) As Cnt','tbl_Users',' And UserName=''' + edt_UserName.Text + ''' And Password=''' + edt_Password.Text + ''' ');
    If ExistUser <> '0' Then Begin
      gUserName := edt_UserName.Text;
-
+     gUserID := GetDBValue('UserId','tbl_Users',' And UserName=''' + gUserName + ''' ');
       vIni := TIniFile.Create(ChangeFileExt(Application.ExeName,'.ini'));
       With vIni do begin
           WriteString('ERP_Option', 'LastUserAccess', gUserName);
       end;
       vIni.Free;
-     ModalResult := mrOk; 
-     fmMainForm.Show;
-     //fmLogin.Free;
+
+
+    gCustomerCode := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription = ''CustomerCode'' ');
+    gWarehouseCode := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''WarehouseCode'' ');
+    gPOSCode := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''POSCode'' ');
+    gCashCode := GetDBValue('CashCode','tbl_POS_Definition',' And CompanyCode = ''' + DCompany + ''' And POSCode  = ''' + gPOSCode + '''  ');
+    gBankCode := GetDBValue('BankCode','tbl_POS_Definition',' And CompanyCode = ''' + DCompany + ''' And POSCode  = ''' + gPOSCode + '''  ');
+    gMainCash := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''MainCash'' ');
+    gOperatorCode := GetDBValue('OperatorCode','tbl_operators',' And CompanyCode = ''' + DCompany + ''' And UserID = ''' + gUserID + '''  ');
+    gPOSWorkByTouch := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''WorkByTouch'' ');
+
+     ModalResult := mrOk;
+     If gLoginFrom_POS_Screen = False
+     then fmMainForm.Show;
+     // fmLogin.Free;
    end else begin
      ShowMessage('«”„ «·„” Œœ„ √Ê ﬂ·„… «·„—Ê— €Ì— ’ÕÌÕ…');
      edt_Password.SetFocus;

@@ -32,6 +32,8 @@ uses
   lkp_Operators in 'Masters\lkp_Operators.pas' {fmOperators},
   lkp_UserGroups in 'Masters\lkp_UserGroups.pas' {fmUserGroups},
   lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers},
+  PointOfSale in 'Transactions\PointOfSale.pas' {fmPointOfSale},
+  posPayType in 'Transactions\posPayType.pas',
   lkp_POSDefinition in 'Masters\lkp_POSDefinition.pas' {fmPOSDefinition},
   lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition},
   PrBegBalForm in 'Pr\PrBegBalForm.pas' {fmBegBalForm},
@@ -42,6 +44,7 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TfmMainForm, fmMainForm);
+
   Application.CreateForm(TfmPrTrxBaseForm, fmPrTrxBaseForm);
   {
   Application.CreateForm(TfmLicense, fmLicense);

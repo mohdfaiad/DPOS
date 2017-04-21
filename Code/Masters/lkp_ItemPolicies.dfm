@@ -1,6 +1,6 @@
 object fmItemPolicies: TfmItemPolicies
-  Left = 187
-  Top = 151
+  Left = -2
+  Top = 109
   BorderStyle = bsDialog
   Caption = #1587#1610#1575#1587#1575#1578' '#1575#1604#1578#1587#1593#1610#1585
   ClientHeight = 499
@@ -155,6 +155,21 @@ object fmItemPolicies: TfmItemPolicies
         TitleFont.Height = -21
         TitleFont.Name = 'Times New Roman'
         TitleFont.Style = []
+      end
+      object btn_AddAllItems: TButton
+        Left = 11
+        Top = 83
+        Width = 115
+        Height = 28
+        Caption = #1573#1590#1575#1601#1577' '#1603#1604' '#1575#1604#1571#1589#1606#1575#1601
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        TabOrder = 4
+        OnClick = btn_AddAllItemsClick
       end
     end
   end
@@ -465,6 +480,10 @@ object fmItemPolicies: TfmItemPolicies
     object SDS_ItemDefItemNameEn: TStringField
       FieldName = 'ItemNameEn'
       Size = 255
+    end
+    object SDS_ItemDefItemUnitCode: TStringField
+      FieldName = 'ItemUnitCode'
+      Size = 6
     end
   end
   object DS_ItemDef: TDataSource

@@ -126,9 +126,53 @@ type
     DBLookupComboBox1: TDBLookupComboBox;
     SDS_HeaderCashDifference: TFMTBCDField;
     ppDailySales: TppReport;
+    ppParameterList1: TppParameterList;
+    ppTitleBand1: TppTitleBand;
+    pplTitle: TppLabel;
     ppHeaderBand1: TppHeaderBand;
     ppDetailBand1: TppDetailBand;
+    ppDBText20: TppDBText;
+    ppDBItemName: TppDBText;
+    ppDBText12: TppDBText;
+    ppDBText14: TppDBText;
+    pplQuantity: TppLabel;
+    pplItem: TppLabel;
+    pplPrice: TppLabel;
+    ppLine1: TppLine;
+    ppDBText1: TppDBText;
+    ppDBText2: TppDBText;
+    ppLabel1: TppLabel;
+    ppLabel2: TppLabel;
+    ppDBText3: TppDBText;
+    ppDBText4: TppDBText;
+    ppLabel3: TppLabel;
+    ppLabel4: TppLabel;
     ppFooterBand1: TppFooterBand;
+    ppLine5: TppLine;
+    ppSystemVariable1: TppSystemVariable;
+    ppSystemVariable2: TppSystemVariable;
+    ppSummaryBand1: TppSummaryBand;
+    pplTotal: TppLabel;
+    ppLine11: TppLine;
+    ppDBCalc2: TppDBCalc;
+    ppLine2: TppLine;
+    raCodeModule1: TraCodeModule;
+    qry_DailySales: TSimpleDataSet;
+    DS_DailySales: TDataSource;
+    qry_DailySalesItemService: TStringField;
+    qry_DailySalesItemCode: TStringField;
+    qry_DailySalesItemNameAr: TStringField;
+    qry_DailySalesItemNameEn: TStringField;
+    qry_DailySalesItemUnitCode: TStringField;
+    qry_DailySalesItemUnitDescA: TStringField;
+    qry_DailySalesItemUnitDescE: TStringField;
+    qry_DailySalesSAQuantity: TFMTBCDField;
+    qry_DailySalesSATotalPrice: TFMTBCDField;
+    qry_DailySalesRTQuantity: TFMTBCDField;
+    qry_DailySalesRTTotalPrice: TFMTBCDField;
+    qry_DailySalesQuantity: TFMTBCDField;
+    qry_DailySalesNetPrice: TFMTBCDField;
+    pplDailySales: TppDBPipeline;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -286,10 +330,12 @@ begin
 
   SDS_HeaderCompanyCode.AsString := DCompany;
   SDS_HeaderBranchCode.AsString := DBranch;
-  cb_Shift.ItemIndex := 0;
-  SDS_HeaderPOSCode.AsString := DPOS_Code ;
-  SDS_HeaderCashCode.AsString := GetDBValue(' CashCode' , 'tbl_POS_Definition' , ' And CompanyCode = ''' + DCompany + ''' And POSCode = ''' + SDS_HeaderPOSCode.AsString + '''  ') ;
-  SDS_HeaderBankCode.AsString := GetDBValue(' BankCode' , 'tbl_POS_Definition' , ' And CompanyCode = ''' + DCompany + '''  And POSCode = ''' + SDS_HeaderPOSCode.AsString + '''   ') ;
+  SDS_HeaderPOSShift.AsString := '1';
+  SDS_HeaderPOSCode.AsString := gPOSCode ;
+  SDS_HeaderCashCode.AsString := gCashCode ;
+  SDS_HeaderBankCode.AsString := gBankCode;
+  SDS_HeaderMainCashCode.AsString := gMainCash;
+
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -370,9 +416,31 @@ procedure TfmPosClose.btnPrintDailySalesClick(Sender: TObject);
 Var
    RepFileName : String ;
 begin
+    qry_DailySales.Close;
+    qry_DailySales.DataSet.Close;
+    qry_DailySales.DataSet.CommandText := ' Select D.ItemService, D.ItemCode, I.ItemNameAr, I.ItemNameEn, I.ItemUnitCode, U.ItemUnitDescA, '
+         + '  U.ItemUnitDescE, '
+         + '           SUM(CASE WHEN (H.TrxType = ''SAIV'' AND D.Quantity > 0) THEN (D.Quantity * D .UnitTransValue) ELSE 0 END) AS SAQuantity, '
+         + '           SUM(CASE WHEN (H.Trxtype = ''SAIV'' AND D.Quantity > 0) THEN (D.NetPrice ) ELSE 0 END) AS SATotalPrice, '
+         + '           SUM(CASE WHEN (H.TrxType = ''SAIV'' AND D.Quantity < 0) THEN (D.Quantity * D .UnitTransValue) ELSE 0 END) AS RTQuantity, '
+         + '           SUM(CASE WHEN (H.Trxtype = ''SAIV'' AND D.Quantity < 0) THEN (D.NetPrice ) ELSE 0 END) AS RTTotalPrice, '
+         + ' '
+         + '           Sum(Case When H.TrxType=''SAIV'' then (D.Quantity * D.UnitTransValue) else -(D.Quantity * D.UnitTransValue) end) Quantity, '
+         + '           Sum(Case When H.Trxtype=''SAIV'' then (D.NetPrice ) else -(D.NetPrice ) end) NetPrice '
+         + '    FROM         tbl_ItemUnit AS U INNER JOIN '
+         + '                          tbl_ItemDefinition AS I ON U.CompanyCode = I.CompanyCode AND U.ItemUnitCode = I.ItemUnitCode INNER JOIN '
+         + '                          sa_POS_TrxHeader AS H INNER JOIN '
+         + '                          sa_POS_TrxDetails AS D ON H.CompanyCode = D.CompanyCode AND H.BranchCode = D.BranchCode AND H.TrxNo = D.TrxNo AND H.TrxType = D.TrxType AND H.YearID = D.YearID AND '
+         + '                          H.PeriodID = D.PeriodID ON I.CompanyCode = D.CompanyCode AND I.ItemCode = D.ItemCode AND I.ItemService = D.ItemService '
+         + '    Where  H.CompanyCode=''' + DCompany + ''' And H.BranchCode = ''' + DBranch + ''' '
+         + '    And H.TrxDate = ''' + FormatDateTime('mm/dd/yyyy',StrToDate(SDS_HeaderTrxDate.AsString)) + ''' And H.POSCode = ''' + SDS_HeaderPOSCode.AsString
+         + '''  And H.OperatorCode = ''' + SDS_HeaderOperatorCode.AsString + ''' And H.PosShift = ''' + SDS_HeaderPOSShift.AsString + ''' '
+         + '    Group By D.ItemService, D.ItemCode, I.ItemNameAr, I.ItemNameEn, I.ItemUnitCode, U.ItemUnitDescA, U.ItemUnitDescE '
+         + '     Order By D.ItemCode ';
+    qry_DailySales.Open;
 
     RepParam.Clear;
-    ppDailySales.Template.FileName := ExtractFileDir(Application.ExeName) + '\Reports\.rtm' ;
+    ppDailySales.Template.FileName := ExtractFileDir(Application.ExeName) + '\Reports\POS_DailyItemSales_ByOperator.rtm' ;
 
     ppDailySales.Parameters.Clear;
     ppDailySales.Template.LoadFromFile;
@@ -397,6 +465,7 @@ end;
 
 procedure TfmPosClose.SDS_HeaderOperatorCodeChange(Sender: TField);
 begin
+    if SDS_HeaderOperatorCode.AsString = '' Then Exit;
     fmMainForm.qry_Main.Close;
     fmMainForm.qry_Main.DataSet.Close;
     fmMainForm.qry_Main.DataSet.CommandText := ''

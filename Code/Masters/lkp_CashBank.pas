@@ -201,7 +201,7 @@ begin
   edtCode.Enabled := True;
   edtCode.SetFocus;
   EditMode := False;
-  Cb_Type.KeyValue := qry_TypeValue.AsString;
+  SDS_HeaderCB_Type.AsString := 'C';
 end;
 
 procedure TfmCashBank.BtnShowClick(Sender: TObject);

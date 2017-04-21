@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls;
 
 type
   TfmItemDefinition = class(TForm)
@@ -133,6 +133,7 @@ type
     TabSheet2: TTabSheet;
     GroupBox4: TGroupBox;
     grd_ItemSpec: TDBGrid;
+    Navigator: TDBNavigator;
     TabSheet3: TTabSheet;
     GroupBox5: TGroupBox;
     grd_RelatedUnits: TDBGrid;
@@ -213,6 +214,7 @@ begin
   grd_RelatedUnits.Enabled := False;
   BtnShow.Enabled := True;
   EditMode := False;
+  Navigator.Enabled := True;
 end;
 
 procedure TfmItemDefinition.btnEditClick(Sender: TObject);
@@ -247,6 +249,7 @@ begin
   grd_RelatedUnits.Enabled := True;
   pg1.Enabled := True;
   EditMode := True;
+  Navigator.Enabled := False;
 end;
 
 procedure TfmItemDefinition.btnSaveClick(Sender: TObject);
@@ -405,6 +408,7 @@ begin
   grd_RelatedUnits.Enabled := True;
   BtnShow.Enabled := False;
   EditMode := False;
+  Navigator.Enabled := False;
 end;
 
 procedure TfmItemDefinition.Button1Click(Sender: TObject);

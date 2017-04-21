@@ -57,6 +57,8 @@ type
     btnSave: TButton;
     BtnCancel: TButton;
     BtnShow: TButton;
+    btn_AddAllItems: TButton;
+    SDS_ItemDefItemUnitCode: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -69,6 +71,7 @@ type
     procedure SDS_ItemPricesNewRecord(DataSet: TDataSet);
     procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
     procedure BtnShowClick(Sender: TObject);
+    procedure btn_AddAllItemsClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -254,6 +257,22 @@ procedure TfmItemPolicies.BtnShowClick(Sender: TObject);
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
+end;
+
+procedure TfmItemPolicies.btn_AddAllItemsClick(Sender: TObject);
+begin
+  SDS_ItemDef.First;
+  while not SDS_ItemDef.Eof do
+  begin
+  SDS_ItemPrices.Append;
+  SDS_ItemPricesCompanyCode.AsString := DCompany;
+  SDS_ItemPricesItemService.AsString := 'IVI';
+  SDS_ItemPricesPolicyCode.AsString := SDS_HeaderPolicyCode.AsString;
+  SDS_ItemPricesItemCode.AsString := SDS_ItemDefItemCode.AsString;
+  SDS_ItemPricesItemUnit.AsString := SDS_ItemDefItemUnitCode.AsString;
+  SDS_ItemDef.Next;
+  end;
+
 end;
 
 end.

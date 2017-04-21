@@ -77,6 +77,7 @@ begin
    Sql := 'Select * FROM ( '+OldSql+' ) as NewTable where 1=1 and ' ;
 
    for i := 0 to SDS_Lkp.FieldCount-1 do begin
+       If SDS_Lkp.Fields[i].FieldKind = fkData Then
        Cond := Cond + SDS_Lkp.Fields[i].FieldName  + ' LIKE ''%' + EdtSearch.Text + '%'' or '  ;
    end;
 

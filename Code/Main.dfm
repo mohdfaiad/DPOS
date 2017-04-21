@@ -1,10 +1,10 @@
 object fmMainForm: TfmMainForm
-  Left = -7
-  Top = 89
+  Left = 0
+  Top = 83
   BorderStyle = bsSingle
   Caption = #1573#1583#1575#1585#1577' '#1606#1602#1575#1591' '#1575#1604#1576#1610#1593
   ClientHeight = 587
-  ClientWidth = 1362
+  ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3127,6 +3127,7 @@ object fmMainForm: TfmMainForm
         Caption = #1606#1602#1591#1600#1600#1577' '#1575#1604#1576#1610#1600#1600#1600#1600#1593
         ParentBiDiMode = False
         TabOrder = 0
+        OnClick = btn_POSClick
       end
     end
     object GroupBox5: TGroupBox
@@ -6178,6 +6179,7 @@ object fmMainForm: TfmMainForm
         Caption = #1573#1594#1604#1575#1602' '#1606#1602#1600#1600#1591#1577' '#1575#1604#1576#1610#1600#1593
         ParentBiDiMode = False
         TabOrder = 0
+        OnClick = btn_DailyCloseClick
       end
     end
     object GroupBox7: TGroupBox
@@ -7320,14 +7322,14 @@ object fmMainForm: TfmMainForm
   object GroupBox8: TGroupBox
     Left = 178
     Top = 5
-    Width = 1184
+    Width = 830
     Height = 577
     Align = alClient
     TabOrder = 2
     object imgBG: TImage
       Left = 2
       Top = 15
-      Width = 1180
+      Width = 826
       Height = 560
       Align = alClient
       Picture.Data = {
@@ -12681,7 +12683,7 @@ object fmMainForm: TfmMainForm
   object Panel4: TPanel
     Left = 0
     Top = 0
-    Width = 1362
+    Width = 1008
     Height = 5
     Align = alTop
     Color = clBackground
@@ -12691,7 +12693,7 @@ object fmMainForm: TfmMainForm
   object Panel5: TPanel
     Left = 0
     Top = 582
-    Width = 1362
+    Width = 1008
     Height = 5
     Align = alBottom
     Color = clBackground
@@ -12708,14 +12710,13 @@ object fmMainForm: TfmMainForm
       'HostName=.'
       'DataBase=WMAPOS'
       'User_Name=sa'
-      'Password=Xyz789'
+      'Password=123456'
       'BlobSize=-1'
       'ErrorResourceFile='
       'LocaleCode=0000'
       'MSSQL TransIsolation=ReadCommited'
       'OS Authentication=False')
     VendorLib = 'oledb'
-    Connected = True
     Left = 280
     Top = 40
   end
@@ -12730,7 +12731,6 @@ object fmMainForm: TfmMainForm
   end
   object MainMenu: TMainMenu
     BiDiMode = bdRightToLeft
-    OwnerDraw = True
     ParentBiDiMode = False
     Left = 360
     Top = 48
@@ -12877,9 +12877,11 @@ object fmMainForm: TfmMainForm
       Caption = #1606#1602#1600#1600#1600#1575#1591' '#1575#1604#1576#1610#1600#1600#1600#1600#1593
       object mn_POS: TMenuItem
         Caption = #1606#1602#1591#1600#1600#1600#1600#1600#1577' '#1575#1604#1576#1610#1600#1600#1600#1600#1600#1600#1600#1600#1600#1593
+        OnClick = mn_POSClick
       end
       object mn_DailyClose: TMenuItem
         Caption = #1573#1594#1600#1600#1600#1604#1575#1602' '#1606#1602#1591#1600#1600#1600#1577' '#1576#1610#1600#1600#1600#1593
+        OnClick = mn_DailyCloseClick
       end
       object N19: TMenuItem
         Caption = '-'
@@ -12903,5 +12905,14 @@ object fmMainForm: TfmMainForm
     LoginPrompt = False
     Left = 314
     Top = 37
+  end
+  object qry_Main2: TSimpleDataSet
+    Aggregates = <>
+    Connection = MainConnection
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 520
+    Top = 88
   end
 end

@@ -1,6 +1,6 @@
 object fmItemUnit: TfmItemUnit
-  Left = 192
-  Top = 124
+  Left = 7
+  Top = 95
   BorderStyle = bsDialog
   Caption = #1608#1581#1583#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
   ClientHeight = 499

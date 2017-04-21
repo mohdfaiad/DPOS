@@ -1,9 +1,9 @@
 object fmItemDefinition: TfmItemDefinition
-  Left = 316
-  Top = 6
+  Left = -4
+  Top = 26
   BorderStyle = bsDialog
   Caption = #1575#1604#1571#1589#1606#1575#1601' '#1575#1604#1605#1582#1586#1606#1610#1577
-  ClientHeight = 592
+  ClientHeight = 616
   ClientWidth = 1016
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,10 +20,10 @@ object fmItemDefinition: TfmItemDefinition
   PixelsPerInch = 96
   TextHeight = 13
   object grp_Content: TGroupBox
-    Left = 63
-    Top = 97
+    Left = 60
+    Top = 92
     Width = 921
-    Height = 477
+    Height = 506
     BiDiMode = bdRightToLeft
     Caption = #1575#1604#1571#1589#1606#1575#1601' '#1575#1604#1605#1582#1586#1606#1610#1577
     Font.Charset = DEFAULT_CHARSET
@@ -36,20 +36,20 @@ object fmItemDefinition: TfmItemDefinition
     TabOrder = 0
     DesignSize = (
       921
-      477)
+      506)
     object grpData: TGroupBox
       Left = 11
-      Top = 30
+      Top = 18
       Width = 902
-      Height = 251
+      Height = 244
       Anchors = []
       TabOrder = 0
       DesignSize = (
         902
-        251)
+        244)
       object Label2: TLabel
         Left = 822
-        Top = 63
+        Top = 61
         Width = 65
         Height = 19
         Anchors = []
@@ -63,7 +63,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label1: TLabel
         Left = 858
-        Top = 27
+        Top = 26
         Width = 29
         Height = 19
         Anchors = []
@@ -77,7 +77,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label3: TLabel
         Left = 397
-        Top = 63
+        Top = 61
         Width = 73
         Height = 19
         Anchors = []
@@ -91,7 +91,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label8: TLabel
         Left = 379
-        Top = 169
+        Top = 164
         Width = 89
         Height = 19
         Anchors = []
@@ -105,7 +105,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label9: TLabel
         Left = 197
-        Top = 169
+        Top = 164
         Width = 47
         Height = 19
         Anchors = []
@@ -119,7 +119,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label10: TLabel
         Left = 426
-        Top = 134
+        Top = 130
         Width = 44
         Height = 19
         Anchors = []
@@ -133,7 +133,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label11: TLabel
         Left = 186
-        Top = 134
+        Top = 130
         Width = 58
         Height = 19
         Anchors = []
@@ -147,7 +147,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label12: TLabel
         Left = 374
-        Top = 100
+        Top = 97
         Width = 96
         Height = 19
         Anchors = []
@@ -161,7 +161,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object Label13: TLabel
         Left = 145
-        Top = 100
+        Top = 97
         Width = 99
         Height = 19
         Anchors = []
@@ -175,7 +175,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object edtCode: TDBEdit
         Left = 679
-        Top = 23
+        Top = 22
         Width = 121
         Height = 27
         Anchors = []
@@ -191,7 +191,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit1: TDBEdit
         Left = 16
-        Top = 59
+        Top = 57
         Width = 356
         Height = 27
         Anchors = []
@@ -345,7 +345,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit2: TDBEdit
         Left = 248
-        Top = 96
+        Top = 93
         Width = 124
         Height = 27
         Anchors = []
@@ -361,7 +361,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit3: TDBEdit
         Left = 18
-        Top = 96
+        Top = 93
         Width = 124
         Height = 27
         Anchors = []
@@ -377,7 +377,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit4: TDBEdit
         Left = 248
-        Top = 130
+        Top = 126
         Width = 124
         Height = 27
         Anchors = []
@@ -393,7 +393,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit5: TDBEdit
         Left = 18
-        Top = 130
+        Top = 126
         Width = 124
         Height = 27
         Anchors = []
@@ -409,7 +409,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit6: TDBEdit
         Left = 480
-        Top = 59
+        Top = 57
         Width = 320
         Height = 27
         Anchors = []
@@ -425,7 +425,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit7: TDBEdit
         Left = 248
-        Top = 165
+        Top = 160
         Width = 124
         Height = 27
         Anchors = []
@@ -441,7 +441,7 @@ object fmItemDefinition: TfmItemDefinition
       end
       object DBEdit8: TDBEdit
         Left = 18
-        Top = 165
+        Top = 160
         Width = 124
         Height = 27
         Anchors = []
@@ -458,7 +458,7 @@ object fmItemDefinition: TfmItemDefinition
     end
     object PG1: TPageControl
       Left = 2
-      Top = 276
+      Top = 272
       Width = 917
       Height = 199
       ActivePage = TabSheet3
@@ -571,6 +571,18 @@ object fmItemDefinition: TfmItemDefinition
           end
         end
       end
+    end
+    object Navigator: TDBNavigator
+      Left = 2
+      Top = 471
+      Width = 917
+      Height = 33
+      DataSource = DS_Header
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      Align = alBottom
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
     end
   end
   object GroupBox2: TGroupBox

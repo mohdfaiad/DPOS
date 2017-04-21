@@ -76,6 +76,7 @@ type
     mn_UserDef: TMenuItem;
     mn_CashBankDef: TMenuItem;
     mn_ItemDef: TMenuItem;
+    qry_Main2: TSimpleDataSet;
     mn_PerchaseInvoice: TMenuItem;
     mn_BegBalDef: TMenuItem;
     procedure FormCreate(Sender: TObject);
@@ -106,6 +107,10 @@ type
     procedure mn_POSDefClick(Sender: TObject);
     procedure mn_CashBankDefClick(Sender: TObject);
     procedure mn_ItemDefClick(Sender: TObject);
+    procedure btn_DailyCloseClick(Sender: TObject);
+    procedure btn_POSClick(Sender: TObject);
+    procedure mn_POSClick(Sender: TObject);
+    procedure mn_DailyCloseClick(Sender: TObject);
     procedure mn_PerchaseInvoiceClick(Sender: TObject);
     procedure mn_BegBalDefClick(Sender: TObject);
   private
@@ -129,6 +134,7 @@ uses  Login, GVariable,
   lkp_WareHouse, lkp_VendorGroup, lkp_UserGroups, lkp_Customers,
   lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
   lkp_Operators, lkp_POSDefinition, lkp_CashBank, lkp_ItemDefinition,
+  PosClose, PointOfSale,
   PrTrxBaseForm, PrBegBalForm;
 
 {$R *.dfm}
@@ -139,6 +145,7 @@ Var
   vIni: TIniFile;
   l: DWORD;
 begin
+   gLoginFrom_POS_Screen := False;
    Screen.MenuFont.Name := 'Times New Roman';
    Screen.MenuFont.Size := 11 ;
    Screen.MenuFont.Style := [fsBold];
@@ -429,6 +436,30 @@ begin
   Application.CreateForm(TfmItemDefinition, fmItemDefinition);
    fmItemDefinition.ShowModal;
 
+end;
+
+procedure TfmMainForm.btn_DailyCloseClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPosClose, fmPosClose);
+  fmPosClose.ShowModal;
+end;
+
+procedure TfmMainForm.btn_POSClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPointOfSale, fmPointOfSale);
+  fmPointOfSale.Show;
+end;
+
+procedure TfmMainForm.mn_POSClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPointOfSale, fmPointOfSale);
+  fmPointOfSale.Show;
+end;
+
+procedure TfmMainForm.mn_DailyCloseClick(Sender: TObject);
+begin
+  Application.CreateForm(TfmPosClose, fmPosClose);
+  fmPosClose.ShowModal;
 end;
 
 procedure TfmMainForm.mn_PerchaseInvoiceClick(Sender: TObject);

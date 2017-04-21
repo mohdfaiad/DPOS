@@ -27,12 +27,15 @@ uses
   LookUp in 'SystemManager\LookUp.pas' {Lkp},
   PosClose in 'Transactions\PosClose.pas' {fmPosClose},
   lkp_Branch in 'Masters\lkp_Branch.pas' {fmBranch},
-
   lkp_Currency in 'Masters\lkp_Currency.pas' {fmCurrency},
   lkp_Vendors in 'Masters\lkp_Vendors.pas' {fmVendors},
   lkp_Operators in 'Masters\lkp_Operators.pas' {fmOperators},
   lkp_UserGroups in 'Masters\lkp_UserGroups.pas' {fmUserGroups},
-  lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers};
+  lkp_Customers in 'Masters\lkp_Customers.pas' {fmCustomers},
+  PointOfSale in 'Transactions\PointOfSale.pas' {fmPointOfSale},
+  posPayType in 'Transactions\posPayType.pas',
+  lkp_POSDefinition in 'Masters\lkp_POSDefinition.pas' {fmPOSDefinition},
+  lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition};
 
 {$R *.res}
 
@@ -41,11 +44,8 @@ begin
   Application.CreateForm(TfmMainForm, fmMainForm);
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);
-  Application.CreateForm(TfmCurrency, fmCurrency);
-  Application.CreateForm(TfmVendors, fmVendors);
-  Application.CreateForm(TfmOperators, fmOperators);
-  Application.CreateForm(TfmUserGroups, fmUserGroups);
-  Application.CreateForm(TfmCustomers, fmCustomers);
+  Application.CreateForm(TfmPOSDefinition, fmPOSDefinition);
+  Application.CreateForm(TfmItemDefinition, fmItemDefinition);
   {
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);
