@@ -13,11 +13,6 @@ type
     SDS_Header: TSimpleDataSet;
     DS_Header: TDataSource;
     grpData: TGroupBox;
-    Label2: TLabel;
-    edtCode: TDBEdit;
-    Label1: TLabel;
-    Label3: TLabel;
-    DBEdit1: TDBEdit;
     GroupBox2: TGroupBox;
     BtnOpen: TButton;
     btnAdd: TButton;
@@ -28,10 +23,6 @@ type
     BtnShow: TButton;
     Label12: TLabel;
     DBEdit2: TDBEdit;
-    DBEdit6: TDBEdit;
-    Label14: TLabel;
-    Label15: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
     Label4: TLabel;
     Co_WareHouse: TDBLookupComboBox;
     SDS_Details: TSimpleDataSet;
@@ -99,6 +90,16 @@ type
     SDS_DetailsItemNameAr2: TStringField;
     SDS_DetailsItemUnit: TStringField;
     SDS_DetailsItemUnitDescAr: TStringField;
+    Label1: TLabel;
+    edtCode: TDBEdit;
+    Label14: TLabel;
+    trxDate: TDateTimePicker;
+    Label15: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit1: TDBEdit;
+    Label3: TLabel;
+    DBEdit6: TDBEdit;
+    Label2: TLabel;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -112,6 +113,7 @@ type
     procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
     procedure SDS_DetailsNewRecord(DataSet: TDataSet);
     procedure SDS_DetailsItemCodeChange(Sender: TField);
+    procedure SDS_DetailsItemUnitChange(Sender: TField);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -152,6 +154,7 @@ begin
   grpData.Enabled := False;
   Co_WareHouse.Enabled := False;
   grd_Details.Enabled := False;
+  trxDate.Enabled := false;
 
   BtnShow.Enabled := True;
   EditMode := False;
@@ -160,6 +163,7 @@ end;
 procedure TfmBegBalForm.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
+  SDS_Details.Edit;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -174,6 +178,7 @@ begin
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
   grd_Details.Enabled := true;
+  trxDate.Enabled := True;
   EditMode := True;
 end;
 
@@ -211,7 +216,7 @@ begin
        end;
    end;
 
-   SDS_HeaderTrxDate.AsDateTime := now;
+   SDS_HeaderTrxDate.AsDateTime := trxDate.DateTime;;
 
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
@@ -291,7 +296,8 @@ end;
 
 procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
-  SDS_Header.Append;
+    SDS_Header.Append;
+  SDS_Details.Append;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -306,6 +312,8 @@ begin
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
   grd_Details.Enabled := true;
+  trxDate.Enabled := true;
+  trxDate.DateTime := now;
   BtnShow.Enabled := False;
   EditMode := False;
 end;
@@ -330,6 +338,7 @@ begin
 SDS_Details.Close;
 SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
 SDS_Details.Open;
+trxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
 end;
 
 procedure TfmBegBalForm.SDS_DetailsNewRecord(DataSet: TDataSet);
@@ -350,9 +359,14 @@ end;
 procedure TfmBegBalForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
   SDS_DetailsItemUnit.AsString := GetDBValue('ItemUnitCode','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
-  SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
+  SDS_DetailsUnitTransValue.AsString := '1';//GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
   SDS_DetailsItemService.AsString := GetDBValue('ItemService','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
-  
+
+end;
+
+procedure TfmBegBalForm.SDS_DetailsItemUnitChange(Sender: TField);
+begin
+SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
 end;
 
 end.

@@ -108,6 +108,7 @@ end;
 procedure TfmItemPolicies.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
+  SDS_ItemPrices.Edit;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -217,6 +218,7 @@ end;
 procedure TfmItemPolicies.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
+  SDS_ItemPrices.Append;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;

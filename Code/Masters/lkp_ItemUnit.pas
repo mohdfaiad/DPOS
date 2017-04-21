@@ -83,6 +83,7 @@ begin
   BtnCancel.Enabled := False;
   btnDelete.Enabled := True;
   grpData.Enabled := False;
+  Co_UnitTransCode.Enabled := False;
   BtnShow.Enabled := True;
   EditMode := False;
 end;
@@ -97,7 +98,8 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := False;
+  edtCode.Enabled := True;
+  Co_UnitTransCode.Enabled := True;
   BtnShow.Enabled := False;
   EditMode := True;
 end;
@@ -204,6 +206,8 @@ begin
   btnDelete.Enabled := False;
   grpData.Enabled := True;
   edtCode.Enabled := True;
+  Co_UnitTransCode.Enabled := True;
+  SDS_HeaderUnitTransValue.AsFloat := 1;
   BtnShow.Enabled := False;
   edtCode.SetFocus;
   EditMode := False;
@@ -224,7 +228,7 @@ end;
 procedure TfmItemUnit.SDS_HeaderAfterScroll(DataSet: TDataSet);
 begin
   SDS_UnitTransCode.Close;
-  SDS_UnitTransCode.DataSet.CommandText := ' Select * From tbl_itemUnit Where ItemUnitCode ='''+SDS_HeaderUnitTransCode.AsString+''' ';
+  SDS_UnitTransCode.DataSet.CommandText := ' Select * From tbl_itemUnit  ';
   SDS_UnitTransCode.Open;
 end;
 

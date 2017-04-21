@@ -46,50 +46,8 @@ object fmBegBalForm: TfmBegBalForm
       DesignSize = (
         902
         241)
-      object Label2: TLabel
-        Left = 815
-        Top = 76
-        Width = 72
-        Height = 19
-        Anchors = []
-        Caption = #1575#1604#1608#1589#1601' '#1593#1585#1576#1610
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label1: TLabel
-        Left = 858
-        Top = 42
-        Width = 29
-        Height = 19
-        Anchors = []
-        Caption = #1575#1604#1585#1605#1586
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label3: TLabel
-        Left = 376
-        Top = 76
-        Width = 84
-        Height = 19
-        Anchors = []
-        Caption = #1575#1604#1608#1589#1601' '#1573#1606#1580#1604#1610#1586#1610
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object Label12: TLabel
-        Left = 422
+        Left = 428
         Top = 111
         Width = 38
         Height = 19
@@ -102,8 +60,36 @@ object fmBegBalForm: TfmBegBalForm
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label4: TLabel
+        Left = 844
+        Top = 109
+        Width = 50
+        Height = 19
+        Anchors = []
+        Caption = #1575#1604#1605#1587#1578#1608#1583#1593
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 865
+        Top = 42
+        Width = 29
+        Height = 19
+        Anchors = []
+        Caption = #1575#1604#1585#1605#1586
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object Label14: TLabel
-        Left = 631
+        Left = 647
         Top = 42
         Width = 36
         Height = 19
@@ -117,7 +103,7 @@ object fmBegBalForm: TfmBegBalForm
         ParentFont = False
       end
       object Label15: TLabel
-        Left = 429
+        Left = 435
         Top = 42
         Width = 31
         Height = 19
@@ -130,13 +116,13 @@ object fmBegBalForm: TfmBegBalForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object Label4: TLabel
-        Left = 837
-        Top = 109
-        Width = 50
+      object Label3: TLabel
+        Left = 382
+        Top = 76
+        Width = 84
         Height = 19
         Anchors = []
-        Caption = #1575#1604#1605#1587#1578#1608#1583#1593
+        Caption = #1575#1604#1608#1589#1601' '#1573#1606#1580#1604#1610#1586#1610
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -144,40 +130,22 @@ object fmBegBalForm: TfmBegBalForm
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object edtCode: TDBEdit
-        Left = 679
-        Top = 38
-        Width = 121
-        Height = 27
+      object Label2: TLabel
+        Left = 822
+        Top = 76
+        Width = 72
+        Height = 19
         Anchors = []
-        DataField = 'TrxNo'
-        DataSource = DS_Header
+        Caption = #1575#1604#1608#1589#1601' '#1593#1585#1576#1610
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
+        Font.Color = clRed
         Font.Height = -16
         Font.Name = 'Times New Roman'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 0
-      end
-      object DBEdit1: TDBEdit
-        Left = 24
-        Top = 72
-        Width = 320
-        Height = 27
-        Anchors = []
-        DataField = 'TrxDescEn'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 1
       end
       object DBEdit2: TDBEdit
-        Left = 24
+        Left = 30
         Top = 107
         Width = 320
         Height = 27
@@ -190,15 +158,33 @@ object fmBegBalForm: TfmBegBalForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 0
       end
-      object DBEdit6: TDBEdit
-        Left = 480
-        Top = 72
+      object Co_WareHouse: TDBLookupComboBox
+        Left = 490
+        Top = 105
         Width = 320
         Height = 27
+        DataField = 'WareHouseCode'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        KeyField = 'WareHouseCode'
+        ListField = 'WareHouseNameAr'
+        ListSource = DS_WareHouse
+        ParentFont = False
+        TabOrder = 1
+      end
+      object edtCode: TDBEdit
+        Left = 689
+        Top = 38
+        Width = 121
+        Height = 27
         Anchors = []
-        DataField = 'TrxDescAr'
+        DataField = 'TrxNo'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -206,10 +192,19 @@ object fmBegBalForm: TfmBegBalForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
+        TabOrder = 2
+      end
+      object trxDate: TDateTimePicker
+        Left = 490
+        Top = 36
+        Width = 151
+        Height = 31
+        Date = 42846.017996770830000000
+        Time = 42846.017996770830000000
         TabOrder = 3
       end
       object DBLookupComboBox1: TDBLookupComboBox
-        Left = 179
+        Left = 185
         Top = 38
         Width = 165
         Height = 27
@@ -227,23 +222,37 @@ object fmBegBalForm: TfmBegBalForm
         ParentFont = False
         TabOrder = 4
       end
-      object Co_WareHouse: TDBLookupComboBox
-        Left = 480
-        Top = 105
+      object DBEdit1: TDBEdit
+        Left = 30
+        Top = 72
         Width = 320
         Height = 27
-        DataField = 'WareHouseCode'
+        Anchors = []
+        DataField = 'TrxDescEn'
         DataSource = DS_Header
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
+        Font.Color = clWindowText
         Font.Height = -16
         Font.Name = 'Times New Roman'
         Font.Style = []
-        KeyField = 'WareHouseCode'
-        ListField = 'WareHouseNameAr'
-        ListSource = DS_WareHouse
         ParentFont = False
         TabOrder = 5
+      end
+      object DBEdit6: TDBEdit
+        Left = 490
+        Top = 72
+        Width = 320
+        Height = 27
+        Anchors = []
+        DataField = 'TrxDescAr'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 6
       end
     end
     object PG1: TPageControl
@@ -567,7 +576,6 @@ object fmBegBalForm: TfmBegBalForm
       DisplayLabel = #1575#1604#1578#1603#1604#1601#1577
       DisplayWidth = 6
       FieldName = 'CostPrice'
-      Visible = False
       Precision = 18
       Size = 8
     end
@@ -590,6 +598,7 @@ object fmBegBalForm: TfmBegBalForm
     object SDS_DetailsItemUnit: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
       FieldName = 'ItemUnit'
+      OnChange = SDS_DetailsItemUnitChange
       Size = 6
     end
     object SDS_DetailsItemUnitDescAr: TStringField

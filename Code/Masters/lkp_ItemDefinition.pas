@@ -133,6 +133,16 @@ type
     TabSheet2: TTabSheet;
     GroupBox4: TGroupBox;
     grd_ItemSpec: TDBGrid;
+    TabSheet3: TTabSheet;
+    GroupBox5: TGroupBox;
+    grd_RelatedUnits: TDBGrid;
+    SDS_RelatedUnits: TSimpleDataSet;
+    DS_RlatedUnits: TDataSource;
+    SDS_RelatedUnitsCompanyCode: TStringField;
+    SDS_RelatedUnitsItemCode: TStringField;
+    SDS_RelatedUnitsItemService: TStringField;
+    SDS_RelatedUnitsRelateUnitCode: TStringField;
+    SDS_RelatedUnitsRelatedUnitDscrAr: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -150,6 +160,7 @@ type
     procedure SDS_BarcodesItemUnitChange(Sender: TField);
     procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
     procedure SDS_ItemSpecDetailItemUnitChange(Sender: TField);
+    procedure SDS_RelatedUnitsNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -173,7 +184,6 @@ begin
   SDS_Header.Open;
   SDS_ItemGroup.Close;
   SDS_Itemunit.Close;
-  SDS_ItemType.Close;
   SDS_ItemCategory.Close;
   SDS_ItemGroup.DataSet.CommandText := 'Select * from tbl_ItemGroup where CompanyCode = ''' + DCompany + ''' ';
   SDS_Itemunit.DataSet.CommandText := 'Select * from tbl_ItemUnit where CompanyCode = ''' + DCompany + ''' ';
@@ -200,6 +210,7 @@ begin
   grpData.Enabled := False;
   grd_Brcodes.Enabled := False;
   grd_ItemSpec.Enabled := False;
+  grd_RelatedUnits.Enabled := False;
   BtnShow.Enabled := True;
   EditMode := False;
 end;
@@ -207,6 +218,9 @@ end;
 procedure TfmItemDefinition.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
+  SDS_Barcodes.Edit;
+  SDS_ItemSpec.Edit;
+  SDS_RelatedUnits.Edit;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -230,6 +244,7 @@ begin
   Co_ItemCategory.Enabled := True;
   grd_Brcodes.Enabled := True;
   grd_ItemSpec.Enabled := True;
+  grd_RelatedUnits.Enabled := True;
   pg1.Enabled := True;
   EditMode := True;
 end;
@@ -275,7 +290,7 @@ begin
   end;
       
 
-  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0 )AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )) then Begin
+  if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0 ) AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )AND (SDS_RelatedUnits.ApplyUpdates(0) = 0 )) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
       BtnOpenClick(Sender);
   end
@@ -297,7 +312,9 @@ begin
   Begin
      SDS_Header.CancelUpdates;
      SDS_Barcodes.CancelUpdates;
-      BtnOpenClick(Sender);
+     SDS_ItemSpec.CancelUpdates;
+     SDS_RelatedUnits.CancelUpdates;
+     BtnOpenClick(Sender);
   end;
 
 end;
@@ -316,13 +333,15 @@ begin
     Begin
         Try
         DeleteSQL := 'Delete From Tbl_Barcodes where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';
-        DeleteSQL := DeleteSQL + 'Delete From tbl_ItemSpecification where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';;
+        DeleteSQL := DeleteSQL + 'Delete From tbl_ItemSpecification where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';
+        DeleteSQL := DeleteSQL + 'Delete From tbl_ItemRelatedUnits where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';;
         DeleteSQL := DeleteSQL + 'Delete From tbl_ItemDefinition where ItemCode ='''+SDS_HeaderItemCode.AsString+''' and companyCode= '''+DCompany+''' ';
         
         fmMainForm.MainConnection.ExecuteDirect(DeleteSQL);
 
         SDS_Barcodes.Refresh;
         SDS_ItemSpec.Refresh;
+        SDS_RelatedUnits.Refresh;
 
         ShowMessage(' „ «·Õ–› »‰Ã«Õ');
         BtnOpenClick(Sender);
@@ -357,6 +376,9 @@ end;
 procedure TfmItemDefinition.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
+  SDS_Barcodes.Append;
+  SDS_ItemSpec.Append;
+  SDS_RelatedUnits.Append;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -380,6 +402,7 @@ begin
   Co_ItemCategory.Enabled := True;
   grd_Brcodes.Enabled := True;
   grd_ItemSpec.Enabled := True;
+  grd_RelatedUnits.Enabled := True;
   BtnShow.Enabled := False;
   EditMode := False;
 end;
@@ -445,12 +468,22 @@ begin
   SDS_ItemSpec.Close;
   SDS_ItemSpec.DataSet.CommandText := 'Select * from tbl_ItemSpecification Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
   SDS_ItemSpec.Open;
+  SDS_RelatedUnits.Close;
+  SDS_RelatedUnits.DataSet.CommandText := 'Select * from tbl_ItemRelatedUnits Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+  SDS_RelatedUnits.Open;
 end;
 
 procedure TfmItemDefinition.SDS_ItemSpecDetailItemUnitChange(
   Sender: TField);
 begin
- SDS_BarcodesUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_ItemSpecDetailItemUnit.AsString + ''' ');
+ SDS_ItemSpecUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_ItemSpecDetailItemUnit.AsString + ''' ');
+end;
+
+procedure TfmItemDefinition.SDS_RelatedUnitsNewRecord(DataSet: TDataSet);
+begin
+  SDS_RelatedUnitsCompanyCode.Value := DCompany;
+  SDS_RelatedUnitsItemCode.Value :=SDS_HeaderItemCode.Value;
+  SDS_RelatedUnitsItemService.Value := SDS_HeaderItemService.Value;
 end;
 
 end.

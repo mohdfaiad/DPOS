@@ -128,6 +128,7 @@ type
     StringField3: TStringField;
     DS_PaymentType: TDataSource;
     SDS_PaymentPaymentDesc: TStringField;
+    trxDate: TDateTimePicker;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -145,6 +146,7 @@ type
     procedure SDS_DetailsCostPriceChange(Sender: TField);
     procedure SDS_DetailsDiscountChange(Sender: TField);
     procedure SDS_PaymentNewRecord(DataSet: TDataSet);
+    procedure SDS_DetailsItemUnitChange(Sender: TField);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -189,6 +191,7 @@ begin
   CO_Vendors.Enabled := False;
   grd_Payment.Enabled := False;
   grd_Details.Enabled := False;
+  trxDate.Enabled := false;
 
   BtnShow.Enabled := True;
   EditMode := False;
@@ -197,6 +200,8 @@ end;
 procedure TfmPrTrxBaseForm.btnEditClick(Sender: TObject);
 begin
   SDS_Header.Edit;
+  SDS_Details.Edit;
+  SDS_Payment.Edit;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -216,6 +221,7 @@ begin
   CO_Vendors.Enabled := True;
   grd_Payment.Enabled := True;
   grd_Details.Enabled := true;
+  trxDate.Enabled := True;
   EditMode := True;
 end;
 
@@ -288,7 +294,7 @@ begin
 
    SDS_HeaderTrxAmount.AsFloat := TrxVal;
    SDS_HeaderTotalDiscount.AsFloat := TotalDiscount;
-   SDS_HeaderTrxDate.AsDateTime := now;
+   SDS_HeaderTrxDate.AsDateTime := trxDate.DateTime;
 
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0) AND (SDS_Payment.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
@@ -313,6 +319,8 @@ begin
   if buttonSelected = mrOK then
   Begin
      SDS_Header.CancelUpdates;
+     SDS_Payment.CancelUpdates;
+     SDS_Details.CancelUpdates;
       BtnOpenClick(Sender);
   end;
 
@@ -373,6 +381,8 @@ end;
 procedure TfmPrTrxBaseForm.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
+  SDS_Details.Append;
+  SDS_Payment.Append;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -392,6 +402,8 @@ begin
   CO_Vendors.Enabled := True;
   grd_Payment.Enabled := True;
   grd_Details.Enabled := true;
+  trxDate.Enabled := true;
+  trxDate.DateTime := now;
   BtnShow.Enabled := False;
   EditMode := False;
 end;
@@ -419,6 +431,7 @@ SDS_Details.Open;
 SDS_Payment.Close;
 SDS_Payment.DataSet.CommandText :='Select * From tbl_PrTrxPayment where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
 SDS_Payment.Open;
+trxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
 end;
 
 procedure TfmPrTrxBaseForm.SDS_DetailsNewRecord(DataSet: TDataSet);
@@ -438,8 +451,13 @@ end;
 
 procedure TfmPrTrxBaseForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
+  SDS_Itemunit.Close;
+  SDS_Itemunit.DataSet.CommandText := ' Select * from tbl_ItemUnit where CompanyCode = ''' + DCompany + ''' And '
+                                     +' (ItemUnitCode in (select RelateUnitCode from tbl_ItemRelatedUnits where itemcode = ''' + SDS_DetailsItemCode.AsString + ''') '
+                                     +' or ItemUnitCode = (select ItemUnitCode from tbl_ItemDefinition where itemcode = ''' + SDS_DetailsItemCode.AsString + ''')) ';
+  SDS_Itemunit.Open;
   SDS_DetailsItemUnit.AsString := GetDBValue('ItemUnitCode','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
-  SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
+  SDS_DetailsUnitTransValue.AsString := '1'; //GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
   SDS_DetailsItemService.AsString := GetDBValue('ItemService','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
 
 end;
@@ -469,6 +487,11 @@ begin
  SDS_PaymentTrxLineNo.Value :=  'XX';
  SDS_PaymentAmount.AsFloat := 0.0;
 
+end;
+
+procedure TfmPrTrxBaseForm.SDS_DetailsItemUnitChange(Sender: TField);
+begin
+SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
 end;
 
 end.

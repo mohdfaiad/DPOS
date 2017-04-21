@@ -153,3 +153,19 @@ GO
 
 
 ---------------------------------------------------------------------------------------
+CREATE TABLE [dbo].[tbl_ItemRelatedUnits](
+	[CompanyCode] [nvarchar](4) NOT NULL,
+	[ItemCode] [nvarchar](25) NOT NULL,
+	[ItemService] [nvarchar](3) NOT NULL,
+	[RelateUnitCode] [nvarchar](6) NOT NULL,
+ CONSTRAINT [PK_tbl_ItemRelatedUnits] PRIMARY KEY CLUSTERED 
+(
+	[CompanyCode] ASC,
+	[ItemCode] ASC,
+	[ItemService] ASC,
+	[RelateUnitCode] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+-----------------------------------------------

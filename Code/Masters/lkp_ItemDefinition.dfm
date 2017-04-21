@@ -461,7 +461,7 @@ object fmItemDefinition: TfmItemDefinition
       Top = 276
       Width = 917
       Height = 199
-      ActivePage = TabSheet1
+      ActivePage = TabSheet3
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
@@ -480,16 +480,16 @@ object fmItemDefinition: TfmItemDefinition
         ParentFont = False
         object GroupBox3: TGroupBox
           Left = 0
-          Top = 32
+          Top = 8
           Width = 909
-          Height = 133
+          Height = 157
           Align = alBottom
           TabOrder = 0
           object grd_Brcodes: TDBGrid
             Left = 2
             Top = 21
             Width = 905
-            Height = 105
+            Height = 128
             Align = alTop
             DataSource = DS_Barcodes
             Font.Charset = DEFAULT_CHARSET
@@ -512,18 +512,50 @@ object fmItemDefinition: TfmItemDefinition
         ImageIndex = 1
         object GroupBox4: TGroupBox
           Left = 0
-          Top = 16
+          Top = 5
           Width = 909
-          Height = 149
+          Height = 160
           Align = alBottom
           TabOrder = 0
           object grd_ItemSpec: TDBGrid
             Left = 2
             Top = 21
             Width = 905
-            Height = 124
+            Height = 132
             Align = alTop
             DataSource = DS_ItemSpec
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clNavy
+            Font.Height = -19
+            Font.Name = 'Times New Roman'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clNavy
+            TitleFont.Height = -21
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = []
+          end
+        end
+      end
+      object TabSheet3: TTabSheet
+        Caption = #1575#1604#1608#1581#1583#1575#1578' '#1575#1604#1605#1585#1578#1576#1591#1577
+        ImageIndex = 2
+        object GroupBox5: TGroupBox
+          Left = 0
+          Top = 8
+          Width = 909
+          Height = 157
+          Align = alBottom
+          TabOrder = 0
+          object grd_RelatedUnits: TDBGrid
+            Left = 2
+            Top = 21
+            Width = 905
+            Height = 129
+            Align = alTop
+            DataSource = DS_RlatedUnits
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clNavy
             Font.Height = -19
@@ -1150,5 +1182,55 @@ object fmItemDefinition: TfmItemDefinition
       FieldName = 'ItemNameEn'
       Size = 255
     end
+  end
+  object SDS_RelatedUnits: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemRelatedUnits'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    OnNewRecord = SDS_RelatedUnitsNewRecord
+    Top = 496
+    object SDS_RelatedUnitsCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_RelatedUnitsItemCode: TStringField
+      FieldName = 'ItemCode'
+      Required = True
+      Visible = False
+      Size = 25
+    end
+    object SDS_RelatedUnitsItemService: TStringField
+      FieldName = 'ItemService'
+      Required = True
+      Visible = False
+      Size = 3
+    end
+    object SDS_RelatedUnitsRelateUnitCode: TStringField
+      DisplayLabel = #1575#1604#1608#1581#1583#1577
+      FieldName = 'RelateUnitCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_RelatedUnitsRelatedUnitDscrAr: TStringField
+      DisplayLabel = #1575#1604#1608#1589#1601
+      FieldKind = fkLookup
+      FieldName = 'RelatedUnitDscrAr'
+      LookupDataSet = SDS_Itemunit
+      LookupKeyFields = 'ItemUnitCode'
+      LookupResultField = 'ItemUnitDescA'
+      KeyFields = 'RelateUnitCode'
+      Size = 30
+      Lookup = True
+    end
+  end
+  object DS_RlatedUnits: TDataSource
+    DataSet = SDS_RelatedUnits
+    Left = 24
+    Top = 496
   end
 end

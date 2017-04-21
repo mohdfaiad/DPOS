@@ -47,7 +47,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         902
         241)
       object Label2: TLabel
-        Left = 815
+        Left = 822
         Top = 76
         Width = 72
         Height = 19
@@ -61,7 +61,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label1: TLabel
-        Left = 858
+        Left = 865
         Top = 42
         Width = 29
         Height = 19
@@ -75,7 +75,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label3: TLabel
-        Left = 376
+        Left = 382
         Top = 76
         Width = 84
         Height = 19
@@ -89,7 +89,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label10: TLabel
-        Left = 807
+        Left = 814
         Top = 175
         Width = 80
         Height = 19
@@ -103,7 +103,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label11: TLabel
-        Left = 386
+        Left = 392
         Top = 175
         Width = 74
         Height = 19
@@ -117,7 +117,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label12: TLabel
-        Left = 849
+        Left = 856
         Top = 143
         Width = 38
         Height = 19
@@ -131,7 +131,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label13: TLabel
-        Left = 368
+        Left = 374
         Top = 143
         Width = 92
         Height = 19
@@ -145,7 +145,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label14: TLabel
-        Left = 631
+        Left = 647
         Top = 42
         Width = 36
         Height = 19
@@ -159,7 +159,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label15: TLabel
-        Left = 429
+        Left = 435
         Top = 42
         Width = 31
         Height = 19
@@ -173,7 +173,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label4: TLabel
-        Left = 837
+        Left = 844
         Top = 109
         Width = 50
         Height = 19
@@ -187,7 +187,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object Label16: TLabel
-        Left = 426
+        Left = 432
         Top = 109
         Width = 34
         Height = 19
@@ -201,7 +201,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ParentFont = False
       end
       object edtCode: TDBEdit
-        Left = 679
+        Left = 689
         Top = 38
         Width = 121
         Height = 27
@@ -217,7 +217,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         TabOrder = 0
       end
       object DBEdit1: TDBEdit
-        Left = 24
+        Left = 30
         Top = 72
         Width = 320
         Height = 27
@@ -230,10 +230,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 3
       end
       object DBEdit2: TDBEdit
-        Left = 480
+        Left = 490
         Top = 139
         Width = 320
         Height = 27
@@ -246,10 +246,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 6
       end
       object DBEdit3: TDBEdit
-        Left = 24
+        Left = 30
         Top = 139
         Width = 320
         Height = 27
@@ -262,10 +262,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 3
+        TabOrder = 7
       end
       object DBEdit4: TDBEdit
-        Left = 480
+        Left = 490
         Top = 171
         Width = 320
         Height = 27
@@ -279,10 +279,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Style = []
         ParentFont = False
         ReadOnly = True
-        TabOrder = 4
+        TabOrder = 8
       end
       object DBEdit5: TDBEdit
-        Left = 24
+        Left = 30
         Top = 171
         Width = 320
         Height = 27
@@ -296,10 +296,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Style = []
         ParentFont = False
         ReadOnly = True
-        TabOrder = 5
+        TabOrder = 9
       end
       object DBEdit6: TDBEdit
-        Left = 480
+        Left = 490
         Top = 72
         Width = 320
         Height = 27
@@ -312,10 +312,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 2
       end
       object DBLookupComboBox1: TDBLookupComboBox
-        Left = 179
+        Left = 185
         Top = 38
         Width = 165
         Height = 27
@@ -331,10 +331,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ListField = 'NameA'
         ListSource = DS_Type
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 10
       end
       object Co_WareHouse: TDBLookupComboBox
-        Left = 480
+        Left = 490
         Top = 105
         Width = 320
         Height = 27
@@ -349,10 +349,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ListField = 'WareHouseNameAr'
         ListSource = DS_WareHouse
         ParentFont = False
-        TabOrder = 8
+        TabOrder = 4
       end
       object CO_Vendors: TDBLookupComboBox
-        Left = 24
+        Left = 30
         Top = 105
         Width = 320
         Height = 27
@@ -367,7 +367,16 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         ListField = 'VendoreNameAr'
         ListSource = DS_Vendors
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 5
+      end
+      object trxDate: TDateTimePicker
+        Left = 490
+        Top = 36
+        Width = 151
+        Height = 31
+        Date = 42846.017996770830000000
+        Time = 42846.017996770830000000
+        TabOrder = 1
       end
     end
     object PG1: TPageControl
@@ -375,7 +384,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Top = 276
       Width = 917
       Height = 199
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
@@ -403,7 +412,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
             Left = 2
             Top = 21
             Width = 905
-            Height = 124
+            Height = 127
             Align = alTop
             DataSource = DS_Details
             Font.Charset = DEFAULT_CHARSET
@@ -428,7 +437,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
           Left = 0
           Top = 0
           Width = 909
-          Height = 137
+          Height = 152
           Align = alTop
           DataSource = DS_Payment
           Font.Charset = DEFAULT_CHARSET
@@ -738,6 +747,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     object SDS_DetailsItemUnit: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1608#1581#1583#1577
       FieldName = 'ItemUnit'
+      OnChange = SDS_DetailsItemUnitChange
       Size = 6
     end
     object SDS_DetailsItemUnitDescAr: TStringField
@@ -975,6 +985,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayWidth = 6
       FieldName = 'Amount'
       Precision = 18
+      Size = 8
     end
     object SDS_PaymentTrxPaymentDescAr: TStringField
       DisplayLabel = #1575#1604#1608#1589#1601
@@ -996,6 +1007,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       FieldName = 'Balance'
       Visible = False
       Precision = 18
+      Size = 8
     end
     object SDS_PaymentCompanyCode: TStringField
       FieldName = 'CompanyCode'
