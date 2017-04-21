@@ -221,7 +221,7 @@ end;
 procedure TfmItemPolicies.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
-  SDS_ItemPrices.Append;
+  {SDS_ItemPrices.Append;}
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;

@@ -297,7 +297,7 @@ end;
 procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
     SDS_Header.Append;
-  SDS_Details.Append;
+  {SDS_Details.Append; }
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
