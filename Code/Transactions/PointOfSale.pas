@@ -244,7 +244,7 @@ type
     qry_OperatorsLastUpdateDate: TSQLTimeStampField;
     DS_Operators: TDataSource;
     Label4: TLabel;
-    DateTimePicker1: TDateTimePicker;
+    dt_TrxDate: TDateTimePicker;
     cbo_Customers: TDBLookupComboBox;
     Label5: TLabel;
     cbo_Warehouse: TDBLookupComboBox;
@@ -530,7 +530,8 @@ begin
   edtCheck.Text := '0';
   edtCreditCard.Text := '0';
   edtATM.Text := '0';
-  edtCredit.Text := '0';  
+  edtCredit.Text := '0';
+  dt_TrxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
 end;
 
 procedure TfmPointOfSale.btn_AddClick(Sender: TObject);
@@ -554,6 +555,7 @@ begin
     SDS_Header.Append;
     SDS_HeaderTrxNo.AsString := '';
     SDS_HeaderTrxStatus.AsString := 'A';
+    dt_TrxDate.Date := Date;
     SDS_HeaderTrxDate.AsDateTime := Date;
     SDS_HeaderTrxTime.AsDateTime := Time;
     SDS_HeaderPOSShift.AsString := '1';
@@ -610,6 +612,7 @@ begin
     TD.IsolationLevel := xilREADCOMMITTED;
     fmMainForm.MainConnection.StartTransaction(TD);
 
+    SDS_HeaderTrxDate.AsDateTime := dt_TrxDate.DateTime;
     SDS_HeaderYearID.AsString := VarToStr(YearOf(SDS_HeaderTrxDate.AsDateTime));
     SDS_HeaderPeriodID.AsString := VarToStr(MonthOf(SDS_HeaderTrxDate.AsDateTime));
 
@@ -624,7 +627,7 @@ begin
 
     NewCode := TempQry.Fields[0].AsString;
     NewCode := IntToStr(StrToInt(NewCode)+1) ;
-    SDS_HeaderTrxNo.AsString := NewCode;
+    SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
 
 
     SQLText := 'Insert Into sa_POS_TrxHeader '

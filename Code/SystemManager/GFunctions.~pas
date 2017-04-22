@@ -4,6 +4,7 @@ interface
 
 Function RepeatedKey(TableName, WhereCond : String): Boolean;
 function GetDBValue(ReqField, TableName, Criteria : String):String ;
+function PadLeft(InString : String; StrSize : Integer; PadChar : Char = '0' ): String;
 
 implementation
 
@@ -37,5 +38,14 @@ begin
      Result := SQLText ;
 end ;
 
+function PadLeft(InString : String; StrSize : Integer; PadChar : Char = '0' ): String;
+Var
+   i : integer;
+Begin
+   Result := InString;
+   For i := 1 to StrSize-Length(InString)
+   do Result := PadChar + Result;
+end;
 
 end.
+

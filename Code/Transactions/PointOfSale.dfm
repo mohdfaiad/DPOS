@@ -1,6 +1,6 @@
 object fmPointOfSale: TfmPointOfSale
-  Left = 1
-  Top = 1
+  Left = 0
+  Top = 2
   Hint = #1606#1602#1591#1577' '#1575#1604#1576#1610#1593
   BorderStyle = bsDialog
   Caption = 'Point Of Sale'
@@ -907,7 +907,7 @@ object fmPointOfSale: TfmPointOfSale
           ParentFont = False
           TabOrder = 3
         end
-        object DateTimePicker1: TDateTimePicker
+        object dt_TrxDate: TDateTimePicker
           Left = 341
           Top = 9
           Width = 172
@@ -1942,8 +1942,8 @@ object fmPointOfSale: TfmPointOfSale
     object ppSalesppField1: TppField
       FieldAlias = 'CompanyCode'
       FieldName = 'CompanyCode'
-      FieldLength = 0
-      DisplayWidth = 0
+      FieldLength = 4
+      DisplayWidth = 4
       Position = 0
     end
     object ppSalesppField2: TppField
@@ -2020,7 +2020,7 @@ object fmPointOfSale: TfmPointOfSale
       FieldAlias = 'ItemNameAr'
       FieldName = 'ItemNameAr'
       FieldLength = 30
-      DisplayWidth = 30
+      DisplayWidth = 20
       Position = 11
     end
     object ppSalesppField13: TppField
@@ -2029,7 +2029,7 @@ object fmPointOfSale: TfmPointOfSale
       FieldName = 'Quantity'
       FieldLength = 8
       DataType = dtDouble
-      DisplayWidth = 8
+      DisplayWidth = 6
       Position = 12
     end
     object ppSalesppField14: TppField
@@ -2047,7 +2047,7 @@ object fmPointOfSale: TfmPointOfSale
       FieldName = 'ItemPrice'
       FieldLength = 8
       DataType = dtDouble
-      DisplayWidth = 8
+      DisplayWidth = 6
       Position = 14
     end
     object ppSalesppField16: TppField
@@ -2074,7 +2074,7 @@ object fmPointOfSale: TfmPointOfSale
       FieldName = 'NetPrice'
       FieldLength = 8
       DataType = dtDouble
-      DisplayWidth = 8
+      DisplayWidth = 6
       Position = 17
     end
     object ppSalesppField19: TppField
@@ -2600,6 +2600,7 @@ object fmPointOfSale: TfmPointOfSale
     object qryItemPricesUnitTransValue: TFMTBCDField
       FieldName = 'UnitTransValue'
       Precision = 18
+      Size = 8
     end
     object qryItemPricesCreateDate: TSQLTimeStampField
       FieldName = 'CreateDate'
@@ -2752,7 +2753,7 @@ object fmPointOfSale: TfmPointOfSale
     PrinterSetup.mmMarginRight = 2000
     PrinterSetup.mmMarginTop = 2000
     PrinterSetup.mmPaperHeight = 130000
-    PrinterSetup.mmPaperWidth = 60000
+    PrinterSetup.mmPaperWidth = 70000
     PrinterSetup.PaperSize = 119
     Template.FileName = 'E:\Work\SVN\DelphiPOS\trunk\Code\Reports\POS_SalesForm.rtm'
     Units = utMillimeters
@@ -2790,7 +2791,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         TextAlignment = taCentered
         mmHeight = 6350
-        mmLeft = 5821
+        mmLeft = 11113
         mmTop = 10583
         mmWidth = 45773
         BandType = 1
@@ -2812,7 +2813,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         TextAlignment = taCentered
         mmHeight = 6350
-        mmLeft = 4498
+        mmLeft = 9790
         mmTop = 8996
         mmWidth = 45773
         BandType = 1
@@ -2833,7 +2834,7 @@ object fmPointOfSale: TfmPointOfSale
         TextAlignment = taRightJustified
         Transparent = True
         mmHeight = 3440
-        mmLeft = 37306
+        mmLeft = 42598
         mmTop = 3440
         mmWidth = 17463
         BandType = 1
@@ -2854,7 +2855,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 3704
+        mmLeft = 8996
         mmTop = 3704
         mmWidth = 19050
         BandType = 1
@@ -2870,7 +2871,7 @@ object fmPointOfSale: TfmPointOfSale
         Pen.Style = psDashDot
         Pen.Width = 2
         mmHeight = 12435
-        mmLeft = 1323
+        mmLeft = 6615
         mmTop = 264
         mmWidth = 54769
         BandType = 0
@@ -2891,7 +2892,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 46302
+        mmLeft = 51594
         mmTop = 2117
         mmWidth = 8731
         BandType = 0
@@ -2912,7 +2913,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 20638
+        mmLeft = 25929
         mmTop = 2117
         mmWidth = 9525
         BandType = 0
@@ -2936,7 +2937,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 30956
+        mmLeft = 36248
         mmTop = 2117
         mmWidth = 14552
         BandType = 0
@@ -2960,7 +2961,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 3175
+        mmLeft = 8467
         mmTop = 2117
         mmWidth = 16404
         BandType = 0
@@ -2973,6 +2974,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Visible = False
         Border.Weight = 1.000000000000000000
         DataField = 'TrxTime'
+        DataPipeline = DPL_Header
         DisplayFormat = 'h:nn:ss AM/PM'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
@@ -2982,8 +2984,9 @@ object fmPointOfSale: TfmPointOfSale
         ParentDataPipeline = False
         TextAlignment = taRightJustified
         Transparent = True
+        DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 2381
+        mmLeft = 7673
         mmTop = 6879
         mmWidth = 16933
         BandType = 0
@@ -3004,7 +3007,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 20902
+        mmLeft = 26194
         mmTop = 7144
         mmWidth = 8467
         BandType = 0
@@ -3034,7 +3037,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 1058
+        mmLeft = 6350
         mmTop = 5556
         mmWidth = 15875
         BandType = 4
@@ -3058,7 +3061,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 1058
+        mmLeft = 6350
         mmTop = 1058
         mmWidth = 30956
         BandType = 4
@@ -3082,7 +3085,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 31485
+        mmLeft = 36777
         mmTop = 5556
         mmWidth = 13229
         BandType = 4
@@ -3107,7 +3110,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 31485
+        mmLeft = 36777
         mmTop = 10319
         mmWidth = 13229
         BandType = 4
@@ -3131,7 +3134,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 33073
+        mmLeft = 38365
         mmTop = 1058
         mmWidth = 11642
         BandType = 4
@@ -3156,7 +3159,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 32015
+        mmLeft = 37306
         mmTop = 14817
         mmWidth = 11906
         BandType = 4
@@ -3181,7 +3184,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3704
-        mmLeft = 1852
+        mmLeft = 7144
         mmTop = 14552
         mmWidth = 14552
         BandType = 4
@@ -3206,7 +3209,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 1058
+        mmLeft = 6350
         mmTop = 10319
         mmWidth = 15875
         BandType = 4
@@ -3227,7 +3230,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45773
+        mmLeft = 51065
         mmTop = 1058
         mmWidth = 9260
         BandType = 4
@@ -3248,7 +3251,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45773
+        mmLeft = 51065
         mmTop = 5556
         mmWidth = 9260
         BandType = 4
@@ -3269,7 +3272,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 17992
+        mmLeft = 23283
         mmTop = 5556
         mmWidth = 10848
         BandType = 4
@@ -3290,7 +3293,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45773
+        mmLeft = 51065
         mmTop = 10319
         mmWidth = 9260
         BandType = 4
@@ -3311,7 +3314,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 17992
+        mmLeft = 23283
         mmTop = 10319
         mmWidth = 10848
         BandType = 4
@@ -3332,7 +3335,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45508
+        mmLeft = 50800
         mmTop = 14817
         mmWidth = 9260
         BandType = 4
@@ -3353,7 +3356,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 17727
+        mmLeft = 23019
         mmTop = 14552
         mmWidth = 8731
         BandType = 4
@@ -3371,7 +3374,7 @@ object fmPointOfSale: TfmPointOfSale
         StretchWithParent = True
         Weight = 1.500000000000000000
         mmHeight = 529
-        mmLeft = 3704
+        mmLeft = 8996
         mmTop = 24342
         mmWidth = 50271
         BandType = 4
@@ -3392,7 +3395,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45508
+        mmLeft = 50800
         mmTop = 20108
         mmWidth = 10054
         BandType = 4
@@ -3417,7 +3420,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 5027
-        mmLeft = 1588
+        mmLeft = 6879
         mmTop = 18785
         mmWidth = 41804
         BandType = 4
@@ -3453,7 +3456,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 15875
+        mmLeft = 21167
         mmTop = 5027
         mmWidth = 12171
         BandType = 7
@@ -3474,7 +3477,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45773
+        mmLeft = 51065
         mmTop = 9790
         mmWidth = 8731
         BandType = 7
@@ -3499,7 +3502,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 31221
+        mmLeft = 36513
         mmTop = 9790
         mmWidth = 12171
         BandType = 7
@@ -3520,7 +3523,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 15875
+        mmLeft = 21167
         mmTop = 9790
         mmWidth = 9790
         BandType = 7
@@ -3545,7 +3548,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 2117
+        mmLeft = 7408
         mmTop = 9790
         mmWidth = 12171
         BandType = 7
@@ -3570,7 +3573,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 2117
+        mmLeft = 7408
         mmTop = 5027
         mmWidth = 12171
         BandType = 7
@@ -3591,7 +3594,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45773
+        mmLeft = 51065
         mmTop = 5027
         mmWidth = 8731
         BandType = 7
@@ -3616,7 +3619,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 32015
+        mmLeft = 37306
         mmTop = 5292
         mmWidth = 11377
         BandType = 7
@@ -3637,7 +3640,7 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 45773
+        mmLeft = 51065
         mmTop = 794
         mmWidth = 8731
         BandType = 7
@@ -3662,7 +3665,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 31221
+        mmLeft = 36513
         mmTop = 794
         mmWidth = 12171
         BandType = 7

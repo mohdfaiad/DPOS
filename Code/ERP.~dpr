@@ -35,7 +35,10 @@ uses
   PointOfSale in 'Transactions\PointOfSale.pas' {fmPointOfSale},
   posPayType in 'Transactions\posPayType.pas',
   lkp_POSDefinition in 'Masters\lkp_POSDefinition.pas' {fmPOSDefinition},
-  lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition};
+  lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition},
+  PrBegBalForm in 'Pr\PrBegBalForm.pas' {fmBegBalForm},
+  PrTrxBaseForm in 'Pr\PrTrxBaseForm.pas' {fmPrTrxBaseForm},
+  BaseReport in 'SystemManager\BaseReport.pas' {fmBaseReports};
 
 {$R *.res}
 
@@ -44,27 +47,5 @@ begin
   Application.CreateForm(TfmMainForm, fmMainForm);
   Application.CreateForm(TfmLicense, fmLicense);
   Application.CreateForm(TfmLogin, fmLogin);
-  Application.CreateForm(TfmPOSDefinition, fmPOSDefinition);
-  Application.CreateForm(TfmItemDefinition, fmItemDefinition);
-  {
-  Application.CreateForm(TfmLicense, fmLicense);
-  Application.CreateForm(TfmLogin, fmLogin);
-  Application.CreateForm(TLkp, Lkp);
-  Application.CreateForm(TfmVendorGroup, fmVendorGroup);
-  Application.CreateForm(TfmCurrency, fmCurrency);
-  Application.CreateForm(TfmUserGroups, fmUserGroups);
-  Application.CreateForm(TfmItemColor, fmItemColor);
-  Application.CreateForm(TfmItemGroupSections, fmItemGroupSections);
-  Application.CreateForm(TfmItemPolicies, fmItemPolicies);
-  Application.CreateForm(TfmItemSize, fmItemSize);
-  Application.CreateForm(TfmItemType, fmItemType);
-  Application.CreateForm(TfmItemUnit, fmItemUnit);
-  Application.CreateForm(TfmWareHouse, fmWareHouse);
-  Application.CreateForm(TfmBranch, fmBranch);
-  Application.CreateForm(TfmCustomers, fmCustomers);
-  Application.CreateForm(TfmCompany, fmCompany);
-  Application.CreateForm(TfmBackUp, fmBackUp);
-  Application.CreateForm(TfmCustomerGroup, fmCustomerGroup);
-  }
   Application.Run;
 end.
