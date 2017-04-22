@@ -221,7 +221,7 @@ end;
 procedure TfmItemPolicies.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
-  {SDS_ItemPrices.Append;}
+  grd_Brcodes.Refresh;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;

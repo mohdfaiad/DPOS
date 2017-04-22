@@ -169,3 +169,25 @@ CREATE TABLE [dbo].[tbl_ItemRelatedUnits](
 
 GO
 -----------------------------------------------
+CREATE TABLE [dbo].[Tbl_ItemStock](
+	[CompanyCode] [CHAR](4) NOT NULL,
+	[ItemCode] [NVARCHAR](25) NOT NULL,
+	[ItemService] [CHAR](3) NOT NULL,
+	[WarehouseCode] [NVARCHAR](20) NOT NULL,
+	[ItemQuantity] [DECIMAL](18, 4) NULL,
+	[ItemUnit] [NVARCHAR](6) NULL,
+	[AvgCost] [DECIMAL](18, 4) NULL,
+	[CreateDate] [DATETIME] NULL,
+	[LastUpdateDate] [DATETIME] NULL
+ CONSTRAINT [PK_Tbl_ItemStock] PRIMARY KEY CLUSTERED 
+(
+	[CompanyCode] ASC,
+	[WarehouseCode] ASC,
+	[ItemCode] ASC,
+	[ItemService] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+---------------------------------------------------------

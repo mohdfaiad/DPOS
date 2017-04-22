@@ -151,6 +151,7 @@ type
     procedure SDS_PaymentNewRecord(DataSet: TDataSet);
     procedure SDS_DetailsItemUnitChange(Sender: TField);
     procedure btn_adjustClick(Sender: TObject);
+    procedure btnPostClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -183,6 +184,8 @@ begin
   SDS_Itemunit.open;
   SDS_PaymentType.Close;
   SDS_PaymentType.Open;
+  qry_Type.Close;
+  qry_Type.Open;
 
   btnEdit.Enabled := True;
   BtnOpen.Enabled := True;
@@ -200,6 +203,7 @@ begin
   BtnShow.Enabled := True;
   Navigator.Enabled := True;
   EditMode := False;
+
 end;
 
 procedure TfmPrTrxBaseForm.btnEditClick(Sender: TObject);
@@ -465,6 +469,18 @@ SDS_Payment.Close;
 SDS_Payment.DataSet.CommandText :='Select * From tbl_PrTrxPayment where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''PRIV'' ';
 SDS_Payment.Open;
 trxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
+  if (SDS_HeaderTrxStatus.AsString = 'P')Then
+  begin
+    btnEdit.Enabled := False;
+    btnPost.Enabled := False;
+    btnDelete.Enabled := False;
+  end
+  else
+  begin
+    btnEdit.Enabled := True;
+    btnPost.Enabled := True;
+    btnDelete.Enabled := True;
+  end;
 end;
 
 procedure TfmPrTrxBaseForm.SDS_DetailsNewRecord(DataSet: TDataSet);
@@ -570,6 +586,61 @@ begin
     end;
 
 
+end;
+
+procedure TfmPrTrxBaseForm.btnPostClick(Sender: TObject);
+var
+Quantity , OldQty , AvgCost , OldAvgCost  : Real;
+WhrCod  , SQl   : String;
+buttonSelected : Integer;
+begin
+
+buttonSelected := MessageDlg('Â·  —Ìœ  —ÕÌ· «·»Ì«‰« ',mtError, mbOKCancel, 0);
+if buttonSelected = mrOK then
+begin
+   Quantity :=0;
+   OldQty := 0;
+   AvgCost := 0;
+   OldAvgCost := 0;
+   With SDS_Details do Begin
+       First;
+       While Not Eof Do Begin
+          WhrCod :=  ' and CompanyCode = ''' + DCompany + ''' '
+           + '   And WarehouseCode = ''' + SDS_DetailsWareHouseCode.AsString + ''' '
+           + '   And ItemCode = ''' + SDS_DetailsItemCode.AsString + '''  ';
+       Try
+        OldQty := StrToFloat( GetDBValue(' ItemQuantity ',' tbl_itemStock ',WhrCod));
+       Except
+        OldQty := 0;
+       End;
+
+       Try
+        OldAvgCost := StrToFloat( GetDBValue(' AvgCost ',' tbl_itemStock ',WhrCod));
+       Except
+        OldAvgCost := 0;
+       End;
+
+          Quantity := OldQty + SDS_DetailsQuantity.AsFloat  * SDS_DetailsUnitTransValue.AsFloat;
+
+          AvgCost := ( (OldQty * OldAvgCost)+ (Abs(SDS_DetailsQuantity.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
+                      SDS_DetailsCostPrice.AsFloat)) / (Quantity)) ;
+          if( GetDBValue(' ItemCode ',' tbl_itemStock ',WhrCod) = '' )  then
+            SQl := ' insert into Tbl_itemStock (CompanyCode,ItemCode,ItemService,WareHouseCode,ItemQuantity,ItemUnit,AvgCost) '
+             + ' Values ('''+DCompany+''','''+SDS_DetailsItemCode.AsString+''',''IVI'' , '''+SDS_DetailsWareHouseCode.AsString+''' , '''+FloatToStr(Quantity)+''' ,1 , '''+FloatToStr(AvgCost)+''' ) '
+          else
+            SQl := ' Update Tbl_itemStock set ItemQuantity ='''+ FloatToStr(Quantity)+''' , AvgCost ='''+FloatToStr(AvgCost)+''' where 1=1 ' + WhrCod;
+          fmMainForm.MainConnection.ExecuteDirect(SQL);
+          SDS_Details.Next;
+       end;
+   end;
+   SDS_Header.Open;
+   SDS_Header.Edit;
+   SDS_HeaderTrxStatus.AsString := 'P';
+   SDS_Header.ApplyUpdates(0);
+   SDS_Header.Close;
+
+   ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
+end;
 end;
 
 end.

@@ -608,6 +608,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
       TabOrder = 7
+      OnClick = btnPostClick
     end
   end
   object SDS_Header: TSimpleDataSet
@@ -698,7 +699,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     DataSet.Params = <>
     Params = <>
     OnNewRecord = SDS_DetailsNewRecord
-    Top = 32
+    Top = 40
     object SDS_DetailsCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
