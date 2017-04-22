@@ -321,13 +321,13 @@ object fmBegBalForm: TfmBegBalForm
     end
   end
   object GroupBox2: TGroupBox
-    Left = 88
+    Left = 17
     Top = 32
-    Width = 873
+    Width = 983
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 626
+      Left = 739
       Top = 13
       Width = 115
       Height = 35
@@ -342,7 +342,7 @@ object fmBegBalForm: TfmBegBalForm
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 503
+      Left = 616
       Top = 13
       Width = 115
       Height = 35
@@ -357,7 +357,7 @@ object fmBegBalForm: TfmBegBalForm
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 379
+      Left = 492
       Top = 13
       Width = 115
       Height = 35
@@ -372,7 +372,7 @@ object fmBegBalForm: TfmBegBalForm
       OnClick = btnEditClick
     end
     object btnDelete: TButton
-      Left = 11
+      Left = 124
       Top = 13
       Width = 115
       Height = 35
@@ -387,7 +387,7 @@ object fmBegBalForm: TfmBegBalForm
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 254
+      Left = 367
       Top = 13
       Width = 115
       Height = 35
@@ -402,7 +402,7 @@ object fmBegBalForm: TfmBegBalForm
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 132
+      Left = 245
       Top = 13
       Width = 115
       Height = 35
@@ -417,7 +417,7 @@ object fmBegBalForm: TfmBegBalForm
       OnClick = BtnCancelClick
     end
     object BtnShow: TButton
-      Left = 750
+      Left = 863
       Top = 13
       Width = 115
       Height = 35
@@ -430,6 +430,21 @@ object fmBegBalForm: TfmBegBalForm
       ParentFont = False
       TabOrder = 6
       OnClick = BtnShowClick
+    end
+    object btnPost: TButton
+      Left = 5
+      Top = 13
+      Width = 115
+      Height = 35
+      Caption = #1578#1585#1581#1610#1604
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = btnPostClick
     end
   end
   object SDS_Header: TSimpleDataSet

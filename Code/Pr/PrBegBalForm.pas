@@ -13,14 +13,6 @@ type
     SDS_Header: TSimpleDataSet;
     DS_Header: TDataSource;
     grpData: TGroupBox;
-    GroupBox2: TGroupBox;
-    BtnOpen: TButton;
-    btnAdd: TButton;
-    btnEdit: TButton;
-    btnDelete: TButton;
-    btnSave: TButton;
-    BtnCancel: TButton;
-    BtnShow: TButton;
     Label12: TLabel;
     DBEdit2: TDBEdit;
     Label4: TLabel;
@@ -101,6 +93,15 @@ type
     DBEdit6: TDBEdit;
     Label2: TLabel;
     Navigator: TDBNavigator;
+    GroupBox2: TGroupBox;
+    BtnOpen: TButton;
+    btnAdd: TButton;
+    btnEdit: TButton;
+    btnDelete: TButton;
+    btnSave: TButton;
+    BtnCancel: TButton;
+    BtnShow: TButton;
+    btnPost: TButton;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -115,6 +116,7 @@ type
     procedure SDS_DetailsNewRecord(DataSet: TDataSet);
     procedure SDS_DetailsItemCodeChange(Sender: TField);
     procedure SDS_DetailsItemUnitChange(Sender: TField);
+    procedure btnPostClick(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -145,6 +147,8 @@ begin
   SDS_ItemDef.open;
   SDS_Itemunit.Close;
   SDS_Itemunit.open;
+  qry_Type.Close;
+  qry_Type.Open;
 
   btnEdit.Enabled := True;
   BtnOpen.Enabled := True;
@@ -359,6 +363,18 @@ SDS_Details.Close;
 SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
 SDS_Details.Open;
 trxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
+if (SDS_HeaderTrxStatus.AsString = 'P')Then
+  begin
+    btnEdit.Enabled := False;
+    btnPost.Enabled := False;
+    btnDelete.Enabled := False;
+  end
+  else
+  begin
+    btnEdit.Enabled := True;
+    btnPost.Enabled := True;
+    btnDelete.Enabled := True;
+  end;
 end;
 
 procedure TfmBegBalForm.SDS_DetailsNewRecord(DataSet: TDataSet);
@@ -387,6 +403,61 @@ end;
 procedure TfmBegBalForm.SDS_DetailsItemUnitChange(Sender: TField);
 begin
 SDS_DetailsUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
+end;
+
+procedure TfmBegBalForm.btnPostClick(Sender: TObject);
+var
+Quantity , OldQty , AvgCost , OldAvgCost  : Real;
+WhrCod  , SQl   : String;
+buttonSelected : Integer;
+begin
+
+buttonSelected := MessageDlg('Â·  —Ìœ  —ÕÌ· «·»Ì«‰« ',mtError, mbOKCancel, 0);
+if buttonSelected = mrOK then
+begin
+   Quantity :=0;
+   OldQty := 0;
+   AvgCost := 0;
+   OldAvgCost := 0;
+   With SDS_Details do Begin
+       First;
+       While Not Eof Do Begin
+          WhrCod :=  ' and CompanyCode = ''' + DCompany + ''' '
+           + '   And WarehouseCode = ''' + SDS_DetailsWareHouseCode.AsString + ''' '
+           + '   And ItemCode = ''' + SDS_DetailsItemCode.AsString + '''  ';
+       Try
+        OldQty := StrToFloat( GetDBValue(' ItemQuantity ',' tbl_itemStock ',WhrCod));
+       Except
+        OldQty := 0;
+       End;
+
+       Try
+        OldAvgCost := StrToFloat( GetDBValue(' AvgCost ',' tbl_itemStock ',WhrCod));
+       Except
+        OldAvgCost := 0;
+       End;
+
+          Quantity := OldQty + SDS_DetailsQuantity.AsFloat  * SDS_DetailsUnitTransValue.AsFloat;
+
+          AvgCost := ( (OldQty * OldAvgCost)+ (Abs(SDS_DetailsQuantity.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
+                      SDS_DetailsCostPrice.AsFloat)) / (Quantity)) ;
+          if( GetDBValue(' ItemCode ',' tbl_itemStock ',WhrCod) = '' )  then
+            SQl := ' insert into Tbl_itemStock (CompanyCode,ItemCode,ItemService,WareHouseCode,ItemQuantity,ItemUnit,AvgCost) '
+             + ' Values ('''+DCompany+''','''+SDS_DetailsItemCode.AsString+''',''IVI'' , '''+SDS_DetailsWareHouseCode.AsString+''' , '''+FloatToStr(Quantity)+''' ,1 , '''+FloatToStr(AvgCost)+''' ) '
+          else
+            SQl := ' Update Tbl_itemStock set ItemQuantity ='''+ FloatToStr(Quantity)+''' , AvgCost ='''+FloatToStr(AvgCost)+''' where 1=1 ' + WhrCod;
+          fmMainForm.MainConnection.ExecuteDirect(SQL);
+          SDS_Details.Next;
+       end;
+   end;
+   SDS_Header.Open;
+   SDS_Header.Edit;
+   SDS_HeaderTrxStatus.AsString := 'P';
+   SDS_Header.ApplyUpdates(0);
+   SDS_Header.Close;
+
+   ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
+end;
 end;
 
 end.
