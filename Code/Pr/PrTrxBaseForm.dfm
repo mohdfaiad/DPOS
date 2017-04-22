@@ -1,6 +1,6 @@
 object fmPrTrxBaseForm: TfmPrTrxBaseForm
-  Left = 334
-  Top = 6
+  Left = 199
+  Top = 5
   BorderStyle = bsDialog
   Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
   ClientHeight = 592
@@ -208,6 +208,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
         Anchors = []
         DataField = 'TrxNo'
         DataSource = DS_Header
+        Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -381,10 +382,10 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     end
     object PG1: TPageControl
       Left = 2
-      Top = 276
+      Top = 243
       Width = 917
       Height = 199
-      ActivePage = TabSheet2
+      ActivePage = TabSheet1
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
@@ -413,7 +414,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
             Top = 21
             Width = 905
             Height = 127
-            TabStop = False
             Align = alTop
             DataSource = DS_Details
             Font.Charset = DEFAULT_CHARSET
@@ -470,6 +470,18 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
           OnClick = btn_adjustClick
         end
       end
+    end
+    object Navigator: TDBNavigator
+      Left = 2
+      Top = 442
+      Width = 917
+      Height = 33
+      DataSource = DS_Header
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      Align = alBottom
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
     end
   end
   object GroupBox2: TGroupBox
@@ -601,7 +613,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_PrTrxHeader'
+    DataSet.CommandText = 'Select * From tbl_PrTrxHeader Where TrxType = '#39'PRIV'#39
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
@@ -731,10 +743,9 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1603#1608#1583' '#1575#1604#1589#1606#1601
       DisplayWidth = 10
       FieldName = 'ItemCode'
-      OnChange = SDS_DetailsItemCodeChange
       Size = 25
     end
-    object SDS_DetailsItemNameAr2: TStringField
+    object SDS_DetailsItemNameAr: TStringField
       DisplayLabel = #1573#1587#1605' '#1575#1604#1589#1606#1601
       FieldKind = fkLookup
       FieldName = 'ItemNameAr'
@@ -779,6 +790,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1585#1605#1586' '#1575#1604#1608#1581#1583#1577
       DisplayWidth = 6
       FieldName = 'ItemUnit'
+      LookupCache = True
       Size = 6
     end
     object SDS_DetailsItemUnitDescAr: TStringField
@@ -816,7 +828,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
   end
   object DS_Details: TDataSource
     DataSet = SDS_Details
-    Left = 24
+    Left = 32
     Top = 32
   end
   object SDS_WareHouse: TSimpleDataSet
@@ -948,34 +960,6 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Left = 32
     Top = 432
   end
-  object SDS_ItemDef: TSimpleDataSet
-    Aggregates = <>
-    Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_ItemDefinition'
-    DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
-    Params = <>
-    Left = 8
-    Top = 464
-    object SDS_ItemDefItemCode: TStringField
-      FieldName = 'ItemCode'
-      Required = True
-      Size = 25
-    end
-    object SDS_ItemDefItemNameAr: TStringField
-      FieldName = 'ItemNameAr'
-      Size = 255
-    end
-    object SDS_ItemDefItemNameEn: TStringField
-      FieldName = 'ItemNameEn'
-      Size = 255
-    end
-  end
-  object DS_ItemDEf: TDataSource
-    DataSet = SDS_ItemDef
-    Left = 32
-    Top = 464
-  end
   object SDS_Payment: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
@@ -1101,5 +1085,33 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     DataSet = SDS_PaymentType
     Left = 48
     Top = 552
+  end
+  object SDS_ItemDef: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemDefinition'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 8
+    Top = 464
+    object SDS_ItemDefItemCode: TStringField
+      FieldName = 'ItemCode'
+      Required = True
+      Size = 25
+    end
+    object SDS_ItemDefItemNameAr: TStringField
+      FieldName = 'ItemNameAr'
+      Size = 255
+    end
+    object SDS_ItemDefItemNameEn: TStringField
+      FieldName = 'ItemNameEn'
+      Size = 255
+    end
+  end
+  object DS_ItemDEf: TDataSource
+    DataSet = SDS_ItemDef
+    Left = 32
+    Top = 464
   end
 end

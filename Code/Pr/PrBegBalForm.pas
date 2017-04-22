@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls;
 
 type
   TfmBegBalForm = class(TForm)
@@ -100,6 +100,7 @@ type
     Label3: TLabel;
     DBEdit6: TDBEdit;
     Label2: TLabel;
+    Navigator: TDBNavigator;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -157,6 +158,7 @@ begin
   trxDate.Enabled := false;
 
   BtnShow.Enabled := True;
+  Navigator.Enabled := True;
   EditMode := False;
 end;
 
@@ -171,7 +173,7 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := True;
+  edtCode.Enabled := False;
   BtnShow.Enabled := True;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
@@ -179,20 +181,23 @@ begin
   Co_WareHouse.Enabled := True;
   grd_Details.Enabled := true;
   trxDate.Enabled := True;
+  Navigator.Enabled := False;
   EditMode := True;
 end;
 
 procedure TfmBegBalForm.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
-TrxVal , TotalDiscount : Real;
+    TrxVal , TotalDiscount : Real;
+    NewCode : String;
 begin
+  {
   If SDS_HeaderTrxNo.AsString = '' Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·—„“  ﬁ»· «·Õ›Ÿ');
      edtCode.SetFocus;
      Exit;
   end;
-
+  }
   If (SDS_HeaderWareHouseCode.AsString = '')  Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·„” Êœ⁄');
@@ -206,6 +211,11 @@ begin
      edtCode.SetFocus;
      Exit;
   end;
+
+  NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''IVBB''');
+  NewCode := IntToStr(StrToInt(NewCode)+1) ;
+  SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
+
    With SDS_Details do Begin
        DisableControls;
        First;
@@ -220,7 +230,16 @@ begin
 
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
-      BtnOpenClick(Sender);
+        btnEdit.Enabled := True;
+        BtnOpen.Enabled := True;
+        btnAdd.Enabled := True;
+        btnSave.Enabled := False;
+        BtnCancel.Enabled := False;
+        btnDelete.Enabled := True;
+        grpData.Enabled := False;
+        Navigator.Enabled := True;
+        BtnShow.Enabled := BtnOpen.Enabled;
+
   end
   else Begin
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
@@ -279,11 +298,7 @@ end;
 
 procedure TfmBegBalForm.FormCreate(Sender: TObject);
 Begin
-  {
-  Left := (Screen.Width - Width) div 2;
-  Top := (Screen.Height - Height) div 2;
-  }
-  //BtnOpenClick(Sender);
+  BtnOpenClick(Sender);
   BtnShow.Enabled := False;
 end;
 
@@ -296,7 +311,7 @@ end;
 
 procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
-    SDS_Header.Append;
+  SDS_Header.Append;
   grd_Details.Refresh;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
@@ -305,18 +320,18 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := True;
-  edtCode.SetFocus;
+  edtCode.Enabled := False;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
   grd_Details.Enabled := true;
   trxDate.Enabled := true;
-  trxDate.DateTime := now;
+  trxDate.DateTime := Date;
   BtnShow.Enabled := False;
   EditMode := False;
-    SDS_HeaderTrxNo.AsString := GetDBValue(' Max(isnull(TrxNo,0)) + 1 ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''IVBB''');
+  Navigator.Enabled := False;
+  trxDate.SetFocus;
 end;
 
 procedure TfmBegBalForm.BtnShowClick(Sender: TObject);
@@ -327,11 +342,15 @@ begin
 end;
 
 procedure TfmBegBalForm.SDS_HeaderNewRecord(DataSet: TDataSet);
+Var NewCode : String;
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
  SDS_HeaderTrxType.Value := 'IVBB';
  SDS_HeaderTrxStatus.Value := 'A';
  SDS_HeaderBranchCode.Value := DBranch;
+ NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''IVBB''');
+ NewCode := IntToStr(StrToInt(NewCode)+1) ;
+ SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8); 
 end;
 
 procedure TfmBegBalForm.SDS_HeaderAfterScroll(DataSet: TDataSet);

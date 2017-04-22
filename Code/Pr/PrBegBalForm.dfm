@@ -40,15 +40,15 @@ object fmBegBalForm: TfmBegBalForm
       Left = 11
       Top = 32
       Width = 902
-      Height = 241
+      Height = 148
       Anchors = []
       TabOrder = 0
       DesignSize = (
         902
-        241)
+        148)
       object Label12: TLabel
         Left = 428
-        Top = 111
+        Top = 105
         Width = 38
         Height = 19
         Anchors = []
@@ -62,7 +62,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label4: TLabel
         Left = 844
-        Top = 109
+        Top = 105
         Width = 50
         Height = 19
         Anchors = []
@@ -76,7 +76,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label1: TLabel
         Left = 865
-        Top = 42
+        Top = 22
         Width = 29
         Height = 19
         Anchors = []
@@ -90,7 +90,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label14: TLabel
         Left = 647
-        Top = 42
+        Top = 22
         Width = 36
         Height = 19
         Anchors = []
@@ -104,7 +104,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label15: TLabel
         Left = 435
-        Top = 42
+        Top = 22
         Width = 31
         Height = 19
         Anchors = []
@@ -118,7 +118,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label3: TLabel
         Left = 382
-        Top = 76
+        Top = 67
         Width = 84
         Height = 19
         Anchors = []
@@ -132,7 +132,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label2: TLabel
         Left = 822
-        Top = 76
+        Top = 67
         Width = 72
         Height = 19
         Anchors = []
@@ -146,7 +146,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object DBEdit2: TDBEdit
         Left = 30
-        Top = 107
+        Top = 101
         Width = 320
         Height = 27
         Anchors = []
@@ -162,7 +162,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Co_WareHouse: TDBLookupComboBox
         Left = 490
-        Top = 105
+        Top = 102
         Width = 320
         Height = 27
         DataField = 'WareHouseCode'
@@ -180,7 +180,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object edtCode: TDBEdit
         Left = 689
-        Top = 38
+        Top = 18
         Width = 121
         Height = 27
         Anchors = []
@@ -196,7 +196,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object trxDate: TDateTimePicker
         Left = 490
-        Top = 36
+        Top = 18
         Width = 151
         Height = 31
         Date = 42846.017996770830000000
@@ -205,7 +205,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 185
-        Top = 38
+        Top = 19
         Width = 165
         Height = 27
         DataField = 'TrxStatus'
@@ -224,7 +224,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object DBEdit1: TDBEdit
         Left = 30
-        Top = 72
+        Top = 63
         Width = 320
         Height = 27
         Anchors = []
@@ -240,7 +240,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object DBEdit6: TDBEdit
         Left = 490
-        Top = 72
+        Top = 63
         Width = 320
         Height = 27
         Anchors = []
@@ -257,9 +257,9 @@ object fmBegBalForm: TfmBegBalForm
     end
     object PG1: TPageControl
       Left = 2
-      Top = 276
+      Top = 180
       Width = 917
-      Height = 199
+      Height = 262
       ActivePage = TabSheet1
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
@@ -279,17 +279,17 @@ object fmBegBalForm: TfmBegBalForm
         ParentFont = False
         object GroupBox3: TGroupBox
           Left = 0
-          Top = 8
+          Top = 10
           Width = 909
-          Height = 157
+          Height = 218
           Align = alBottom
           TabOrder = 0
           object grd_Details: TDBGrid
             Left = 2
             Top = 21
             Width = 905
-            Height = 124
-            Align = alTop
+            Height = 195
+            Align = alClient
             DataSource = DS_Details
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clNavy
@@ -306,6 +306,18 @@ object fmBegBalForm: TfmBegBalForm
           end
         end
       end
+    end
+    object Navigator: TDBNavigator
+      Left = 2
+      Top = 442
+      Width = 917
+      Height = 33
+      DataSource = DS_Header
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      Align = alBottom
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
     end
   end
   object GroupBox2: TGroupBox
@@ -423,7 +435,7 @@ object fmBegBalForm: TfmBegBalForm
   object SDS_Header: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_PrTrxHeader'
+    DataSet.CommandText = 'Select * From tbl_PrTrxHeader Where TrxType = '#39'IVBB'#39
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
@@ -502,7 +514,7 @@ object fmBegBalForm: TfmBegBalForm
   object SDS_Details: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_PrTrxDetails'
+    DataSet.CommandText = 'Select * From tbl_PrTrxDetails '
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>

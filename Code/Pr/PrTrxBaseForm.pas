@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls;
 
 type
   TfmPrTrxBaseForm = class(TForm)
@@ -50,7 +50,6 @@ type
     SDS_DetailsTrxType: TStringField;
     SDS_DetailsTraLineNo: TStringField;
     SDS_DetailsItemService: TStringField;
-    SDS_DetailsItemCode: TStringField;
     SDS_DetailsCostPrice: TFMTBCDField;
     SDS_DetailsDiscount: TFMTBCDField;
     SDS_DetailsNetPrice: TFMTBCDField;
@@ -101,13 +100,6 @@ type
     SDS_ItemunitItemUnitDescA: TStringField;
     SDS_ItemunitItemUnitDescE: TStringField;
     DS_ItemUnit: TDataSource;
-    SDS_ItemDef: TSimpleDataSet;
-    DS_ItemDEf: TDataSource;
-    SDS_ItemDefItemCode: TStringField;
-    SDS_ItemDefItemNameAr: TStringField;
-    SDS_ItemDefItemNameEn: TStringField;
-    SDS_DetailsItemNameAr2: TStringField;
-    SDS_DetailsItemUnitDescAr: TStringField;
     SDS_Payment: TSimpleDataSet;
     DS_Payment: TDataSource;
     SDS_PaymentTrxLineNo: TStringField;
@@ -131,6 +123,15 @@ type
     btnPost: TButton;
     btn_adjust: TButton;
     SDS_DetailsItemUnit: TStringField;
+    Navigator: TDBNavigator;
+    SDS_DetailsItemNameAr: TStringField;
+    SDS_DetailsItemUnitDescAr: TStringField;
+    SDS_ItemDef: TSimpleDataSet;
+    SDS_ItemDefItemCode: TStringField;
+    SDS_ItemDefItemNameAr: TStringField;
+    SDS_ItemDefItemNameEn: TStringField;
+    DS_ItemDEf: TDataSource;
+    SDS_DetailsItemCode: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -197,6 +198,7 @@ begin
   trxDate.Enabled := false;
 
   BtnShow.Enabled := True;
+  Navigator.Enabled := True;
   EditMode := False;
 end;
 
@@ -212,7 +214,7 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := True;
+  edtCode.Enabled := False;
   BtnShow.Enabled := True;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
@@ -225,20 +227,23 @@ begin
   grd_Payment.Enabled := True;
   grd_Details.Enabled := true;
   trxDate.Enabled := True;
+  Navigator.Enabled := False;
   EditMode := True;
 end;
 
 procedure TfmPrTrxBaseForm.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
-TrxVal , TotalDiscount , TotalPayment : Real;
+    TrxVal , TotalDiscount , TotalPayment : Real;
+    NewCode : String;
 begin
+{
   If SDS_HeaderTrxNo.AsString = '' Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·—„“  ﬁ»· «·Õ›Ÿ');
      edtCode.SetFocus;
      Exit;
   end;
-
+}
   If (SDS_HeaderWareHouseCode.AsString = '')  Then
   Begin
      ShowMessage('ÌÃ»  ÕœÌœ «·„” Êœ⁄');
@@ -259,6 +264,11 @@ begin
      edtCode.SetFocus;
      Exit;
   end;
+
+  NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''PRIV''');
+  NewCode := IntToStr(StrToInt(NewCode)+1) ;
+  SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
+
   TotalDiscount := 0;
   TrxVal := 0;
    With SDS_Details do Begin
@@ -308,9 +318,19 @@ begin
    SDS_HeaderTotalDiscount.AsFloat := TotalDiscount;
    SDS_HeaderTrxDate.AsDateTime := trxDate.DateTime;
 
+   
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0) AND (SDS_Payment.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
-      BtnOpenClick(Sender);
+        btnEdit.Enabled := True;
+        BtnOpen.Enabled := True;
+        btnAdd.Enabled := True;
+        btnSave.Enabled := False;
+        BtnCancel.Enabled := False;
+        btnDelete.Enabled := True;
+        grpData.Enabled := False;
+        Navigator.Enabled := True;
+        BtnShow.Enabled := BtnOpen.Enabled;
+
   end
   else Begin
    SDS_Payment.EnableControls;
@@ -375,11 +395,7 @@ end;
 
 procedure TfmPrTrxBaseForm.FormCreate(Sender: TObject);
 Begin
-  {
-  Left := (Screen.Width - Width) div 2;
-  Top := (Screen.Height - Height) div 2;
-  }
-  //BtnOpenClick(Sender);
+  BtnOpenClick(Sender);
   BtnShow.Enabled := False;
 end;
 
@@ -402,23 +418,23 @@ begin
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
   grpData.Enabled := True;
-  edtCode.Enabled := True;
-  edtCode.SetFocus;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
   DBEdit3.Enabled := True;
   DBEdit4.Enabled := True;
   DBEdit5.Enabled := True;
   DBEdit6.Enabled := True;
+  edtCode.Enabled := False;
   Co_WareHouse.Enabled := True;
   CO_Vendors.Enabled := True;
   grd_Payment.Enabled := True;
   grd_Details.Enabled := true;
   trxDate.Enabled := true;
-  trxDate.DateTime := now;
+  trxDate.DateTime := Date;
   BtnShow.Enabled := False;
   EditMode := False;
-  SDS_HeaderTrxNo.AsString := GetDBValue(' Max(isnull(TrxNo,0)) + 1 ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''PRIV''');
+  Navigator.Enabled := False;
+  trxDate.SetFocus;
 end;
 
 procedure TfmPrTrxBaseForm.BtnShowClick(Sender: TObject);
@@ -429,11 +445,15 @@ begin
 end;
 
 procedure TfmPrTrxBaseForm.SDS_HeaderNewRecord(DataSet: TDataSet);
+Var NewCode : String;
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
  SDS_HeaderTrxType.Value := 'PRIV';
  SDS_HeaderTrxStatus.Value := 'A';
  SDS_HeaderBranchCode.Value := DBranch;
+ NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''PRIV''');
+ NewCode := IntToStr(StrToInt(NewCode)+1) ;
+ SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
 end;
 
 procedure TfmPrTrxBaseForm.SDS_HeaderAfterScroll(DataSet: TDataSet);
@@ -464,12 +484,14 @@ end;
 
 procedure TfmPrTrxBaseForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
+
   SDS_Itemunit.Close;
   SDS_Itemunit.DataSet.Close;
   SDS_Itemunit.DataSet.CommandText := ' Select * from tbl_ItemUnit where CompanyCode = ''' + DCompany + ''' And '
                                      +' (ItemUnitCode in (select RelateUnitCode from tbl_ItemRelatedUnits where itemcode = ''' + SDS_DetailsItemCode.AsString + ''') '
                                      +' or ItemUnitCode = (select ItemUnitCode from tbl_ItemDefinition where itemcode = ''' + SDS_DetailsItemCode.AsString + ''')) ';
   SDS_Itemunit.Open;
+
   SDS_DetailsItemUnit.AsString := GetDBValue('ItemUnitCode','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
   SDS_DetailsUnitTransValue.AsString := '1'; //GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
   SDS_DetailsItemService.AsString := GetDBValue('ItemService','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
