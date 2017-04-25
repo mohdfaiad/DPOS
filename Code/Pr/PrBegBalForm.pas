@@ -136,7 +136,7 @@ uses Main, GFunctions, GVariable;
 procedure TfmBegBalForm.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
-  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' and TrxType =''IVBB'' ';
+  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' And BranchCode = ''' + DBranch + ''' and TrxType =''IVBB'' ';
   SDS_Header.Open;
 
   SDS_WareHouse.Close;

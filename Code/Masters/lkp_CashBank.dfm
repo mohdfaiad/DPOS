@@ -1,10 +1,10 @@
 object fmCashBank: TfmCashBank
-  Left = 192
+  Left = 0
   Top = 124
   BorderStyle = bsDialog
   Caption = #1575#1604#1589#1606#1575#1583#1610#1602' '#1608#1575#1604#1576#1606#1608#1603
   ClientHeight = 499
-  ClientWidth = 1016
+  ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

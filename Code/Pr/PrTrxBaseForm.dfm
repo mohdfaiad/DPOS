@@ -1,10 +1,10 @@
 object fmPrTrxBaseForm: TfmPrTrxBaseForm
-  Left = 199
+  Left = 0
   Top = 5
   BorderStyle = bsDialog
   Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
   ClientHeight = 592
-  ClientWidth = 1016
+  ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -744,6 +744,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayLabel = #1603#1608#1583' '#1575#1604#1589#1606#1601
       DisplayWidth = 10
       FieldName = 'ItemCode'
+      OnChange = SDS_DetailsItemCodeChange
       Size = 25
     end
     object SDS_DetailsItemNameAr: TStringField
@@ -1100,6 +1101,11 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       FieldName = 'ItemCode'
       Required = True
       Size = 25
+    end
+    object SDS_ItemDefItemService: TStringField
+      FieldName = 'ItemService'
+      Required = True
+      Size = 3
     end
     object SDS_ItemDefItemNameAr: TStringField
       FieldName = 'ItemNameAr'

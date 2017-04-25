@@ -1,10 +1,10 @@
 object fmBegBalForm: TfmBegBalForm
-  Left = 316
+  Left = 0
   Top = 6
   BorderStyle = bsDialog
   Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577' '#1604#1604#1605#1582#1575#1586#1606
   ClientHeight = 592
-  ClientWidth = 1016
+  ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -1,11 +1,11 @@
 object fmPointOfSale: TfmPointOfSale
-  Left = 0
-  Top = 2
+  Left = -8
+  Top = -8
   Hint = #1606#1602#1591#1577' '#1575#1604#1576#1610#1593
   BorderStyle = bsDialog
   Caption = 'Point Of Sale'
-  ClientHeight = 688
-  ClientWidth = 1006
+  ClientHeight = 706
+  ClientWidth = 1366
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,19 +23,19 @@ object fmPointOfSale: TfmPointOfSale
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
-    Left = 852
+    Left = 1212
     Top = 37
     Width = 149
-    Height = 541
+    Height = 559
     Align = alRight
     TabOrder = 0
     object paButtons: TPanel
       Left = 1
       Top = 1
       Width = 147
-      Height = 539
+      Height = 557
       Align = alClient
-      Color = clSilver
+      Color = clWhite
       TabOrder = 0
       object btn_Cancel: TVrDemoButton
         Left = 0
@@ -217,8 +217,8 @@ object fmPointOfSale: TfmPointOfSale
   end
   object Panel2: TPanel
     Left = 0
-    Top = 578
-    Width = 1006
+    Top = 596
+    Width = 1366
     Height = 110
     Align = alBottom
     Color = 16762566
@@ -232,7 +232,7 @@ object fmPointOfSale: TfmPointOfSale
     object Panel7: TPanel
       Left = 1
       Top = -1
-      Width = 1004
+      Width = 1364
       Height = 110
       Align = alBottom
       Color = 13750737
@@ -246,16 +246,16 @@ object fmPointOfSale: TfmPointOfSale
       object ArEnPanel1: TPanel
         Left = 1
         Top = 1
-        Width = 1002
+        Width = 1362
         Height = 108
         Align = alClient
-        Color = clSilver
+        Color = clWhite
         TabOrder = 0
         DesignSize = (
-          1002
+          1362
           108)
         object QLabel10: TLabel
-          Left = 387
+          Left = 550
           Top = 19
           Width = 136
           Height = 29
@@ -271,7 +271,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object vrmAmount: TVrMatrix
-          Left = 217
+          Left = 325
           Top = 17
           Width = 168
           Height = 30
@@ -297,7 +297,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object QLabel7: TLabel
-          Left = 745
+          Left = 1029
           Top = 65
           Width = 93
           Height = 27
@@ -313,7 +313,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object vrmTotalDiscount: TVrMatrix
-          Left = 568
+          Left = 802
           Top = 65
           Width = 168
           Height = 30
@@ -339,7 +339,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object vrmTotal: TVrMatrix
-          Left = 568
+          Left = 802
           Top = 17
           Width = 168
           Height = 30
@@ -365,7 +365,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object QLabel13: TLabel
-          Left = 739
+          Left = 1024
           Top = 20
           Width = 109
           Height = 22
@@ -381,7 +381,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object vrmChange: TVrMatrix
-          Left = 217
+          Left = 325
           Top = 66
           Width = 168
           Height = 30
@@ -407,7 +407,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object ArEnLabel1: TLabel
-          Left = 388
+          Left = 552
           Top = 66
           Width = 137
           Height = 26
@@ -423,7 +423,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object VrBlotter2: TVrBlotter
-          Left = 850
+          Left = 1210
           Top = 1
           Width = 151
           Height = 106
@@ -488,7 +488,7 @@ object fmPointOfSale: TfmPointOfSale
   object pnlTitle: TPanel
     Left = 0
     Top = 0
-    Width = 1006
+    Width = 1366
     Height = 37
     Align = alTop
     Caption = #1606#1602#1591#1600#1600#1600#1577' '#1576#1610#1600#1600#1600#1600#1593
@@ -501,10 +501,10 @@ object fmPointOfSale: TfmPointOfSale
     TabOrder = 2
   end
   object Panel4: TPanel
-    Left = 1001
+    Left = 1361
     Top = 37
     Width = 5
-    Height = 541
+    Height = 559
     Align = alRight
     Color = 13750737
     TabOrder = 3
@@ -512,26 +512,26 @@ object fmPointOfSale: TfmPointOfSale
   object grp_Container: TGroupBox
     Left = 0
     Top = 37
-    Width = 852
-    Height = 541
+    Width = 1212
+    Height = 559
     Align = alClient
-    Color = clSilver
+    Color = clWhite
     ParentColor = False
     TabOrder = 4
     object pnlKeyPad: TPanel
       Left = 2
       Top = 130
       Width = 205
-      Height = 409
+      Height = 427
       Align = alLeft
       TabOrder = 0
       object ArEnPanel3: TPanel
         Left = 1
         Top = 1
         Width = 203
-        Height = 407
+        Height = 425
         Align = alClient
-        Color = clSilver
+        Color = clWhite
         TabOrder = 0
         object Bevel1: TBevel
           Left = 3
@@ -679,15 +679,15 @@ object fmPointOfSale: TfmPointOfSale
     object pnlDetails: TPanel
       Left = 207
       Top = 130
-      Width = 643
-      Height = 409
+      Width = 1003
+      Height = 427
       Align = alClient
       TabOrder = 1
       object grdDetails: TDBGrid
         Left = 335
         Top = 1
-        Width = 307
-        Height = 407
+        Width = 667
+        Height = 425
         Align = alClient
         BiDiMode = bdLeftToRight
         DataSource = DS_Details
@@ -711,7 +711,7 @@ object fmPointOfSale: TfmPointOfSale
         Left = 1
         Top = 1
         Width = 334
-        Height = 407
+        Height = 425
         Align = alLeft
         MultiLine = True
         TabHeight = 25
@@ -722,7 +722,7 @@ object fmPointOfSale: TfmPointOfSale
     object pnl_Header: TPanel
       Left = 2
       Top = 15
-      Width = 848
+      Width = 1208
       Height = 80
       Align = alTop
       Caption = 'pnl_Header'
@@ -730,10 +730,10 @@ object fmPointOfSale: TfmPointOfSale
       object Panel6: TPanel
         Left = 1
         Top = 1
-        Width = 846
+        Width = 1206
         Height = 79
         Align = alTop
-        Color = clSilver
+        Color = clWhite
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clNavy
         Font.Height = -11
@@ -742,10 +742,10 @@ object fmPointOfSale: TfmPointOfSale
         ParentFont = False
         TabOrder = 0
         DesignSize = (
-          846
+          1206
           79)
         object ArEnLabel10: TLabel
-          Left = 1220
+          Left = 1580
           Top = 10
           Width = 35
           Height = 13
@@ -762,7 +762,7 @@ object fmPointOfSale: TfmPointOfSale
           Visible = False
         end
         object Label1: TLabel
-          Left = 796
+          Left = 1118
           Top = 44
           Width = 50
           Height = 16
@@ -777,7 +777,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object Label2: TLabel
-          Left = 793
+          Left = 1115
           Top = 13
           Width = 50
           Height = 16
@@ -792,7 +792,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object Label3: TLabel
-          Left = 522
+          Left = 700
           Top = 46
           Width = 50
           Height = 16
@@ -807,7 +807,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object Label4: TLabel
-          Left = 521
+          Left = 699
           Top = 13
           Width = 50
           Height = 16
@@ -852,7 +852,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object DBComboBox1: TDBComboBox
-          Left = 646
+          Left = 968
           Top = 41
           Width = 136
           Height = 21
@@ -867,7 +867,7 @@ object fmPointOfSale: TfmPointOfSale
           TabOrder = 0
         end
         object qdbeCode: TDBEdit
-          Left = 645
+          Left = 967
           Top = 9
           Width = 135
           Height = 21
@@ -878,7 +878,7 @@ object fmPointOfSale: TfmPointOfSale
           TabOrder = 2
         end
         object lcbPolicy: TDBLookupComboBox
-          Left = 1079
+          Left = 1439
           Top = 7
           Width = 111
           Height = 21
@@ -890,7 +890,7 @@ object fmPointOfSale: TfmPointOfSale
           Visible = False
         end
         object cbo_Operators: TDBLookupComboBox
-          Left = 341
+          Left = 519
           Top = 42
           Width = 173
           Height = 23
@@ -898,9 +898,9 @@ object fmPointOfSale: TfmPointOfSale
           DataSource = DS_Header
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -12
           Font.Name = 'Times New Roman'
-          Font.Style = []
+          Font.Style = [fsBold]
           KeyField = 'OperatorCode'
           ListField = 'OperatorNameAr'
           ListSource = DS_Operators
@@ -908,7 +908,7 @@ object fmPointOfSale: TfmPointOfSale
           TabOrder = 3
         end
         object dt_TrxDate: TDateTimePicker
-          Left = 341
+          Left = 519
           Top = 9
           Width = 172
           Height = 21
@@ -925,9 +925,9 @@ object fmPointOfSale: TfmPointOfSale
           DataSource = DS_Header
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -12
           Font.Name = 'Times New Roman'
-          Font.Style = []
+          Font.Style = [fsBold]
           KeyField = 'CustomerCode'
           ListField = 'CustomerNameAr'
           ListSource = DS_Customers
@@ -943,9 +943,9 @@ object fmPointOfSale: TfmPointOfSale
           DataSource = DS_Header
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -13
+          Font.Height = -12
           Font.Name = 'Times New Roman'
-          Font.Style = []
+          Font.Style = [fsBold]
           KeyField = 'WareHouseCode'
           ListField = 'WareHouseNameAr'
           ListSource = DS_Warehouse
@@ -957,12 +957,12 @@ object fmPointOfSale: TfmPointOfSale
     object pnl_InsertBarcode: TPanel
       Left = 2
       Top = 95
-      Width = 848
+      Width = 1208
       Height = 35
       Align = alTop
       TabOrder = 3
       object ArEnLabel11: TLabel
-        Left = 800
+        Left = 1115
         Top = 9
         Width = 72
         Height = 16
@@ -1010,7 +1010,7 @@ object fmPointOfSale: TfmPointOfSale
         Visible = False
       end
       object edtBarcode: TEdit
-        Left = 501
+        Left = 816
         Top = 5
         Width = 284
         Height = 24
@@ -2187,6 +2187,7 @@ object fmPointOfSale: TfmPointOfSale
     end
     object SDS_DetailsBarcode: TStringField
       Tag = 2
+      DisplayLabel = 'Barcode / '#1576#1575#1585#1603#1608#1583
       DisplayWidth = 15
       FieldName = 'Barcode'
       Origin = #1575#1604#1576#1575#1585#1603#1608#1583
@@ -2205,7 +2206,7 @@ object fmPointOfSale: TfmPointOfSale
     end
     object SDS_DetailsItemCode: TStringField
       Tag = 5
-      DisplayLabel = 'Item Code'
+      DisplayLabel = 'Code / '#1575#1604#1585#1605#1586
       DisplayWidth = 15
       FieldName = 'ItemCode'
       Origin = #1585#1605#1586' '#1575#1604#1589#1606#1601

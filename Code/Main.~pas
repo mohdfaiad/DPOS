@@ -113,7 +113,6 @@ type
     procedure mn_DailyCloseClick(Sender: TObject);
     procedure mn_PerchaseInvoiceClick(Sender: TObject);
     procedure mn_BegBalDefClick(Sender: TObject);
-    procedure btn_ReportsClick(Sender: TObject);
   private
     { Private declarations }
     LastUserAccess , LicenseNo , BiosID : String;
@@ -136,7 +135,7 @@ uses  Login, GVariable,
   lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
   lkp_Operators, lkp_POSDefinition, lkp_CashBank, lkp_ItemDefinition,
   PosClose, PointOfSale,
-  PrTrxBaseForm, PrBegBalForm, BaseReport;
+  PrTrxBaseForm, PrBegBalForm;
 
 {$R *.dfm}
 
@@ -475,12 +474,6 @@ begin
   Application.CreateForm(TfmBegBalForm, fmBegBalForm);
    fmBegBalForm.ShowModal;
 
-end;
-
-procedure TfmMainForm.btn_ReportsClick(Sender: TObject);
-begin
-  Application.CreateForm(TfmBaseReports, fmBaseReports);
-  fmBaseReports.ShowModal;
 end;
 
 end.

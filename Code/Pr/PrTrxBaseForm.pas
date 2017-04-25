@@ -124,14 +124,15 @@ type
     btn_adjust: TButton;
     SDS_DetailsItemUnit: TStringField;
     Navigator: TDBNavigator;
-    SDS_DetailsItemNameAr: TStringField;
     SDS_DetailsItemUnitDescAr: TStringField;
     SDS_ItemDef: TSimpleDataSet;
     SDS_ItemDefItemCode: TStringField;
+    DS_ItemDEf: TDataSource;
+    SDS_ItemDefItemService: TStringField;
     SDS_ItemDefItemNameAr: TStringField;
     SDS_ItemDefItemNameEn: TStringField;
-    DS_ItemDEf: TDataSource;
     SDS_DetailsItemCode: TStringField;
+    SDS_DetailsItemNameAr: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -171,7 +172,7 @@ uses Main, GFunctions, GVariable;
 procedure TfmPrTrxBaseForm.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
-  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' and TrxType =''PRIV'' ';
+  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' And BranchCode = ''' + DBranch + '''  and TrxType =''PRIV'' ';
   SDS_Header.Open;
 
   SDS_WareHouse.Close;

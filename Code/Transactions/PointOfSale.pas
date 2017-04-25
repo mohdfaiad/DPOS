@@ -470,6 +470,14 @@ begin
      grdDetails.BiDiMode := bdLeftToRight;
 
   end else Begin
+     SDS_DetailsBarcode.Visible := True;
+     SDS_DetailsItemCode.Visible := True;
+     SDS_DetailsBarcode.DisplayWidth := 13;
+     SDS_DetailsItemCode.DisplayWidth := 10;
+     SDS_DetailsItemNameAr.DisplayWidth := 30;
+     SDS_DetailsQuantity.DisplayWidth := 10;
+     SDS_DetailsItemPrice.DisplayWidth := 10;
+     SDS_DetailsNetPrice.DisplayWidth := 10;
      pnl_InsertBarcode.Visible := True;
      PageControlDetails.Visible := False;
      grdDetails.BiDiMode := bdRightToLeft;

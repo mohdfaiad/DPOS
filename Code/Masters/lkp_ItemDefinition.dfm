@@ -962,6 +962,13 @@ object fmItemDefinition: TfmItemDefinition
       KeyFields = 'ItemUnit'
       Lookup = True
     end
+    object SDS_BarcodesPrice: TFMTBCDField
+      DisplayLabel = #1575#1604#1587#1593#1585
+      DisplayWidth = 6
+      FieldName = 'Price'
+      Precision = 18
+      Size = 8
+    end
     object SDS_BarcodesItemColorCode: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1604#1608#1606
       FieldName = 'ItemColorCode'
@@ -991,13 +998,6 @@ object fmItemDefinition: TfmItemDefinition
       LookupResultField = 'ItemSizeNameAr'
       KeyFields = 'ItemSizeCode'
       Lookup = True
-    end
-    object SDS_BarcodesPrice: TFMTBCDField
-      DisplayLabel = #1575#1604#1587#1593#1585
-      DisplayWidth = 6
-      FieldName = 'Price'
-      Precision = 18
-      Size = 8
     end
     object SDS_BarcodesDiscountRatio: TFMTBCDField
       DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1582#1589#1605

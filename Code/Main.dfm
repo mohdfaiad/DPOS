@@ -4649,6 +4649,7 @@ object fmMainForm: TfmMainForm
         Caption = #1575#1604#1578#1602#1600#1575#1585#1610#1600#1600#1600#1600#1600#1600#1600#1600#1600#1585
         ParentBiDiMode = False
         TabOrder = 0
+        OnClick = btn_ReportsClick
       end
     end
     object GroupBox6: TGroupBox
@@ -12717,6 +12718,7 @@ object fmMainForm: TfmMainForm
       'MSSQL TransIsolation=ReadCommited'
       'OS Authentication=False')
     VendorLib = 'oledb'
+    Connected = True
     Left = 280
     Top = 40
   end

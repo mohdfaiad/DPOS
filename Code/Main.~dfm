@@ -1,6 +1,6 @@
 object fmMainForm: TfmMainForm
   Left = 0
-  Top = 83
+  Top = 89
   BorderStyle = bsSingle
   Caption = #1573#1583#1575#1585#1577' '#1606#1602#1575#1591' '#1575#1604#1576#1610#1593
   ClientHeight = 587
@@ -4649,7 +4649,6 @@ object fmMainForm: TfmMainForm
         Caption = #1575#1604#1578#1602#1600#1575#1585#1610#1600#1600#1600#1600#1600#1600#1600#1600#1600#1585
         ParentBiDiMode = False
         TabOrder = 0
-        OnClick = btn_ReportsClick
       end
     end
     object GroupBox6: TGroupBox

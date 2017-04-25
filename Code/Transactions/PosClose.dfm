@@ -1,5 +1,5 @@
 object fmPosClose: TfmPosClose
-  Left = 2
+  Left = 1
   Top = 0
   BorderStyle = bsDialog
   Caption = #1573#1594#1600#1600#1604#1575#1602' '#1606#1602#1600#1600#1600#1600#1591#1577' '#1575#1604#1576#1610#1600#1600#1600#1600#1593
@@ -1253,7 +1253,7 @@ object fmPosClose: TfmPosClose
     OutlineSettings.CreateNode = False
     OutlineSettings.CreatePageNodes = False
     OutlineSettings.Enabled = False
-    OutlineSettings.Visible = True
+    OutlineSettings.Visible = False
     TextSearchSettings.DefaultString = '<FindText>'
     TextSearchSettings.Enabled = True
     Left = 128
@@ -1926,6 +1926,7 @@ object fmPosClose: TfmPosClose
     object qry_DailySalesSATotalPrice: TFMTBCDField
       FieldName = 'SATotalPrice'
       Precision = 32
+      Size = 8
     end
     object qry_DailySalesRTQuantity: TFMTBCDField
       FieldName = 'RTQuantity'
@@ -1935,6 +1936,7 @@ object fmPosClose: TfmPosClose
     object qry_DailySalesRTTotalPrice: TFMTBCDField
       FieldName = 'RTTotalPrice'
       Precision = 32
+      Size = 8
     end
     object qry_DailySalesQuantity: TFMTBCDField
       FieldName = 'Quantity'
@@ -1944,6 +1946,7 @@ object fmPosClose: TfmPosClose
     object qry_DailySalesNetPrice: TFMTBCDField
       FieldName = 'NetPrice'
       Precision = 32
+      Size = 8
     end
   end
   object DS_DailySales: TDataSource
