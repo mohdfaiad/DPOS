@@ -461,7 +461,7 @@ object fmItemDefinition: TfmItemDefinition
       Top = 272
       Width = 917
       Height = 199
-      ActivePage = TabSheet3
+      ActivePage = TabSheet1
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed

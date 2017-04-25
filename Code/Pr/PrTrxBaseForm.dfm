@@ -428,6 +428,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
             TitleFont.Height = -21
             TitleFont.Name = 'Times New Roman'
             TitleFont.Style = []
+            OnEnter = grd_DetailsEnter
           end
         end
       end
@@ -793,6 +794,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       DisplayWidth = 6
       FieldName = 'ItemUnit'
       LookupCache = True
+      OnChange = SDS_DetailsItemUnitChange
       Size = 6
     end
     object SDS_DetailsItemUnitDescAr: TStringField

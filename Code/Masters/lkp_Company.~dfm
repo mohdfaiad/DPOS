@@ -24,7 +24,7 @@ object fmCompany: TfmCompany
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1575#1604#1588#1585#1603#1600#1600#1575#1578
+    Caption = #1575#1604#1588#1585#1603#1575#1578
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
@@ -165,9 +165,9 @@ object fmCompany: TfmCompany
     Height = 57
     TabOrder = 1
     object BtnOpen: TButton
-      Left = 734
-      Top = 12
-      Width = 127
+      Left = 626
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1601#1578#1581
       Font.Charset = DEFAULT_CHARSET
@@ -180,9 +180,9 @@ object fmCompany: TfmCompany
       OnClick = BtnOpenClick
     end
     object btnAdd: TButton
-      Left = 590
-      Top = 12
-      Width = 127
+      Left = 503
+      Top = 13
+      Width = 115
       Height = 35
       Caption = #1573#1590#1575#1601#1577
       Font.Charset = DEFAULT_CHARSET
@@ -195,9 +195,9 @@ object fmCompany: TfmCompany
       OnClick = btnAddClick
     end
     object btnEdit: TButton
-      Left = 447
+      Left = 379
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1578#1593#1583#1610#1600#1600#1604
       Font.Charset = DEFAULT_CHARSET
@@ -212,7 +212,7 @@ object fmCompany: TfmCompany
     object btnDelete: TButton
       Left = 11
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1584#1601
       Font.Charset = DEFAULT_CHARSET
@@ -225,9 +225,9 @@ object fmCompany: TfmCompany
       OnClick = btnDeleteClick
     end
     object btnSave: TButton
-      Left = 305
+      Left = 254
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1581#1601#1600#1600#1600#1600#1600#1592
       Font.Charset = DEFAULT_CHARSET
@@ -240,9 +240,9 @@ object fmCompany: TfmCompany
       OnClick = btnSaveClick
     end
     object BtnCancel: TButton
-      Left = 158
+      Left = 132
       Top = 13
-      Width = 127
+      Width = 115
       Height = 35
       Caption = #1573#1604#1594#1575#1569
       Font.Charset = DEFAULT_CHARSET
@@ -253,6 +253,21 @@ object fmCompany: TfmCompany
       ParentFont = False
       TabOrder = 4
       OnClick = BtnCancelClick
+    end
+    object BtnShow: TButton
+      Left = 750
+      Top = 13
+      Width = 115
+      Height = 35
+      Caption = #1593#1585#1590
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 6
+      OnClick = BtnShowClick
     end
   end
   object SDS_Header: TSimpleDataSet

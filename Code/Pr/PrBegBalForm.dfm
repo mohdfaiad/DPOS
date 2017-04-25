@@ -40,15 +40,15 @@ object fmBegBalForm: TfmBegBalForm
       Left = 11
       Top = 32
       Width = 902
-      Height = 148
+      Height = 174
       Anchors = []
       TabOrder = 0
       DesignSize = (
         902
-        148)
+        174)
       object Label12: TLabel
         Left = 428
-        Top = 105
+        Top = 94
         Width = 38
         Height = 19
         Anchors = []
@@ -62,7 +62,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label4: TLabel
         Left = 844
-        Top = 105
+        Top = 94
         Width = 50
         Height = 19
         Anchors = []
@@ -76,7 +76,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label1: TLabel
         Left = 865
-        Top = 22
+        Top = 27
         Width = 29
         Height = 19
         Anchors = []
@@ -90,7 +90,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label14: TLabel
         Left = 647
-        Top = 22
+        Top = 27
         Width = 36
         Height = 19
         Anchors = []
@@ -104,7 +104,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label15: TLabel
         Left = 435
-        Top = 22
+        Top = 27
         Width = 31
         Height = 19
         Anchors = []
@@ -118,7 +118,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label3: TLabel
         Left = 382
-        Top = 67
+        Top = 60
         Width = 84
         Height = 19
         Anchors = []
@@ -132,7 +132,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Label2: TLabel
         Left = 822
-        Top = 67
+        Top = 60
         Width = 72
         Height = 19
         Anchors = []
@@ -144,9 +144,24 @@ object fmBegBalForm: TfmBegBalForm
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object lbl_sourceDoc: TLabel
+        Left = 855
+        Top = 126
+        Width = 39
+        Height = 19
+        Anchors = []
+        Caption = #1575#1604#1605#1589#1583#1585
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+        Visible = False
+      end
       object DBEdit2: TDBEdit
         Left = 30
-        Top = 101
+        Top = 90
         Width = 320
         Height = 27
         Anchors = []
@@ -162,7 +177,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object Co_WareHouse: TDBLookupComboBox
         Left = 490
-        Top = 102
+        Top = 90
         Width = 320
         Height = 27
         DataField = 'WareHouseCode'
@@ -180,7 +195,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object edtCode: TDBEdit
         Left = 689
-        Top = 18
+        Top = 23
         Width = 121
         Height = 27
         Anchors = []
@@ -224,7 +239,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object DBEdit1: TDBEdit
         Left = 30
-        Top = 63
+        Top = 56
         Width = 320
         Height = 27
         Anchors = []
@@ -240,7 +255,7 @@ object fmBegBalForm: TfmBegBalForm
       end
       object DBEdit6: TDBEdit
         Left = 490
-        Top = 63
+        Top = 56
         Width = 320
         Height = 27
         Anchors = []
@@ -254,12 +269,31 @@ object fmBegBalForm: TfmBegBalForm
         ParentFont = False
         TabOrder = 6
       end
+      object CO_SourceDocNo: TDBLookupComboBox
+        Left = 490
+        Top = 122
+        Width = 320
+        Height = 27
+        DataField = 'SourceTrxNo'
+        DataSource = DS_Header
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = []
+        KeyField = 'TrxNo'
+        ListField = 'TrxDescAr'
+        ListSource = DS_SourceTrxNo
+        ParentFont = False
+        TabOrder = 7
+        Visible = False
+      end
     end
     object PG1: TPageControl
       Left = 2
-      Top = 180
+      Top = 208
       Width = 917
-      Height = 262
+      Height = 234
       ActivePage = TabSheet1
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
@@ -279,7 +313,7 @@ object fmBegBalForm: TfmBegBalForm
         ParentFont = False
         object GroupBox3: TGroupBox
           Left = 0
-          Top = 10
+          Top = -18
           Width = 909
           Height = 218
           Align = alBottom
@@ -303,6 +337,7 @@ object fmBegBalForm: TfmBegBalForm
             TitleFont.Height = -21
             TitleFont.Name = 'Times New Roman'
             TitleFont.Style = []
+            OnEnter = grd_DetailsEnter
           end
         end
       end
@@ -521,6 +556,15 @@ object fmBegBalForm: TfmBegBalForm
       FieldName = 'TrxDescEn'
       Size = 75
     end
+    object SDS_HeaderSourceTrxNo: TStringField
+      FieldName = 'SourceTrxNo'
+      OnChange = SDS_HeaderSourceTrxNoChange
+      Size = 10
+    end
+    object SDS_HeadersourceDocType: TStringField
+      FieldName = 'sourceDocType'
+      Size = 4
+    end
   end
   object DS_Header: TDataSource
     DataSet = SDS_Header
@@ -582,7 +626,7 @@ object fmBegBalForm: TfmBegBalForm
       OnChange = SDS_DetailsItemCodeChange
       Size = 25
     end
-    object SDS_DetailsItemNameAr2: TStringField
+    object SDS_DetailsItemNameAr: TStringField
       DisplayLabel = #1573#1587#1605' '#1575#1604#1589#1606#1601
       FieldKind = fkLookup
       FieldName = 'ItemNameAr'
@@ -598,6 +642,21 @@ object fmBegBalForm: TfmBegBalForm
       FieldName = 'Quantity'
       Precision = 18
       Size = 8
+    end
+    object SDS_DetailsSystemQty: TFMTBCDField
+      DisplayLabel = #1603#1605#1610#1577' '#1575#1604#1606#1592#1575#1605
+      DisplayWidth = 6
+      FieldName = 'SystemQty'
+      Visible = False
+      Precision = 18
+    end
+    object SDS_DetailsDiff: TFloatField
+      DisplayLabel = #1575#1604#1601#1585#1602
+      DisplayWidth = 6
+      FieldKind = fkCalculated
+      FieldName = 'Diff'
+      Visible = False
+      Calculated = True
     end
     object SDS_DetailsCostPrice: TFMTBCDField
       DisplayLabel = #1575#1604#1578#1603#1604#1601#1577
@@ -768,6 +827,7 @@ object fmBegBalForm: TfmBegBalForm
     Top = 168
   end
   object SDS_Itemunit: TSimpleDataSet
+    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_ItemUnit'
@@ -796,6 +856,7 @@ object fmBegBalForm: TfmBegBalForm
     Top = 432
   end
   object SDS_ItemDef: TSimpleDataSet
+    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_ItemDefinition'
@@ -822,5 +883,45 @@ object fmBegBalForm: TfmBegBalForm
     DataSet = SDS_ItemDef
     Left = 32
     Top = 464
+  end
+  object SDS_SouceTrxNo: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 
+      'select TrxNo,TrxNo +'#39' : '#39' + TrxDescAr as TrxDescAr , TrxNo +'#39' : ' +
+      #39' + TrxDescEn as TrxDescEn , WareHouseCode,TrxType from tbl_PrTr' +
+      'xHeader where TrxType = '#39'IVCT'#39' and TrxStatus = '#39'P'#39
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 480
+    Top = 256
+    object SDS_SouceTrxNoTrxNo: TStringField
+      FieldName = 'TrxNo'
+      Required = True
+      Size = 10
+    end
+    object SDS_SouceTrxNoTrxDescAr: TStringField
+      FieldName = 'TrxDescAr'
+      Size = 86
+    end
+    object SDS_SouceTrxNoTrxDescEn: TStringField
+      FieldName = 'TrxDescEn'
+      Size = 86
+    end
+    object SDS_SouceTrxNoWareHouseCode: TStringField
+      FieldName = 'WareHouseCode'
+      Size = 6
+    end
+    object SDS_SouceTrxNoTrxType: TStringField
+      FieldName = 'TrxType'
+      Required = True
+      Size = 4
+    end
+  end
+  object DS_SourceTrxNo: TDataSource
+    DataSet = SDS_SouceTrxNo
+    Left = 504
+    Top = 256
   end
 end

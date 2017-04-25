@@ -153,6 +153,7 @@ type
     procedure SDS_DetailsItemUnitChange(Sender: TField);
     procedure btn_adjustClick(Sender: TObject);
     procedure btnPostClick(Sender: TObject);
+    procedure grd_DetailsEnter(Sender: TObject);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -262,17 +263,19 @@ begin
      CO_Vendors.SetFocus;
      Exit;
   end;
-
+  SDS_Header.Edit;
   IsDuplicated := RepeatedKey('tbl_PrTrxHeader', ' TrxNo = ''' + SDS_HeaderTrxNo.AsString + ''' And CompanyCode = ''' + DCompany + ''' And TrxType = ''PRIV''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
      Exit;
   end;
-
+  if EditMode = False then
+  begin
   NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''PRIV''');
   NewCode := IntToStr(StrToInt(NewCode)+1) ;
   SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
+  end;
 
   TotalDiscount := 0;
   TrxVal := 0;
@@ -489,10 +492,10 @@ begin
  SDS_DetailsCompanyCode.Value := DCompany;
  SDS_DetailsTrxType.Value := 'PRIV';
  SDS_DetailsBranchCode.Value := DBranch;
- SDS_DetailsTrxNo.Value := 'xx';
- SDS_DetailsWareHouseCode.Value := 'xx';
- SDS_DetailsVendoreCode.Value := 'xx';
- SDS_DetailsTraLineNo.AsInteger :=  SDS_Details.RecNo;
+ SDS_DetailsTrxNo.Value := SDS_HeaderTrxNo.AsString;
+ SDS_DetailsWareHouseCode.Value := SDS_HeaderWareHouseCode.AsString;
+ SDS_DetailsVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
+ SDS_DetailsTraLineNo.Value :=  'XX';
  SDS_DetailsQuantity.AsFloat := 1;
  SDS_DetailsDiscount.AsFloat := 0;
  SDS_DetailsCostPrice.AsFloat := 0;
@@ -623,8 +626,8 @@ begin
 
           Quantity := OldQty + SDS_DetailsQuantity.AsFloat  * SDS_DetailsUnitTransValue.AsFloat;
 
-          AvgCost := ( (OldQty * OldAvgCost)+ (Abs(SDS_DetailsQuantity.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
-                      SDS_DetailsCostPrice.AsFloat)) / (Quantity)) ;
+          AvgCost := ((OldQty * OldAvgCost)+ (Abs(SDS_DetailsQuantity.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
+                      SDS_DetailsCostPrice.AsFloat))) / Quantity ;
           if( GetDBValue(' ItemCode ',' tbl_itemStock ',WhrCod) = '' )  then
             SQl := ' insert into Tbl_itemStock (CompanyCode,ItemCode,ItemService,WareHouseCode,ItemQuantity,ItemUnit,AvgCost) '
              + ' Values ('''+DCompany+''','''+SDS_DetailsItemCode.AsString+''',''IVI'' , '''+SDS_DetailsWareHouseCode.AsString+''' , '''+FloatToStr(Quantity)+''' ,1 , '''+FloatToStr(AvgCost)+''' ) '
@@ -641,7 +644,24 @@ begin
    SDS_Header.Close;
 
    ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
+   BtnOpenClick(Sender);
 end;
+end;
+
+procedure TfmPrTrxBaseForm.grd_DetailsEnter(Sender: TObject);
+begin
+ if (SDS_HeaderVendoreCode.AsString = '')Then
+ begin
+   ShowMessage('Ì—ÃÌ «Œ Ì«— «·„Ê—œ');
+   CO_Vendors.SetFocus;
+   Exit;
+ end;
+  if (SDS_HeaderWareHouseCode.AsString = '')Then
+ begin
+   ShowMessage('Ì—ÃÌ ≈Œ Ì«— «·„” Êœ⁄');
+   Co_WareHouse.SetFocus;
+   Exit;
+ end;
 end;
 
 end.

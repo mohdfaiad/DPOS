@@ -379,9 +379,12 @@ end;
 procedure TfmItemDefinition.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
-  SDS_Barcodes.Append;
-  SDS_ItemSpec.Append;
-  SDS_RelatedUnits.Append;
+  grd_Brcodes.Refresh;
+  grd_ItemSpec.Refresh;
+  grd_RelatedUnits.Refresh;
+  //SDS_Barcodes.Append;
+  //SDS_ItemSpec.Append;
+  //SDS_RelatedUnits.Append;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;

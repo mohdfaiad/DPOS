@@ -12711,7 +12711,7 @@ object fmMainForm: TfmMainForm
       'HostName=.'
       'DataBase=WMAPOS'
       'User_Name=sa'
-      'Password=123456'
+      'Password=Xyz789'
       'BlobSize=-1'
       'ErrorResourceFile='
       'LocaleCode=0000'
@@ -12834,6 +12834,14 @@ object fmMainForm: TfmMainForm
       object mn_BegBalDef: TMenuItem
         Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577
         OnClick = mn_BegBalDefClick
+      end
+      object mn_ivCounting: TMenuItem
+        Caption = #1575#1604#1580#1585#1583' '#1575#1604#1605#1582#1586#1606#1610
+        OnClick = mn_ivCountingClick
+      end
+      object mn_fmAdjustment: TMenuItem
+        Caption = #1578#1587#1608#1610#1577' '#1575#1604#1605#1582#1586#1608#1606
+        OnClick = mn_fmAdjustmentClick
       end
     end
     object N15: TMenuItem

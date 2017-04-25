@@ -79,7 +79,6 @@ type
     SDS_ItemDefItemCode: TStringField;
     SDS_ItemDefItemNameAr: TStringField;
     SDS_ItemDefItemNameEn: TStringField;
-    SDS_DetailsItemNameAr2: TStringField;
     SDS_DetailsItemUnit: TStringField;
     SDS_DetailsItemUnitDescAr: TStringField;
     Label1: TLabel;
@@ -102,6 +101,20 @@ type
     BtnCancel: TButton;
     BtnShow: TButton;
     btnPost: TButton;
+    SDS_DetailsItemNameAr: TStringField;
+    SDS_DetailsSystemQty: TFMTBCDField;
+    SDS_HeaderSourceTrxNo: TStringField;
+    SDS_HeadersourceDocType: TStringField;
+    lbl_sourceDoc: TLabel;
+    CO_SourceDocNo: TDBLookupComboBox;
+    SDS_SouceTrxNo: TSimpleDataSet;
+    DS_SourceTrxNo: TDataSource;
+    SDS_SouceTrxNoTrxNo: TStringField;
+    SDS_SouceTrxNoTrxDescAr: TStringField;
+    SDS_SouceTrxNoTrxDescEn: TStringField;
+    SDS_SouceTrxNoWareHouseCode: TStringField;
+    SDS_SouceTrxNoTrxType: TStringField;
+    SDS_DetailsDiff: TFloatField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -117,6 +130,8 @@ type
     procedure SDS_DetailsItemCodeChange(Sender: TField);
     procedure SDS_DetailsItemUnitChange(Sender: TField);
     procedure btnPostClick(Sender: TObject);
+    procedure grd_DetailsEnter(Sender: TObject);
+    procedure SDS_HeaderSourceTrxNoChange(Sender: TField);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -136,7 +151,7 @@ uses Main, GFunctions, GVariable;
 procedure TfmBegBalForm.BtnOpenClick(Sender: TObject);
 begin
   SDS_Header.Close;
-  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' And BranchCode = ''' + DBranch + ''' and TrxType =''IVBB'' ';
+  SDS_Header.DataSet.CommandText := 'Select * from tbl_PrTrxHeader where CompanyCode = ''' + DCompany + ''' and TrxType ='''+gIV_TrxType+''' ';
   SDS_Header.Open;
 
   SDS_WareHouse.Close;
@@ -149,6 +164,8 @@ begin
   SDS_Itemunit.open;
   qry_Type.Close;
   qry_Type.Open;
+  SDS_SouceTrxNo.Close;
+  SDS_SouceTrxNo.Open;
 
   btnEdit.Enabled := True;
   BtnOpen.Enabled := True;
@@ -208,17 +225,20 @@ begin
      Co_WareHouse.SetFocus;
      Exit;
   end;
-
-  IsDuplicated := RepeatedKey('tbl_PrTrxHeader', ' TrxNo = ''' + SDS_HeaderTrxNo.AsString + ''' And CompanyCode = ''' + DCompany + ''' And TrxType = ''IVBB''  ');
+  SDS_Header.Edit;
+  IsDuplicated := RepeatedKey('tbl_PrTrxHeader', ' TrxNo = ''' + SDS_HeaderTrxNo.AsString + ''' And CompanyCode = ''' + DCompany + ''' And TrxType = '''+gIV_TrxType+'''  ');
   If (IsDuplicated = True) And (EditMode = False) Then Begin
      ShowMessage('Â–« «·—„“ „ÊÃÊœ „”»ﬁ«');
      edtCode.SetFocus;
      Exit;
   end;
 
-  NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''IVBB''');
+  if EditMode = false then begin
+  NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType ='''+gIV_TrxType+'''');
   NewCode := IntToStr(StrToInt(NewCode)+1) ;
+
   SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
+  end;
 
    With SDS_Details do Begin
        DisableControls;
@@ -229,8 +249,7 @@ begin
              SDS_Details.Next;
        end;
    end;
-
-   SDS_HeaderTrxDate.AsDateTime := trxDate.DateTime;;
+   SDS_HeaderTrxDate.AsDateTime := trxDate.DateTime;
 
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
@@ -280,8 +299,8 @@ begin
     if buttonSelected = mrOK then
     Begin
         Try
-        DeleteSQL := 'Delete From Tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
-        DeleteSQL := DeleteSQL + 'Delete From tbl_PrTrxHeader where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
+        DeleteSQL := 'Delete From Tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType='''+gIV_TrxType+''' ';
+        DeleteSQL := DeleteSQL + 'Delete From tbl_PrTrxHeader where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType='''+gIV_TrxType+''' ';
 
         fmMainForm.MainConnection.ExecuteDirect(DeleteSQL);
 
@@ -302,6 +321,22 @@ end;
 
 procedure TfmBegBalForm.FormCreate(Sender: TObject);
 Begin
+  if gIV_TrxType = 'IVCT' then begin
+    Caption :='«·Ã—œ «·„Œ“‰Ì';
+    grp_Content.Caption := '«·Ã—œ «·„Œ“‰Ì';
+    SDS_DetailsCostPrice.Visible := false;
+    //SDS_DetailsSystemQty.Visible := True;
+  end
+  else if gIV_TrxType = 'IVAD' Then
+  begin
+    Caption :=' ”ÊÌ… «·„Œ“Ê‰';
+    grp_Content.Caption := ' ”ÊÌ… «·„Œ“Ê‰';
+    SDS_DetailsSystemQty.Visible := True;
+    CO_SourceDocNo.Visible := True;
+    lbl_sourceDoc.Visible := True;
+    SDS_DetailsDiff.Visible := true;
+  end;
+
   BtnOpenClick(Sender);
   BtnShow.Enabled := False;
 end;
@@ -349,18 +384,18 @@ procedure TfmBegBalForm.SDS_HeaderNewRecord(DataSet: TDataSet);
 Var NewCode : String;
 begin
  SDS_HeaderCompanyCode.Value := DCompany;
- SDS_HeaderTrxType.Value := 'IVBB';
+ SDS_HeaderTrxType.Value := gIV_TrxType;
  SDS_HeaderTrxStatus.Value := 'A';
  SDS_HeaderBranchCode.Value := DBranch;
- NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''IVBB''');
+ NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType ='''+gIV_TrxType+'''');
  NewCode := IntToStr(StrToInt(NewCode)+1) ;
- SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8); 
+ SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
 end;
 
 procedure TfmBegBalForm.SDS_HeaderAfterScroll(DataSet: TDataSet);
 begin
 SDS_Details.Close;
-SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType=''IVBB'' ';
+SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType='''+gIV_TrxType+''' ';
 SDS_Details.Open;
 trxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
 if (SDS_HeaderTrxStatus.AsString = 'P')Then
@@ -380,7 +415,7 @@ end;
 procedure TfmBegBalForm.SDS_DetailsNewRecord(DataSet: TDataSet);
 begin
  SDS_DetailsCompanyCode.Value := DCompany;
- SDS_DetailsTrxType.Value := 'IVBB';
+ SDS_DetailsTrxType.Value := gIV_TrxType;
  SDS_DetailsBranchCode.Value := DBranch;
  SDS_DetailsTrxNo.Value := SDS_HeaderTrxNo.AsString;
  SDS_DetailsWareHouseCode.Value := SDS_HeaderWareHouseCode.AsString;
@@ -394,6 +429,11 @@ end;
 
 procedure TfmBegBalForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
+  if gIV_TrxType= 'IVCT' then
+  begin
+    SDS_DetailsSystemQty.AsString := GetDBValue('ItemQuantity','tbl_ItemStock',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' and companycode ='''+DCompany+''' and itemservice =''IVI'' and warehousecode='''+SDS_HeaderWareHouseCode.AsString+''' ');
+    SDS_DetailsCostPrice.AsString := GetDBValue('AVGcost','tbl_ItemStock',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' and companycode ='''+DCompany+''' and itemservice =''IVI'' and warehousecode='''+SDS_HeaderWareHouseCode.AsString+''' ');
+  end;
   SDS_DetailsItemUnit.AsString := GetDBValue('ItemUnitCode','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
   SDS_DetailsUnitTransValue.AsString := '1';//GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_DetailsItemUnit.AsString + ''' ');
   SDS_DetailsItemService.AsString := GetDBValue('ItemService','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
@@ -415,49 +455,137 @@ begin
 buttonSelected := MessageDlg('Â·  —Ìœ  —ÕÌ· «·»Ì«‰« ',mtError, mbOKCancel, 0);
 if buttonSelected = mrOK then
 begin
-   Quantity :=0;
-   OldQty := 0;
-   AvgCost := 0;
-   OldAvgCost := 0;
-   With SDS_Details do Begin
-       First;
-       While Not Eof Do Begin
-          WhrCod :=  ' and CompanyCode = ''' + DCompany + ''' '
-           + '   And WarehouseCode = ''' + SDS_DetailsWareHouseCode.AsString + ''' '
-           + '   And ItemCode = ''' + SDS_DetailsItemCode.AsString + '''  ';
-       Try
-        OldQty := StrToFloat( GetDBValue(' ItemQuantity ',' tbl_itemStock ',WhrCod));
-       Except
-        OldQty := 0;
-       End;
+   if gIV_TrxType = 'IVBB' Then
+   begin
+       Quantity :=0;
+       OldQty := 0;
+       AvgCost := 0;
+       OldAvgCost := 0;
+       With SDS_Details do Begin
+           First;
+           While Not Eof Do Begin
+              WhrCod :=  ' and CompanyCode = ''' + DCompany + ''' '
+               + '   And WarehouseCode = ''' + SDS_DetailsWareHouseCode.AsString + ''' '
+               + '   And ItemCode = ''' + SDS_DetailsItemCode.AsString + '''  ';
+              Try
+                OldQty := StrToFloat( GetDBValue(' ItemQuantity ',' tbl_itemStock ',WhrCod));
+              Except
+                OldQty := 0;
+              End;
 
-       Try
-        OldAvgCost := StrToFloat( GetDBValue(' AvgCost ',' tbl_itemStock ',WhrCod));
-       Except
-        OldAvgCost := 0;
-       End;
+              Try
+                OldAvgCost := StrToFloat( GetDBValue(' AvgCost ',' tbl_itemStock ',WhrCod));
+              Except
+                OldAvgCost := 0;
+              End;
 
-          Quantity := OldQty + SDS_DetailsQuantity.AsFloat  * SDS_DetailsUnitTransValue.AsFloat;
+              Quantity := OldQty + SDS_DetailsQuantity.AsFloat  * SDS_DetailsUnitTransValue.AsFloat;
 
-          AvgCost := ( (OldQty * OldAvgCost)+ (Abs(SDS_DetailsQuantity.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
-                      SDS_DetailsCostPrice.AsFloat)) / (Quantity)) ;
-          if( GetDBValue(' ItemCode ',' tbl_itemStock ',WhrCod) = '' )  then
-            SQl := ' insert into Tbl_itemStock (CompanyCode,ItemCode,ItemService,WareHouseCode,ItemQuantity,ItemUnit,AvgCost) '
-             + ' Values ('''+DCompany+''','''+SDS_DetailsItemCode.AsString+''',''IVI'' , '''+SDS_DetailsWareHouseCode.AsString+''' , '''+FloatToStr(Quantity)+''' ,1 , '''+FloatToStr(AvgCost)+''' ) '
-          else
-            SQl := ' Update Tbl_itemStock set ItemQuantity ='''+ FloatToStr(Quantity)+''' , AvgCost ='''+FloatToStr(AvgCost)+''' where 1=1 ' + WhrCod;
-          fmMainForm.MainConnection.ExecuteDirect(SQL);
-          SDS_Details.Next;
+              AvgCost := ((OldQty * OldAvgCost)+ (Abs(SDS_DetailsQuantity.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
+                          SDS_DetailsCostPrice.AsFloat))) / Quantity ;
+              if( GetDBValue(' ItemCode ',' tbl_itemStock ',WhrCod) = '' )  then
+                SQl := ' insert into Tbl_itemStock (CompanyCode,ItemCode,ItemService,WareHouseCode,ItemQuantity,ItemUnit,AvgCost) '
+                 + ' Values ('''+DCompany+''','''+SDS_DetailsItemCode.AsString+''',''IVI'' , '''+SDS_DetailsWareHouseCode.AsString+''' , '''+FloatToStr(Quantity)+''' ,1 , '''+FloatToStr(AvgCost)+''' ) '
+              else
+                SQl := ' Update Tbl_itemStock set ItemQuantity ='''+ FloatToStr(Quantity)+''' , AvgCost ='''+FloatToStr(AvgCost)+''' where 1=1 ' + WhrCod;
+              fmMainForm.MainConnection.ExecuteDirect(SQL);
+              SDS_Details.Next;
+           end;
        end;
+       SDS_Header.Open;
+       SDS_Header.Edit;
+       SDS_HeaderTrxStatus.AsString := 'P';
+       SDS_Header.ApplyUpdates(0);
+       SDS_Header.Close;
+       ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
+       BtnOpenClick(Sender);
+   end
+   else if gIV_TrxType = 'IVCT' Then
+   begin
+       SDS_Header.Open;
+       SDS_Header.Edit;
+       SDS_HeaderTrxStatus.AsString := 'P';
+       SDS_Header.ApplyUpdates(0);
+       SDS_Header.Close;
+       ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
+   end
+   else if gIV_TrxType = 'IVAD' Then
+   begin
    end;
-   SDS_Header.Open;
-   SDS_Header.Edit;
-   SDS_HeaderTrxStatus.AsString := 'P';
-   SDS_Header.ApplyUpdates(0);
-   SDS_Header.Close;
-
-   ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
 end;
+end;
+
+procedure TfmBegBalForm.grd_DetailsEnter(Sender: TObject);
+begin
+  if (SDS_HeaderWareHouseCode.AsString = '')Then
+ begin
+   ShowMessage('Ì—ÃÌ ≈Œ Ì«— «·„” Êœ⁄');
+   Co_WareHouse.SetFocus;
+   Exit;
+ end;
+ if gIV_TrxType = 'IVAD' Then
+ begin
+   if (SDS_HeaderWareHouseCode.AsString = '')Then
+   begin
+     ShowMessage('ÌÃ» ≈Œ Ì«— «·„” ‰œ «·„—Ã⁄');
+     CO_SourceDocNo.SetFocus;
+   Exit;
+ end;
+
+ end;
+end;
+
+procedure TfmBegBalForm.SDS_HeaderSourceTrxNoChange(Sender: TField);
+var
+TempQry: TSimpleDataSet;
+begin
+  SDS_HeaderWareHouseCode.Value := SDS_SouceTrxNoWareHouseCode.Value;
+  Co_WareHouse.Enabled := false;
+  SDS_HeaderTrxNo.Value := SDS_SouceTrxNoTrxNo.Value;
+  SDS_HeaderTrxType.Value := SDS_SouceTrxNoTrxType.Value;
+
+      TempQry := TSimpleDataSet.Create(fmMainForm);
+      TempQry.Connection := fmMainForm.MainConnection;
+      TempQry.Close;
+      TempQry.DataSet.Close;
+      TempQry.DataSet.CommandText := ' Select D.CompanyCode,d.BranchCode,d.TraLineNo,d.ItemService,d.ItemCode,d.ItemUnit,d.CostPrice, '
+                                    +' d.UnitTransValue,d.BarCode,d.Quantity,d.WareHouseCode,d.SystemQty,(Quantity-SystemQty) Diff From tbl_PrTrxHeader H left outer join tbl_PrTrxDetails D '
+                                    +' on h.CompanyCode=d.CompanyCode and h.BranchCode=d.BranchCode and h.TrxNo=d.TrxNo and h.TrxType=d.TrxType '
+                                    +' where D.CompanyCode ='''+DCompany+''' And D.BranchCode ='''+DBranch+'''  and D.TRxType='''+SDS_SouceTrxNoTrxType.Value+''' '
+                                    +' and h.trxstatus = ''P'' and H.trxno= '''+SDS_SouceTrxNoTrxNo.Value+''' and H.warehousecode ='''+SDS_SouceTrxNoWareHouseCode.Value+''' and (Quantity-systemqty) <> 0 ';
+
+      TempQry.Open;
+      //SDS_Details.Free;
+      //SDS_Details.Open;
+      TempQry.First;
+      While Not TempQry.Eof Do Begin
+         SDS_Details.Append;
+
+          SDS_DetailsCompanyCode.Value := DCompany;
+          SDS_DetailsTrxType.Value := gIV_TrxType;
+          SDS_DetailsBranchCode.Value := DBranch;
+          SDS_DetailsTrxNo.Value := SDS_HeaderTrxNo.AsString;
+          SDS_DetailsWareHouseCode.Value := SDS_HeaderWareHouseCode.AsString;
+          SDS_DetailsTraLineNo.AsString :=  TempQry.FieldByName('TraLineNo').AsString;
+          SDS_DetailsItemService.AsString := TempQry.FieldByName('ItemService').AsString;
+          SDS_DetailsItemCode.AsString := TempQry.FieldByName('ItemCode').AsString;
+          SDS_DetailsItemUnit.AsString := TempQry.FieldByName('ItemUnit').AsString;
+          SDS_DetailsCostPrice.AsString := TempQry.FieldByName('CostPrice').AsString;
+          SDS_DetailsUnitTransValue.AsString := TempQry.FieldByName('UnitTransValue').AsString;
+          SDS_DetailsBarCode.AsString := TempQry.FieldByName('BarCode').AsString;
+          SDS_DetailsQuantity.AsString := TempQry.FieldByName('Quantity').AsString;
+          SDS_DetailsSystemQty.AsString := TempQry.FieldByName('SystemQty').AsString;
+          SDS_DetailsDiff.Value := StrToFloat(TempQry.FieldByName('Quantity').AsString)- StrToFloat(TempQry.FieldByName('SystemQty').AsString);
+
+
+         TempQry.Next;
+       end;
+       TempQry.Free;
+       SDS_DetailsQuantity.ReadOnly := True;
+       SDS_DetailsSystemQty.ReadOnly := true;
+       SDS_DetailsCostPrice.ReadOnly := True;
+       SDS_DetailsDiff.ReadOnly := True;
+
 end;
 
 end.

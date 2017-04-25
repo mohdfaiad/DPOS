@@ -79,6 +79,8 @@ type
     qry_Main2: TSimpleDataSet;
     mn_PerchaseInvoice: TMenuItem;
     mn_BegBalDef: TMenuItem;
+    mn_ivCounting: TMenuItem;
+    mn_fmAdjustment: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure mnExitClick(Sender: TObject);
@@ -113,7 +115,8 @@ type
     procedure mn_DailyCloseClick(Sender: TObject);
     procedure mn_PerchaseInvoiceClick(Sender: TObject);
     procedure mn_BegBalDefClick(Sender: TObject);
-    procedure btn_ReportsClick(Sender: TObject);
+    procedure mn_ivCountingClick(Sender: TObject);
+    procedure mn_fmAdjustmentClick(Sender: TObject);
   private
     { Private declarations }
     LastUserAccess , LicenseNo , BiosID : String;
@@ -136,7 +139,7 @@ uses  Login, GVariable,
   lkp_CurrencyExchange, lkp_ItemGroups, lkp_Vendors, Lkp_Users,
   lkp_Operators, lkp_POSDefinition, lkp_CashBank, lkp_ItemDefinition,
   PosClose, PointOfSale,
-  PrTrxBaseForm, PrBegBalForm, BaseReport;
+  PrTrxBaseForm, PrBegBalForm;
 
 {$R *.dfm}
 
@@ -472,15 +475,24 @@ end;
 
 procedure TfmMainForm.mn_BegBalDefClick(Sender: TObject);
 begin
+  gIV_TrxType :='IVBB';
   Application.CreateForm(TfmBegBalForm, fmBegBalForm);
-   fmBegBalForm.ShowModal;
+  fmBegBalForm.ShowModal;
 
 end;
 
-procedure TfmMainForm.btn_ReportsClick(Sender: TObject);
+procedure TfmMainForm.mn_ivCountingClick(Sender: TObject);
 begin
-  Application.CreateForm(TfmBaseReports, fmBaseReports);
-   fmBaseReports.ShowModal;
+    gIV_TrxType :='IVCT';
+  Application.CreateForm(TfmBegBalForm, fmBegBalForm);
+  fmBegBalForm.ShowModal;
+end;
+
+procedure TfmMainForm.mn_fmAdjustmentClick(Sender: TObject);
+begin
+      gIV_TrxType :='IVAD';
+  Application.CreateForm(TfmBegBalForm, fmBegBalForm);
+  fmBegBalForm.ShowModal;
 end;
 
 end.
