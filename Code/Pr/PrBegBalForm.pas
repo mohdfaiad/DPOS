@@ -114,7 +114,7 @@ type
     SDS_SouceTrxNoTrxDescEn: TStringField;
     SDS_SouceTrxNoWareHouseCode: TStringField;
     SDS_SouceTrxNoTrxType: TStringField;
-    SDS_DetailsDiff: TFloatField;
+    SDS_DetailsDiffQty: TFMTBCDField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -334,7 +334,13 @@ Begin
     SDS_DetailsSystemQty.Visible := True;
     CO_SourceDocNo.Visible := True;
     lbl_sourceDoc.Visible := True;
-    SDS_DetailsDiff.Visible := true;
+    SDS_DetailsDiffQty.Visible := true;
+    //SDS_DetailsQuantity.ReadOnly := true;
+    //SDS_DetailsSystemQty.ReadOnly := True;
+    //SDS_DetailsDiffQty.ReadOnly := true;
+    SDS_DetailsCostPrice.Visible:=True;
+    //SDS_DetailsCostPrice.ReadOnly := True;
+
   end;
 
   BtnOpenClick(Sender);
@@ -455,12 +461,12 @@ begin
 buttonSelected := MessageDlg('Â·  —Ìœ  —ÕÌ· «·»Ì«‰« ',mtError, mbOKCancel, 0);
 if buttonSelected = mrOK then
 begin
+   Quantity :=0;
+   OldQty := 0;
+   AvgCost := 0;
+   OldAvgCost := 0;
    if gIV_TrxType = 'IVBB' Then
    begin
-       Quantity :=0;
-       OldQty := 0;
-       AvgCost := 0;
-       OldAvgCost := 0;
        With SDS_Details do Begin
            First;
            While Not Eof Do Begin
@@ -511,6 +517,44 @@ begin
    end
    else if gIV_TrxType = 'IVAD' Then
    begin
+       With SDS_Details do Begin
+           First;
+           While Not Eof Do Begin
+              WhrCod :=  ' and CompanyCode = ''' + DCompany + ''' '
+               + '   And WarehouseCode = ''' + SDS_DetailsWareHouseCode.AsString + ''' '
+               + '   And ItemCode = ''' + SDS_DetailsItemCode.AsString + '''  ';
+              Try
+                OldQty := StrToFloat( GetDBValue(' ItemQuantity ',' tbl_itemStock ',WhrCod));
+              Except
+                OldQty := 0;
+              End;
+
+              Try
+                OldAvgCost := StrToFloat( GetDBValue(' AvgCost ',' tbl_itemStock ',WhrCod));
+              Except
+                OldAvgCost := 0;
+              End;
+
+              Quantity := OldQty + SDS_DetailsDiffQty.AsFloat  * SDS_DetailsUnitTransValue.AsFloat;
+
+              AvgCost := ((OldQty * OldAvgCost)+ (Abs(SDS_DetailsDiffQty.AsFloat * SDS_DetailsUnitTransValue.AsFloat *
+                          SDS_DetailsCostPrice.AsFloat))) / Quantity ;
+              if( GetDBValue(' ItemCode ',' tbl_itemStock ',WhrCod) = '' )  then
+                SQl := ' insert into Tbl_itemStock (CompanyCode,ItemCode,ItemService,WareHouseCode,ItemQuantity,ItemUnit,AvgCost) '
+                 + ' Values ('''+DCompany+''','''+SDS_DetailsItemCode.AsString+''',''IVI'' , '''+SDS_DetailsWareHouseCode.AsString+''' , '''+FloatToStr(Quantity)+''' ,1 , '''+FloatToStr(AvgCost)+''' ) '
+              else
+                SQl := ' Update Tbl_itemStock set ItemQuantity ='''+ FloatToStr(Quantity)+''' , AvgCost ='''+FloatToStr(AvgCost)+''' where 1=1 ' + WhrCod;
+              fmMainForm.MainConnection.ExecuteDirect(SQL);
+              SDS_Details.Next;
+           end;
+       end;
+       SDS_Header.Open;
+       SDS_Header.Edit;
+       SDS_HeaderTrxStatus.AsString := 'P';
+       SDS_Header.ApplyUpdates(0);
+       SDS_Header.Close;
+       ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
+       BtnOpenClick(Sender);
    end;
 end;
 end;
@@ -541,19 +585,20 @@ TempQry: TSimpleDataSet;
 begin
   SDS_HeaderWareHouseCode.Value := SDS_SouceTrxNoWareHouseCode.Value;
   Co_WareHouse.Enabled := false;
-  SDS_HeaderTrxNo.Value := SDS_SouceTrxNoTrxNo.Value;
-  SDS_HeaderTrxType.Value := SDS_SouceTrxNoTrxType.Value;
+  //SDS_HeaderSourceTrxNo.Value := SDS_SouceTrxNoTrxNo.AsString;
+  SDS_HeadersourceDocType.Value := SDS_SouceTrxNoTrxType.AsString;
 
       TempQry := TSimpleDataSet.Create(fmMainForm);
       TempQry.Connection := fmMainForm.MainConnection;
       TempQry.Close;
       TempQry.DataSet.Close;
       TempQry.DataSet.CommandText := ' Select D.CompanyCode,d.BranchCode,d.TraLineNo,d.ItemService,d.ItemCode,d.ItemUnit,d.CostPrice, '
-                                    +' d.UnitTransValue,d.BarCode,d.Quantity,d.WareHouseCode,d.SystemQty,(Quantity-SystemQty) Diff From tbl_PrTrxHeader H left outer join tbl_PrTrxDetails D '
+                                    +' d.UnitTransValue,d.BarCode,d.Quantity,d.WareHouseCode,d.SystemQty From tbl_PrTrxHeader H left outer join tbl_PrTrxDetails D '
                                     +' on h.CompanyCode=d.CompanyCode and h.BranchCode=d.BranchCode and h.TrxNo=d.TrxNo and h.TrxType=d.TrxType '
                                     +' where D.CompanyCode ='''+DCompany+''' And D.BranchCode ='''+DBranch+'''  and D.TRxType='''+SDS_SouceTrxNoTrxType.Value+''' '
                                     +' and h.trxstatus = ''P'' and H.trxno= '''+SDS_SouceTrxNoTrxNo.Value+''' and H.warehousecode ='''+SDS_SouceTrxNoWareHouseCode.Value+''' and (Quantity-systemqty) <> 0 ';
 
+      {,(Quantity-SystemQty) DiffQty }
       TempQry.Open;
       //SDS_Details.Free;
       //SDS_Details.Open;
@@ -575,7 +620,7 @@ begin
           SDS_DetailsBarCode.AsString := TempQry.FieldByName('BarCode').AsString;
           SDS_DetailsQuantity.AsString := TempQry.FieldByName('Quantity').AsString;
           SDS_DetailsSystemQty.AsString := TempQry.FieldByName('SystemQty').AsString;
-          SDS_DetailsDiff.Value := StrToFloat(TempQry.FieldByName('Quantity').AsString)- StrToFloat(TempQry.FieldByName('SystemQty').AsString);
+          SDS_DetailsDiffQty.AsString := FloatToStr(StrToFloat(TempQry.FieldByName('Quantity').AsString)- StrToFloat(TempQry.FieldByName('SystemQty').AsString));
 
 
          TempQry.Next;
@@ -584,7 +629,7 @@ begin
        SDS_DetailsQuantity.ReadOnly := True;
        SDS_DetailsSystemQty.ReadOnly := true;
        SDS_DetailsCostPrice.ReadOnly := True;
-       SDS_DetailsDiff.ReadOnly := True;
+       SDS_DetailsDiffQty.ReadOnly := True;
 
 end;
 

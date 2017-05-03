@@ -197,4 +197,6 @@ alter table tbl_PrtrxHeader add SourceTrxNo nvarchar(10) null
 GO
 alter table tbl_prtrxHeader add sourceDocType nvarchar(4) null
 GO
+alter table tbl_PrTrxDetails add DiffQty decimal(18,4) null
+GO
 -----------------------------------------------------------

@@ -1,6 +1,6 @@
 object fmBegBalForm: TfmBegBalForm
-  Left = 0
-  Top = 6
+  Left = 147
+  Top = 26
   BorderStyle = bsDialog
   Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577' '#1604#1604#1605#1582#1575#1586#1606
   ClientHeight = 592
@@ -649,14 +649,14 @@ object fmBegBalForm: TfmBegBalForm
       FieldName = 'SystemQty'
       Visible = False
       Precision = 18
+      Size = 8
     end
-    object SDS_DetailsDiff: TFloatField
+    object SDS_DetailsDiffQty: TFMTBCDField
       DisplayLabel = #1575#1604#1601#1585#1602
       DisplayWidth = 6
-      FieldKind = fkCalculated
-      FieldName = 'Diff'
+      FieldName = 'DiffQty'
       Visible = False
-      Calculated = True
+      Precision = 18
     end
     object SDS_DetailsCostPrice: TFMTBCDField
       DisplayLabel = #1575#1604#1578#1603#1604#1601#1577
@@ -888,9 +888,10 @@ object fmBegBalForm: TfmBegBalForm
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 
-      'select TrxNo,TrxNo +'#39' : '#39' + TrxDescAr as TrxDescAr , TrxNo +'#39' : ' +
-      #39' + TrxDescEn as TrxDescEn , WareHouseCode,TrxType from tbl_PrTr' +
-      'xHeader where TrxType = '#39'IVCT'#39' and TrxStatus = '#39'P'#39
+      'select TrxNo,TrxNo +'#39' : '#39' + isnull(TrxDescAr,'#39#39') as TrxDescAr , ' +
+      'TrxNo +'#39' : '#39' + isnull(TrxDescEn,'#39#39') as TrxDescEn , WareHouseCode' +
+      ',TrxType from tbl_PrTrxHeader where TrxType = '#39'IVCT'#39' and TrxStat' +
+      'us = '#39'P'#39
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
