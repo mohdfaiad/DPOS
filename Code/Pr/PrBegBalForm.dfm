@@ -311,34 +311,26 @@ object fmBegBalForm: TfmBegBalForm
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        object GroupBox3: TGroupBox
+        object grd_Details: TDBGrid
           Left = 0
-          Top = -18
+          Top = 0
           Width = 909
-          Height = 218
-          Align = alBottom
+          Height = 200
+          Align = alClient
+          DataSource = DS_Details
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clNavy
+          Font.Height = -19
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          ParentFont = False
           TabOrder = 0
-          object grd_Details: TDBGrid
-            Left = 2
-            Top = 21
-            Width = 905
-            Height = 195
-            Align = alClient
-            DataSource = DS_Details
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clNavy
-            Font.Height = -19
-            Font.Name = 'Times New Roman'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
-            TitleFont.Color = clNavy
-            TitleFont.Height = -21
-            TitleFont.Name = 'Times New Roman'
-            TitleFont.Style = []
-            OnEnter = grd_DetailsEnter
-          end
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clNavy
+          TitleFont.Height = -21
+          TitleFont.Name = 'Times New Roman'
+          TitleFont.Style = []
+          OnEnter = grd_DetailsEnter
         end
       end
     end
@@ -425,7 +417,7 @@ object fmBegBalForm: TfmBegBalForm
       Left = 367
       Top = 13
       Width = 115
-      Height = 35
+      Height = 36
       Caption = #1581#1601#1600#1600#1600#1600#1600#1592
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
@@ -657,6 +649,7 @@ object fmBegBalForm: TfmBegBalForm
       FieldName = 'DiffQty'
       Visible = False
       Precision = 18
+      Size = 8
     end
     object SDS_DetailsCostPrice: TFMTBCDField
       DisplayLabel = #1575#1604#1578#1603#1604#1601#1577

@@ -189,12 +189,14 @@ begin
   qry_Type.Close;
   qry_Type.Open;
 
-  btnEdit.Enabled := True;
+  if SDS_HeaderTrxStatus.AsString <> 'P' Then begin
+    btnEdit.Enabled := True;
+    btnDelete.Enabled := True;
+  end;
   BtnOpen.Enabled := True;
   btnAdd.Enabled := True;
   btnSave.Enabled := False;
   BtnCancel.Enabled := False;
-  btnDelete.Enabled := True;
   grpData.Enabled := False;
   Co_WareHouse.Enabled := False;
   CO_Vendors.Enabled := False;
@@ -338,6 +340,8 @@ begin
         grpData.Enabled := False;
         Navigator.Enabled := True;
         BtnShow.Enabled := BtnOpen.Enabled;
+          SDS_Details.EnableControls;
+          SDS_Payment.EnableControls;
 
   end
   else Begin

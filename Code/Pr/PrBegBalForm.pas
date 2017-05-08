@@ -62,8 +62,6 @@ type
     SDS_HeaderTrxDescEn: TStringField;
     PG1: TPageControl;
     TabSheet1: TTabSheet;
-    GroupBox3: TGroupBox;
-    grd_Details: TDBGrid;
     qry_Type: TSimpleDataSet;
     qry_TypeValue: TStringField;
     qry_TypeNameA: TStringField;
@@ -115,6 +113,7 @@ type
     SDS_SouceTrxNoWareHouseCode: TStringField;
     SDS_SouceTrxNoTrxType: TStringField;
     SDS_DetailsDiffQty: TFMTBCDField;
+    grd_Details: TDBGrid;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -167,20 +166,23 @@ begin
   SDS_SouceTrxNo.Close;
   SDS_SouceTrxNo.Open;
 
-  btnEdit.Enabled := True;
+  if SDS_HeaderTrxStatus.AsString <> 'P' Then begin
+    btnEdit.Enabled := True;
+    btnDelete.Enabled := True;
+  end;
   BtnOpen.Enabled := True;
   btnAdd.Enabled := True;
   btnSave.Enabled := False;
   BtnCancel.Enabled := False;
-  btnDelete.Enabled := True;
   grpData.Enabled := False;
   Co_WareHouse.Enabled := False;
-  grd_Details.Enabled := False;
+
   trxDate.Enabled := false;
 
   BtnShow.Enabled := True;
   Navigator.Enabled := True;
   EditMode := False;
+  grd_Details.Enabled := False;
 end;
 
 procedure TfmBegBalForm.btnEditClick(Sender: TObject);
@@ -200,7 +202,7 @@ begin
   DBEdit2.Enabled := True;
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
-  grd_Details.Enabled := true;
+  grd_Details.Enabled := True;
   trxDate.Enabled := True;
   Navigator.Enabled := False;
   EditMode := True;
@@ -262,6 +264,8 @@ begin
         grpData.Enabled := False;
         Navigator.Enabled := True;
         BtnShow.Enabled := BtnOpen.Enabled;
+        grd_Details.Enabled := False;
+        SDS_Details.EnableControls;
 
   end
   else Begin
@@ -357,7 +361,7 @@ end;
 procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
   SDS_Header.Append;
-  grd_Details.Refresh;
+  SDS_Details.Append;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
