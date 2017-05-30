@@ -1,10 +1,10 @@
 object fmPosClose: TfmPosClose
-  Left = 1
+  Left = 129
   Top = 0
   BorderStyle = bsDialog
   Caption = #1573#1594#1600#1600#1604#1575#1602' '#1606#1602#1600#1600#1600#1600#1591#1577' '#1575#1604#1576#1610#1600#1600#1600#1600#1593
   ClientHeight = 689
-  ClientWidth = 1007
+  ClientWidth = 997
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object fmPosClose: TfmPosClose
   PixelsPerInch = 96
   TextHeight = 13
   object grp_Type: TGroupBox
-    Left = 88
+    Left = 69
     Top = 127
     Width = 875
     Height = 544
@@ -640,7 +640,7 @@ object fmPosClose: TfmPosClose
     end
   end
   object GroupBox2: TGroupBox
-    Left = 88
+    Left = 69
     Top = 16
     Width = 873
     Height = 57
@@ -787,7 +787,7 @@ object fmPosClose: TfmPosClose
     end
   end
   object GroupBox3: TGroupBox
-    Left = 88
+    Left = 69
     Top = 77
     Width = 873
     Height = 44
@@ -811,7 +811,6 @@ object fmPosClose: TfmPosClose
     end
   end
   object SDS_Header: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'select * from tbl_PosClose'
@@ -933,7 +932,7 @@ object fmPosClose: TfmPosClose
   end
   object DS_Header: TDataSource
     DataSet = SDS_Header
-    Left = 64
+    Left = 59
   end
   object qry_Cash: TSimpleDataSet
     Aggregates = <>
@@ -1052,141 +1051,26 @@ object fmPosClose: TfmPosClose
   end
   object DS_Cash: TDataSource
     DataSet = qry_Cash
-    Left = 56
+    Left = 51
     Top = 40
   end
   object DS_Bank: TDataSource
     DataSet = qry_Bank
-    Left = 56
+    Left = 51
     Top = 72
   end
   object DS_POS: TDataSource
     DataSet = qry_POS
-    Left = 56
+    Left = 51
     Top = 112
   end
   object PPL_Header: TppDBPipeline
     DataSource = DS_Header
     UserName = 'PPL_Header'
-    Left = 94
+    Left = 89
     Top = 1
-    object PPL_HeaderppField1: TppField
-      FieldAlias = 'TrxNo'
-      FieldName = 'TrxNo'
-      FieldLength = 0
-      DisplayWidth = 0
-      Position = 0
-    end
-    object PPL_HeaderppField2: TppField
-      FieldAlias = 'TrxType'
-      FieldName = 'TrxType'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 1
-    end
-    object PPL_HeaderppField3: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'YearId'
-      FieldName = 'YearId'
-      FieldLength = 0
-      DataType = dtDouble
-      DisplayWidth = 6
-      Position = 2
-    end
-    object PPL_HeaderppField4: TppField
-      FieldAlias = 'TrxDate_hijri'
-      FieldName = 'TrxDate_hijri'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 3
-    end
-    object PPL_HeaderppField5: TppField
-      FieldAlias = 'Subject'
-      FieldName = 'Subject'
-      FieldLength = 4000
-      DisplayWidth = 40
-      Position = 4
-    end
-    object PPL_HeaderppField6: TppField
-      FieldAlias = 'Notes'
-      FieldName = 'Notes'
-      FieldLength = 4000
-      DisplayWidth = 4000
-      Position = 5
-    end
-    object PPL_HeaderppField7: TppField
-      FieldAlias = 'AttachementCode'
-      FieldName = 'AttachementCode'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 6
-    end
-    object PPL_HeaderppField8: TppField
-      FieldAlias = 'AttachementDesc'
-      FieldName = 'AttachementDesc'
-      FieldLength = 20
-      DisplayWidth = 40
-      Position = 7
-    end
-    object PPL_HeaderppField9: TppField
-      FieldAlias = 'NoOfAttachement'
-      FieldName = 'NoOfAttachement'
-      FieldLength = 100
-      DisplayWidth = 100
-      Position = 8
-    end
-    object PPL_HeaderppField10: TppField
-      FieldAlias = 'AttachementDetails'
-      FieldName = 'AttachementDetails'
-      FieldLength = 200
-      DisplayWidth = 200
-      Position = 9
-    end
-    object PPL_HeaderppField11: TppField
-      FieldAlias = 'DirectionCode'
-      FieldName = 'DirectionCode'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 10
-    end
-    object PPL_HeaderppField12: TppField
-      FieldAlias = 'DirectionType'
-      FieldName = 'DirectionType'
-      FieldLength = 1
-      DisplayWidth = 1
-      Position = 11
-    end
-    object PPL_HeaderppField13: TppField
-      FieldAlias = 'DirectionDesc'
-      FieldName = 'DirectionDesc'
-      FieldLength = 80
-      DisplayWidth = 80
-      Position = 12
-    end
-    object PPL_HeaderppField14: TppField
-      FieldAlias = 'SendingCode'
-      FieldName = 'SendingCode'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 13
-    end
-    object PPL_HeaderppField15: TppField
-      FieldAlias = 'SendingDesc'
-      FieldName = 'SendingDesc'
-      FieldLength = 20
-      DisplayWidth = 20
-      Position = 14
-    end
-    object PPL_HeaderppField16: TppField
-      FieldAlias = 'SenderName'
-      FieldName = 'SenderName'
-      FieldLength = 150
-      DisplayWidth = 150
-      Position = 15
-    end
   end
   object qry_Operators: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_operators'
@@ -1226,7 +1110,7 @@ object fmPosClose: TfmPosClose
   end
   object DS_Operators: TDataSource
     DataSet = qry_Operators
-    Left = 56
+    Left = 51
     Top = 152
   end
   object ppDailySales: TppReport
@@ -1243,7 +1127,7 @@ object fmPosClose: TfmPosClose
     PrinterSetup.mmMarginTop = 0
     PrinterSetup.mmPaperHeight = 130000
     PrinterSetup.mmPaperWidth = 60000
-    PrinterSetup.PaperSize = 119
+    PrinterSetup.PaperSize = 256
     Template.FileName = 
       'E:\Work\SVN\DelphiPOS\trunk\Code\Reports\POS_DailyItemSales_ByOp' +
       'erator.rtm'
@@ -1256,7 +1140,7 @@ object fmPosClose: TfmPosClose
     OutlineSettings.Visible = False
     TextSearchSettings.DefaultString = '<FindText>'
     TextSearchSettings.Enabled = True
-    Left = 128
+    Left = 123
     Top = 183
     Version = '10.02'
     mmColumnWidth = 0
@@ -1856,7 +1740,6 @@ object fmPosClose: TfmPosClose
     end
   end
   object qry_DailySales: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 
@@ -1951,116 +1834,13 @@ object fmPosClose: TfmPosClose
   end
   object DS_DailySales: TDataSource
     DataSet = qry_DailySales
-    Left = 56
+    Left = 51
     Top = 184
   end
   object pplDailySales: TppDBPipeline
     DataSource = DS_DailySales
     UserName = 'PPL_DailySales'
-    Left = 94
+    Left = 89
     Top = 185
-    object ppDBPipeline1ppField1: TppField
-      FieldAlias = 'ItemService'
-      FieldName = 'ItemService'
-      FieldLength = 0
-      DisplayWidth = 0
-      Position = 0
-    end
-    object ppDBPipeline1ppField2: TppField
-      FieldAlias = 'ItemCode'
-      FieldName = 'ItemCode'
-      FieldLength = 25
-      DisplayWidth = 25
-      Position = 1
-    end
-    object ppDBPipeline1ppField3: TppField
-      FieldAlias = 'ItemNameAr'
-      FieldName = 'ItemNameAr'
-      FieldLength = 255
-      DisplayWidth = 255
-      Position = 2
-    end
-    object ppDBPipeline1ppField4: TppField
-      FieldAlias = 'ItemNameEn'
-      FieldName = 'ItemNameEn'
-      FieldLength = 255
-      DisplayWidth = 255
-      Position = 3
-    end
-    object ppDBPipeline1ppField5: TppField
-      FieldAlias = 'ItemUnitCode'
-      FieldName = 'ItemUnitCode'
-      FieldLength = 6
-      DisplayWidth = 6
-      Position = 4
-    end
-    object ppDBPipeline1ppField6: TppField
-      FieldAlias = 'ItemUnitDescA'
-      FieldName = 'ItemUnitDescA'
-      FieldLength = 75
-      DisplayWidth = 75
-      Position = 5
-    end
-    object ppDBPipeline1ppField7: TppField
-      FieldAlias = 'ItemUnitDescE'
-      FieldName = 'ItemUnitDescE'
-      FieldLength = 75
-      DisplayWidth = 75
-      Position = 6
-    end
-    object ppDBPipeline1ppField8: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'SAQuantity'
-      FieldName = 'SAQuantity'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 33
-      Position = 7
-    end
-    object ppDBPipeline1ppField9: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'SATotalPrice'
-      FieldName = 'SATotalPrice'
-      FieldLength = 4
-      DataType = dtDouble
-      DisplayWidth = 33
-      Position = 8
-    end
-    object ppDBPipeline1ppField10: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'RTQuantity'
-      FieldName = 'RTQuantity'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 33
-      Position = 9
-    end
-    object ppDBPipeline1ppField11: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'RTTotalPrice'
-      FieldName = 'RTTotalPrice'
-      FieldLength = 4
-      DataType = dtDouble
-      DisplayWidth = 33
-      Position = 10
-    end
-    object ppDBPipeline1ppField12: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'Quantity'
-      FieldName = 'Quantity'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 33
-      Position = 11
-    end
-    object ppDBPipeline1ppField13: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'NetPrice'
-      FieldName = 'NetPrice'
-      FieldLength = 4
-      DataType = dtDouble
-      DisplayWidth = 33
-      Position = 12
-    end
   end
 end

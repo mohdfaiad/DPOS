@@ -8,7 +8,7 @@ uses
   ExtCtrls, VrControls, VrButtons, VrNavigator, ppBands, ppClass, ppCtrls,
   ppPrnabl, ppCache, ppProd, ppReport, ppDB, ppComm, ppRelatv, ppDBPipe,
   ppBarCod, ppModule, raCodMod, ppVar, ppParameter, daDataView,
-  daQueryDataView, daADO, daDataModule, VrLabel;
+  daQueryDataView, daADO, daDataModule, VrLabel, jpeg;
 
 type
   TfmPosClose = class(TForm)
@@ -192,7 +192,7 @@ type
     { Public declarations }
     TrxType : String;
     Rep: TppReport;
-    RepParam , ExpensesRepParam : TppParameterList;
+    RepParam : TppParameterList;
     function PadStringLeft(InString : String; StrSize : Integer; PadChar : Char = '0' ): String;
   end;
 

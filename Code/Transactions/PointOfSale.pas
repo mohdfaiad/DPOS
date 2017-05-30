@@ -12,7 +12,7 @@ uses
   VrDigit,VrButtons ,
   ppTypes, DateUtils,  FMTBcd, SqlExpr,
   VrKeyPad,   ComCtrls, ppModule, raCodMod, ppStrtch, ppMemo, ppCtrls,
-  ppVar, ppPrnabl;
+  ppVar, ppPrnabl, jpeg;
 
 type
   TfmPointOfSale = class(TForm)
@@ -267,12 +267,59 @@ type
     qry_WarehouseCreateDate: TSQLTimeStampField;
     qry_WarehouseLastUpdateDate: TSQLTimeStampField;
     ppPrintSales: TppReport;
+    qryItemPricesUnitTransValue: TFMTBCDField;
+    grp_Return: TGroupBox;
+    Label7: TLabel;
+    cbo_SourceBranchCode: TDBLookupComboBox;
+    Label8: TLabel;
+    cbo_SourceDocNo: TDBLookupComboBox;
+    qry_Branch: TSimpleDataSet;
+    DS_Branch: TDataSource;
+    qry_SourceDoc: TSimpleDataSet;
+    DS_SourceDoc: TDataSource;
+    qry_BranchCompanyCode: TStringField;
+    qry_BranchBranchCode: TStringField;
+    qry_BranchBranchNameAr: TStringField;
+    qry_BranchBranchNameEn: TStringField;
+    qry_SourceDocCompanyCode: TStringField;
+    qry_SourceDocBranchCode: TStringField;
+    qry_SourceDocTrxNo: TStringField;
+    qry_SourceDocTrxType: TStringField;
+    qry_SourceDocYearID: TStringField;
+    qry_SourceDocPeriodID: TStringField;
+    qry_SourceDocTrxDate: TSQLTimeStampField;
+    qry_SourceDocTrxStatus: TStringField;
+    qry_SourceDocTrxDescA: TStringField;
+    qry_SourceDocTrxDescE: TStringField;
+    qry_SourceDocIntRefrence: TStringField;
+    qry_SourceDocTrxAmount: TFMTBCDField;
+    qry_SourceDocTrxBalance: TFMTBCDField;
+    qry_SourceDocTotalDiscount: TFMTBCDField;
+    qry_SourceDocCustomerCode: TStringField;
+    qry_SourceDocWarehouseCode: TStringField;
+    qry_SourceDocSourceDocNo: TStringField;
+    qry_SourceDocSourceDocType: TStringField;
+    qry_SourceDocTrxTime: TSQLTimeStampField;
+    qry_SourceDocPOSShift: TStringField;
+    qry_SourceDocPOSCode: TStringField;
+    qry_SourceDocOperatorCode: TStringField;
+    qry_SourceDocSourceDocYearId: TStringField;
+    qry_SourceDocSourceDocPeriodId: TStringField;
+    qry_SourceDocCashCode: TStringField;
+    qry_SourceDocBankCode: TStringField;
+    qry_SourceDocCash: TFMTBCDField;
+    qry_SourceDocATM: TFMTBCDField;
+    qry_SourceDocVisa: TFMTBCDField;
+    qry_SourceDocChecks: TFMTBCDField;
+    qry_SourceDocCredit: TFMTBCDField;
+    qry_SourceDocCreateDate: TSQLTimeStampField;
+    qry_SourceDocLastUpdateDate: TSQLTimeStampField;
+    qry_SourceDocPayedValue: TFMTBCDField;
+    qry_SourceDocRemainderValue: TFMTBCDField;
+    SDS_HeaderSourceBranchCode: TStringField;
     ppTitleBand1: TppTitleBand;
     ppLabel10: TppLabel;
     pplTitle: TppLabel;
-    ppSystemVariable1: TppSystemVariable;
-    ppSystemVariable2: TppSystemVariable;
-    ppHeaderBand1: TppHeaderBand;
     ppShape2: TppShape;
     pplTrxNo: TppLabel;
     pplTrxDate: TppLabel;
@@ -283,22 +330,15 @@ type
     ppDetailBand1: TppDetailBand;
     ppDBQty: TppDBText;
     ppDBItemName: TppDBText;
-    ppDBUnit: TppDBText;
     ppDBText1: TppDBText;
-    ppDBText2: TppDBText;
-    ppDBText7: TppDBText;
     ppDBText8: TppDBText;
     ppDBText6: TppDBText;
     pplItemName: TppLabel;
-    pplUnit: TppLabel;
     pplQty: TppLabel;
     pplPrice: TppLabel;
     pplTotalPrice: TppLabel;
-    pplDiscount: TppLabel;
     pplNet: TppLabel;
     ppLine12: TppLine;
-    ppLabel9: TppLabel;
-    ppDBMemo1: TppDBMemo;
     ppFooterBand1: TppFooterBand;
     ppSummaryBand1: TppSummaryBand;
     pplTotal: TppLabel;
@@ -307,14 +347,56 @@ type
     ppLabel3: TppLabel;
     ppDBText10: TppDBText;
     ppDBText16: TppDBText;
-    ppLabel6: TppLabel;
-    ppDBText17: TppDBText;
     ppLabel7: TppLabel;
     ppDBText14: TppDBText;
     raCodeModule1: TraCodeModule;
     ppParameterList2: TppParameterList;
     ppParamTrxType: TppParameter;
-    qryItemPricesUnitTransValue: TFMTBCDField;
+    pnl_InvoiceType: TPanel;
+    Label9: TLabel;
+    Panel5: TPanel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    lbl_Table: TLabel;
+    rg_InvoiceType: TDBRadioGroup;
+    SDS_HeaderInvoiceType: TStringField;
+    SDS_HeaderTableCode: TStringField;
+    cbo_Table: TDBLookupComboBox;
+    qry_Tables: TSimpleDataSet;
+    StringField1: TStringField;
+    DS_Tables: TDataSource;
+    qry_TablesTableCode: TStringField;
+    qry_TablesTableNameAr: TStringField;
+    qry_TablesTableNameEn: TStringField;
+    qry_RelatedItemDetails: TSimpleDataSet;
+    qry_RelatedItemDetailsCompanyCode: TStringField;
+    qry_RelatedItemDetailsTrxNo: TStringField;
+    qry_RelatedItemDetailsTrxType: TStringField;
+    qry_RelatedItemDetailsYearID: TStringField;
+    qry_RelatedItemDetailsPeriodID: TStringField;
+    qry_RelatedItemDetailsTrxLineNo: TFMTBCDField;
+    qry_RelatedItemDetailsItemService: TStringField;
+    qry_RelatedItemDetailsDetailItemCode: TStringField;
+    qry_RelatedItemDetailsItemCode: TStringField;
+    qry_RelatedItemDetailsItemUnit: TStringField;
+    qry_RelatedItemDetailsQuantity: TFMTBCDField;
+    qry_RelatedItemDetailsCostPrice: TFMTBCDField;
+    qry_RelatedItemDetailsUnitTransValue: TFMTBCDField;
+    ppImage4: TppImage;
+    ppLabel6: TppLabel;
+    SDS_HeaderTableNameAr: TStringField;
+    ppDBText2: TppDBText;
     procedure btn_CloseClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
@@ -347,6 +429,9 @@ type
     procedure btn_DeleteItemClick(Sender: TObject);
     procedure SDS_HeaderTotalChange(Sender: TField);
     procedure Btn_LogOutClick(Sender: TObject);
+    procedure SDS_HeaderSourceBranchCodeChange(Sender: TField);
+    procedure SDS_HeaderSourceDocNoChange(Sender: TField);
+    procedure rg_InvoiceTypeChange(Sender: TObject);
   private
     { Private declarations }
     TrxType , QueryStr: string;
@@ -385,12 +470,14 @@ begin
   SDS_DetailsBarcode.ReadOnly := False;
   if Quantity <> 0 then
   begin
-    if not qryBarcodeVio.Locate('Barcode', Barcode, []) then
+    if not qryBarcodeVio.Locate('Barcode', Barcode, [loCaseInsensitive, loPartialKey]) then
     begin
-
+      ShowMessage('«·»«—ﬂÊœ «·„œŒ· €Ì— „⁄—›');
+      Exit;
+    {
       SDS_DetailsItemService.Value := qryItemPricesItemService.Value;
       SDS_DetailsItemCode.Value := qryItemPricesItemCode.Value;
-     
+
 
       SDS_DetailsQuantity.ReadOnly := False;
       SDS_DetailsQuantity.AsFloat := Quantity ;
@@ -401,6 +488,7 @@ begin
       SDS_DetailsItemPrice.ReadOnly := False;
       SDS_DetailsItemPrice.AsFloat := qryItemPricesPriceValue.AsFloat;
       SDS_DetailsUnitTransValue.AsFloat := qryItemPricesUnitTransValue.AsFloat;
+      }
     end
     else
     begin
@@ -449,15 +537,18 @@ begin
   RepParam := TppParameterList.Create(Self);
   if gPOSWorkByTouch = 'T' Then Begin
      pnl_InsertBarcode.Visible := False;
+     pnl_InvoiceType.Visible := True;
+     pnl_InvoiceType.Enabled := False;
      PageControlDetails.Visible := True;
      SDS_DetailsItemCode.Visible := False;
      SDS_DetailsBarcode.Visible := False;
+
      If (Screen.Width = 1024) And (Screen.Height = 768)  Then Begin
        SDS_DetailsItemNameAr.DisplayWidth := 15;
        SDS_DetailsQuantity.DisplayWidth := 6;
        SDS_DetailsItemPrice.DisplayWidth := 6;
        SDS_DetailsNetPrice.DisplayWidth := 6;
-       PageControlDetails.Width := 350
+       PageControlDetails.Width := 358
      end else Begin
        SDS_DetailsItemNameAr.DisplayWidth := 22;
        SDS_DetailsQuantity.DisplayWidth := 7;
@@ -479,6 +570,7 @@ begin
      SDS_DetailsItemPrice.DisplayWidth := 10;
      SDS_DetailsNetPrice.DisplayWidth := 10;
      pnl_InsertBarcode.Visible := True;
+     pnl_InvoiceType.Visible := False;
      PageControlDetails.Visible := False;
      grdDetails.BiDiMode := bdRightToLeft;
   end;
@@ -498,6 +590,17 @@ begin
   qryItemPrices.Open;
   SDS_Header.Open;
 
+  qry_Branch.Close;
+  qry_Branch.DataSet.Close;
+  qry_Branch.DataSet.CommandText := 'Select * From tbl_Branch Where CompanyCode = ''' + DCompany + ''' ';
+  qry_Branch.Open;
+
+
+
+  qry_Tables.Close;
+  qry_Tables.DataSet.Close;
+  qry_Tables.DataSet.CommandText := 'Select * From tbl_Tables Where CompanyCode = ''' + DCompany + ''' ';
+  qry_Tables.Open;
 
   QueryStr := ' '
     + ' SELECT H.* '
@@ -532,7 +635,16 @@ begin
   SDS_Details.DataSet.CommandText := QueryStr;
   SDS_Details.Open;
 
-
+  If gPOSWorkByTouch = 'T' Then Begin
+     if rg_InvoiceType.Value = 'H' Then Begin
+        lbl_Table.Visible := True;
+        cbo_Table.Visible := True;
+     end
+     else Begin
+        lbl_Table.Visible := False;
+        cbo_Table.Visible := False;
+     end ;
+  end;
   edtCashPaid.Text := '0';
   edtCash.Text := '0';
   edtCheck.Text := '0';
@@ -567,6 +679,7 @@ begin
     SDS_HeaderTrxDate.AsDateTime := Date;
     SDS_HeaderTrxTime.AsDateTime := Time;
     SDS_HeaderPOSShift.AsString := '1';
+    if pnl_InvoiceType.Visible Then pnl_InvoiceType.Enabled := True;
 
     SDS_HeaderCustomerCode.AsString := gCustomerCode;
     SDS_HeaderWarehouseCode.AsString := gWarehouseCode;
@@ -620,7 +733,11 @@ begin
     TD.IsolationLevel := xilREADCOMMITTED;
     fmMainForm.MainConnection.StartTransaction(TD);
 
-    SDS_HeaderTrxDate.AsDateTime := dt_TrxDate.DateTime;
+    SDS_HeaderTrxDate.AsDateTime := Date;
+
+    if ((TimeOf(Now) <= StrToTime(gEndingShift))) then
+        SDS_HeaderTrxDate.AsDateTime := Date - 1;
+
     SDS_HeaderYearID.AsString := VarToStr(YearOf(SDS_HeaderTrxDate.AsDateTime));
     SDS_HeaderPeriodID.AsString := VarToStr(MonthOf(SDS_HeaderTrxDate.AsDateTime));
 
@@ -642,8 +759,8 @@ begin
            + '           (CompanyCode ,BranchCode,YearID,PeriodID ,TrxNo,TrxType, TrxDate,TrxStatus,TrxDescA '
            + '           ,TrxDescE,IntRefrence,TrxAmount,TrxBalance,TotalDiscount,CustomerCode,WarehouseCode '
            + '           ,SourceDocNo,SourceDocType,TrxTime,POSShift,POSCode,OperatorCode,SourceDocYearId '
-           + '           ,SourceDocPeriodId,CashCode,BankCode,Cash,ATM,Visa,Checks,Credit '
-           + '           ,CreateDate,PayedValue,RemainderValue) Values (''' + DCompany + ''', ''' + DBranch
+           + '           ,SourceDocPeriodId , SourceBranchCode ,CashCode,BankCode,Cash,ATM,Visa,Checks,Credit '
+           + '           ,CreateDate,PayedValue,RemainderValue , InvoiceType , TableCode ) Values (''' + DCompany + ''', ''' + DBranch
            + ''', ''' + SDS_HeaderYearID.AsString + ''', ''' + SDS_HeaderPeriodID.AsString
            + ''', ''' + SDS_HeaderTrxNo.AsString + ''', ''' + TrxType + ''', ''' + FormatDateTime('MM/DD/YYYY', SDS_HeaderTrxDate.AsDateTime)
            + ''', ''A'', ''' + SDS_HeaderTrxDescA.AsString
@@ -667,6 +784,7 @@ begin
 
            + ''', ''' + SDS_HeaderSourceDocYearID.AsString
            + ''', ''' + SDS_HeaderSourceDocPeriodID.AsString
+           + ''', ''' + SDS_HeaderSourceBranchCode.AsString
 
            + ''', ''' + SDS_HeaderCashCode.AsString
            + ''', ''' + SDS_HeaderBankCode.AsString
@@ -681,7 +799,10 @@ begin
            + ''', ' + FloatToStr(SDS_HeaderPayedValue.AsFloat)
            + ', ' + FloatToStr(SDS_HeaderRemainderValue.AsFloat)
 
-           + ') ';
+           + ', ''' + SDS_HeaderInvoiceType.AsString
+           + ''', ''' + SDS_HeaderTableCode.AsString
+
+           + ''') ';
 
      With SDS_Details do Begin
        DisableControls;
@@ -722,6 +843,58 @@ begin
 
     fmMainForm.MainConnection.ExecuteDirect(SQLText);
 
+    If gPOSWorkByTouch = 'T' Then
+    Begin
+          QueryStr := 'SELECT  ''' + DCompany + ''' As CompanyCode, ''' + DBranch + ''' As BranchCode, ''' + SDS_HeaderTrxNo.AsString + ''' As TrxNo, ''SAIV'' As TrxType, '
+                    + '         ''' + SDS_HeaderYearID.AsString + ''' As YearID, ''' + SDS_HeaderPeriodID.AsString + ''' As PeriodID, ROW_NUMBER() OVER(PARTITION BY D.CompanyCode ORDER BY D.DetailItemCode Asc)  AS TrxLineNo , '
+                    + '         D.ItemService, D.DetailItemCode , D.ItemCode, D.DetailItemUnit AS ItemUnit, (D.ItemQuantity * DD.Quantity) AS Quantity , (I.AvgCost * D.UnitTransValue ) AS CostPrice, D.UnitTransValue '
+                    + ' FROM         tbl_ItemSpecification AS D INNER JOIN '
+                    + '                           sa_POS_TrxDetails AS DD ON D.CompanyCode = DD.CompanyCode AND D.ItemCode = DD.ItemCode AND D.ItemService = DD.ItemService  '
+                    + '                           LEFT OUTER JOIN '
+                    + '                           Tbl_ItemStock AS I ON D.CompanyCode = I.CompanyCode AND D.DetailItemCode = I.ItemCode AND D.ItemService = I.ItemService '
+                    + ' Where DD.CompanyCode = ''' + DCompany
+                    + ''' And DD.BranchCode = ''' + DBranch
+                    + ''' And DD.TrxType = ''SAIV'' '
+                    + '   And DD.TrxNo=''' + SDS_HeaderTrxNo.AsString
+                    + ''' And DD.YearID=''' + SDS_HeaderYearID.AsString
+                    + ''' And DD.PeriodID=''' + SDS_HeaderPeriodID.AsString + '''  ' ;
+
+          qry_RelatedItemDetails.Close;
+          qry_RelatedItemDetails.DataSet.Close;
+          qry_RelatedItemDetails.DataSet.CommandText := QueryStr;
+          qry_RelatedItemDetails.Open;
+
+
+          If  (qry_RelatedItemDetails.RecordCount >0)  Then  // «·«’‰«› «·„Ã„⁄…
+          Begin
+              SQLText := '';
+              With qry_RelatedItemDetails do Begin
+                   First;
+                   While Not Eof Do Begin
+                         SQLText := SQLText + ' Insert Into sa_POS_TrxItemSpecification(CompanyCode, BranchCode, YearID, PeriodID, TrxNo, TrxType, '
+                            + 'TrxLineNo,  ItemService, ItemCode, DetailsItemCode , ItemUnitCode, Quantity,  CostPrice,  '
+                            + ' UnitTransValue ) '
+                            + 'Values (''' + DCompany + ''',''' + DBranch + ''', ''' + SDS_HeaderYearID.AsString
+                            + ''', ''' + SDS_HeaderPeriodID.AsString + ''', ''' + SDS_HeaderTrxNo.AsString + ''', ''' + TrxType
+                            + ''', ' + IntToStr(qry_RelatedItemDetails.RecNo)
+                            + ', ''' + qry_RelatedItemDetailsItemService.AsString
+                            + ''', ''' + qry_RelatedItemDetailsItemCode.AsString
+                            + ''', ''' + qry_RelatedItemDetailsDetailItemCode.AsString
+                            + ''', ''' + qry_RelatedItemDetailsItemUnit.AsString
+                            + ''', ' + FloatToStr(qry_RelatedItemDetailsQuantity.AsFloat)
+                            + ', ' + FloatToStr(qry_RelatedItemDetailsCostPrice.AsFloat)
+                            + ', ' + FloatToStr(qry_RelatedItemDetailsUnitTransValue.AsFloat)
+                            + ')';
+
+                      Next;
+                   end;
+              end;
+
+              fmMainForm.MainConnection.ExecuteDirect(SQLText);
+          end;
+          qry_RelatedItemDetails.Filtered := False;
+    end;
+
     fmMainForm.MainConnection.Commit(TD);
     SQLStatements.Free;
   except
@@ -759,7 +932,9 @@ var
   TrxDate: TDateTime;
   SQLStatements : TStringList;
   RepFileName : String ;
+  i : Integer;
 begin
+  SDS_HeaderTrxDate.AsDateTime := Date;
   TrxDate := SDS_HeaderTrxDate.AsDateTime;
   SQLStatements := TStringList.Create;
   SQLStatements.Clear;
@@ -906,8 +1081,10 @@ begin
     ppPrintSales.DeviceType := 'dtPrinter';
     ppPrintSales.Device := dvPrinter;
 
-    ppPrintSales.Print;
-
+    for  i:=1  to StrToInt(gCountOfInvPrint) do
+    begin
+        ppPrintSales.Print;
+    end;
 
 
     grdDetails.Options := grdDetails.Options + [dgIndicator];
@@ -1052,6 +1229,9 @@ begin
   SDS_HeaderCompanyCode.AsString := DCompany;
   SDS_HeaderBranchCode.AsString := DBranch;
   SDS_HeaderTrxType.AsString := TrxType;
+
+  If gInvoiceType = 'H' Then SDS_HeaderInvoiceType.AsString := 'H'
+  else SDS_HeaderInvoiceType.AsString := 'T';
      
   edtCashPaid.Text := '0';
   edtCash.Text := '0';
@@ -1121,6 +1301,7 @@ begin
   lkp := Tlkp.Create(SDS_Header,nil);
   lkp.ShowModal;
 
+  SDS_HeaderAfterScroll(SDS_Header);
   vrmTotal.Text := FloatToStr((SDS_HeaderTotal.AsFloat));
   vrmTotalDiscount.Text := FloatToStr((SDS_HeaderTotalDiscount.AsFloat));
   vrdgAmount.Value := (SDS_HeaderTrxAmount.AsFloat);
@@ -1143,11 +1324,11 @@ begin
     ppPrintSales.PreviewFormSettings.WindowState := wsMaximized;
     ppPrintSales.PreviewFormSettings.ZoomPercentage := 100;
     ppPrintSales.AllowPrintToFile := True;
-
+    {
     ppPrintSales.ShowPrintDialog := false;
     ppPrintSales.DeviceType := 'dtPrinter';
     ppPrintSales.Device := dvPrinter;
-
+    }
     ppPrintSales.Print;
 end;
 
@@ -1382,25 +1563,25 @@ while not fmMainForm.qry_Main.Eof   do
          end;
          for x := 0 to fmMainForm.qry_Main2.RecordCount-1 do
          begin
-            y := x div 3 ;
-            if ((x mod 3)=0) then
+            y := x div 2 ;
+            if ((x mod 2)=0) then
              z := 0 ;
             TempBtn := TVrDemoButton.Create(TempScroll);
-            Font.Size := 9;
+            Font.Size := 8;
             with TempBtn do begin
             BevelWidth := 5;
             Parent := TempScroll;
-            FontEnter.Size := 9;
-            FontLeave.Size := 9;
+            FontEnter.Size := 8;
+            FontLeave.Size := 8;
             TextAlignment := vtaCenter;
             height := 50;
-            width := 100;
+            width := 156;
             caption :=  fmMainForm.qry_Main2.FieldByName('ItemNameAr').AsString ; 
             
  
               Brush.Color := clBlack ;
             TempBtn.Hint := fmMainForm.qry_Main2.FieldByName('ItemCode').AsString ;
-            left := z * (100 + 10) ;
+            left := z * (156 + 10) ;
             top := y* (50 + 10) ;
             Inc(z) ;
             OnClick := ItemClick;
@@ -1453,6 +1634,81 @@ begin
       LoginForm.Free; 
    end
    else Application.Terminate;
+end;
+
+procedure TfmPointOfSale.SDS_HeaderSourceBranchCodeChange(Sender: TField);
+begin
+   If SDS_Header.State in [dsInsert, dsEdit] then
+   Begin
+      qry_SourceDoc.Close;
+      qry_SourceDoc.DataSet.Close;
+      qry_SourceDoc.DataSet.CommandText := 'Select * From sa_POS_TrxHeader H '
+        + ' Where (DATEDIFF(Day, H.TrxDate, ''' + FormatDateTime('MM/DD/YYYY', SDS_HeaderTrxDate.AsDateTime)
+        + ''')<=' + gPOS_ReplacementDuring + ') And H.CompanyCode = ''' + DCompany
+        + '''  And H.BranchCode = ''' + SDS_HeaderSourceBranchCode.AsString
+        + '''  And H.TrxType = ''SAIV'' '
+        + '    And ((SourceDocNo IS NULL) Or (SourceDocNo='''')) '
+        + ' And Not Exists(SELECT * FROM sa_POS_TrxHeader As HH'
+        + ' WHERE (HH.SourceDocNo = H.TrxNo) AND (HH.SourceDocType = H.TrxType) '
+        + ' AND (HH.SourceDocYearID = H.YearID) AND (HH.SourceDocPeriodID = H.PeriodID) '
+        + ' AND (HH.SourceBranchCode = H.BranchCode))';
+      qry_SourceDoc.Open;
+   end;
+end;
+
+procedure TfmPointOfSale.SDS_HeaderSourceDocNoChange(Sender: TField);
+begin
+  SDS_HeaderSourceDocYearID.Value := qry_SourceDocYearID.Value;
+  SDS_HeaderSourceDocPeriodID.Value := qry_SourceDocPeriodID.AsString;
+  SDS_HeaderSourceBranchCode.Value := qry_SourceDocBranchCode.AsString;
+  SDS_HeaderSourceDocType.AsString := 'SAIV';
+
+  QueryStr := 'Select * From sa_POS_TrxDetails Where CompanyCode =''' + DCompany + ''' And BranchCode =''' + SDS_HeaderSourceBranchCode.AsString + '''  '
+            + ' And YearId =''' + qry_SourceDocYearID.AsString + ''' And PeriodId =''' +  qry_SourceDocPeriodID.AsString + ''' And TrxType=''SAIV'' '
+            + ' And TrxNo =''' + SDS_HeaderSourceDocNo.AsString  + ''' ';
+  qry_SorceDocItems.Close;
+  qry_SorceDocItems.DataSet.Close;
+  qry_SorceDocItems.DataSet.CommandText := QueryStr;
+  qry_SorceDocItems.Open;
+
+  If SDS_Details.RecordCount > 0 Then SDS_Details.EmptyDataSet;
+  qry_SorceDocItems.First;
+  While Not qry_SorceDocItems.Eof Do Begin
+    SDS_Details.Append;
+    SDS_DetailsBarcode.ReadOnly := False;
+    SDS_DetailsBarcode.Value := qry_SorceDocItemsBarcode.Value;
+    SDS_DetailsBarcode.ReadOnly := True;
+    SDS_DetailsItemService.Value := qry_SorceDocItemsItemService.Value;
+    SDS_DetailsItemCode.Value := qry_SorceDocItemsItemCode.Value;
+    SDS_DetailsQuantity.ReadOnly := False;
+    SDS_DetailsQuantity.AsFloat := qry_SorceDocItemsQuantity.AsFloat * -1;
+    SDS_DetailsQuantity.ReadOnly := True;
+    SDS_DetailsItemUnitCode.ReadOnly := False;
+    SDS_DetailsItemUnitCode.Value := qry_SorceDocItemsItemUnitCode.Value;
+    SDS_DetailsUnitTransValue.AsFloat := qry_SorceDocItemsUnitTransValue.AsFloat;
+    SDS_DetailsCostPrice.AsFloat := qry_SorceDocItemsCostPrice.AsFloat;
+
+    SDS_DetailsItemPrice.AsFloat := qry_SorceDocItemsItemPrice.AsFloat;
+
+
+  qry_SorceDocItems.Next;
+  end;
+
+
+
+
+end;
+
+procedure TfmPointOfSale.rg_InvoiceTypeChange(Sender: TObject);
+begin
+   if rg_InvoiceType.Value = 'H' Then Begin
+      lbl_Table.Visible := True;
+      cbo_Table.Visible := True;
+   end
+   else Begin
+      lbl_Table.Visible := False;
+      cbo_Table.Visible := False;
+   end ;
 end;
 
 end.
