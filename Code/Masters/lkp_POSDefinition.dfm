@@ -1,6 +1,6 @@
 object fmPOSDefinition: TfmPOSDefinition
-  Left = 255
-  Top = 60
+  Left = 176
+  Top = 125
   BorderStyle = bsDialog
   Caption = #1578#1593#1585#1610#1601' '#1606#1602#1591#1577' '#1575#1604#1576#1610#1593
   ClientHeight = 499
@@ -49,7 +49,7 @@ object fmPOSDefinition: TfmPOSDefinition
         335)
       object Label2: TLabel
         Left = 360
-        Top = 84
+        Top = 76
         Width = 65
         Height = 19
         Anchors = []
@@ -77,7 +77,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object Label3: TLabel
         Left = 352
-        Top = 135
+        Top = 121
         Width = 73
         Height = 19
         Anchors = []
@@ -91,7 +91,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object Label4: TLabel
         Left = 379
-        Top = 183
+        Top = 167
         Width = 46
         Height = 19
         Anchors = []
@@ -105,7 +105,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object Label5: TLabel
         Left = 400
-        Top = 228
+        Top = 212
         Width = 25
         Height = 19
         Anchors = []
@@ -119,7 +119,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object Label6: TLabel
         Left = 339
-        Top = 274
+        Top = 256
         Width = 86
         Height = 19
         Anchors = []
@@ -131,9 +131,23 @@ object fmPOSDefinition: TfmPOSDefinition
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object Label7: TLabel
+        Left = 350
+        Top = 305
+        Width = 79
+        Height = 19
+        Anchors = []
+        Caption = #1575#1606#1578#1607#1575#1569' '#1575#1604#1608#1585#1583#1610#1600#1600#1577
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object edtName: TDBEdit
         Left = 21
-        Top = 80
+        Top = 72
         Width = 315
         Height = 27
         Anchors = []
@@ -165,7 +179,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object DBEdit1: TDBEdit
         Left = 21
-        Top = 131
+        Top = 117
         Width = 315
         Height = 27
         Anchors = []
@@ -181,7 +195,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object Co_Cash: TDBLookupComboBox
         Left = 21
-        Top = 179
+        Top = 163
         Width = 315
         Height = 27
         DataField = 'CashCode'
@@ -199,7 +213,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object CO_Bank: TDBLookupComboBox
         Left = 21
-        Top = 224
+        Top = 208
         Width = 315
         Height = 27
         DataField = 'BankCode'
@@ -217,7 +231,7 @@ object fmPOSDefinition: TfmPOSDefinition
       end
       object DBEdit2: TDBEdit
         Left = 144
-        Top = 270
+        Top = 252
         Width = 192
         Height = 27
         Anchors = []
@@ -230,6 +244,17 @@ object fmPOSDefinition: TfmPOSDefinition
         Font.Style = []
         ParentFont = False
         TabOrder = 5
+      end
+      object dt_EndingShift: TDateTimePicker
+        Left = 145
+        Top = 299
+        Width = 191
+        Height = 28
+        Date = 42885.757632442130000000
+        Format = 'hh:mm:tt'
+        Time = 42885.757632442130000000
+        Kind = dtkTime
+        TabOrder = 6
       end
     end
     object DBGrid1: TDBGrid
@@ -366,6 +391,7 @@ object fmPOSDefinition: TfmPOSDefinition
     end
   end
   object SDS_Header: TSimpleDataSet
+    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 'Select * From tbl_POS_Definition'
@@ -373,6 +399,7 @@ object fmPOSDefinition: TfmPOSDefinition
     DataSet.Params = <>
     Params = <>
     BeforePost = SDS_HeaderBeforePost
+    AfterScroll = SDS_HeaderAfterScroll
     Left = 24
     Top = 16
     object SDS_HeaderCompanyCode: TStringField
@@ -414,6 +441,10 @@ object fmPOSDefinition: TfmPOSDefinition
       FieldName = 'OpenBalance'
       Precision = 18
       Size = 8
+    end
+    object SDS_HeaderEndingShift: TStringField
+      FieldName = 'EndingShift'
+      Size = 11
     end
   end
   object DS_Header: TDataSource

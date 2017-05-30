@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, jpeg, ExtCtrls;
 
 type
   TfmItemPolicies = class(TForm)
@@ -121,6 +121,8 @@ begin
   grpData.Enabled := True;
   edtCode.Enabled := False;
   EditMode := True;
+  if SDS_ItemPrices.RecordCount > 0 Then btn_AddAllItems.Enabled := False
+  else btn_AddAllItems.Enabled := True;
 end;
 
 procedure TfmItemPolicies.btnSaveClick(Sender: TObject);
@@ -261,6 +263,7 @@ end;
 
 procedure TfmItemPolicies.btn_AddAllItemsClick(Sender: TObject);
 begin
+
   SDS_ItemDef.First;
   while not SDS_ItemDef.Eof do
   begin

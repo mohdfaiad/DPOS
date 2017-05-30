@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons;
+  VrControls, VrButtons, Buttons, jpeg, ExtCtrls, ComCtrls;
 
 type
   TfmPOSDefinition = class(TForm)
@@ -55,6 +55,9 @@ type
     SDS_BankCB_Type: TStringField;
     SDS_BankCB_NameA: TStringField;
     SDS_BankCB_NameE: TStringField;
+    dt_EndingShift: TDateTimePicker;
+    Label7: TLabel;
+    SDS_HeaderEndingShift: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -67,6 +70,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure BtnShowClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure SDS_HeaderAfterScroll(DataSet: TDataSet);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -149,6 +153,9 @@ begin
      Exit;
   end;
 
+  SDS_HeaderEndingShift.AsString := FormatDateTime('tt', dt_EndingShift.Time) ;
+  gEndingShift := SDS_HeaderEndingShift.AsString;
+  
   if SDS_Header.ApplyUpdates(0) = 0 then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
       BtnOpenClick(Sender);
@@ -261,6 +268,12 @@ procedure TfmPOSDefinition.FormClose(Sender: TObject;
 begin
   SDS_Bank.Close;
   SDS_Cash.Close;
+end;
+
+procedure TfmPOSDefinition.SDS_HeaderAfterScroll(DataSet: TDataSet);
+begin
+   If SDS_HeaderEndingShift.AsString <> '' Then
+      dt_EndingShift.Time := SDS_HeaderEndingShift.AsDateTime;
 end;
 
 end.

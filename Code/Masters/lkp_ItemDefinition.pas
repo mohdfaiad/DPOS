@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls, jpeg;
 
 type
   TfmItemDefinition = class(TForm)
@@ -254,6 +254,7 @@ end;
 
 procedure TfmItemDefinition.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
+    SQLText : String;
 begin
   If SDS_HeaderItemCode.AsString = '' Then
   Begin
@@ -294,8 +295,40 @@ begin
       
 
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Barcodes.ApplyUpdates(0) = 0 ) AND (SDS_ItemSpec.ApplyUpdates(0) = 0 )AND (SDS_RelatedUnits.ApplyUpdates(0) = 0 )) then Begin
+
+      IF SDS_Barcodes.RecordCount = 0  THEN BEGIN
+         SQLText := ' Insert Into tbl_Barcodes (CompanyCode, ItemCode, ItemService, Barcode, Status, '
+            + ' ItemUnit, UnitTransValue, Price '
+            + ' ) Values (''' + DCompany
+            + ''', ''' + SDS_HeaderItemCode.AsString
+            + ''', ''IVI'', ''' + SDS_HeaderItemCode.AsString
+            + ''', ''' + 'A'
+            + ''', ''' + SDS_HeaderItemUnitCode.AsString
+            + ''',   ' + '1'
+            + '  ,   ' + '0'
+            + ' ) ';
+
+         fmMainForm.MainConnection.ExecuteDirect(SQLText);
+
+         SDS_Barcodes.Close;
+         SDS_Barcodes.DataSet.CommandText := 'Select * from Tbl_Barcodes Where CompanyCode = ''' + DCompany + ''' And ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+         SDS_Barcodes.Open;
+      end;
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
-      BtnOpenClick(Sender);
+      //BtnOpenClick(Sender);
+      btnEdit.Enabled := True;
+      BtnOpen.Enabled := True;
+      btnAdd.Enabled := True;
+      btnSave.Enabled := False;
+      BtnCancel.Enabled := False;
+      btnDelete.Enabled := True;
+      grpData.Enabled := False;
+      grd_Brcodes.Enabled := False;
+      grd_ItemSpec.Enabled := False;
+      grd_RelatedUnits.Enabled := False;
+      BtnShow.Enabled := True;
+      EditMode := False;
+      Navigator.Enabled := True;
   end
   else Begin
    ShowMessage('ÕœÀ Œÿ√ √À‰«¡ «·Õ›Ÿ') ;
@@ -427,6 +460,7 @@ var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
+    SDS_HeaderAfterScroll(SDS_Header);
 end;
 
 procedure TfmItemDefinition.FormClose(Sender: TObject;
@@ -464,26 +498,26 @@ end;
 
 procedure TfmItemDefinition.SDS_BarcodesItemUnitChange(Sender: TField);
 begin
-  SDS_BarcodesUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_BarcodesItemUnit.AsString + ''' ');
+  SDS_BarcodesUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And  CompanyCode = ''' + DCompany + ''' And  ItemUnitCode =''' + SDS_BarcodesItemUnit.AsString + ''' ');
 end;
 
 procedure TfmItemDefinition.SDS_HeaderAfterScroll(DataSet: TDataSet);
 begin
   SDS_Barcodes.Close;
-  SDS_Barcodes.DataSet.CommandText := 'Select * from Tbl_Barcodes Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+  SDS_Barcodes.DataSet.CommandText := 'Select * from Tbl_Barcodes Where  CompanyCode = ''' + DCompany + ''' And  ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
   SDS_Barcodes.Open;
   SDS_ItemSpec.Close;
-  SDS_ItemSpec.DataSet.CommandText := 'Select * from tbl_ItemSpecification Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+  SDS_ItemSpec.DataSet.CommandText := 'Select * from tbl_ItemSpecification   Where CompanyCode = ''' + DCompany + ''' And ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
   SDS_ItemSpec.Open;
   SDS_RelatedUnits.Close;
-  SDS_RelatedUnits.DataSet.CommandText := 'Select * from tbl_ItemRelatedUnits Where ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
+  SDS_RelatedUnits.DataSet.CommandText := 'Select * from tbl_ItemRelatedUnits Where  CompanyCode = ''' + DCompany + ''' And   ItemCode = '''+SDS_HeaderItemCode.AsString+''' ';
   SDS_RelatedUnits.Open;
 end;
 
 procedure TfmItemDefinition.SDS_ItemSpecDetailItemUnitChange(
   Sender: TField);
 begin
- SDS_ItemSpecUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit',' And ItemUnitCode =''' + SDS_ItemSpecDetailItemUnit.AsString + ''' ');
+ SDS_ItemSpecUnitTransValue.AsString := GetDBValue('UnitTransValue','tbl_ItemUnit','  And  CompanyCode = ''' + DCompany + ''' And  ItemUnitCode =''' + SDS_ItemSpecDetailItemUnit.AsString + ''' ');
 end;
 
 procedure TfmItemDefinition.SDS_RelatedUnitsNewRecord(DataSet: TDataSet);

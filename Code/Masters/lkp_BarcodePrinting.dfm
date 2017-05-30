@@ -1,11 +1,11 @@
-object fmCompany: TfmCompany
-  Left = 192
-  Top = 124
+object fmBarcodePrinting: TfmBarcodePrinting
+  Left = 156
+  Top = 116
   BorderStyle = bsDialog
-  Caption = #1575#1604#1588#1585#1603#1575#1578
+  Caption = #1591#1576#1575#1593#1600#1577' '#1575#1604#1576#1575#1585#1603#1600#1600#1608#1583
   ClientHeight = 499
   ClientWidth = 1016
-  Color = clBtnFace
+  Color = 16509409
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -3199,63 +3199,37 @@ object fmCompany: TfmCompany
     Width = 873
     Height = 382
     BiDiMode = bdRightToLeft
-    Caption = #1575#1604#1588#1585#1603#1575#1578
+    Caption = #1591#1576#1575#1593#1600#1600#1577' '#1575#1604#1576#1575#1585#1603#1600#1600#1600#1608#1583
+    Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
     Font.Height = -21
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentBiDiMode = False
+    ParentColor = False
     ParentFont = False
     TabOrder = 0
     DesignSize = (
       873
       382)
     object grpData: TGroupBox
-      Left = 424
+      Left = 16
       Top = 26
-      Width = 441
+      Width = 849
       Height = 335
       Anchors = []
       TabOrder = 0
       DesignSize = (
-        441
+        849
         335)
-      object Label2: TLabel
-        Left = 363
-        Top = 94
-        Width = 65
-        Height = 19
-        Anchors = []
-        Caption = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610' '
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label1: TLabel
-        Left = 396
-        Top = 36
-        Width = 29
-        Height = 19
-        Anchors = []
-        Caption = #1575#1604#1585#1605#1586
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
       object Label3: TLabel
-        Left = 357
-        Top = 152
-        Width = 73
+        Left = 467
+        Top = 28
+        Width = 41
         Height = 19
         Anchors = []
-        Caption = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
+        Caption = #1575#1604#1603#1605#1610#1600#1600#1600#1577
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clRed
         Font.Height = -16
@@ -3263,74 +3237,64 @@ object fmCompany: TfmCompany
         Font.Style = [fsBold]
         ParentFont = False
       end
-      object edtName: TDBEdit
-        Left = 40
-        Top = 92
-        Width = 315
-        Height = 27
-        Anchors = []
-        DataField = 'CompanyNameAr'
-        DataSource = DS_Header
+      object grd_Brcodes: TDBGrid
+        Left = 2
+        Top = 56
+        Width = 845
+        Height = 277
+        Align = alBottom
+        DataSource = DS_ItemPrices
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Times New Roman'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 1
-      end
-      object edtCode: TDBEdit
-        Left = 226
-        Top = 34
-        Width = 121
-        Height = 27
-        Anchors = []
-        DataField = 'CompanyCode'
-        DataSource = DS_Header
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -16
+        Font.Color = clNavy
+        Font.Height = -19
         Font.Name = 'Times New Roman'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clNavy
+        TitleFont.Height = -21
+        TitleFont.Name = 'Times New Roman'
+        TitleFont.Style = []
       end
-      object DBEdit1: TDBEdit
-        Left = 42
-        Top = 150
-        Width = 315
-        Height = 27
-        Anchors = []
-        DataField = 'CompanyNameEn'
-        DataSource = DS_Header
+      object btn_AddAllItems: TButton
+        Left = 662
+        Top = 20
+        Width = 174
+        Height = 31
+        Caption = #1573#1590#1575#1601#1577' '#1603#1604' '#1575#1604#1571#1589#1606#1575#1601
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
+        Font.Color = clBlack
         Font.Height = -16
         Font.Name = 'Times New Roman'
-        Font.Style = []
+        Font.Style = [fsBold, fsItalic]
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 1
+        OnClick = btn_AddAllItemsClick
       end
-    end
-    object DBGrid1: TDBGrid
-      Left = 9
-      Top = 33
-      Width = 407
-      Height = 327
-      DataSource = DS_Header
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNavy
-      Font.Height = -19
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 1
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clNavy
-      TitleFont.Height = -21
-      TitleFont.Name = 'Times New Roman'
-      TitleFont.Style = []
+      object edt_Quantity: TEdit
+        Left = 359
+        Top = 23
+        Width = 78
+        Height = 31
+        TabOrder = 2
+        Text = '1'
+      end
+      object btn_DeleteAllItems: TButton
+        Left = 6
+        Top = 20
+        Width = 174
+        Height = 31
+        Caption = #1581#1600#1584#1601' '#1603#1604' '#1575#1604#1571#1589#1606#1575#1601
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
+        TabOrder = 3
+        OnClick = btn_DeleteAllItemsClick
+      end
     end
   end
   object GroupBox2: TGroupBox
@@ -3338,13 +3302,15 @@ object fmCompany: TfmCompany
     Top = 32
     Width = 873
     Height = 57
+    Color = clBtnFace
+    ParentColor = False
     TabOrder = 1
-    object BtnOpen: TButton
-      Left = 626
+    object btnPrint: TButton
+      Left = 16
       Top = 13
-      Width = 115
+      Width = 841
       Height = 35
-      Caption = #1601#1578#1581
+      Caption = #1591#1576#1600#1575#1593#1600#1600#1577' '#1575#1604#1576#1575#1585#1603#1600#1600#1600#1600#1608#1583
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -16
@@ -3352,130 +3318,404 @@ object fmCompany: TfmCompany
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
       TabOrder = 0
-      OnClick = BtnOpenClick
-    end
-    object btnAdd: TButton
-      Left = 503
-      Top = 13
-      Width = 115
-      Height = 35
-      Caption = #1573#1590#1575#1601#1577
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -16
-      Font.Name = 'Times New Roman'
-      Font.Style = [fsBold, fsItalic]
-      ParentFont = False
-      TabOrder = 1
-      OnClick = btnAddClick
-    end
-    object btnEdit: TButton
-      Left = 379
-      Top = 13
-      Width = 115
-      Height = 35
-      Caption = #1578#1593#1583#1610#1600#1600#1604
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -16
-      Font.Name = 'Times New Roman'
-      Font.Style = [fsBold, fsItalic]
-      ParentFont = False
-      TabOrder = 2
-      OnClick = btnEditClick
-    end
-    object btnDelete: TButton
-      Left = 11
-      Top = 13
-      Width = 115
-      Height = 35
-      Caption = #1581#1584#1601
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -16
-      Font.Name = 'Times New Roman'
-      Font.Style = [fsBold, fsItalic]
-      ParentFont = False
-      TabOrder = 5
-      OnClick = btnDeleteClick
-    end
-    object btnSave: TButton
-      Left = 254
-      Top = 13
-      Width = 115
-      Height = 35
-      Caption = #1581#1601#1600#1600#1600#1600#1600#1592
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -16
-      Font.Name = 'Times New Roman'
-      Font.Style = [fsBold, fsItalic]
-      ParentFont = False
-      TabOrder = 3
-      OnClick = btnSaveClick
-    end
-    object BtnCancel: TButton
-      Left = 132
-      Top = 13
-      Width = 115
-      Height = 35
-      Caption = #1573#1604#1594#1575#1569
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -16
-      Font.Name = 'Times New Roman'
-      Font.Style = [fsBold, fsItalic]
-      ParentFont = False
-      TabOrder = 4
-      OnClick = BtnCancelClick
-    end
-    object BtnShow: TButton
-      Left = 750
-      Top = 13
-      Width = 115
-      Height = 35
-      Caption = #1593#1585#1590
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -16
-      Font.Name = 'Times New Roman'
-      Font.Style = [fsBold, fsItalic]
-      ParentFont = False
-      TabOrder = 6
-      OnClick = BtnShowClick
+      OnClick = btnPrintClick
     end
   end
-  object SDS_Header: TSimpleDataSet
+  object SDS_ItemPrices: TSimpleDataSet
     Aggregates = <>
     Connection = fmMainForm.MainConnection
-    DataSet.CommandText = 'Select * From tbl_Company'
+    DataSet.CommandText = 'Select * , 1 As Quantity From tbl_ItemPrices Where 1=2'#13#10
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 24
-    Top = 16
-    object SDS_HeaderCompanyCode: TStringField
-      DisplayLabel = #1575#1604#1585#1605#1586
+    OnNewRecord = SDS_ItemPricesNewRecord
+    Left = 16
+    Top = 32
+    object SDS_ItemPricesCompanyCode: TStringField
       FieldName = 'CompanyCode'
       Required = True
+      Visible = False
       Size = 4
     end
-    object SDS_HeaderCompanyNameAr: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1593#1585#1576#1610
-      DisplayWidth = 20
-      FieldName = 'CompanyNameAr'
-      Size = 250
+    object SDS_ItemPricesItemService: TStringField
+      FieldName = 'ItemService'
+      Required = True
+      Visible = False
+      Size = 3
     end
-    object SDS_HeaderCompanyNameEn: TStringField
-      DisplayLabel = #1575#1604#1575#1587#1605' '#1575#1606#1580#1604#1610#1586#1610
-      DisplayWidth = 15
-      FieldName = 'CompanyNameEn'
-      Size = 250
+    object SDS_ItemPricesPolicyCode: TStringField
+      FieldName = 'PolicyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object SDS_ItemPricesItemCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1589#1606#1601
+      DisplayWidth = 10
+      FieldName = 'ItemCode'
+      Required = True
+    end
+    object SDS_ItemPricesItemNameAr: TStringField
+      DisplayLabel = #1573#1587#1605' '#1575#1604#1589#1606#1601
+      FieldKind = fkLookup
+      FieldName = 'ItemNameAr'
+      LookupDataSet = SDS_ItemDef
+      LookupKeyFields = 'ItemCode'
+      LookupResultField = 'ItemNameAr'
+      KeyFields = 'ItemCode'
+      Lookup = True
+    end
+    object SDS_ItemPricesItemUnit: TStringField
+      DisplayLabel = #1608#1581#1583#1577' '#1575#1604#1589#1606#1601
+      FieldName = 'ItemUnit'
+      Required = True
+      Size = 6
+    end
+    object SDS_ItemPricesItemUnitAr: TStringField
+      DisplayLabel = #1575#1604#1608#1589#1601
+      FieldKind = fkLookup
+      FieldName = 'ItemUnitDescAr'
+      LookupDataSet = SDS_ItemUnit
+      LookupKeyFields = 'ItemUnitCode'
+      LookupResultField = 'ItemUnitDescA'
+      KeyFields = 'ItemUnit'
+      Lookup = True
+    end
+    object SDS_ItemPricesPriceValue: TFMTBCDField
+      DisplayLabel = #1575#1604#1587#1593#1585
+      DisplayWidth = 6
+      FieldName = 'PriceValue'
+      Precision = 18
+      Size = 8
+    end
+    object SDS_ItemPricesQuantity: TIntegerField
+      DisplayLabel = #1575#1604#1603#1605#1610#1600#1600#1577
+      FieldName = 'Quantity'
+      Required = True
     end
   end
-  object DS_Header: TDataSource
-    DataSet = SDS_Header
+  object DS_ItemPrices: TDataSource
+    DataSet = SDS_ItemPrices
+    Left = 56
+    Top = 32
+  end
+  object SDS_ItemUnit: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemUnit'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 16
+    Top = 72
+    object SDS_HeaderItemUnitCode: TStringField
+      DisplayLabel = #1575#1604#1585#1605#1586
+      FieldName = 'ItemUnitCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_HeaderItemUnitDescA: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1593#1585#1576#1610
+      DisplayWidth = 20
+      FieldName = 'ItemUnitDescA'
+      Size = 75
+    end
+    object SDS_HeaderItemUnitDescE: TStringField
+      DisplayLabel = #1575#1604#1573#1587#1605' '#1573#1606#1580#1604#1610#1586#1610
+      DisplayWidth = 20
+      FieldName = 'ItemUnitDescE'
+      Size = 75
+    end
+    object SDS_HeaderUnitTransCode: TStringField
+      DisplayLabel = #1575#1604#1608#1581#1583#1607' '#1575#1604#1605#1585#1578#1576#1591#1577
+      FieldName = 'UnitTransCode'
+      Size = 6
+    end
+    object SDS_HeaderUnitTransValue: TFMTBCDField
+      DisplayLabel = #1575#1604#1605#1593#1575#1605#1604
+      DisplayWidth = 5
+      FieldName = 'UnitTransValue'
+      Precision = 18
+      Size = 8
+    end
+    object StringField1: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+  end
+  object DS_ItemUnit: TDataSource
+    DataSet = SDS_ItemUnit
+    Left = 56
+    Top = 72
+  end
+  object SDS_ItemDef: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * From tbl_ItemDefinition'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 16
+    Top = 120
+    object SDS_ItemDefItemCode: TStringField
+      FieldName = 'ItemCode'
+      Required = True
+      Size = 25
+    end
+    object SDS_ItemDefItemNameAr: TStringField
+      FieldName = 'ItemNameAr'
+      Size = 255
+    end
+    object SDS_ItemDefItemNameEn: TStringField
+      FieldName = 'ItemNameEn'
+      Size = 255
+    end
+    object SDS_ItemDefItemUnitCode: TStringField
+      FieldName = 'ItemUnitCode'
+      Size = 6
+    end
+  end
+  object DS_ItemDef: TDataSource
+    DataSet = SDS_ItemDef
+    Left = 56
+    Top = 112
+  end
+  object pplBarcode: TppDBPipeline
+    DataSource = DS_ItemPrices
+    UserName = 'PPL_Barcode'
+    Left = 89
+    Top = 33
+  end
+  object ppBarcode: TppReport
+    AutoStop = False
+    DataPipeline = pplBarcode
+    PrinterSetup.BinName = 'Default'
+    PrinterSetup.DocumentName = 'Report'
+    PrinterSetup.PaperName = 'Custom'
+    PrinterSetup.PrinterName = 'Default'
+    PrinterSetup.mmMarginBottom = 1000
+    PrinterSetup.mmMarginLeft = 1000
+    PrinterSetup.mmMarginRight = 1000
+    PrinterSetup.mmMarginTop = 1000
+    PrinterSetup.mmPaperHeight = 25000
+    PrinterSetup.mmPaperWidth = 55000
+    PrinterSetup.PaperSize = 256
+    Template.FileName = 'E:\Work\SVN\DelphiPOS\trunk\Code\Reports\Barcode.rtm'
+    Units = utMillimeters
+    DeviceType = 'Screen'
+    EmailSettings.ReportFormat = 'PDF'
+    OutlineSettings.CreateNode = True
+    OutlineSettings.CreatePageNodes = True
+    OutlineSettings.Enabled = True
+    OutlineSettings.Visible = False
+    TextSearchSettings.DefaultString = '<FindText>'
+    TextSearchSettings.Enabled = True
+    Left = 123
+    Top = 31
+    Version = '10.02'
+    mmColumnWidth = 0
+    DataPipelineName = 'pplBarcode'
+    object ppDetailBand1: TppDetailBand
+      mmBottomOffset = 0
+      mmHeight = 20108
+      mmPrintPosition = 0
+      object ppDBBarCode1: TppDBBarCode
+        UserName = 'DBBarCode1'
+        AutoEncode = True
+        BarCodeType = bcCode128
+        BarColor = clBlack
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'ItemCode'
+        DataPipeline = pplBarcode
+        AutoSize = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Courier New'
+        Font.Size = 8
+        Font.Style = []
+        Transparent = True
+        DataPipelineName = 'pplBarcode'
+        mmHeight = 7938
+        mmLeft = 4233
+        mmTop = 5292
+        mmWidth = 44450
+        BandType = 4
+        mmBarWidth = 254
+        mmWideBarRatio = 76200
+      end
+      object ppDBText1: TppDBText
+        UserName = 'DBText1'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'PriceValue'
+        DataPipeline = pplBarcode
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Courier New'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        Transparent = True
+        DataPipelineName = 'pplBarcode'
+        mmHeight = 3969
+        mmLeft = 5292
+        mmTop = 14817
+        mmWidth = 13229
+        BandType = 4
+      end
+      object ppDBText2: TppDBText
+        UserName = 'DBText2'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'ItemNameAr'
+        DataPipeline = pplBarcode
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Courier New'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'pplBarcode'
+        mmHeight = 4043
+        mmLeft = 19844
+        mmTop = 14817
+        mmWidth = 29369
+        BandType = 4
+      end
+      object ppLabel1: TppLabel
+        UserName = 'Label1'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = 'IKon'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Forte'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 4784
+        mmLeft = 4763
+        mmTop = 1058
+        mmWidth = 42598
+        BandType = 4
+      end
+    end
+    object raCodeModule1: TraCodeModule
+      ProgramStream = {
+        01060F5472614576656E7448616E646C65720B50726F6772616D4E616D650610
+        444254657874314F6E476574546578740B50726F6772616D54797065070B7474
+        50726F63656475726506536F75726365067A70726F6365647572652044425465
+        7874314F6E476574546578742876617220546578743A20537472696E67293B0D
+        0A626567696E0D0A0D0A202054657874203A3D20466C6F6174546F5374722850
+        504C5F426172636F64655B27507269636556616C7565275D29202B2027205352
+        273B0D0A0D0A656E643B0D0A0D436F6D706F6E656E744E616D65060744425465
+        787431094576656E744E616D6506094F6E47657454657874074576656E744944
+        02350000}
+    end
+    object ppParameterList1: TppParameterList
+    end
+  end
+  object qry_ItemsToPrinter: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 'Select * , 1 As Quantity From tbl_ItemPrices Where 1=2'#13#10
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    OnNewRecord = qry_ItemsToPrinterNewRecord
+    Left = 24
+    Top = 168
+    object qry_ItemsToPrinterCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object qry_ItemsToPrinterItemService: TStringField
+      FieldName = 'ItemService'
+      Required = True
+      Visible = False
+      Size = 3
+    end
+    object qry_ItemsToPrinterPolicyCode: TStringField
+      FieldName = 'PolicyCode'
+      Required = True
+      Visible = False
+      Size = 4
+    end
+    object qry_ItemsToPrinterItemCode: TStringField
+      DisplayLabel = #1603#1608#1583' '#1575#1604#1589#1606#1601
+      DisplayWidth = 10
+      FieldName = 'ItemCode'
+      Required = True
+    end
+    object qry_ItemsToPrinterItemNameAr: TStringField
+      DisplayLabel = #1573#1587#1605' '#1575#1604#1589#1606#1601
+      FieldKind = fkLookup
+      FieldName = 'ItemNameAr'
+      LookupDataSet = SDS_ItemDef
+      LookupKeyFields = 'ItemCode'
+      LookupResultField = 'ItemNameAr'
+      KeyFields = 'ItemCode'
+      Lookup = True
+    end
+    object qry_ItemsToPrinterItemUnit: TStringField
+      DisplayLabel = #1608#1581#1583#1577' '#1575#1604#1589#1606#1601
+      FieldName = 'ItemUnit'
+      Required = True
+      Size = 6
+    end
+    object qry_ItemsToPrinterItemUnitDescAr: TStringField
+      DisplayLabel = #1575#1604#1608#1589#1601
+      FieldKind = fkLookup
+      FieldName = 'ItemUnitDescAr'
+      LookupDataSet = SDS_ItemUnit
+      LookupKeyFields = 'ItemUnitCode'
+      LookupResultField = 'ItemUnitDescA'
+      KeyFields = 'ItemUnit'
+      Lookup = True
+    end
+    object qry_ItemsToPrinterPriceValue: TFMTBCDField
+      DisplayLabel = #1575#1604#1587#1593#1585
+      DisplayWidth = 6
+      FieldName = 'PriceValue'
+      Precision = 18
+      Size = 8
+    end
+    object qry_ItemsToPrinterQuantity: TIntegerField
+      DisplayLabel = #1575#1604#1603#1605#1610#1600#1600#1577
+      FieldName = 'Quantity'
+      Required = True
+    end
+  end
+  object DS_ItemsToPrinter: TDataSource
+    DataSet = qry_ItemsToPrinter
     Left = 64
-    Top = 16
+    Top = 168
+  end
+  object pp_ItemsToPrinter: TppDBPipeline
+    DataSource = DS_ItemsToPrinter
+    UserName = 'pp_ItemsToPrinter'
+    Left = 97
+    Top = 169
   end
 end

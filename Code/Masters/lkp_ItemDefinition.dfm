@@ -470,6 +470,7 @@ object fmItemDefinition: TfmItemDefinition
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
+      TabWidth = 300
       object TabSheet1: TTabSheet
         Caption = #1575#1604#1576#1575#1585#1603#1608#1583
         Font.Charset = DEFAULT_CHARSET
@@ -972,6 +973,7 @@ object fmItemDefinition: TfmItemDefinition
     object SDS_BarcodesItemColorCode: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1604#1608#1606
       FieldName = 'ItemColorCode'
+      Visible = False
       Size = 6
     end
     object SDS_BarcodesItemColorNameAr: TStringField
@@ -982,11 +984,13 @@ object fmItemDefinition: TfmItemDefinition
       LookupKeyFields = 'ItemColorCode'
       LookupResultField = 'ItemColorNameAr'
       KeyFields = 'ItemColorCode'
+      Visible = False
       Lookup = True
     end
     object SDS_BarcodesItemSizeCode: TStringField
       DisplayLabel = #1603#1608#1583' '#1575#1604#1605#1602#1575#1587
       FieldName = 'ItemSizeCode'
+      Visible = False
       Size = 6
     end
     object SDS_BarcodesItemSizeNameAr: TStringField
@@ -997,12 +1001,14 @@ object fmItemDefinition: TfmItemDefinition
       LookupKeyFields = 'ItemSizeCode'
       LookupResultField = 'ItemSizeNameAr'
       KeyFields = 'ItemSizeCode'
+      Visible = False
       Lookup = True
     end
     object SDS_BarcodesDiscountRatio: TFMTBCDField
       DisplayLabel = #1606#1587#1576#1577' '#1575#1604#1582#1589#1605
       DisplayWidth = 6
       FieldName = 'DiscountRatio'
+      Visible = False
       Precision = 18
       Size = 8
     end
@@ -1010,6 +1016,7 @@ object fmItemDefinition: TfmItemDefinition
       DisplayLabel = #1602#1610#1605#1577' '#1575#1604#1582#1589#1605
       DisplayWidth = 6
       FieldName = 'DiscountValue'
+      Visible = False
       Precision = 18
       Size = 8
     end

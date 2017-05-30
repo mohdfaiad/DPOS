@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids, LookUp,
-  VrControls, VrButtons, Buttons;
+  VrControls, VrButtons, Buttons, jpeg, ExtCtrls;
 
 type
   TfmCompany = class(TForm)
