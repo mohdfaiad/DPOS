@@ -9,12 +9,12 @@ uses
   GVariable in 'SystemManager\GVariable.pas',
   License in 'SystemManager\License.pas' {fmLicense},
   Login in 'SystemManager\Login.pas' {fmLogin},
-  lkp_VendorGroup in 'Masters\lkp_VendorGroup.pas' {fmVendorGroup},
+  lkp_Tables in 'Masters\lkp_Tables.pas' {fmTables},
   lkp_CurrencyExchange in 'Masters\lkp_CurrencyExchange.pas' {fmCurrencyExchange},
   lkp_Users in 'Masters\lkp_Users.pas' {fmUsers},
   lkp_ItemColor in 'Masters\lkp_ItemColor.pas' {fmItemColor},
   lkp_ItemGroupSections in 'Masters\lkp_ItemGroupSections.pas' {fmItemGroupSections},
-  lkp_ItemPolicies in 'Masters\lkp_ItemPolicies.pas' {fmItemPolicies},
+  lkp_BarcodePrinting in 'Masters\lkp_BarcodePrinting.pas' {fmBarcodePrinting},
   lkp_ItemSize in 'Masters\lkp_ItemSize.pas' {fmItemSize},
   lkp_ItemType in 'Masters\lkp_ItemType.pas' {fmItemType},
   lkp_ItemUnit in 'Masters\lkp_ItemUnit.pas' {fmItemUnit},
@@ -38,7 +38,9 @@ uses
   lkp_ItemDefinition in 'Masters\lkp_ItemDefinition.pas' {fmItemDefinition},
   PrBegBalForm in 'Pr\PrBegBalForm.pas' {fmBegBalForm},
   PrTrxBaseForm in 'Pr\PrTrxBaseForm.pas' {fmPrTrxBaseForm},
-  BaseReport in 'SystemManager\BaseReport.pas' {fmBaseReports};
+  BaseReport in 'SystemManager\BaseReport.pas' {fmBaseReports},
+  lkp_ItemPolicies in 'Masters\lkp_ItemPolicies.pas' {fmItemPolicies},
+  lkp_VendorGroup in 'Masters\lkp_VendorGroup.pas' {fmVendorGroup};
 
 {$R *.res}
 
