@@ -1,6 +1,6 @@
 object fmPrTrxBaseForm: TfmPrTrxBaseForm
-  Left = 0
-  Top = 5
+  Left = 189
+  Top = 11
   BorderStyle = bsDialog
   Caption = #1601#1575#1578#1608#1585#1577' '#1605#1588#1578#1585#1610#1575#1578
   ClientHeight = 592
@@ -385,7 +385,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Top = 243
       Width = 917
       Height = 199
-      ActivePage = TabSheet1
+      ActivePage = tshDetails
       Align = alBottom
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
@@ -394,7 +394,8 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
-      object TabSheet1: TTabSheet
+      TabWidth = 450
+      object tshDetails: TTabSheet
         Caption = #1575#1604#1578#1601#1575#1589#1610#1604
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -432,7 +433,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
           end
         end
       end
-      object TabSheet2: TTabSheet
+      object tshPayment: TTabSheet
         Caption = #1575#1604#1583#1601#1593
         ImageIndex = 1
         object grd_Payment: TDBGrid
@@ -756,6 +757,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       LookupKeyFields = 'ItemCode'
       LookupResultField = 'ItemNameAr'
       KeyFields = 'ItemCode'
+      LookupCache = True
       Lookup = True
     end
     object SDS_DetailsQuantity: TFMTBCDField

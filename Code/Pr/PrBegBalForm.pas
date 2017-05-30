@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls, jpeg;
 
 type
   TfmBegBalForm = class(TForm)
@@ -114,6 +114,14 @@ type
     SDS_SouceTrxNoTrxType: TStringField;
     SDS_DetailsDiffQty: TFMTBCDField;
     grd_Details: TDBGrid;
+    qry_ItemCard: TSimpleDataSet;
+    qry_ItemCardCompanyCode: TStringField;
+    qry_ItemCardItemCode: TStringField;
+    qry_ItemCardItemService: TStringField;
+    qry_ItemCardItemNameAr: TStringField;
+    qry_ItemCardItemNameEn: TStringField;
+    qry_ItemCardBalance: TFMTBCDField;
+    qry_ItemCardReOrderQuantity: TFMTBCDField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -131,6 +139,9 @@ type
     procedure btnPostClick(Sender: TObject);
     procedure grd_DetailsEnter(Sender: TObject);
     procedure SDS_HeaderSourceTrxNoChange(Sender: TField);
+    procedure SDS_DetailsQuantityChange(Sender: TField);
+    procedure SDS_DetailsDiscountChange(Sender: TField);
+    procedure SDS_DetailsCostPriceChange(Sender: TField);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -166,6 +177,8 @@ begin
   SDS_SouceTrxNo.Close;
   SDS_SouceTrxNo.Open;
 
+  btnEdit.Enabled := False;
+  btnDelete.Enabled := False;
   if SDS_HeaderTrxStatus.AsString <> 'P' Then begin
     btnEdit.Enabled := True;
     btnDelete.Enabled := True;
@@ -174,6 +187,7 @@ begin
   btnAdd.Enabled := True;
   btnSave.Enabled := False;
   BtnCancel.Enabled := False;
+
   grpData.Enabled := False;
   Co_WareHouse.Enabled := False;
 
@@ -195,9 +209,9 @@ begin
   btnSave.Enabled := True;
   BtnCancel.Enabled := True;
   btnDelete.Enabled := False;
-  grpData.Enabled := True;
   edtCode.Enabled := False;
   BtnShow.Enabled := True;
+  btnPost.Enabled := False;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
   DBEdit6.Enabled := True;
@@ -205,6 +219,7 @@ begin
   grd_Details.Enabled := True;
   trxDate.Enabled := True;
   Navigator.Enabled := False;
+  grpData.Enabled := True;
   EditMode := True;
 end;
 
@@ -236,10 +251,9 @@ begin
   end;
 
   if EditMode = false then begin
-  NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType ='''+gIV_TrxType+'''');
-  NewCode := IntToStr(StrToInt(NewCode)+1) ;
-
-  SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
+     NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType ='''+gIV_TrxType+'''');
+     NewCode := IntToStr(StrToInt(NewCode)+1) ;
+     SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
   end;
 
    With SDS_Details do Begin
@@ -250,6 +264,7 @@ begin
              SDS_DetailsTraLineNo.AsInteger := SDS_Details.RecNo;
              SDS_Details.Next;
        end;
+       EnableControls;
    end;
    SDS_HeaderTrxDate.AsDateTime := trxDate.DateTime;
 
@@ -264,6 +279,8 @@ begin
         grpData.Enabled := False;
         Navigator.Enabled := True;
         BtnShow.Enabled := BtnOpen.Enabled;
+        btnPost.Enabled := True;
+
         grd_Details.Enabled := False;
         SDS_Details.EnableControls;
 
@@ -360,8 +377,10 @@ end;
 
 procedure TfmBegBalForm.btnAddClick(Sender: TObject);
 begin
+  SDS_Header.Open;
   SDS_Header.Append;
   SDS_Details.Append;
+  grd_Details.Refresh;
   btnEdit.Enabled := False;
   BtnOpen.Enabled := False;
   btnAdd.Enabled := False;
@@ -378,6 +397,7 @@ begin
   trxDate.Enabled := true;
   trxDate.DateTime := Date;
   BtnShow.Enabled := False;
+  btnPost.Enabled := False;
   EditMode := False;
   Navigator.Enabled := False;
   trxDate.SetFocus;
@@ -388,6 +408,7 @@ var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
+    SDS_HeaderAfterScroll(SDS_Header);
 end;
 
 procedure TfmBegBalForm.SDS_HeaderNewRecord(DataSet: TDataSet);
@@ -405,6 +426,7 @@ end;
 procedure TfmBegBalForm.SDS_HeaderAfterScroll(DataSet: TDataSet);
 begin
 SDS_Details.Close;
+SDS_Details.DataSet.Close;
 SDS_Details.DataSet.CommandText :='Select * From tbl_PrTrxDetails where CompanyCode ='''+DCompany+''' And BranchCode ='''+DBranch+''' And TrxNo ='''+SDS_HeaderTrxNo.AsString+''' and TRxType='''+gIV_TrxType+''' ';
 SDS_Details.Open;
 trxDate.DateTime := SDS_HeaderTrxDate.AsDateTime;
@@ -441,7 +463,61 @@ procedure TfmBegBalForm.SDS_DetailsItemCodeChange(Sender: TField);
 begin
   if gIV_TrxType= 'IVCT' then
   begin
-    SDS_DetailsSystemQty.AsString := GetDBValue('ItemQuantity','tbl_ItemStock',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' and companycode ='''+DCompany+''' and itemservice =''IVI'' and warehousecode='''+SDS_HeaderWareHouseCode.AsString+''' ');
+
+    qry_ItemCard.Close;
+    qry_ItemCard.DataSet.Close;
+    qry_ItemCard.DataSet.CommandText := ''
+      + ' SELECT     CompanyCode, ItemCode, ItemService, ItemNameAr, ItemNameEn, SUM(InQty) - SUM(OutQty) AS Balance, ISNULL(ReOrderQuantity, 0)  AS ReOrderQuantity   '
+      + ' FROM         (   '
+
+       {-- «·„»Ì⁄«  }
+
+      + '                         SELECT     H.CompanyCode, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate, H.TrxStatus, H.TrxDescA, H.TrxDescE, H.TrxAmount, D.Barcode, D.ItemCode, '
+      + '                                               D.ItemService, I.ItemNameAr, I.ItemNameEn, CASE WHEN H.TrxType = ''SART'' THEN D .Quantity ELSE 0 END AS InQty, '
+      + '                                               CASE WHEN H.TrxType = ''SAIV'' THEN D .Quantity ELSE 0 END AS OutQty, D.ItemUnitCode, U.ItemUnitDescA, U.ItemUnitDescE, D.UnitTransValue, '
+      + '                                               CASE WHEN H.TrxType = ''SART'' THEN 0 ELSE 1 END AS TrxOrder, I.ReOrderQuantity  '
+      + '                         FROM         sa_POS_TrxHeader AS H INNER JOIN  '
+      + '                                               sa_POS_TrxDetails AS D ON H.CompanyCode = D.CompanyCode AND H.BranchCode = D.BranchCode AND H.TrxNo = D.TrxNo AND  '
+      + '                                               H.TrxType = D.TrxType AND H.YearID = D.YearID AND H.PeriodID = D.PeriodID LEFT OUTER JOIN  '
+      + '                                               tbl_ItemUnit AS U ON D.CompanyCode = U.CompanyCode AND D.ItemUnitCode = U.ItemUnitCode LEFT OUTER JOIN '
+      + '                                               tbl_ItemDefinition AS I ON D.CompanyCode = I.CompanyCode AND D.ItemService = I.ItemService AND D.ItemCode = I.ItemCode '
+      + '                         WHERE     (H.TrxType IN (''SAIV'', ''SART'')) '
+
+      {-- „ﬂÊ‰«  «·«·’‰«›}
+      + '                         UNION ALL '
+      + '                         SELECT  H.CompanyCode, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate, H.TrxStatus, ''„‰’—› „‰ „ﬂÊ‰«  «ÕœÏ «·«’‰«›'' As TrxDescA, H.TrxDescE, H.TrxAmount, D.Barcode, DD.DetailsItemCode, D.ItemService, '
+      + '                                            		I.ItemNameAr, I.ItemNameEn, CASE WHEN H.TrxType = ''SART'' THEN DD.Quantity ELSE 0 END AS InQty, '
+      + '                                            		CASE WHEN H.TrxType = ''SAIV'' THEN DD.Quantity ELSE 0 END AS OutQty, DD.ItemUnitCode, U.ItemUnitDescA, U.ItemUnitDescE, D.UnitTransValue, '
+      + '                                            		CASE WHEN H.TrxType = ''SART'' THEN 0 ELSE 1 END AS TrxOrder , I.ReOrderQuantity '
+      + '                         FROM   sa_POS_TrxHeader AS H INNER JOIN '
+      + '                                            		sa_POS_TrxDetails AS D ON H.CompanyCode = D.CompanyCode AND H.BranchCode = D.BranchCode AND H.TrxNo = D.TrxNo AND H.TrxType = D.TrxType AND '
+      + '                                            		H.YearID = D.YearID AND H.PeriodID = D.PeriodID INNER JOIN '
+      + '                                            		sa_POS_TrxItemSpecification AS DD ON D.CompanyCode = DD.CompanyCode AND D.BranchCode = DD.BranchCode AND D.TrxNo = DD.TrxNo AND '
+      + '                                            		D.TrxType = DD.TrxType AND D.YearID = DD.YearID AND D.PeriodID = DD.PeriodID AND D.ItemCode = DD.ItemCode AND '
+      + '                                            		D.ItemService = DD.ItemService LEFT OUTER JOIN '
+      + '                                            		tbl_ItemUnit AS U ON DD.CompanyCode = U.CompanyCode AND DD.ItemUnitCode = U.ItemUnitCode LEFT OUTER JOIN '
+      + '                                            		tbl_ItemDefinition AS I ON DD.CompanyCode = I.CompanyCode AND DD.ItemService = I.ItemService AND DD.DetailsItemCode = I.ItemCode '
+      + '                         WHERE     (H.TrxType IN (''SAIV'', ''SART'')) '
+      {-- «·„‘ —Ì«  Ê«·—’Ìœ «·«›  «ÕÌ Ê«·Ã—œ «·„Œ“‰Ì }
+      + '                         UNION ALL '
+      + '                         SELECT     H.CompanyCode, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate, H.TrxStatus, H.TrxDescAr, H.TrxDescEn, H.TrxAmount, D.BarCode, D.ItemCode, '
+      + '                                               D.ItemService, I.ItemNameAr, I.ItemNameEn, CASE WHEN H.TrxType IN (''IVBB'', ''PRIV'') THEN D .Quantity When (H.TrxType =  ''IVAD'' And D.DiffQty > 0) Then D.DiffQty ELSE 0 END AS InQty, '
+      + '                                               CASE WHEN H.TrxType = ''PRRT'' THEN D .Quantity When (H.TrxType =  ''IVAD'' And D.DiffQty < 0) Then Abs(D.DiffQty) ELSE 0 END AS OutQty, D.ItemUnit, U.ItemUnitDescA, U.ItemUnitDescE, D.UnitTransValue, '
+      + '                                               CASE WHEN H.TrxType IN (''IVBB'', ''PRIV'') THEN 0 When (H.TrxType =  ''IVAD'' And D.DiffQty > 0) Then 0 ELSE 1 END AS TrxOrder, I.ReOrderQuantity '
+      + '                         FROM         tbl_PrTrxHeader AS H INNER JOIN '
+      + '                                               tbl_PrTrxDetails AS D ON H.CompanyCode = D.CompanyCode AND H.BranchCode = D.BranchCode AND H.TrxNo = D.TrxNo AND '
+      + '                                               H.TrxType = D.TrxType LEFT OUTER JOIN '
+      + '                                               tbl_ItemUnit AS U ON D.CompanyCode = U.CompanyCode AND D.ItemUnit = U.ItemUnitCode LEFT OUTER JOIN '
+      + '                                               tbl_ItemDefinition AS I ON D.CompanyCode = I.CompanyCode AND D.ItemService = I.ItemService AND D.ItemCode = I.ItemCode'
+      + '                         WHERE     (H.TrxType IN (''IVBB'', ''PRIV'', ''PRRT'' , ''IVAD''))) AS RD '
+      + ' WHERE     (CompanyCode = ''' + DCompany + ''') And ItemCode = ''' + SDS_DetailsItemCode.AsString + '''   '
+      + ' GROUP BY CompanyCode, ItemCode, ItemService, ItemNameAr, ItemNameEn, ReOrderQuantity '
+      + ' ORDER BY CompanyCode , ItemCode ';
+
+    qry_ItemCard.Open;
+
+    //SDS_DetailsSystemQty.AsString := GetDBValue('ItemQuantity','tbl_ItemStock',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' and companycode ='''+DCompany+''' and itemservice =''IVI'' and warehousecode='''+SDS_HeaderWareHouseCode.AsString+''' ');
+    SDS_DetailsSystemQty.AsString := qry_ItemCardBalance.AsString;
     SDS_DetailsCostPrice.AsString := GetDBValue('AVGcost','tbl_ItemStock',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' and companycode ='''+DCompany+''' and itemservice =''IVI'' and warehousecode='''+SDS_HeaderWareHouseCode.AsString+''' ');
   end;
   SDS_DetailsItemUnit.AsString := GetDBValue('ItemUnitCode','tbl_ItemDefinition',' And ItemCode =''' + SDS_DetailsItemCode.AsString + ''' ');
@@ -508,7 +584,6 @@ begin
        SDS_Header.ApplyUpdates(0);
        SDS_Header.Close;
        ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
-       BtnOpenClick(Sender);
    end
    else if gIV_TrxType = 'IVCT' Then
    begin
@@ -560,6 +635,21 @@ begin
        ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
        BtnOpenClick(Sender);
    end;
+   
+   BtnOpen.Enabled := True;
+   btnAdd.Enabled := True;
+   btnSave.Enabled := False;
+   BtnCancel.Enabled := False;
+   grpData.Enabled := False;
+   Co_WareHouse.Enabled := False;
+   grd_Details.Enabled := False;
+   trxDate.Enabled := false;
+   BtnShow.Enabled := True;
+   Navigator.Enabled := True;
+   btnEdit.Enabled := False;
+   btnPost.Enabled := False;
+   btnDelete.Enabled := False;
+   EditMode := False;
 end;
 end;
 
@@ -600,7 +690,7 @@ begin
                                     +' d.UnitTransValue,d.BarCode,d.Quantity,d.WareHouseCode,d.SystemQty From tbl_PrTrxHeader H left outer join tbl_PrTrxDetails D '
                                     +' on h.CompanyCode=d.CompanyCode and h.BranchCode=d.BranchCode and h.TrxNo=d.TrxNo and h.TrxType=d.TrxType '
                                     +' where D.CompanyCode ='''+DCompany+''' And D.BranchCode ='''+DBranch+'''  and D.TRxType='''+SDS_SouceTrxNoTrxType.Value+''' '
-                                    +' and h.trxstatus = ''P'' and H.trxno= '''+SDS_SouceTrxNoTrxNo.Value+''' and H.warehousecode ='''+SDS_SouceTrxNoWareHouseCode.Value+''' and (Quantity-systemqty) <> 0 ';
+                                    +' and h.trxstatus = ''P'' and H.trxno= '''+SDS_SouceTrxNoTrxNo.Value+''' and H.warehousecode ='''+SDS_SouceTrxNoWareHouseCode.Value+''' and (Quantity-IsNull(systemqty,0)) <> 0 ';
 
       {,(Quantity-SystemQty) DiffQty }
       TempQry.Open;
@@ -635,6 +725,21 @@ begin
        SDS_DetailsCostPrice.ReadOnly := True;
        SDS_DetailsDiffQty.ReadOnly := True;
 
+end;
+
+procedure TfmBegBalForm.SDS_DetailsQuantityChange(Sender: TField);
+begin
+  SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
+end;
+
+procedure TfmBegBalForm.SDS_DetailsDiscountChange(Sender: TField);
+begin
+  SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
+end;
+
+procedure TfmBegBalForm.SDS_DetailsCostPriceChange(Sender: TField);
+begin
+  SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
 end;
 
 end.

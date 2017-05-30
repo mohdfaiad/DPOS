@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, DB, DBClient, SimpleDS, Mask, DBCtrls, Grids, DBGrids,LookUp,
-  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls;
+  VrControls, VrButtons, Buttons, ComCtrls, ExtCtrls, jpeg;
 
 type
   TfmPrTrxBaseForm = class(TForm)
@@ -85,10 +85,10 @@ type
     SDS_HeaderTrxDescAr: TStringField;
     SDS_HeaderTrxDescEn: TStringField;
     PG1: TPageControl;
-    TabSheet1: TTabSheet;
+    tshDetails: TTabSheet;
     GroupBox3: TGroupBox;
     grd_Details: TDBGrid;
-    TabSheet2: TTabSheet;
+    tshPayment: TTabSheet;
     grd_Payment: TDBGrid;
     qry_Type: TSimpleDataSet;
     qry_TypeValue: TStringField;
@@ -189,6 +189,8 @@ begin
   qry_Type.Close;
   qry_Type.Open;
 
+  btnEdit.Enabled := False;
+  btnDelete.Enabled := False;
   if SDS_HeaderTrxStatus.AsString <> 'P' Then begin
     btnEdit.Enabled := True;
     btnDelete.Enabled := True;
@@ -197,13 +199,13 @@ begin
   btnAdd.Enabled := True;
   btnSave.Enabled := False;
   BtnCancel.Enabled := False;
+
   grpData.Enabled := False;
   Co_WareHouse.Enabled := False;
   CO_Vendors.Enabled := False;
   grd_Payment.Enabled := False;
   grd_Details.Enabled := False;
   trxDate.Enabled := false;
-
   BtnShow.Enabled := True;
   Navigator.Enabled := True;
   EditMode := False;
@@ -224,6 +226,7 @@ begin
   grpData.Enabled := True;
   edtCode.Enabled := False;
   BtnShow.Enabled := True;
+  btnPost.Enabled := False;
   DBEdit1.Enabled := True;
   DBEdit2.Enabled := True;
   DBEdit3.Enabled := True;
@@ -274,11 +277,9 @@ begin
   end;
   if EditMode = False then
   begin
-  NewCode := GetDBValue('ISNULL(Max(CAST(TrxNo AS NUMERIC)),0) As LastTrxNo ','Tbl_PrTrxHeader',' and Companycode ='''+DCompany+''' And TrxType =''PRIV''');
-  NewCode := IntToStr(StrToInt(NewCode)+1) ;
-  SDS_HeaderTrxNo.AsString := PadLeft(NewCode,8);
-  end;
 
+
+  end;
   TotalDiscount := 0;
   TrxVal := 0;
    With SDS_Details do Begin
@@ -320,7 +321,9 @@ begin
      ShowMessage('Ì—ÃÌ ÷»ÿ «·œ›⁄« ');
      SDS_Payment.EnableControls;
      SDS_Details.EnableControls;
-     grd_Payment.SetFocus;
+     PG1.ActivePageIndex := 1;
+     btn_adjust.SetFocus;
+     //grd_Payment.SetFocus;
      Exit;
    end;
 
@@ -331,17 +334,26 @@ begin
    
   if ((SDS_Header.ApplyUpdates(0) = 0) AND (SDS_Details.ApplyUpdates(0) = 0) AND (SDS_Payment.ApplyUpdates(0) = 0)) then Begin
       ShowMessage(' „ «·Õ›‹‹Ÿ »‰Ã«Õ');
-        btnEdit.Enabled := True;
-        BtnOpen.Enabled := True;
-        btnAdd.Enabled := True;
-        btnSave.Enabled := False;
-        BtnCancel.Enabled := False;
-        btnDelete.Enabled := True;
-        grpData.Enabled := False;
-        Navigator.Enabled := True;
-        BtnShow.Enabled := BtnOpen.Enabled;
           SDS_Details.EnableControls;
           SDS_Payment.EnableControls;
+
+
+      btnEdit.Enabled := True;
+      BtnOpen.Enabled := True;
+      btnAdd.Enabled := True;
+      btnSave.Enabled := False;
+      BtnCancel.Enabled := False;
+      btnDelete.Enabled := True;
+      grpData.Enabled := False;
+      Co_WareHouse.Enabled := False;
+      CO_Vendors.Enabled := False;
+      grd_Payment.Enabled := False;
+      grd_Details.Enabled := False;
+      trxDate.Enabled := false;
+      BtnShow.Enabled := True;
+      btnPost.Enabled := True;
+      Navigator.Enabled := True;
+      EditMode := False;
 
   end
   else Begin
@@ -444,6 +456,7 @@ begin
   trxDate.Enabled := true;
   trxDate.DateTime := Date;
   BtnShow.Enabled := False;
+  btnPost.Enabled := False;
   EditMode := False;
   Navigator.Enabled := False;
   trxDate.SetFocus;
@@ -454,6 +467,7 @@ var lkp : Tlkp;
 begin
     lkp := Tlkp.Create(SDS_Header,nil);
     lkp.ShowModal;
+    SDS_HeaderAfterScroll(SDS_Header);
 end;
 
 procedure TfmPrTrxBaseForm.SDS_HeaderNewRecord(DataSet: TDataSet);
@@ -496,10 +510,8 @@ begin
  SDS_DetailsCompanyCode.Value := DCompany;
  SDS_DetailsTrxType.Value := 'PRIV';
  SDS_DetailsBranchCode.Value := DBranch;
- SDS_DetailsTrxNo.Value := SDS_HeaderTrxNo.AsString;
- SDS_DetailsWareHouseCode.Value := SDS_HeaderWareHouseCode.AsString;
- SDS_DetailsVendoreCode.Value := SDS_HeaderVendoreCode.AsString;
- SDS_DetailsTraLineNo.Value :=  'XX';
+ SDS_DetailsTrxNo.AsString := 'xx';
+ SDS_DetailsTraLineNo.AsInteger :=  SDS_Details.RecNo;
  SDS_DetailsQuantity.AsFloat := 1;
  SDS_DetailsDiscount.AsFloat := 0;
  SDS_DetailsCostPrice.AsFloat := 0;
@@ -648,7 +660,22 @@ begin
    SDS_Header.Close;
 
    ShowMessage(' „ «· —ÕÌ· »‰Ã«Õ');
-   BtnOpenClick(Sender);
+   BtnOpen.Enabled := True;
+   btnAdd.Enabled := True;
+   btnSave.Enabled := False;
+   BtnCancel.Enabled := False;
+   grpData.Enabled := False;
+   Co_WareHouse.Enabled := False;
+   CO_Vendors.Enabled := False;
+   grd_Payment.Enabled := False;
+   grd_Details.Enabled := False;
+   trxDate.Enabled := false;
+   BtnShow.Enabled := True;
+   Navigator.Enabled := True;
+   btnEdit.Enabled := False;
+   btnPost.Enabled := False;
+   btnDelete.Enabled := False;
+   EditMode := False;
 end;
 end;
 

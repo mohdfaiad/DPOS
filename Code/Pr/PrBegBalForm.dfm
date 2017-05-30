@@ -1,6 +1,6 @@
 object fmBegBalForm: TfmBegBalForm
-  Left = 147
-  Top = 26
+  Left = 79
+  Top = 10
   BorderStyle = bsDialog
   Caption = #1575#1604#1571#1585#1589#1583#1577' '#1575#1604#1573#1601#1578#1578#1575#1581#1610#1577' '#1604#1604#1605#1582#1575#1586#1606
   ClientHeight = 592
@@ -303,6 +303,7 @@ object fmBegBalForm: TfmBegBalForm
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 1
+      TabWidth = 900
       object TabSheet1: TTabSheet
         Caption = #1575#1604#1578#1601#1575#1589#1610#1604
         Font.Charset = DEFAULT_CHARSET
@@ -632,6 +633,7 @@ object fmBegBalForm: TfmBegBalForm
       DisplayLabel = #1575#1604#1603#1605#1610#1577
       DisplayWidth = 6
       FieldName = 'Quantity'
+      OnChange = SDS_DetailsQuantityChange
       Precision = 18
       Size = 8
     end
@@ -655,6 +657,7 @@ object fmBegBalForm: TfmBegBalForm
       DisplayLabel = #1575#1604#1578#1603#1604#1601#1577
       DisplayWidth = 6
       FieldName = 'CostPrice'
+      OnChange = SDS_DetailsCostPriceChange
       Precision = 18
       Size = 8
     end
@@ -663,6 +666,7 @@ object fmBegBalForm: TfmBegBalForm
       DisplayWidth = 6
       FieldName = 'Discount'
       Visible = False
+      OnChange = SDS_DetailsDiscountChange
       Precision = 18
       Size = 8
     end
@@ -917,5 +921,96 @@ object fmBegBalForm: TfmBegBalForm
     DataSet = SDS_SouceTrxNo
     Left = 504
     Top = 256
+  end
+  object qry_ItemCard: TSimpleDataSet
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.CommandText = 
+      'SELECT     CompanyCode, ItemCode, ItemService, ItemNameAr, ItemN' +
+      'ameEn, SUM(InQty) - SUM(OutQty) AS Balance, ISNULL(ReOrderQuanti' +
+      'ty, 0)  AS ReOrderQuantity'#13#10'FROM         (SELECT     H.CompanyCo' +
+      'de, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate, H.TrxStatus, H.' +
+      'TrxDescA, H.TrxDescE, H.TrxAmount, D.Barcode, D.ItemCode, '#13#10'    ' +
+      '                                          D.ItemService, I.ItemN' +
+      'ameAr, I.ItemNameEn, CASE WHEN H.TrxType = '#39'SART'#39' THEN D .Quanti' +
+      'ty ELSE 0 END AS InQty, '#13#10'                                      ' +
+      '        CASE WHEN H.TrxType = '#39'SAIV'#39' THEN D .Quantity ELSE 0 END' +
+      ' AS OutQty, D.ItemUnitCode, U.ItemUnitDescA, U.ItemUnitDescE, D.' +
+      'UnitTransValue, '#13#10'                                              ' +
+      'CASE WHEN H.TrxType = '#39'SART'#39' THEN 0 ELSE 1 END AS TrxOrder, I.Re' +
+      'OrderQuantity'#13#10'                        FROM         sa_POS_TrxHe' +
+      'ader AS H INNER JOIN'#13#10'                                          ' +
+      '    sa_POS_TrxDetails AS D ON H.CompanyCode = D.CompanyCode AND ' +
+      'H.BranchCode = D.BranchCode AND H.TrxNo = D.TrxNo AND '#13#10'        ' +
+      '                                      H.TrxType = D.TrxType AND ' +
+      'H.YearID = D.YearID AND H.PeriodID = D.PeriodID LEFT OUTER JOIN'#13 +
+      #10'                                              tbl_ItemUnit AS U' +
+      ' ON D.CompanyCode = U.CompanyCode AND D.ItemUnitCode = U.ItemUni' +
+      'tCode LEFT OUTER JOIN'#13#10'                                         ' +
+      '     tbl_ItemDefinition AS I ON D.CompanyCode = I.CompanyCode AN' +
+      'D D.ItemService = I.ItemService AND D.ItemCode = I.ItemCode'#13#10'   ' +
+      '                     WHERE     (H.TrxType IN ('#39'SAIV'#39', '#39'SART'#39'))'#13#10 +
+      '                        UNION ALL'#13#10'                        SELEC' +
+      'T     H.CompanyCode, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate' +
+      ', H.TrxStatus, H.TrxDescAr, H.TrxDescEn, H.TrxAmount, D.BarCode,' +
+      ' D.ItemCode, '#13#10'                                              D.I' +
+      'temService, I.ItemNameAr, I.ItemNameEn, CASE WHEN H.TrxType IN (' +
+      #39'IVBB'#39', '#39'PRIV'#39') THEN D .Quantity ELSE 0 END AS InQty, '#13#10'        ' +
+      '                                      CASE WHEN H.TrxType = '#39'PRR' +
+      'T'#39' THEN D .Quantity ELSE 0 END AS OutQty, D.ItemUnit, U.ItemUnit' +
+      'DescA, U.ItemUnitDescE, D.UnitTransValue, '#13#10'                    ' +
+      '                          CASE WHEN H.TrxType IN ('#39'IVBB'#39', '#39'PRIV'#39 +
+      ') THEN 0 ELSE 1 END AS TrxOrder, I.ReOrderQuantity'#13#10'            ' +
+      '            FROM         tbl_PrTrxHeader AS H INNER JOIN'#13#10'      ' +
+      '                                        tbl_PrTrxDetails AS D ON' +
+      ' H.CompanyCode = D.CompanyCode AND H.BranchCode = D.BranchCode A' +
+      'ND H.TrxNo = D.TrxNo AND '#13#10'                                     ' +
+      '         H.TrxType = D.TrxType LEFT OUTER JOIN'#13#10'                ' +
+      '                              tbl_ItemUnit AS U ON D.CompanyCode' +
+      ' = U.CompanyCode AND D.ItemUnit = U.ItemUnitCode LEFT OUTER JOIN' +
+      #13#10'                                              tbl_ItemDefiniti' +
+      'on AS I ON D.CompanyCode = I.CompanyCode AND D.ItemService = I.I' +
+      'temService AND D.ItemCode = I.ItemCode'#13#10'                        ' +
+      'WHERE     (H.TrxType IN ('#39'IVBB'#39', '#39'PRIV'#39', '#39'PRRT'#39'))) AS RD'#13#10'WHERE ' +
+      '    (CompanyCode = '#39'0001'#39') '#13#10'GROUP BY CompanyCode, ItemCode, Ite' +
+      'mService, ItemNameAr, ItemNameEn, ReOrderQuantity'#13#10'ORDER BY Item' +
+      'Code'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 16
+    Top = 274
+    object qry_ItemCardCompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Size = 4
+    end
+    object qry_ItemCardItemCode: TStringField
+      FieldName = 'ItemCode'
+      Size = 25
+    end
+    object qry_ItemCardItemService: TStringField
+      FieldName = 'ItemService'
+      Size = 4
+    end
+    object qry_ItemCardItemNameAr: TStringField
+      FieldName = 'ItemNameAr'
+      Size = 255
+    end
+    object qry_ItemCardItemNameEn: TStringField
+      FieldName = 'ItemNameEn'
+      Size = 255
+    end
+    object qry_ItemCardBalance: TFMTBCDField
+      FieldName = 'Balance'
+      Precision = 32
+      Size = 8
+    end
+    object qry_ItemCardReOrderQuantity: TFMTBCDField
+      FieldName = 'ReOrderQuantity'
+      Required = True
+      Precision = 18
+      Size = 8
+    end
   end
 end
