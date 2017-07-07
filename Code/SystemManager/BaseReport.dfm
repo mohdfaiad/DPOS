@@ -171,6 +171,7 @@ object fmBaseReports: TfmBaseReports
           ParentFont = False
           TabOrder = 4
           Visible = False
+          OnKeyDown = cbo_ItemKeyDown
         end
         object rg_ReportType: TRadioGroup
           Left = 83
@@ -2386,7 +2387,6 @@ object fmBaseReports: TfmBaseReports
     end
   end
   object qry_ItemCard: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.CommandText = 

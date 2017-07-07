@@ -21,7 +21,7 @@ object Lkp: TLkp
   TextHeight = 13
   object LkpGrid: TDBGrid
     Left = 0
-    Top = 31
+    Top = 30
     Width = 621
     Height = 470
     Align = alBottom

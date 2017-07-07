@@ -430,6 +430,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
             TitleFont.Name = 'Times New Roman'
             TitleFont.Style = []
             OnEnter = grd_DetailsEnter
+            OnKeyDown = grd_DetailsKeyDown
           end
         end
       end

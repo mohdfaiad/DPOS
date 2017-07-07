@@ -399,6 +399,8 @@ type
     procedure rg_Sales_AllItemsClick(Sender: TObject);
     procedure rg_Purchase_AllItemsClick(Sender: TObject);
     procedure btnPrintPurchaseRepotClick(Sender: TObject);
+    procedure cbo_ItemKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -412,7 +414,7 @@ var
 
 implementation
 
-uses GFunctions, DateUtils, GVariable, Main;
+uses GFunctions, DateUtils, GVariable, Main, LookUp;
 
 {$R *.dfm}
 
@@ -787,6 +789,23 @@ begin
     pp_Purchases.ShowPrintDialog := True;
     pp_Purchases.Print;
 
+end;
+
+procedure TfmBaseReports.cbo_ItemKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+If Key<>VK_F2 then Exit
+ else begin
+    lkp := Tlkp.Create(qry_Items,nil);
+    lkp.ShowModal;
+    qry_ItemCard.Open;
+    qry_ItemCard.Edit;
+    qry_ItemCardItemCode.AsString := qry_ItemsItemCode.AsString;
+    qry_ItemCardItemService.AsString := qry_ItemsItemService.AsString;
+    qry_ItemCardItemNameAr.AsString := qry_ItemsItemNameAr.AsString;
+    qry_ItemCardItemNameEn.AsString := qry_ItemsItemNameEn.AsString;
+    qry_ItemCardItemUnitCode.AsString := qry_ItemsItemUnitCode.AsString;
+  end;
 end;
 
 end.

@@ -154,6 +154,8 @@ type
     procedure btn_adjustClick(Sender: TObject);
     procedure btnPostClick(Sender: TObject);
     procedure grd_DetailsEnter(Sender: TObject);
+    procedure grd_DetailsKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -693,6 +695,23 @@ begin
    Co_WareHouse.SetFocus;
    Exit;
  end;
+end;
+
+procedure TfmPrTrxBaseForm.grd_DetailsKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+ If Key<>VK_F2 then Exit
+ else begin
+  if grd_Details.SelectedField.FieldName = 'ItemCode' then begin
+    lkp := Tlkp.Create(SDS_ItemDef,nil);
+    lkp.ShowModal;
+    SDS_Details.Edit;
+    SDS_DetailsItemCode.AsString := SDS_ItemDefItemCode.AsString;
+    SDS_DetailsItemService.AsString := SDS_ItemDefItemService.AsString;
+    SDS_DetailsItemNameAr.AsString := SDS_ItemDefItemNameAr.AsString;
+  end;
+ end;
+
 end;
 
 end.
