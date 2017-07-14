@@ -1648,10 +1648,12 @@ begin
         + '''  And H.BranchCode = ''' + SDS_HeaderSourceBranchCode.AsString
         + '''  And H.TrxType = ''SAIV'' '
         + '    And ((SourceDocNo IS NULL) Or (SourceDocNo='''')) '
+        {
         + ' And Not Exists(SELECT * FROM sa_POS_TrxHeader As HH'
         + ' WHERE (HH.SourceDocNo = H.TrxNo) AND (HH.SourceDocType = H.TrxType) '
         + ' AND (HH.SourceDocYearID = H.YearID) AND (HH.SourceDocPeriodID = H.PeriodID) '
-        + ' AND (HH.SourceBranchCode = H.BranchCode))';
+        + ' AND (HH.SourceBranchCode = H.BranchCode))'
+        };
       qry_SourceDoc.Open;
    end;
 end;
