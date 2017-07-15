@@ -23,7 +23,7 @@ object fmBaseReports: TfmBaseReports
     Top = 0
     Width = 878
     Height = 321
-    ActivePage = tsh_ItemCard
+    ActivePage = tsh_Sales
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -1476,164 +1476,6 @@ object fmBaseReports: TfmBaseReports
     UserName = 'PPL_ItemCard'
     Left = 62
     Top = 1
-    object PPL_ItemCardppField1: TppField
-      FieldAlias = 'CompanyCode'
-      FieldName = 'CompanyCode'
-      FieldLength = 0
-      DisplayWidth = 0
-      Position = 0
-    end
-    object PPL_ItemCardppField2: TppField
-      FieldAlias = 'BranchCode'
-      FieldName = 'BranchCode'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 1
-    end
-    object PPL_ItemCardppField3: TppField
-      FieldAlias = 'TrxNo'
-      FieldName = 'TrxNo'
-      FieldLength = 10
-      DisplayWidth = 10
-      Position = 2
-    end
-    object PPL_ItemCardppField4: TppField
-      FieldAlias = 'TrxType'
-      FieldName = 'TrxType'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 3
-    end
-    object PPL_ItemCardppField5: TppField
-      FieldAlias = 'TrxDate'
-      FieldName = 'TrxDate'
-      FieldLength = 0
-      DataType = dtDateTime
-      DisplayWidth = 34
-      Position = 4
-    end
-    object PPL_ItemCardppField6: TppField
-      FieldAlias = 'TrxStatus'
-      FieldName = 'TrxStatus'
-      FieldLength = 1
-      DisplayWidth = 1
-      Position = 5
-    end
-    object PPL_ItemCardppField7: TppField
-      FieldAlias = 'TrxDescA'
-      FieldName = 'TrxDescA'
-      FieldLength = 4000
-      DisplayWidth = 4000
-      Position = 6
-    end
-    object PPL_ItemCardppField8: TppField
-      FieldAlias = 'TrxDescE'
-      FieldName = 'TrxDescE'
-      FieldLength = 4000
-      DisplayWidth = 4000
-      Position = 7
-    end
-    object PPL_ItemCardppField9: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'TrxAmount'
-      FieldName = 'TrxAmount'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 19
-      Position = 8
-    end
-    object PPL_ItemCardppField10: TppField
-      FieldAlias = 'Barcode'
-      FieldName = 'Barcode'
-      FieldLength = 30
-      DisplayWidth = 30
-      Position = 9
-    end
-    object PPL_ItemCardppField11: TppField
-      FieldAlias = 'ItemCode'
-      FieldName = 'ItemCode'
-      FieldLength = 25
-      DisplayWidth = 25
-      Position = 10
-    end
-    object PPL_ItemCardppField12: TppField
-      FieldAlias = 'ItemService'
-      FieldName = 'ItemService'
-      FieldLength = 4
-      DisplayWidth = 4
-      Position = 11
-    end
-    object PPL_ItemCardppField13: TppField
-      FieldAlias = 'ItemNameAr'
-      FieldName = 'ItemNameAr'
-      FieldLength = 255
-      DisplayWidth = 255
-      Position = 12
-    end
-    object PPL_ItemCardppField14: TppField
-      FieldAlias = 'ItemNameEn'
-      FieldName = 'ItemNameEn'
-      FieldLength = 255
-      DisplayWidth = 255
-      Position = 13
-    end
-    object PPL_ItemCardppField15: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'InQty'
-      FieldName = 'InQty'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 19
-      Position = 14
-    end
-    object PPL_ItemCardppField16: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'OutQty'
-      FieldName = 'OutQty'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 19
-      Position = 15
-    end
-    object PPL_ItemCardppField17: TppField
-      FieldAlias = 'ItemUnitCode'
-      FieldName = 'ItemUnitCode'
-      FieldLength = 6
-      DisplayWidth = 6
-      Position = 16
-    end
-    object PPL_ItemCardppField18: TppField
-      FieldAlias = 'ItemUnitDescA'
-      FieldName = 'ItemUnitDescA'
-      FieldLength = 75
-      DisplayWidth = 75
-      Position = 17
-    end
-    object PPL_ItemCardppField19: TppField
-      FieldAlias = 'ItemUnitDescE'
-      FieldName = 'ItemUnitDescE'
-      FieldLength = 75
-      DisplayWidth = 75
-      Position = 18
-    end
-    object PPL_ItemCardppField20: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'UnitTransValue'
-      FieldName = 'UnitTransValue'
-      FieldLength = 8
-      DataType = dtDouble
-      DisplayWidth = 19
-      Position = 19
-    end
-    object PPL_ItemCardppField21: TppField
-      Alignment = taRightJustify
-      FieldAlias = 'TrxOrder'
-      FieldName = 'TrxOrder'
-      FieldLength = 0
-      DataType = dtInteger
-      DisplayWidth = 10
-      Position = 20
-    end
   end
   object pp_Sales: TppReport
     AutoStop = False
@@ -1926,6 +1768,16 @@ object fmBaseReports: TfmBaseReports
         mmBottomOffset = 0
         mmHeight = 32015
         mmPrintPosition = 0
+        object ppShape25: TppShape
+          UserName = 'Shape5'
+          Shape = stRoundRect
+          mmHeight = 14288
+          mmLeft = 4498
+          mmTop = 6085
+          mmWidth = 80698
+          BandType = 3
+          GroupNo = 0
+        end
         object ppShape8: TppShape
           UserName = 'Shape1'
           Shape = stRoundRect
@@ -1997,7 +1849,7 @@ object fmBaseReports: TfmBaseReports
           Transparent = True
           mmHeight = 5027
           mmLeft = 239978
-          mmTop = 3969
+          mmTop = 6615
           mmWidth = 21167
           BandType = 3
           GroupNo = 0
@@ -2018,9 +1870,9 @@ object fmBaseReports: TfmBaseReports
           TextAlignment = taCentered
           Transparent = True
           mmHeight = 5027
-          mmLeft = 85725
-          mmTop = 3175
-          mmWidth = 21431
+          mmLeft = 144992
+          mmTop = 6085
+          mmWidth = 27517
           BandType = 3
           GroupNo = 0
         end
@@ -2170,8 +2022,8 @@ object fmBaseReports: TfmBaseReports
           TextAlignment = taCentered
           Transparent = True
           mmHeight = 5027
-          mmLeft = 83608
-          mmTop = 13494
+          mmLeft = 144198
+          mmTop = 13758
           mmWidth = 29369
           BandType = 3
           GroupNo = 0
@@ -2195,7 +2047,7 @@ object fmBaseReports: TfmBaseReports
           DataPipelineName = 'PPL_Sales_Purchases'
           mmHeight = 4233
           mmLeft = 211138
-          mmTop = 3704
+          mmTop = 6350
           mmWidth = 22754
           BandType = 3
           GroupNo = 0
@@ -2218,8 +2070,8 @@ object fmBaseReports: TfmBaseReports
           Transparent = True
           DataPipelineName = 'PPL_Sales_Purchases'
           mmHeight = 4233
-          mmLeft = 44450
-          mmTop = 3969
+          mmLeft = 104775
+          mmTop = 6615
           mmWidth = 36777
           BandType = 3
           GroupNo = 0
@@ -2242,9 +2094,9 @@ object fmBaseReports: TfmBaseReports
           Transparent = True
           DataPipelineName = 'PPL_Sales_Purchases'
           mmHeight = 4233
-          mmLeft = 116417
+          mmLeft = 174361
           mmTop = 14023
-          mmWidth = 117740
+          mmWidth = 59796
           BandType = 3
           GroupNo = 0
         end
@@ -2266,8 +2118,8 @@ object fmBaseReports: TfmBaseReports
           Transparent = True
           DataPipelineName = 'PPL_Sales_Purchases'
           mmHeight = 4233
-          mmLeft = 44186
-          mmTop = 14023
+          mmLeft = 104775
+          mmTop = 14288
           mmWidth = 37571
           BandType = 3
           GroupNo = 0
@@ -2291,6 +2143,212 @@ object fmBaseReports: TfmBaseReports
           mmLeft = 220398
           mmTop = 24077
           mmWidth = 41275
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppLabel56: TppLabel
+          UserName = 'Label56'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          Caption = #1606#1602#1583#1610
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Times New Roman'
+          Font.Size = 12
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          mmHeight = 5027
+          mmLeft = 68527
+          mmTop = 7144
+          mmWidth = 11377
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppLabel58: TppLabel
+          UserName = 'Label58'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          Caption = #1588#1576#1603#1577' '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Times New Roman'
+          Font.Size = 12
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          mmHeight = 5027
+          mmLeft = 68527
+          mmTop = 14552
+          mmWidth = 13758
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppLabel59: TppLabel
+          UserName = 'Label59'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          Caption = #1570#1580#1604
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Times New Roman'
+          Font.Size = 12
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          mmHeight = 4995
+          mmLeft = 29263
+          mmTop = 15081
+          mmWidth = 5165
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppLabel60: TppLabel
+          UserName = 'Label60'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          Caption = #1601#1610#1586#1575
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Times New Roman'
+          Font.Size = 12
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          mmHeight = 4995
+          mmLeft = 29369
+          mmTop = 7673
+          mmWidth = 5249
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppLabel61: TppLabel
+          UserName = 'Label61'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          Caption = #1591#1585#1610#1602#1600#1600#1600#1577' '#1575#1604#1583#1601#1600#1600#1600#1600#1593
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Name = 'Arial'
+          Font.Size = 14
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          mmHeight = 6085
+          mmLeft = 26458
+          mmTop = 0
+          mmWidth = 34660
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppDBText45: TppDBText
+          UserName = 'DBText45'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          DataField = 'Cash'
+          DataPipeline = PPL_Sales_Purchases
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          DataPipelineName = 'PPL_Sales_Purchases'
+          mmHeight = 4233
+          mmLeft = 44450
+          mmTop = 7408
+          mmWidth = 22754
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppDBText46: TppDBText
+          UserName = 'DBText46'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          DataField = 'ATM'
+          DataPipeline = PPL_Sales_Purchases
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          DataPipelineName = 'PPL_Sales_Purchases'
+          mmHeight = 4233
+          mmLeft = 44186
+          mmTop = 14288
+          mmWidth = 22754
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppDBText47: TppDBText
+          UserName = 'DBText47'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          DataField = 'Visa'
+          DataPipeline = PPL_Sales_Purchases
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          DataPipelineName = 'PPL_Sales_Purchases'
+          mmHeight = 4233
+          mmLeft = 5292
+          mmTop = 7673
+          mmWidth = 22754
+          BandType = 3
+          GroupNo = 0
+        end
+        object ppDBText48: TppDBText
+          UserName = 'DBText48'
+          Border.BorderPositions = []
+          Border.Color = clBlack
+          Border.Style = psSolid
+          Border.Visible = False
+          Border.Weight = 1.000000000000000000
+          DataField = 'Credit'
+          DataPipeline = PPL_Sales_Purchases
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Name = 'Arial'
+          Font.Size = 10
+          Font.Style = [fsBold]
+          TextAlignment = taCentered
+          Transparent = True
+          DataPipelineName = 'PPL_Sales_Purchases'
+          mmHeight = 4233
+          mmLeft = 5556
+          mmTop = 14552
+          mmWidth = 22754
           BandType = 3
           GroupNo = 0
         end

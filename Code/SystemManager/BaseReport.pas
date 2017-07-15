@@ -390,6 +390,16 @@ type
     ppLine63: TppLine;
     ppLine64: TppLine;
     ppDBCalc20: TppDBCalc;
+    ppLabel56: TppLabel;
+    ppShape25: TppShape;
+    ppLabel58: TppLabel;
+    ppLabel59: TppLabel;
+    ppLabel60: TppLabel;
+    ppLabel61: TppLabel;
+    ppDBText45: TppDBText;
+    ppDBText46: TppDBText;
+    ppDBText47: TppDBText;
+    ppDBText48: TppDBText;
     procedure btnPrintItemCardReportClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
@@ -661,7 +671,7 @@ begin
       qry_Sales_Purchases.Close;
       qry_Sales_Purchases.DataSet.Close;
       qry_Sales_Purchases.DataSet.CommandText := ''
-        + ' SELECT     CompanyCode, BranchCode, TrxNo, TrxType, TrxDate, TrxStatus, TrxDescA, TrxDescE, TrxAmount, Cash, ATM, Visa, Checks, Credit, Cast ( Null As NvarChar(20)) AS Barcode,  '
+        + ' SELECT   Distinct  CompanyCode, BranchCode, TrxNo, TrxType, TrxDate, TrxStatus, TrxDescA, TrxDescE, TrxAmount, Cash, ATM, Visa, Checks, Credit, Cast ( Null As NvarChar(20)) AS Barcode,  '
         + '            Cast ( Null As NvarChar(20)) AS ItemCode, Cast ( Null As NvarChar(20)) AS ItemService, Cast ( Null As NvarChar(20)) AS ItemNameAr, Cast ( Null As NvarChar(20)) AS ItemNameEn, '
         + '            Cast ( Null As NvarChar(20)) AS ItemUnitCode, Cast ( Null As NvarChar(20)) AS ItemUnitDescA, Cast ( Null As NvarChar(20)) AS ItemUnitDescE,  Cast ( 0.0 As decimal(18,4)) AS UnitTransValue,   '
         + '            Cast ( 0 As Integer) AS TrxOrder, Cast (0.0 As decimal(18,4)) AS Quantity, Cast ( 0.0 As decimal(18,4)) AS ItemPrice, Cast ( 0.0 As decimal(18,4)) AS Discount, Cast ( 0.0 As decimal(18,4)) AS NetPrice '
