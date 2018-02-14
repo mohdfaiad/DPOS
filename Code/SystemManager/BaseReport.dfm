@@ -1,9 +1,9 @@
 object fmBaseReports: TfmBaseReports
-  Left = 130
-  Top = 252
+  Left = 229
+  Top = 233
   BorderStyle = bsDialog
   Caption = #1575#1604#1578#1602#1575#1585#1610#1585
-  ClientHeight = 321
+  ClientHeight = 428
   ClientWidth = 878
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@ object fmBaseReports: TfmBaseReports
     Left = 0
     Top = 0
     Width = 878
-    Height = 321
+    Height = 428
     ActivePage = tsh_Sales
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
@@ -39,15 +39,15 @@ object fmBaseReports: TfmBaseReports
         Left = 0
         Top = 0
         Width = 870
-        Height = 290
+        Height = 393
         Align = alTop
         TabOrder = 0
         DesignSize = (
           870
-          290)
+          393)
         object Label4: TLabel
           Left = 786
-          Top = 82
+          Top = 85
           Width = 48
           Height = 19
           Anchors = []
@@ -61,7 +61,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label9: TLabel
           Left = 291
-          Top = 78
+          Top = 80
           Width = 49
           Height = 19
           Anchors = []
@@ -75,7 +75,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label1: TLabel
           Left = 788
-          Top = 131
+          Top = 152
           Width = 45
           Height = 19
           Anchors = []
@@ -89,7 +89,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label2: TLabel
           Left = 291
-          Top = 134
+          Top = 156
           Width = 43
           Height = 19
           Anchors = []
@@ -188,7 +188,7 @@ object fmBaseReports: TfmBaseReports
         end
         object GroupBox2: TGroupBox
           Left = 2
-          Top = 231
+          Top = 334
           Width = 866
           Height = 57
           Align = alBottom
@@ -233,15 +233,15 @@ object fmBaseReports: TfmBaseReports
         Left = 0
         Top = 0
         Width = 870
-        Height = 288
+        Height = 387
         Align = alTop
         TabOrder = 0
         DesignSize = (
           870
-          288)
+          387)
         object Label5: TLabel
           Left = 778
-          Top = 78
+          Top = 82
           Width = 48
           Height = 19
           Anchors = []
@@ -255,7 +255,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label10: TLabel
           Left = 291
-          Top = 80
+          Top = 85
           Width = 49
           Height = 19
           Anchors = []
@@ -269,7 +269,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label11: TLabel
           Left = 788
-          Top = 131
+          Top = 144
           Width = 45
           Height = 19
           Anchors = []
@@ -283,11 +283,25 @@ object fmBaseReports: TfmBaseReports
         end
         object Label12: TLabel
           Left = 291
-          Top = 134
+          Top = 148
           Width = 43
           Height = 19
           Anchors = []
           Caption = #1575#1604#1606#1600#1600#1600#1600#1600#1608#1593
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Times New Roman'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label13: TLabel
+          Left = 780
+          Top = 258
+          Width = 62
+          Height = 19
+          Anchors = []
+          Caption = #1575#1604#1605#1580#1605#1600#1608#1593#1600#1600#1577
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clRed
           Font.Height = -16
@@ -331,9 +345,9 @@ object fmBaseReports: TfmBaseReports
         end
         object GroupBox3: TGroupBox
           Left = 2
-          Top = 229
+          Top = 330
           Width = 866
-          Height = 57
+          Height = 55
           Align = alBottom
           TabOrder = 3
           object btnPrintSalesRepot: TButton
@@ -401,6 +415,7 @@ object fmBaseReports: TfmBaseReports
           ParentFont = False
           TabOrder = 5
           Visible = False
+          OnKeyDown = cbo_ItemKeyDown
         end
         object rg_Sales_ReportType: TRadioGroup
           Left = 83
@@ -415,6 +430,42 @@ object fmBaseReports: TfmBaseReports
           ParentBiDiMode = False
           TabOrder = 6
         end
+        object rg_Sales_AllIGroups: TRadioGroup
+          Left = 571
+          Top = 229
+          Width = 185
+          Height = 78
+          BiDiMode = bdRightToLeft
+          ItemIndex = 0
+          Items.Strings = (
+            #1603#1600#1600#1600#1604' '#1575#1604#1605#1580#1605#1608#1593#1600#1600#1575#1578
+            #1605#1580#1605#1608#1593#1577' '#1605#1581#1600#1600#1600#1583#1583#1577)
+          ParentBiDiMode = False
+          TabOrder = 7
+          OnClick = rg_Sales_AllIGroupsClick
+        end
+        object cbo_Sales_Groups: TDBLookupComboBox
+          Left = 570
+          Top = 310
+          Width = 184
+          Height = 25
+          BiDiMode = bdRightToLeft
+          DataField = 'ItemCode'
+          DataSource = DS_ItemCard
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Times New Roman'
+          Font.Style = [fsBold]
+          KeyField = 'ItemGroupCode'
+          ListField = 'ItemGroupNameAr'
+          ListSource = DS_Groups
+          ParentBiDiMode = False
+          ParentFont = False
+          TabOrder = 8
+          Visible = False
+          OnKeyDown = cbo_ItemKeyDown
+        end
       end
     end
     object tsh_Purchases: TTabSheet
@@ -424,15 +475,15 @@ object fmBaseReports: TfmBaseReports
         Left = 0
         Top = 0
         Width = 870
-        Height = 288
+        Height = 385
         Align = alTop
         TabOrder = 0
         DesignSize = (
           870
-          288)
+          385)
         object Label3: TLabel
           Left = 778
-          Top = 78
+          Top = 80
           Width = 48
           Height = 19
           Anchors = []
@@ -446,7 +497,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label6: TLabel
           Left = 291
-          Top = 80
+          Top = 83
           Width = 49
           Height = 19
           Anchors = []
@@ -460,7 +511,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label7: TLabel
           Left = 788
-          Top = 131
+          Top = 145
           Width = 45
           Height = 19
           Anchors = []
@@ -474,7 +525,7 @@ object fmBaseReports: TfmBaseReports
         end
         object Label8: TLabel
           Left = 291
-          Top = 134
+          Top = 149
           Width = 43
           Height = 19
           Anchors = []
@@ -522,7 +573,7 @@ object fmBaseReports: TfmBaseReports
         end
         object GroupBox4: TGroupBox
           Left = 2
-          Top = 229
+          Top = 326
           Width = 866
           Height = 57
           Align = alBottom
@@ -592,6 +643,7 @@ object fmBaseReports: TfmBaseReports
           ParentFont = False
           TabOrder = 5
           Visible = False
+          OnKeyDown = cbo_ItemKeyDown
         end
         object rg_Purchase_ReportType: TRadioGroup
           Left = 83
@@ -1752,8 +1804,66 @@ object fmBaseReports: TfmBaseReports
     end
     object ppSummaryBand2: TppSummaryBand
       mmBottomOffset = 0
-      mmHeight = 1588
+      mmHeight = 10054
       mmPrintPosition = 0
+      object ppLine65: TppLine
+        UserName = 'Line65'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        ParentWidth = True
+        Weight = 0.750000000000000000
+        mmHeight = 265
+        mmLeft = 0
+        mmTop = 6879
+        mmWidth = 266701
+        BandType = 7
+      end
+      object ppLabel62: TppLabel
+        UserName = 'Label62'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = ':   '#1575#1604#1575#1580#1605#1575#1604#1600#1600#1600#1610' '#1575#1604#1603#1604#1610
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 12
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 4995
+        mmLeft = 50006
+        mmTop = 1058
+        mmWidth = 26755
+        BandType = 7
+      end
+      object ppDBCalc21: TppDBCalc
+        UserName = 'DBCalc21'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'NetPrice'
+        DataPipeline = PPL_Sales_Purchases
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Name = 'Arial'
+        Font.Size = 10
+        Font.Style = [fsBold]
+        TextAlignment = taCentered
+        Transparent = True
+        DataPipelineName = 'PPL_Sales_Purchases'
+        mmHeight = 4233
+        mmLeft = 6879
+        mmTop = 1852
+        mmWidth = 36248
+        BandType = 7
+      end
     end
     object ppGroup2: TppGroup
       BreakName = 'TrxNo'
@@ -2600,6 +2710,7 @@ object fmBaseReports: TfmBaseReports
     object qry_ItemsItemService: TStringField
       FieldName = 'ItemService'
       Required = True
+      Visible = False
       FixedChar = True
       Size = 3
     end
@@ -5891,5 +6002,37 @@ object fmBaseReports: TfmBaseReports
     end
     object ppParameterList6: TppParameterList
     end
+  end
+  object qry_Groups: TSimpleDataSet
+    Tag = 1
+    Aggregates = <>
+    Connection = fmMainForm.MainConnection
+    DataSet.SchemaName = 'dbo'
+    DataSet.CommandText = 
+      'Select ItemGroupCode ,ItemGroupNameAr , ItemGroupNameEn'#13#10'From   ' +
+      'tbl_ItemGroup'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 2
+    Top = 236
+    object qry_GroupsItemGroupCode: TStringField
+      FieldName = 'ItemGroupCode'
+      Required = True
+      Size = 6
+    end
+    object qry_GroupsItemGroupNameAr: TStringField
+      FieldName = 'ItemGroupNameAr'
+      Size = 255
+    end
+    object qry_GroupsItemGroupNameEn: TStringField
+      FieldName = 'ItemGroupNameEn'
+      Size = 255
+    end
+  end
+  object DS_Groups: TDataSource
+    DataSet = qry_Groups
+    Left = 32
+    Top = 236
   end
 end

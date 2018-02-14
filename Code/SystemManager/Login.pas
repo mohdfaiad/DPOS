@@ -74,6 +74,7 @@ begin
     gPOS_ReplacementDuring := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''ReplacmentDuring'' ');
     gInvoiceType := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''InvoiceType'' ');
     gCountOfInvPrint := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''CountOfInvPrint'' ');
+    gApplyTaxValue  := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''ApplyTaxValue'' ');
      ModalResult := mrOk;
      If gLoginFrom_POS_Screen = False
      then fmMainForm.Show;

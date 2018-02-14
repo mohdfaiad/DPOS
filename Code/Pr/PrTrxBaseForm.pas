@@ -206,7 +206,8 @@ begin
   Co_WareHouse.Enabled := False;
   CO_Vendors.Enabled := False;
   grd_Payment.Enabled := False;
-  grd_Details.Enabled := False;
+  grd_Details.Enabled := True;
+  grd_Details.ReadOnly := True;
   trxDate.Enabled := false;
   BtnShow.Enabled := True;
   Navigator.Enabled := True;
@@ -238,7 +239,8 @@ begin
   Co_WareHouse.Enabled := True;
   CO_Vendors.Enabled := True;
   grd_Payment.Enabled := True;
-  grd_Details.Enabled := true;
+  grd_Details.Enabled := True;
+  grd_Details.ReadOnly := False;
   trxDate.Enabled := True;
   Navigator.Enabled := False;
   EditMode := True;
@@ -350,7 +352,8 @@ begin
       Co_WareHouse.Enabled := False;
       CO_Vendors.Enabled := False;
       grd_Payment.Enabled := False;
-      grd_Details.Enabled := False;
+      grd_Details.Enabled := True;
+      grd_Details.ReadOnly := True;
       trxDate.Enabled := false;
       BtnShow.Enabled := True;
       btnPost.Enabled := True;
@@ -454,7 +457,8 @@ begin
   Co_WareHouse.Enabled := True;
   CO_Vendors.Enabled := True;
   grd_Payment.Enabled := True;
-  grd_Details.Enabled := true;
+  grd_Details.Enabled := True;
+  grd_Details.ReadOnly := False;
   trxDate.Enabled := true;
   trxDate.DateTime := Date;
   BtnShow.Enabled := False;
@@ -670,7 +674,8 @@ begin
    Co_WareHouse.Enabled := False;
    CO_Vendors.Enabled := False;
    grd_Payment.Enabled := False;
-   grd_Details.Enabled := False;
+   grd_Details.Enabled := True;
+   grd_Details.ReadOnly := True;
    trxDate.Enabled := false;
    BtnShow.Enabled := True;
    Navigator.Enabled := True;
@@ -711,6 +716,7 @@ begin
     SDS_DetailsItemNameAr.AsString := SDS_ItemDefItemNameAr.AsString;
   end;
  end;
+ SDS_ItemDef.Refresh;
 
 end;
 

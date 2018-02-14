@@ -235,6 +235,7 @@ begin
          LicenseNo := ReadString('ERP_Option', 'LicenseNo', '');
          DCompany :=ReadString('ERP_Option', 'DCompany', '');
          DBranch := ReadString('ERP_Option', 'DBranch', '');
+         gPOSExtraInternalPrinter := ReadString('ERP_Option', 'ExtraInternalPrinter', '');
      end;
      vIni.Free;
      MainConnection.Connected := False;

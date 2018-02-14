@@ -122,6 +122,7 @@ type
     qry_ItemCardItemNameEn: TStringField;
     qry_ItemCardBalance: TFMTBCDField;
     qry_ItemCardReOrderQuantity: TFMTBCDField;
+    SDS_ItemDefItemService: TStringField;
     procedure BtnOpenClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
@@ -142,6 +143,8 @@ type
     procedure SDS_DetailsQuantityChange(Sender: TField);
     procedure SDS_DetailsDiscountChange(Sender: TField);
     procedure SDS_DetailsCostPriceChange(Sender: TField);
+    procedure grd_DetailsKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     EditMode : Boolean;
@@ -196,7 +199,8 @@ begin
   BtnShow.Enabled := True;
   Navigator.Enabled := True;
   EditMode := False;
-  grd_Details.Enabled := False;
+  grd_Details.Enabled := True;
+  grd_Details.ReadOnly := True;
 end;
 
 procedure TfmBegBalForm.btnEditClick(Sender: TObject);
@@ -217,6 +221,7 @@ begin
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
   grd_Details.Enabled := True;
+  grd_Details.ReadOnly := False;
   trxDate.Enabled := True;
   Navigator.Enabled := False;
   grpData.Enabled := True;
@@ -226,7 +231,7 @@ end;
 procedure TfmBegBalForm.btnSaveClick(Sender: TObject);
 Var IsDuplicated : Boolean;
     TrxVal , TotalDiscount : Real;
-    NewCode : String;
+    NewCode , DeleteSQL : String;
 begin
   {
   If SDS_HeaderTrxNo.AsString = '' Then
@@ -281,7 +286,8 @@ begin
         BtnShow.Enabled := BtnOpen.Enabled;
         btnPost.Enabled := True;
 
-        grd_Details.Enabled := False;
+        grd_Details.Enabled := True;
+        grd_Details.ReadOnly := True;
         SDS_Details.EnableControls;
 
   end
@@ -393,7 +399,8 @@ begin
   DBEdit2.Enabled := True;
   DBEdit6.Enabled := True;
   Co_WareHouse.Enabled := True;
-  grd_Details.Enabled := true;
+  grd_Details.Enabled := True;
+  grd_Details.ReadOnly := False;
   trxDate.Enabled := true;
   trxDate.DateTime := Date;
   BtnShow.Enabled := False;
@@ -642,7 +649,8 @@ begin
    BtnCancel.Enabled := False;
    grpData.Enabled := False;
    Co_WareHouse.Enabled := False;
-   grd_Details.Enabled := False;
+   grd_Details.Enabled := True;
+   grd_Details.ReadOnly := True;
    trxDate.Enabled := false;
    BtnShow.Enabled := True;
    Navigator.Enabled := True;
@@ -740,6 +748,23 @@ end;
 procedure TfmBegBalForm.SDS_DetailsCostPriceChange(Sender: TField);
 begin
   SDS_DetailsNetPrice.AsFloat := (SDS_DetailsCostPrice.AsFloat * SDS_DetailsQuantity.AsFloat) - SDS_DetailsDiscount.AsFloat;
+end;
+
+procedure TfmBegBalForm.grd_DetailsKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+ If Key<>VK_F2 then Exit
+ else begin
+  if grd_Details.SelectedField.FieldName = 'ItemCode' then begin
+    lkp := Tlkp.Create(SDS_ItemDef,nil);
+    lkp.ShowModal;
+    SDS_Details.Edit;
+    SDS_DetailsItemCode.AsString := SDS_ItemDefItemCode.AsString;
+    SDS_DetailsItemService.AsString := SDS_ItemDefItemService.AsString;
+    SDS_DetailsItemNameAr.AsString := SDS_ItemDefItemNameAr.AsString;
+  end;
+ end;
+ SDS_ItemDef.Refresh;
 end;
 
 end.

@@ -1,10 +1,10 @@
 object fmItemGroupSections: TfmItemGroupSections
-  Left = 192
+  Left = 0
   Top = 124
   BorderStyle = bsDialog
   Caption = #1571#1602#1587#1575#1605' '#1605#1580#1605#1608#1593#1575#1578' '#1575#1604#1571#1589#1606#1575#1601
   ClientHeight = 499
-  ClientWidth = 1016
+  ClientWidth = 1008
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

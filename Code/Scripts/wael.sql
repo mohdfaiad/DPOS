@@ -404,5 +404,36 @@ ALTER TABLE [dbo].[tbl_POS_Definition] ADD
 
 GO
 
+Alter Table tbl_PrTrxDetails Alter Column ItemService NvarChar(3)
+GO
+ALTER TABLE [dbo].[tbl_PrTrxDetails]  WITH CHECK ADD  CONSTRAINT [FK_tbl_PrTrxDetails_tbl_PrTrxDetails] FOREIGN KEY([CompanyCode], [ItemCode], [ItemService])
+REFERENCES [dbo].[tbl_ItemDefinition] ([CompanyCode], [ItemCode], [ItemService])
+GO
+ALTER TABLE [dbo].[tbl_PrTrxDetails] CHECK CONSTRAINT [FK_tbl_PrTrxDetails_tbl_PrTrxDetails]
+GO
 
 
+ALTER TABLE [dbo].[sa_POS_TrxDetails]  WITH CHECK ADD  CONSTRAINT [FK_sa_POS_TrxDetails_tbl_ItemDefinition] FOREIGN KEY([CompanyCode], [ItemCode], [ItemService])
+REFERENCES [dbo].[tbl_ItemDefinition] ([CompanyCode], [ItemCode], [ItemService])
+GO
+ALTER TABLE [dbo].[sa_POS_TrxDetails] CHECK CONSTRAINT [FK_sa_POS_TrxDetails_tbl_ItemDefinition]
+GO
+
+ALTER TABLE [dbo].[sa_POS_TrxDetails] ADD
+	[TaxPercent] [decimal](18, 4) NULL,
+	[TaxValue] [decimal](18, 4) NULL
+GO
+
+ALTER TABLE [dbo].[sa_POS_TrxHeader] ADD
+	[TotalTaxes] [decimal](18, 4) NULL
+GO
+
+INSERT INTO [dbo].[tbl_DefaultSetting]
+           ([CompanyCode]
+           ,[SettingDescription]
+           ,[SettingValue])
+VALUES
+           ('0001'
+           ,'ApplyTaxValue'
+           ,'F')
+GO

@@ -752,6 +752,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     end
     object SDS_DetailsItemNameAr: TStringField
       DisplayLabel = #1573#1587#1605' '#1575#1604#1589#1606#1601
+      DisplayWidth = 20
       FieldKind = fkLookup
       FieldName = 'ItemNameAr'
       LookupDataSet = SDS_ItemDef
@@ -759,6 +760,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
       LookupResultField = 'ItemNameAr'
       KeyFields = 'ItemCode'
       LookupCache = True
+      Size = 25
       Lookup = True
     end
     object SDS_DetailsQuantity: TFMTBCDField
@@ -1103,6 +1105,7 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     Left = 8
     Top = 464
     object SDS_ItemDefItemCode: TStringField
+      DisplayLabel = 'Item Code / '#1575#1604#1585#1605#1600#1600#1600#1600#1600#1600#1586
       FieldName = 'ItemCode'
       Required = True
       Size = 25
@@ -1110,9 +1113,11 @@ object fmPrTrxBaseForm: TfmPrTrxBaseForm
     object SDS_ItemDefItemService: TStringField
       FieldName = 'ItemService'
       Required = True
+      Visible = False
       Size = 3
     end
     object SDS_ItemDefItemNameAr: TStringField
+      DisplayLabel = 'ItemNameAr / '#1575#1587#1600#1600#1605' '#1575#1604#1589#1606#1600#1600#1600#1600#1600#1601
       FieldName = 'ItemNameAr'
       Size = 255
     end

@@ -67,12 +67,14 @@ begin
     gPOSCode := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''POSCode'' ');
     gCashCode := GetDBValue('CashCode','tbl_POS_Definition',' And CompanyCode = ''' + DCompany + ''' And POSCode  = ''' + gPOSCode + '''  ');
     gBankCode := GetDBValue('BankCode','tbl_POS_Definition',' And CompanyCode = ''' + DCompany + ''' And POSCode  = ''' + gPOSCode + '''  ');
+    gEndingShift := GetDBValue('EndingShift','tbl_POS_Definition',' And CompanyCode = ''' + DCompany + ''' And POSCode  = ''' + gPOSCode + '''  ');
     gMainCash := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''MainCash'' ');
     gOperatorCode := GetDBValue('OperatorCode','tbl_operators',' And CompanyCode = ''' + DCompany + ''' And UserID = ''' + gUserID + '''  ');
     gPOSWorkByTouch := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''WorkByTouch'' ');
     gPOS_ReplacementDuring := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''ReplacmentDuring'' ');
     gInvoiceType := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''InvoiceType'' ');
     gCountOfInvPrint := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''CountOfInvPrint'' ');
+    gApplyTaxValue  := GetDBValue('settingValue','tbl_DefaultSetting',' And CompanyCode = ''' + DCompany + ''' And SettingDescription  = ''ApplyTaxValue'' ');
      ModalResult := mrOk;
      If gLoginFrom_POS_Screen = False
      then fmMainForm.Show;

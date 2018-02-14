@@ -400,6 +400,17 @@ type
     ppDBText46: TppDBText;
     ppDBText47: TppDBText;
     ppDBText48: TppDBText;
+    Label13: TLabel;
+    rg_Sales_AllIGroups: TRadioGroup;
+    cbo_Sales_Groups: TDBLookupComboBox;
+    qry_Groups: TSimpleDataSet;
+    DS_Groups: TDataSource;
+    qry_GroupsItemGroupCode: TStringField;
+    qry_GroupsItemGroupNameAr: TStringField;
+    qry_GroupsItemGroupNameEn: TStringField;
+    ppLine65: TppLine;
+    ppLabel62: TppLabel;
+    ppDBCalc21: TppDBCalc;
     procedure btnPrintItemCardReportClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
@@ -411,6 +422,7 @@ type
     procedure btnPrintPurchaseRepotClick(Sender: TObject);
     procedure cbo_ItemKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure rg_Sales_AllIGroupsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -593,7 +605,10 @@ begin
 
   qry_Items.Open;
   qry_Items.First;
-  
+
+  qry_Groups.Open;
+  qry_Groups.First;
+
   RepParam := TppParameterList.Create(Self);
   RepParam.Clear;
   RepParam['From_Date'].AsString := DateToStr(dt_ItemCardFromDate.Date);
@@ -616,7 +631,7 @@ end;
 procedure TfmBaseReports.btnPrintSalesRepotClick(Sender: TObject);
 Var
    RepFileName : String ;
-   FDate , TDate , F_OBDate , ItemCode : String ;
+   FDate , TDate , F_OBDate , ItemCode , ItemGroupCode : String ;
    StrLst : TStringList;
 begin
     STRLST := TStringList.Create;
@@ -634,6 +649,10 @@ begin
        ItemCode := ' And ItemCode = ''' + qry_ItemsItemCode.AsString  + ''' '
     else ItemCode := ' ';
 
+    If (rg_Sales_AllIGroups.ItemIndex = 1) Then
+       ItemGroupCode := ' And I.ItemGroupCode = ''' + qry_GroupsItemGroupCode.AsString  + ''' '
+    else ItemGroupCode := ' ';
+
     If (rg_Sales_ReportType.ItemIndex = 0) Then Begin
       qry_Sales_Purchases.Close;
       qry_Sales_Purchases.DataSet.Close;
@@ -646,7 +665,7 @@ begin
         + '                                H.TrxType = D.TrxType AND H.YearID = D.YearID AND H.PeriodID = D.PeriodID LEFT OUTER JOIN '
         + '                                tbl_ItemUnit AS U ON D.CompanyCode = U.CompanyCode AND D.ItemUnitCode = U.ItemUnitCode LEFT OUTER JOIN '
         + '                                tbl_ItemDefinition AS I ON D.CompanyCode = I.CompanyCode AND D.ItemService = I.ItemService AND D.ItemCode = I.ItemCode '
-        + '                      WHERE     (H.TrxType IN (''SAIV'', ''SART'')) '
+        + '                      WHERE     (H.TrxType IN (''SAIV'', ''SART'')) '  + ItemGroupCode
         + '                      UNION ALL '
         + '                      SELECT     H.CompanyCode, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate, H.TrxStatus, H.TrxDescAr, H.TrxDescEn, H.TrxAmount, NULL AS Cash, NULL AS ATM, NULL AS Visa, NULL AS Checks, NULL AS Credit, D.BarCode, '
         + '                                 D.ItemCode, D.ItemService, I.ItemNameAr, I.ItemNameEn, D.ItemUnit, U.ItemUnitDescA, U.ItemUnitDescE, D.UnitTransValue, '
@@ -683,7 +702,7 @@ begin
         + '                   H.TrxType = D.TrxType AND H.YearID = D.YearID AND H.PeriodID = D.PeriodID LEFT OUTER JOIN '
         + '                   tbl_ItemUnit AS U ON D.CompanyCode = U.CompanyCode AND D.ItemUnitCode = U.ItemUnitCode LEFT OUTER JOIN '
         + '                   tbl_ItemDefinition AS I ON D.CompanyCode = I.CompanyCode AND D.ItemService = I.ItemService AND D.ItemCode = I.ItemCode '
-        + '          WHERE     (H.TrxType IN (''SAIV'', ''SART'')) '
+        + '          WHERE     (H.TrxType IN (''SAIV'', ''SART'')) '  + ItemGroupCode
         + '          UNION ALL '
         + '          SELECT     H.CompanyCode, H.BranchCode, H.TrxNo, H.TrxType, H.TrxDate, H.TrxStatus, H.TrxDescAr, H.TrxDescEn, H.TrxAmount, NULL AS Cash, NULL AS ATM, NULL AS Visa, NULL AS Checks, NULL AS Credit, D.BarCode, '
         + '                     D.ItemCode, D.ItemService, I.ItemNameAr, I.ItemNameEn, D.ItemUnit, U.ItemUnitDescA, U.ItemUnitDescE, D.UnitTransValue, '
@@ -806,6 +825,7 @@ procedure TfmBaseReports.cbo_ItemKeyDown(Sender: TObject; var Key: Word;
 begin
 If Key<>VK_F2 then Exit
  else begin
+    qry_Items.Refresh;
     lkp := Tlkp.Create(qry_Items,nil);
     lkp.ShowModal;
     qry_ItemCard.Open;
@@ -816,6 +836,12 @@ If Key<>VK_F2 then Exit
     qry_ItemCardItemNameEn.AsString := qry_ItemsItemNameEn.AsString;
     qry_ItemCardItemUnitCode.AsString := qry_ItemsItemUnitCode.AsString;
   end;
+end;
+
+procedure TfmBaseReports.rg_Sales_AllIGroupsClick(Sender: TObject);
+begin
+   If rg_Sales_AllIGroups.ItemIndex = 1 Then cbo_Sales_Groups.Visible := True
+   else cbo_Sales_Groups.Visible := False;
 end;
 
 end.

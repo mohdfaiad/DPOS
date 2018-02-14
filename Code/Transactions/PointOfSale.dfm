@@ -1,11 +1,11 @@
 object fmPointOfSale: TfmPointOfSale
-  Left = 135
-  Top = 0
+  Left = 1
+  Top = 1
   Hint = #1606#1602#1591#1577' '#1575#1604#1576#1610#1593
   BorderStyle = bsDialog
   Caption = 'Point Of Sale'
-  ClientHeight = 706
-  ClientWidth = 1024
+  ClientHeight = 688
+  ClientWidth = 1006
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,17 +23,17 @@ object fmPointOfSale: TfmPointOfSale
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
-    Left = 876
+    Left = 858
     Top = 37
     Width = 143
-    Height = 559
+    Height = 541
     Align = alRight
     TabOrder = 0
     object paButtons: TPanel
       Left = 1
       Top = 1
       Width = 141
-      Height = 557
+      Height = 539
       Align = alClient
       Color = clWhite
       TabOrder = 0
@@ -217,8 +217,8 @@ object fmPointOfSale: TfmPointOfSale
   end
   object Panel2: TPanel
     Left = 0
-    Top = 596
-    Width = 1024
+    Top = 578
+    Width = 1006
     Height = 110
     Align = alBottom
     Color = 16762566
@@ -232,7 +232,7 @@ object fmPointOfSale: TfmPointOfSale
     object Panel7: TPanel
       Left = 1
       Top = -1
-      Width = 1022
+      Width = 1004
       Height = 110
       Align = alBottom
       Color = 13750737
@@ -246,13 +246,13 @@ object fmPointOfSale: TfmPointOfSale
       object ArEnPanel1: TPanel
         Left = 1
         Top = 1
-        Width = 1020
+        Width = 1002
         Height = 108
         Align = alClient
         Color = clWhite
         TabOrder = 0
         DesignSize = (
-          1020
+          1002
           108)
         object QLabel10: TLabel
           Left = 394
@@ -295,7 +295,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object QLabel7: TLabel
-          Left = 757
+          Left = 743
           Top = 65
           Width = 96
           Height = 27
@@ -311,7 +311,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object vrmTotalDiscount: TVrMatrix
-          Left = 578
+          Left = 566
           Top = 65
           Width = 168
           Height = 30
@@ -337,7 +337,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object vrmTotal: TVrMatrix
-          Left = 578
+          Left = 566
           Top = 17
           Width = 168
           Height = 30
@@ -363,7 +363,7 @@ object fmPointOfSale: TfmPointOfSale
           Text = '0.00'
         end
         object QLabel13: TLabel
-          Left = 755
+          Left = 741
           Top = 20
           Width = 109
           Height = 22
@@ -419,7 +419,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object VrBlotter2: TVrBlotter
-          Left = 875
+          Left = 857
           Top = 1
           Width = 144
           Height = 106
@@ -484,7 +484,7 @@ object fmPointOfSale: TfmPointOfSale
   object pnlTitle: TPanel
     Left = 0
     Top = 0
-    Width = 1024
+    Width = 1006
     Height = 37
     Align = alTop
     Caption = #1606#1602#1591#1600#1600#1600#1577' '#1576#1610#1600#1600#1600#1600#1593
@@ -497,10 +497,10 @@ object fmPointOfSale: TfmPointOfSale
     TabOrder = 2
   end
   object Panel4: TPanel
-    Left = 1019
+    Left = 1001
     Top = 37
     Width = 5
-    Height = 559
+    Height = 541
     Align = alRight
     Color = 13750737
     TabOrder = 3
@@ -508,8 +508,8 @@ object fmPointOfSale: TfmPointOfSale
   object grp_Container: TGroupBox
     Left = 0
     Top = 37
-    Width = 876
-    Height = 559
+    Width = 858
+    Height = 541
     Align = alClient
     Color = clWhite
     ParentColor = False
@@ -518,14 +518,14 @@ object fmPointOfSale: TfmPointOfSale
       Left = 2
       Top = 193
       Width = 200
-      Height = 364
+      Height = 346
       Align = alLeft
       TabOrder = 0
       object ArEnPanel3: TPanel
         Left = 1
         Top = 1
         Width = 198
-        Height = 362
+        Height = 344
         Align = alClient
         Color = clWhite
         TabOrder = 0
@@ -675,15 +675,15 @@ object fmPointOfSale: TfmPointOfSale
     object pnlDetails: TPanel
       Left = 202
       Top = 193
-      Width = 672
-      Height = 364
+      Width = 654
+      Height = 346
       Align = alClient
       TabOrder = 1
       object grdDetails: TDBGrid
         Left = 361
         Top = 1
-        Width = 310
-        Height = 362
+        Width = 292
+        Height = 344
         Align = alClient
         BiDiMode = bdLeftToRight
         DataSource = DS_Details
@@ -707,7 +707,7 @@ object fmPointOfSale: TfmPointOfSale
         Left = 1
         Top = 1
         Width = 360
-        Height = 362
+        Height = 344
         Align = alLeft
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -724,7 +724,7 @@ object fmPointOfSale: TfmPointOfSale
     object pnl_Header: TPanel
       Left = 2
       Top = 15
-      Width = 872
+      Width = 854
       Height = 80
       Align = alTop
       Caption = 'pnl_Header'
@@ -732,7 +732,7 @@ object fmPointOfSale: TfmPointOfSale
       object Panel6: TPanel
         Left = 1
         Top = 1
-        Width = 870
+        Width = 852
         Height = 78
         Align = alTop
         Color = clWhite
@@ -744,10 +744,10 @@ object fmPointOfSale: TfmPointOfSale
         ParentFont = False
         TabOrder = 0
         DesignSize = (
-          870
+          852
           78)
         object ArEnLabel10: TLabel
-          Left = 1936
+          Left = 1918
           Top = 10
           Width = 35
           Height = 13
@@ -764,7 +764,7 @@ object fmPointOfSale: TfmPointOfSale
           Visible = False
         end
         object Label1: TLabel
-          Left = 801
+          Left = 784
           Top = 50
           Width = 50
           Height = 16
@@ -780,7 +780,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object Label2: TLabel
-          Left = 802
+          Left = 785
           Top = 5
           Width = 50
           Height = 16
@@ -796,7 +796,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object Label3: TLabel
-          Left = 618
+          Left = 605
           Top = 51
           Width = 56
           Height = 16
@@ -812,7 +812,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object Label4: TLabel
-          Left = 619
+          Left = 606
           Top = 8
           Width = 56
           Height = 16
@@ -858,7 +858,7 @@ object fmPointOfSale: TfmPointOfSale
           Layout = tlCenter
         end
         object DBComboBox1: TDBComboBox
-          Left = 690
+          Left = 675
           Top = 47
           Width = 104
           Height = 21
@@ -874,7 +874,7 @@ object fmPointOfSale: TfmPointOfSale
           TabOrder = 0
         end
         object qdbeCode: TDBEdit
-          Left = 692
+          Left = 677
           Top = 3
           Width = 100
           Height = 21
@@ -886,7 +886,7 @@ object fmPointOfSale: TfmPointOfSale
           TabOrder = 2
         end
         object lcbPolicy: TDBLookupComboBox
-          Left = 1795
+          Left = 1777
           Top = 7
           Width = 111
           Height = 21
@@ -898,7 +898,7 @@ object fmPointOfSale: TfmPointOfSale
           Visible = False
         end
         object cbo_Operators: TDBLookupComboBox
-          Left = 481
+          Left = 470
           Top = 47
           Width = 129
           Height = 23
@@ -917,7 +917,7 @@ object fmPointOfSale: TfmPointOfSale
           TabOrder = 3
         end
         object dt_TrxDate: TDateTimePicker
-          Left = 482
+          Left = 471
           Top = 4
           Width = 128
           Height = 21
@@ -1046,15 +1046,15 @@ object fmPointOfSale: TfmPointOfSale
     object pnl_InsertBarcode: TPanel
       Left = 2
       Top = 158
-      Width = 872
+      Width = 854
       Height = 35
       Align = alTop
       TabOrder = 3
       DesignSize = (
-        872
+        854
         35)
       object ArEnLabel11: TLabel
-        Left = 803
+        Left = 786
         Top = 9
         Width = 65
         Height = 16
@@ -1103,7 +1103,7 @@ object fmPointOfSale: TfmPointOfSale
         Visible = False
       end
       object edtBarcode: TEdit
-        Left = 462
+        Left = 444
         Top = 5
         Width = 314
         Height = 24
@@ -1331,15 +1331,15 @@ object fmPointOfSale: TfmPointOfSale
     object pnl_InvoiceType: TPanel
       Left = 2
       Top = 95
-      Width = 872
+      Width = 854
       Height = 63
       Align = alTop
       TabOrder = 4
       DesignSize = (
-        872
+        854
         63)
       object Label9: TLabel
-        Left = 804
+        Left = 787
         Top = 23
         Width = 70
         Height = 16
@@ -1355,7 +1355,7 @@ object fmPointOfSale: TfmPointOfSale
         Layout = tlCenter
       end
       object lbl_Table: TLabel
-        Left = 390
+        Left = 381
         Top = 24
         Width = 65
         Height = 16
@@ -1581,7 +1581,7 @@ object fmPointOfSale: TfmPointOfSale
         end
       end
       object rg_InvoiceType: TDBRadioGroup
-        Left = 480
+        Left = 462
         Top = -7
         Width = 310
         Height = 69
@@ -1628,6 +1628,7 @@ object fmPointOfSale: TfmPointOfSale
   end
   object SDS_Items: TSimpleDataSet
     Tag = 1
+    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.SchemaName = 'dbo'
@@ -1765,6 +1766,7 @@ object fmPointOfSale: TfmPointOfSale
   end
   object SDS_AllUnits: TSimpleDataSet
     Tag = 1
+    Active = True
     Aggregates = <>
     Connection = fmMainForm.MainConnection
     DataSet.SchemaName = 'dbo'
@@ -2057,6 +2059,11 @@ object fmPointOfSale: TfmPointOfSale
       KeyFields = 'TableCode'
       Lookup = True
     end
+    object SDS_HeaderTotalTaxes: TFMTBCDField
+      FieldName = 'TotalTaxes'
+      Precision = 18
+      Size = 8
+    end
   end
   object DS_Header: TDataSource
     DataSet = SDS_Header
@@ -2071,8 +2078,8 @@ object fmPointOfSale: TfmPointOfSale
     object DPL_HeaderppField1: TppField
       FieldAlias = 'BranchCode'
       FieldName = 'BranchCode'
-      FieldLength = 0
-      DisplayWidth = 0
+      FieldLength = 4
+      DisplayWidth = 4
       Position = 0
     end
     object DPL_HeaderppField2: TppField
@@ -2374,14 +2381,230 @@ object fmPointOfSale: TfmPointOfSale
       DisplayWidth = 20
       Position = 39
     end
+    object DPL_HeaderppField41: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TotalTaxes'
+      FieldName = 'TotalTaxes'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 40
+    end
   end
   object ppSales: TppDBPipeline
     DataSource = DS_Details
     UserName = 'Details'
     Left = 387
     Top = 345
+    object ppSalesppField1: TppField
+      FieldAlias = 'CompanyCode'
+      FieldName = 'CompanyCode'
+      FieldLength = 0
+      DisplayWidth = 0
+      Position = 0
+    end
+    object ppSalesppField2: TppField
+      FieldAlias = 'BranchCode'
+      FieldName = 'BranchCode'
+      FieldLength = 4
+      DisplayWidth = 4
+      Position = 1
+    end
+    object ppSalesppField3: TppField
+      FieldAlias = 'YearID'
+      FieldName = 'YearID'
+      FieldLength = 9
+      DisplayWidth = 9
+      Position = 2
+    end
+    object ppSalesppField4: TppField
+      FieldAlias = 'PeriodID'
+      FieldName = 'PeriodID'
+      FieldLength = 2
+      DisplayWidth = 2
+      Position = 3
+    end
+    object ppSalesppField5: TppField
+      FieldAlias = 'TrxType'
+      FieldName = 'TrxType'
+      FieldLength = 4
+      DisplayWidth = 4
+      Position = 4
+    end
+    object ppSalesppField6: TppField
+      FieldAlias = 'TrxNo'
+      FieldName = 'TrxNo'
+      FieldLength = 8
+      DisplayWidth = 8
+      Position = 5
+    end
+    object ppSalesppField7: TppField
+      FieldAlias = 'Barcode'
+      FieldName = 'Barcode'
+      FieldLength = 30
+      DisplayWidth = 15
+      Position = 6
+    end
+    object ppSalesppField8: TppField
+      FieldAlias = 'ItemService'
+      FieldName = 'ItemService'
+      FieldLength = 3
+      DisplayWidth = 8
+      Position = 7
+    end
+    object ppSalesppField9: TppField
+      FieldAlias = 'ItemCode'
+      FieldName = 'ItemCode'
+      FieldLength = 20
+      DisplayWidth = 15
+      Position = 8
+    end
+    object ppSalesppField10: TppField
+      FieldAlias = 'ItemUnitCode'
+      FieldName = 'ItemUnitCode'
+      FieldLength = 6
+      DisplayWidth = 6
+      Position = 9
+    end
+    object ppSalesppField11: TppField
+      FieldAlias = 'ItemUnitDescA'
+      FieldName = 'ItemUnitDescA'
+      FieldLength = 30
+      DisplayWidth = 30
+      Position = 10
+    end
+    object ppSalesppField12: TppField
+      FieldAlias = 'ItemNameAr'
+      FieldName = 'ItemNameAr'
+      FieldLength = 30
+      DisplayWidth = 20
+      Position = 11
+    end
+    object ppSalesppField13: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'Quantity'
+      FieldName = 'Quantity'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 6
+      Position = 12
+    end
+    object ppSalesppField14: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'CostPrice'
+      FieldName = 'CostPrice'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 8
+      Position = 13
+    end
+    object ppSalesppField15: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'ItemPrice'
+      FieldName = 'ItemPrice'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 6
+      Position = 14
+    end
+    object ppSalesppField16: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'Discount'
+      FieldName = 'Discount'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 8
+      Position = 15
+    end
+    object ppSalesppField17: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'DiscountRatio'
+      FieldName = 'DiscountRatio'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 8
+      Position = 16
+    end
+    object ppSalesppField18: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TaxPercent'
+      FieldName = 'TaxPercent'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 6
+      Position = 17
+    end
+    object ppSalesppField19: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TaxValue'
+      FieldName = 'TaxValue'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 6
+      Position = 18
+    end
+    object ppSalesppField20: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'NetPrice'
+      FieldName = 'NetPrice'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 6
+      Position = 19
+    end
+    object ppSalesppField21: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'UnitTransValue'
+      FieldName = 'UnitTransValue'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 12
+      Position = 20
+    end
+    object ppSalesppField22: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TotalPrice'
+      FieldName = 'TotalPrice'
+      FieldLength = 8
+      DataType = dtDouble
+      DisplayWidth = 12
+      Position = 21
+    end
+    object ppSalesppField23: TppField
+      FieldAlias = 'TrxDetailDescA'
+      FieldName = 'TrxDetailDescA'
+      FieldLength = 240
+      DisplayWidth = 240
+      Position = 22
+    end
+    object ppSalesppField24: TppField
+      FieldAlias = 'TrxDetailDescE'
+      FieldName = 'TrxDetailDescE'
+      FieldLength = 240
+      DisplayWidth = 240
+      Position = 23
+    end
+    object ppSalesppField25: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TrxLineNo'
+      FieldName = 'TrxLineNo'
+      FieldLength = 0
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 24
+    end
+    object ppSalesppField26: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'SourceDocLineNo'
+      FieldName = 'SourceDocLineNo'
+      FieldLength = 0
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 25
+    end
   end
   object SDS_Details: TSimpleDataSet
+    Active = True
     Aggregates = <>
     AggregatesActive = True
     Connection = fmMainForm.MainConnection
@@ -2541,6 +2764,23 @@ object fmPointOfSale: TfmPointOfSale
       Precision = 18
       Size = 8
     end
+    object SDS_DetailsTaxPercent: TFMTBCDField
+      DisplayLabel = '% '#1575#1604#1590#1585#1610#1576#1577
+      DisplayWidth = 6
+      FieldName = 'TaxPercent'
+      OnChange = SDS_DetailsTaxPercentChange
+      Precision = 18
+      Size = 8
+    end
+    object SDS_DetailsTaxValue: TFMTBCDField
+      DisplayLabel = #1575#1604#1590#1585#1610#1576#1577
+      DisplayWidth = 6
+      FieldName = 'TaxValue'
+      ReadOnly = True
+      OnChange = SDS_DetailsDiscountChange
+      Precision = 18
+      Size = 8
+    end
     object SDS_DetailsNetPrice: TFMTBCDField
       Tag = 2
       DefaultExpression = '0'
@@ -2599,6 +2839,11 @@ object fmPointOfSale: TfmPointOfSale
       FieldName = 'TotalDiscount'
       Active = True
       Expression = 'Sum(Discount)'
+    end
+    object SDS_DetailsTotalTaxes: TAggregateField
+      FieldName = 'TotalTaxes'
+      Active = True
+      Expression = 'Sum(TaxValue)'
     end
   end
   object DS_Details: TDataSource
@@ -2716,6 +2961,16 @@ object fmPointOfSale: TfmPointOfSale
       FieldName = 'SourceDocLineNo'
       Precision = 18
       Size = 0
+    end
+    object qry_SorceDocItemsTaxPercent: TFMTBCDField
+      FieldName = 'TaxPercent'
+      Precision = 18
+      Size = 8
+    end
+    object qry_SorceDocItemsTaxValue: TFMTBCDField
+      FieldName = 'TaxValue'
+      Precision = 18
+      Size = 8
     end
   end
   object DS_Policy: TDataSource
@@ -3025,7 +3280,7 @@ object fmPointOfSale: TfmPointOfSale
     DataPipelineName = 'ppSales'
     object ppTitleBand1: TppTitleBand
       mmBottomOffset = 0
-      mmHeight = 44715
+      mmHeight = 46038
       mmPrintPosition = 0
       object ppLabel10: TppLabel
         UserName = 'lTitle1'
@@ -3045,7 +3300,7 @@ object fmPointOfSale: TfmPointOfSale
         TextAlignment = taCentered
         mmHeight = 6350
         mmLeft = 11113
-        mmTop = 24077
+        mmTop = 26194
         mmWidth = 45773
         BandType = 1
       end
@@ -3067,7 +3322,7 @@ object fmPointOfSale: TfmPointOfSale
         TextAlignment = taCentered
         mmHeight = 6350
         mmLeft = 9790
-        mmTop = 22490
+        mmTop = 24606
         mmWidth = 45773
         BandType = 1
       end
@@ -3077,7 +3332,7 @@ object fmPointOfSale: TfmPointOfSale
         Pen.Width = 2
         mmHeight = 12435
         mmLeft = 5292
-        mmTop = 32279
+        mmTop = 33338
         mmWidth = 54769
         BandType = 1
       end
@@ -3089,17 +3344,18 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1585#1602#1605
+        Caption = ' '#1575#1604#1585#1602#1605' - NO'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
-        Font.Size = 8
+        Font.Size = 11
         Font.Style = [fsBold]
+        TextAlignment = taCentered
         Transparent = True
-        mmHeight = 3440
-        mmLeft = 50271
-        mmTop = 34131
-        mmWidth = 8731
+        mmHeight = 4657
+        mmLeft = 33338
+        mmTop = 2117
+        mmWidth = 28575
         BandType = 1
       end
       object pplTrxDate: TppLabel
@@ -3110,7 +3366,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1578#1575#1585#1610#1582
+        Caption = ': '#1575#1604#1578#1575#1585#1610#1582' - Date'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -3118,9 +3374,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 24606
-        mmTop = 34131
-        mmWidth = 9525
+        mmLeft = 39952
+        mmTop = 35454
+        mmWidth = 19315
         BandType = 1
       end
       object ppDBText3: TppDBText
@@ -3135,16 +3391,16 @@ object fmPointOfSale: TfmPointOfSale
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Arial'
-        Font.Size = 8
+        Font.Size = 14
         Font.Style = [fsBold]
         ParentDataPipeline = False
         TextAlignment = taRightJustified
         Transparent = True
         DataPipelineName = 'DPL_Header'
-        mmHeight = 3440
-        mmLeft = 34925
-        mmTop = 34131
-        mmWidth = 14552
+        mmHeight = 6085
+        mmLeft = 31221
+        mmTop = 8202
+        mmWidth = 32015
         BandType = 1
       end
       object ppDBText4: TppDBText
@@ -3166,8 +3422,8 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 7144
-        mmTop = 34131
+        mmLeft = 22490
+        mmTop = 35454
         mmWidth = 16404
         BandType = 1
       end
@@ -3191,9 +3447,9 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 6350
-        mmTop = 39158
-        mmWidth = 16933
+        mmLeft = 21696
+        mmTop = 40481
+        mmWidth = 16669
         BandType = 1
       end
       object ppLabel1: TppLabel
@@ -3204,7 +3460,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1608#1602#1578' '
+        Caption = ': '#1575#1604#1608#1602#1578' - Time'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -3212,9 +3468,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 24871
-        mmTop = 39423
-        mmWidth = 8467
+        mmLeft = 40217
+        mmTop = 40746
+        mmWidth = 18256
         BandType = 1
       end
       object ppImage4: TppImage
@@ -3896,54 +4152,54 @@ object fmPointOfSale: TfmPointOfSale
           028A28A0028A28A0028A28A0028A28A0028A28A0028A28A0028A28A0028A28A0
           028A28A0028A28A002B89D1FEE0AEDAB89D1FEE0A00FFFD9}
         mmHeight = 21696
-        mmLeft = 10583
-        mmTop = 0
-        mmWidth = 42863
+        mmLeft = 0
+        mmTop = 265
+        mmWidth = 30956
         BandType = 1
       end
-      object ppLabel6: TppLabel
-        UserName = 'lTrxNo1'
+      object ppLabel4: TppLabel
+        UserName = 'lTrxNo2'
         AutoSize = False
         Border.BorderPositions = []
         Border.Color = clBlack
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1591#1575#1608#1604#1577
+        Caption = ':  '#1575#1604#1585#1602#1605' '#1575#1604#1590#1585#1610#1576#1610' '
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
-        Font.Size = 8
+        Font.Size = 9
         Font.Style = [fsBold]
         Transparent = True
-        mmHeight = 3440
-        mmLeft = 50271
-        mmTop = 39423
-        mmWidth = 8731
+        Visible = False
+        mmHeight = 3969
+        mmLeft = 39423
+        mmTop = 19579
+        mmWidth = 17992
         BandType = 1
       end
-      object ppDBText2: TppDBText
-        UserName = 'DBText2'
+      object ppLabel8: TppLabel
+        UserName = 'Label8'
+        AutoSize = False
         Border.BorderPositions = []
         Border.Color = clBlack
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        DataField = 'TableNameAr'
-        DataPipeline = DPL_Header
+        Caption = '15555454555'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
-        Font.Name = 'Arial'
-        Font.Size = 8
+        Font.Name = 'Times New Roman'
+        Font.Size = 9
         Font.Style = [fsBold]
-        ParentDataPipeline = False
         TextAlignment = taRightJustified
         Transparent = True
-        DataPipelineName = 'DPL_Header'
-        mmHeight = 3440
-        mmLeft = 34396
-        mmTop = 39158
-        mmWidth = 14552
+        Visible = False
+        mmHeight = 3704
+        mmLeft = 7938
+        mmTop = 19579
+        mmWidth = 29369
         BandType = 1
       end
     end
@@ -3973,7 +4229,7 @@ object fmPointOfSale: TfmPointOfSale
         mmHeight = 3440
         mmLeft = 33338
         mmTop = 5292
-        mmWidth = 15875
+        mmWidth = 11642
         BandType = 4
       end
       object ppDBItemName: TppDBText
@@ -3997,7 +4253,7 @@ object fmPointOfSale: TfmPointOfSale
         mmHeight = 3440
         mmLeft = 2117
         mmTop = 1058
-        mmWidth = 47096
+        mmWidth = 42863
         BandType = 4
       end
       object ppDBText1: TppDBText
@@ -4020,9 +4276,9 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3440
-        mmLeft = 6350
+        mmLeft = 2910
         mmTop = 5821
-        mmWidth = 14023
+        mmWidth = 13229
         BandType = 4
       end
       object ppDBText8: TppDBText
@@ -4045,9 +4301,9 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'ppSales'
         mmHeight = 3704
-        mmLeft = 5821
+        mmLeft = 2381
         mmTop = 10848
-        mmWidth = 14552
+        mmWidth = 13758
         BandType = 4
       end
       object ppDBText6: TppDBText
@@ -4072,7 +4328,7 @@ object fmPointOfSale: TfmPointOfSale
         mmHeight = 3440
         mmLeft = 33338
         mmTop = 10319
-        mmWidth = 15875
+        mmWidth = 11642
         BandType = 4
       end
       object pplItemName: TppLabel
@@ -4083,7 +4339,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1589#1606#1601
+        Caption = ': '#1575#1604#1589#1606#1601'-Item'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4091,9 +4347,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 51065
+        mmLeft = 45773
         mmTop = 1058
-        mmWidth = 9260
+        mmWidth = 17198
         BandType = 4
       end
       object pplQty: TppLabel
@@ -4104,7 +4360,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1603#1605#1610#1577
+        Caption = ': '#1575#1604#1603#1605#1610#1577'-Qty'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4112,9 +4368,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 51065
+        mmLeft = 45773
         mmTop = 5821
-        mmWidth = 10848
+        mmWidth = 15875
         BandType = 4
       end
       object pplPrice: TppLabel
@@ -4125,7 +4381,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1587#1593#1585
+        Caption = ': '#1575#1604#1587#1593#1585'-Price'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4133,9 +4389,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 23019
+        mmLeft = 16933
         mmTop = 5292
-        mmWidth = 9260
+        mmWidth = 16140
         BandType = 4
       end
       object pplTotalPrice: TppLabel
@@ -4146,7 +4402,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1575#1580#1605#1575#1604#1610
+        Caption = ': '#1575#1604#1575#1580#1605#1575#1604#1610'-Total'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4154,9 +4410,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 51065
+        mmLeft = 45773
         mmTop = 10319
-        mmWidth = 10848
+        mmWidth = 18521
         BandType = 4
       end
       object pplNet: TppLabel
@@ -4167,7 +4423,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1589#1575#1601#1609
+        Caption = ': '#1575#1604#1589#1575#1601#1609'-Net'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4175,9 +4431,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 23019
+        mmLeft = 16933
         mmTop = 10583
-        mmWidth = 8731
+        mmWidth = 15875
         BandType = 4
       end
       object ppLine12: TppLine
@@ -4207,7 +4463,7 @@ object fmPointOfSale: TfmPointOfSale
     object ppSummaryBand1: TppSummaryBand
       PrintHeight = phDynamic
       mmBottomOffset = 0
-      mmHeight = 11113
+      mmHeight = 16933
       mmPrintPosition = 0
       object pplTotal: TppLabel
         UserName = 'lTotal'
@@ -4217,7 +4473,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1589#1575#1601#1610
+        Caption = ': '#1575#1604#1589#1575#1601#1610'-Net'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4225,9 +4481,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 21167
+        mmLeft = 17727
         mmTop = 794
-        mmWidth = 12171
+        mmWidth = 14288
         BandType = 7
       end
       object ppLabel2: TppLabel
@@ -4238,7 +4494,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1605#1583#1601#1608#1593
+        Caption = ': '#1575#1604#1605#1583#1601#1608#1593'-Payed'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4246,9 +4502,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 51065
-        mmTop = 5556
-        mmWidth = 8731
+        mmLeft = 46302
+        mmTop = 6085
+        mmWidth = 18785
         BandType = 7
       end
       object ppDBText9: TppDBText
@@ -4271,8 +4527,8 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 36513
-        mmTop = 5556
+        mmLeft = 33338
+        mmTop = 6085
         mmWidth = 12171
         BandType = 7
       end
@@ -4284,7 +4540,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1576#1575#1602#1609
+        Caption = ': '#1575#1604#1576#1575#1602#1609'-Remain'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4292,9 +4548,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 21167
-        mmTop = 5556
-        mmWidth = 9790
+        mmLeft = 17727
+        mmTop = 6085
+        mmWidth = 18521
         BandType = 7
       end
       object ppDBText10: TppDBText
@@ -4317,8 +4573,8 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 7408
-        mmTop = 5556
+        mmLeft = 4763
+        mmTop = 6085
         mmWidth = 12171
         BandType = 7
       end
@@ -4342,7 +4598,7 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 7408
+        mmLeft = 4763
         mmTop = 794
         mmWidth = 12171
         BandType = 7
@@ -4355,7 +4611,7 @@ object fmPointOfSale: TfmPointOfSale
         Border.Style = psSolid
         Border.Visible = False
         Border.Weight = 1.000000000000000000
-        Caption = ': '#1575#1604#1575#1580#1605#1575#1604#1610
+        Caption = ': '#1575#1604#1575#1580#1605#1575#1604#1610'-Total'
         Font.Charset = ARABIC_CHARSET
         Font.Color = clBlack
         Font.Name = 'Times New Roman'
@@ -4363,9 +4619,9 @@ object fmPointOfSale: TfmPointOfSale
         Font.Style = [fsBold]
         Transparent = True
         mmHeight = 3440
-        mmLeft = 51065
+        mmLeft = 46302
         mmTop = 794
-        mmWidth = 8731
+        mmWidth = 18785
         BandType = 7
       end
       object ppDBText14: TppDBText
@@ -4388,9 +4644,56 @@ object fmPointOfSale: TfmPointOfSale
         Transparent = True
         DataPipelineName = 'DPL_Header'
         mmHeight = 3440
-        mmLeft = 36513
+        mmLeft = 33338
         mmTop = 794
         mmWidth = 12171
+        BandType = 7
+      end
+      object ppDBText7: TppDBText
+        UserName = 'DBText7'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'TotalTaxes'
+        DataPipeline = DPL_Header
+        DisplayFormat = '#,0.00;(#,0.00)'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        TextAlignment = taRightJustified
+        Transparent = True
+        Visible = False
+        DataPipelineName = 'DPL_Header'
+        mmHeight = 3440
+        mmLeft = 4233
+        mmTop = 11113
+        mmWidth = 12171
+        BandType = 7
+      end
+      object ppLabel5: TppLabel
+        UserName = 'Label5'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = ' :  VAT 0 %  - '#1590#1585#1610#1576#1577' '#1575#1604#1602#1610#1605#1577' '#1575#1604#1605#1590#1575#1601#1577
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 20108
+        mmTop = 11113
+        mmWidth = 41275
         BandType = 7
       end
     end
@@ -4874,6 +5177,11 @@ object fmPointOfSale: TfmPointOfSale
       Precision = 18
       Size = 8
     end
+    object qry_SourceDocTotalTaxes: TFMTBCDField
+      FieldName = 'TotalTaxes'
+      Precision = 18
+      Size = 8
+    end
   end
   object DS_SourceDoc: TDataSource
     DataSet = qry_SourceDoc
@@ -5003,6 +5311,1010 @@ object fmPointOfSale: TfmPointOfSale
       FieldName = 'UnitTransValue'
       Precision = 18
       Size = 8
+    end
+  end
+  object SDS_Details_Temp2: TSimpleDataSet
+    Active = True
+    Aggregates = <>
+    AggregatesActive = True
+    Connection = fmMainForm.MainConnection
+    DataSet.SchemaName = 'dbo'
+    DataSet.CommandText = 
+      'SELECT     D.CompanyCode, D.BranchCode, D.TrxNo, D.TrxType, D.Ye' +
+      'arID, D.PeriodID, D.TrxLineNo, D.Barcode, D.ItemCode, D.ItemServ' +
+      'ice, Sum(D.Quantity) As Quantity, D.ItemPrice, D.Discount, '#13#10'   ' +
+      '                   D.DiscountRatio, D.NetPrice, D.CostPrice, D.I' +
+      'temUnitCode, D.UnitTransValue, D.TrxDetailDescA, D.TrxDetailDesc' +
+      'E, D.SourceDocLineNo, D.TaxPercent, D.TaxValue, '#13#10'              ' +
+      '        T.SectionNameA, T.SectionCode, T.SectionNameE, T.Printer' +
+      'Path, G.ItemGroupNameAr, G.ItemGroupNameEn, G.ItemGroupCode, I.I' +
+      'temNameAr, I.ItemNameEn'#13#10'FROM         tbl_ItemGroupSections AS T' +
+      ' INNER JOIN'#13#10'                      tbl_ItemGroup AS G ON T.Compa' +
+      'nyCode = G.CompanyCode AND T.SectionCode = G.SectionCode INNER J' +
+      'OIN'#13#10'                      sa_POS_TrxDetails AS D INNER JOIN'#13#10'  ' +
+      '                    tbl_ItemDefinition AS I ON D.CompanyCode = I' +
+      '.CompanyCode AND D.ItemCode = I.ItemCode AND D.ItemService = I.I' +
+      'temService ON '#13#10'                      G.CompanyCode = I.CompanyC' +
+      'ode AND G.ItemGroupCode = I.ItemGroupCode'#13#10'GROUP BY D.CompanyCod' +
+      'e, D.BranchCode, D.TrxNo, D.TrxType, D.YearID, D.PeriodID, D.Trx' +
+      'LineNo, D.Barcode, D.ItemCode, D.ItemService, D.ItemPrice, '#13#10'   ' +
+      '                   D.Discount, D.DiscountRatio, D.NetPrice, D.Co' +
+      'stPrice, D.ItemUnitCode, D.UnitTransValue, D.TrxDetailDescA, D.T' +
+      'rxDetailDescE, D.SourceDocLineNo, D.TaxPercent, '#13#10'              ' +
+      '        D.TaxValue, T.SectionNameA, T.SectionCode, T.SectionName' +
+      'E, T.PrinterPath, G.ItemGroupNameAr, G.ItemGroupNameEn, G.ItemGr' +
+      'oupCode, I.ItemNameAr, '#13#10'                      I.ItemNameEn '#13#10
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 347
+    Top = 385
+    object SDS_Details_Temp2CompanyCode: TStringField
+      FieldName = 'CompanyCode'
+      Required = True
+      Size = 4
+    end
+    object SDS_Details_Temp2BranchCode: TStringField
+      FieldName = 'BranchCode'
+      Required = True
+      Size = 4
+    end
+    object SDS_Details_Temp2TrxNo: TStringField
+      FieldName = 'TrxNo'
+      Required = True
+      Size = 8
+    end
+    object SDS_Details_Temp2TrxType: TStringField
+      FieldName = 'TrxType'
+      Required = True
+      Size = 4
+    end
+    object SDS_Details_Temp2YearID: TStringField
+      FieldName = 'YearID'
+      Required = True
+      Size = 4
+    end
+    object SDS_Details_Temp2PeriodID: TStringField
+      FieldName = 'PeriodID'
+      Required = True
+      Size = 2
+    end
+    object SDS_Details_Temp2TrxLineNo: TFMTBCDField
+      FieldName = 'TrxLineNo'
+      Required = True
+      Precision = 18
+      Size = 0
+    end
+    object SDS_Details_Temp2Barcode: TStringField
+      FieldName = 'Barcode'
+      Size = 30
+    end
+    object SDS_Details_Temp2ItemCode: TStringField
+      FieldName = 'ItemCode'
+      Size = 25
+    end
+    object SDS_Details_Temp2ItemService: TStringField
+      FieldName = 'ItemService'
+      Size = 3
+    end
+    object SDS_Details_Temp2Quantity: TFMTBCDField
+      FieldName = 'Quantity'
+      Precision = 18
+    end
+    object SDS_Details_Temp2ItemPrice: TFMTBCDField
+      FieldName = 'ItemPrice'
+      Precision = 18
+    end
+    object SDS_Details_Temp2Discount: TFMTBCDField
+      FieldName = 'Discount'
+      Precision = 18
+    end
+    object SDS_Details_Temp2DiscountRatio: TFMTBCDField
+      FieldName = 'DiscountRatio'
+      Precision = 18
+    end
+    object SDS_Details_Temp2NetPrice: TFMTBCDField
+      FieldName = 'NetPrice'
+      Precision = 18
+    end
+    object SDS_Details_Temp2CostPrice: TFMTBCDField
+      FieldName = 'CostPrice'
+      Precision = 18
+    end
+    object SDS_Details_Temp2ItemUnitCode: TStringField
+      FieldName = 'ItemUnitCode'
+      Size = 6
+    end
+    object SDS_Details_Temp2UnitTransValue: TFMTBCDField
+      FieldName = 'UnitTransValue'
+      Precision = 18
+    end
+    object SDS_Details_Temp2TrxDetailDescA: TStringField
+      FieldName = 'TrxDetailDescA'
+      Size = 4000
+    end
+    object SDS_Details_Temp2TrxDetailDescE: TStringField
+      FieldName = 'TrxDetailDescE'
+      Size = 4000
+    end
+    object SDS_Details_Temp2SourceDocLineNo: TFMTBCDField
+      FieldName = 'SourceDocLineNo'
+      Precision = 18
+      Size = 0
+    end
+    object SDS_Details_Temp2TaxPercent: TFMTBCDField
+      FieldName = 'TaxPercent'
+      Precision = 18
+    end
+    object SDS_Details_Temp2TaxValue: TFMTBCDField
+      FieldName = 'TaxValue'
+      Precision = 18
+    end
+    object SDS_Details_Temp2SectionNameA: TStringField
+      FieldName = 'SectionNameA'
+      Size = 75
+    end
+    object SDS_Details_Temp2SectionCode: TStringField
+      FieldName = 'SectionCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_Details_Temp2SectionNameE: TStringField
+      FieldName = 'SectionNameE'
+      Size = 75
+    end
+    object SDS_Details_Temp2PrinterPath: TStringField
+      FieldName = 'PrinterPath'
+      Size = 200
+    end
+    object SDS_Details_Temp2ItemGroupNameAr: TStringField
+      FieldName = 'ItemGroupNameAr'
+      Size = 255
+    end
+    object SDS_Details_Temp2ItemGroupNameEn: TStringField
+      FieldName = 'ItemGroupNameEn'
+      Size = 255
+    end
+    object SDS_Details_Temp2ItemGroupCode: TStringField
+      FieldName = 'ItemGroupCode'
+      Required = True
+      Size = 6
+    end
+    object SDS_Details_Temp2ItemNameAr: TStringField
+      FieldName = 'ItemNameAr'
+      Size = 255
+    end
+    object SDS_Details_Temp2ItemNameEn: TStringField
+      FieldName = 'ItemNameEn'
+      Size = 255
+    end
+    object SDS_Details_Temp2TotalAmount: TAggregateField
+      FieldName = 'TotalAmount'
+      Active = True
+      Expression = 'Sum(NetPrice)'
+    end
+    object SDS_Details_Temp2TotalDiscount: TAggregateField
+      FieldName = 'TotalDiscount'
+      Active = True
+      Expression = 'Sum(Discount)'
+    end
+    object SDS_Details_Temp2TotalTaxes: TAggregateField
+      FieldName = 'TotalTaxes'
+      Active = True
+      Expression = 'Sum(TaxValue)'
+    end
+  end
+  object ppReport1: TppReport
+    AutoStop = False
+    DataPipeline = ppDBPipeline1
+    PassSetting = psTwoPass
+    PrinterSetup.BinName = 'Default'
+    PrinterSetup.DocumentName = 'Report'
+    PrinterSetup.PaperName = 'Custom'
+    PrinterSetup.PrinterName = 'Default'
+    PrinterSetup.mmMarginBottom = 2000
+    PrinterSetup.mmMarginLeft = 2000
+    PrinterSetup.mmMarginRight = 2000
+    PrinterSetup.mmMarginTop = 2000
+    PrinterSetup.mmPaperHeight = 130000
+    PrinterSetup.mmPaperWidth = 60000
+    PrinterSetup.PaperSize = 119
+    Template.FileName = 'E:\Work\SVN\DelphiPOS\trunk\Code\Reports\Sales_POS_Temp.rtm'
+    Units = utMillimeters
+    DeviceType = 'Screen'
+    EmailSettings.ReportFormat = 'PDF'
+    OutlineSettings.CreateNode = False
+    OutlineSettings.CreatePageNodes = False
+    OutlineSettings.Enabled = False
+    OutlineSettings.Visible = False
+    TextSearchSettings.DefaultString = '<FindText>'
+    TextSearchSettings.Enabled = True
+    Left = 340
+    Top = 240
+    Version = '10.02'
+    mmColumnWidth = 0
+    DataPipelineName = 'ppDBPipeline1'
+    object ppTitleBand2: TppTitleBand
+      mmBottomOffset = 0
+      mmHeight = 14552
+      mmPrintPosition = 0
+      object ppLabel6: TppLabel
+        UserName = 'lTitle'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = #1573#1585#1587#1575#1604#1610#1577
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Traditional Arabic'
+        Font.Size = 12
+        Font.Style = [fsBold]
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 6350
+        mmLeft = 5027
+        mmTop = 8202
+        mmWidth = 45773
+        BandType = 1
+      end
+      object ppSystemVariable1: TppSystemVariable
+        UserName = 'SystemVariable1'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taRightJustified
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 37306
+        mmTop = 3175
+        mmWidth = 17463
+        BandType = 1
+      end
+      object ppSystemVariable2: TppSystemVariable
+        UserName = 'SystemVariable2'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        VarType = vtTime
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 1852
+        mmTop = 3440
+        mmWidth = 17463
+        BandType = 1
+      end
+    end
+    object ppHeaderBand1: TppHeaderBand
+      mmBottomOffset = 0
+      mmHeight = 8731
+      mmPrintPosition = 0
+      object ppShape1: TppShape
+        UserName = 'Shape2'
+        Pen.Style = psDashDot
+        Pen.Width = 2
+        mmHeight = 8467
+        mmLeft = 0
+        mmTop = 264
+        mmWidth = 56621
+        BandType = 0
+      end
+      object ppLabel12: TppLabel
+        UserName = 'lTrxNo'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = ': '#1575#1604#1585#1602#1605
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 46302
+        mmTop = 2117
+        mmWidth = 8731
+        BandType = 0
+      end
+      object ppLabel13: TppLabel
+        UserName = 'lTrxDate'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = ': '#1575#1604#1578#1575#1585#1610#1582
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 19050
+        mmTop = 2117
+        mmWidth = 9525
+        BandType = 0
+      end
+      object ppDBText2: TppDBText
+        UserName = 'DBText3'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'TrxNo'
+        DataPipeline = DPL_Header
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'DPL_Header'
+        mmHeight = 3440
+        mmLeft = 30956
+        mmTop = 2117
+        mmWidth = 14552
+        BandType = 0
+      end
+      object ppDBText12: TppDBText
+        UserName = 'DBText4'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'TrxDate'
+        DataPipeline = DPL_Header
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'DPL_Header'
+        mmHeight = 3440
+        mmLeft = 1588
+        mmTop = 2117
+        mmWidth = 16404
+        BandType = 0
+      end
+    end
+    object ppDetailBand2: TppDetailBand
+      mmBottomOffset = 0
+      mmHeight = 10583
+      mmPrintPosition = 0
+      object ppDBText17: TppDBText
+        UserName = 'DBQty'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'Quantity'
+        DataPipeline = ppDBPipeline1
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'ppDBPipeline1'
+        mmHeight = 3440
+        mmLeft = 3969
+        mmTop = 4498
+        mmWidth = 7673
+        BandType = 4
+      end
+      object ppLabel14: TppLabel
+        UserName = 'lItemName'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = ' '#1575#1604#1589#1606#1601' Item'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        TextAlignment = taCentered
+        Transparent = True
+        mmHeight = 3217
+        mmLeft = 23019
+        mmTop = 1058
+        mmWidth = 32279
+        BandType = 4
+      end
+      object ppLabel15: TppLabel
+        UserName = 'lQty'
+        AutoSize = False
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Caption = #1575#1604#1603#1605#1610#1577' Qty'
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Times New Roman'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        Transparent = True
+        mmHeight = 3440
+        mmLeft = 3969
+        mmTop = 529
+        mmWidth = 13494
+        BandType = 4
+      end
+      object ppLine1: TppLine
+        UserName = 'Line12'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        Pen.Style = psDot
+        Pen.Width = 2
+        Position = lpBottom
+        Weight = 1.500000000000000000
+        mmHeight = 1588
+        mmLeft = 1058
+        mmTop = 8995
+        mmWidth = 56092
+        BandType = 4
+      end
+      object ppDBText19: TppDBText
+        UserName = 'DBText1'
+        Border.BorderPositions = []
+        Border.Color = clBlack
+        Border.Style = psSolid
+        Border.Visible = False
+        Border.Weight = 1.000000000000000000
+        DataField = 'ItemNameAr'
+        DataPipeline = ppDBPipeline1
+        Font.Charset = ARABIC_CHARSET
+        Font.Color = clBlack
+        Font.Name = 'Arial'
+        Font.Size = 8
+        Font.Style = [fsBold]
+        ParentDataPipeline = False
+        TextAlignment = taRightJustified
+        Transparent = True
+        DataPipelineName = 'ppDBPipeline1'
+        mmHeight = 3440
+        mmLeft = 14817
+        mmTop = 4763
+        mmWidth = 41010
+        BandType = 4
+      end
+    end
+    object ppFooterBand2: TppFooterBand
+      mmBottomOffset = 0
+      mmHeight = 3440
+      mmPrintPosition = 0
+    end
+    object ppSummaryBand2: TppSummaryBand
+      mmBottomOffset = 0
+      mmHeight = 1588
+      mmPrintPosition = 0
+    end
+    object raCodeModule2: TraCodeModule
+      ProgramStream = {
+        01060A54726150726F6772616D094368696C645479706502150E497346756E63
+        74696F6E54797065090B50726F6772616D4E616D6506084E756D546F5374720B
+        50726F6772616D54797065070A747446756E6374696F6E06536F757263651428
+        0F000066756E6374696F6E204E756D546F537472284E203A20496E7465676572
+        293A20537472696E673B0D0A5661722068756E64726564732C2074656E732C20
+        6F6E6573203A20496E74656765723B0D0A20202020732C2073732C207373732C
+        20416E64537472203A20537472696E673B0D0A626567696E0D0A202069662052
+        65706F72742E506172616D65746572735B274C616E67275D203D202741272074
+        68656E20416E64537472203A3D2027D988270D0A2020656C736520416E645374
+        72203A3D2027416E64273B0D0A20200D0A202068756E6472656473203A3D204E
+        20646976203130303B0D0A202074656E73203A3D20284E206D6F642031303029
+        206469762031303B0D0A20206F6E6573203A3D204E206D6F642031303B0D0A20
+        200D0A20206966205265706F72742E506172616D65746572735B274C616E6727
+        5D203D20274127207468656E20200D0A2020626567696E0D0A20202020636173
+        65206F6E6573206F660D0A202020202020303A2073203A3D2027273B0D0A2020
+        20202020313A2073203A3D2027D988D8A7D8ADD8AF273B0D0A20202020202032
+        3A2073203A3D2027D8A7D8ABD986D8A7D986273B0D0A202020202020333A2073
+        203A3D2027D8ABD984D8A7D8ABD8A9273B0D0A202020202020343A2073203A3D
+        2027D8A7D8B1D8A8D8B9D8A9273B0D0A202020202020353A2073203A3D2027D8
+        AED985D8B3D8A9273B0D0A202020202020363A2073203A3D2027D8B3D8AAD8A9
+        273B0D0A202020202020373A2073203A3D2027D8B3D8A8D8B9D8A9273B0D0A20
+        2020202020383A2073203A3D2027D8ABD985D8A7D986D98AD8A9273B0D0A2020
+        20202020393A2073203A3D2027D8AAD8B3D8B9D8A9273B0D0A20202020656E64
+        3B0D0A20200D0A20202020636173652074656E73206F66202020200D0A202020
+        202020303A207373203A3D2027273B202020200D0A202020202020313A207373
+        203A3D2027D8B9D8B4D8B1D8A9273B0D0A202020202020323A207373203A3D20
+        27D8B9D8B4D8B1D988D986273B0D0A202020202020333A207373203A3D2027D8
+        ABD984D8A7D8ABD988D986273B0D0A202020202020343A207373203A3D2027D8
+        A3D8B1D8A8D8B9D988D986273B0D0A202020202020353A207373203A3D2027D8
+        AED985D8B3D988D986273B0D0A202020202020363A207373203A3D2027D8B3D8
+        AAD988D986273B0D0A202020202020373A207373203A3D2027D8B3D8A8D8B9D9
+        88D986273B0D0A202020202020383A207373203A3D2027D8ABD985D8A7D986D9
+        88D986273B0D0A202020202020393A207373203A3D2027D8AAD8B3D8B9D988D9
+        86273B0D0A20202020656E643B20200D0A0D0A20202020636173652068756E64
+        72656473206F660D0A202020202020303A20737373203A3D2027273B0D0A2020
+        20202020313A20737373203A3D2027D985D8A6D8A9273B0D0A20202020202032
+        3A20737373203A3D2027D985D8A6D8AAD8A7D986273B0D0A202020202020333A
+        20737373203A3D2027D8ABD984D8A7D8ABD985D8A7D8A6D8A9273B0D0A202020
+        202020343A20737373203A3D2027D8A7D8B1D8A8D8B9D985D8A7D8A6D8A9273B
+        0D0A202020202020353A20737373203A3D2027D8AED985D8B3D985D8A7D8A6D8
+        A9273B0D0A202020202020363A20737373203A3D2027D8B3D8AAD985D8A7D8A6
+        D8A9273B0D0A202020202020373A20737373203A3D2027D8B3D8A8D8B9D985D8
+        A7D8A6D8A9273B0D0A202020202020383A20737373203A3D2027D8ABD985D8A7
+        D986D985D8A7D8A6D8A9273B0D0A202020202020393A20737373203A3D2027D8
+        AAD8B3D8B9D985D8A7D8A6D8A9273B0D0A20202020656E643B202020200D0A20
+        2020200D0A2020202069662074656E73203D2031207468656E0D0A2020202062
+        6567696E0D0A20202020202073203A3D2027273B0D0A20202020202063617365
+        206F6E6573206F66202020200D0A2020202020202020303A207373203A3D2027
+        D8B9D8B4D8B1D8A9273B202020200D0A2020202020202020313A207373203A3D
+        2027D8A7D8ADD8AFD98920D8B9D8B4D8B1273B0D0A2020202020202020323A20
+        7373203A3D2027D8A7D8ABD986D8A720D8B9D8B4D8B1273B0D0A202020202020
+        2020333A207373203A3D2027D8ABD984D8A7D8ABD8A920D8B9D8B4D8B1273B0D
+        0A2020202020202020343A207373203A3D2027D8A3D8B1D8A8D8B9D8A920D8B9
+        D8B4D8B1273B0D0A2020202020202020353A207373203A3D2027D8AED985D8B3
+        D8A920D8B9D8B4D8B1273B0D0A2020202020202020363A207373203A3D2027D8
+        B3D8AAD8A920D8B9D8B4D8B1273B0D0A2020202020202020373A207373203A3D
+        2027D8B3D8A8D8B9D8A920D8B9D8B4D8B1273B0D0A2020202020202020383A20
+        7373203A3D2027D8ABD985D8A7D986D98AD8A920D8B9D8B4D8B1273B0D0A2020
+        202020202020393A207373203A3D2027D8AAD8B3D8B9D8A920D8B9D8B4D8B127
+        3B0D0A202020202020656E643B0D0A20202020656E643B200D0A0D0A20202020
+        726573756C74203A3D2027273B0D0A20202020696620737373203C3E20272720
+        7468656E0D0A20202020202020726573756C74203A3D20726573756C74202B20
+        7373733B0D0A20202020696620282873203C3E202727292920616E6420287373
+        73203C3E20272729207468656E0D0A20202020202020726573756C74203A3D20
+        726573756C74202B20272027202B2020416E64537472202B202720273B20200D
+        0A2020202069662073203C3E202727207468656E0D0A20202020202020726573
+        756C74203A3D20726573756C74202B20733B0D0A20202020696620287373203C
+        3E2027272920616E6420282853203C3E20272729206F722028737373203C3E20
+        27272929207468656E0D0A20202020202020726573756C74203A3D2072657375
+        6C74202B20272027202B20416E64535472202B202720273B2020200D0A202020
+        2069662074656E73203E2030207468656E0D0A20202020202020726573756C74
+        203A3D20726573756C74202B2073733B202020200D0A2020656E643B200D0A0D
+        0A20206966205265706F72742E506172616D65746572735B274C616E67275D20
+        3D20274527207468656E20200D0A2020626567696E0D0A202020206361736520
+        6F6E6573206F660D0A202020202020303A2073203A3D2027273B0D0A20202020
+        2020313A2073203A3D20274F6E65273B0D0A202020202020323A2073203A3D20
+        2754776F273B0D0A202020202020333A2073203A3D20275468726565273B0D0A
+        202020202020343A2073203A3D2027466F7572273B0D0A202020202020353A20
+        73203A3D202746697665273B0D0A202020202020363A2073203A3D2027536978
+        273B0D0A202020202020373A2073203A3D2027536576656E273B0D0A20202020
+        2020383A2073203A3D20274569676874273B0D0A202020202020393A2073203A
+        3D20274E696E65273B0D0A20202020656E643B0D0A20200D0A20202020636173
+        652074656E73206F66202020200D0A202020202020303A207373203A3D202727
+        3B202020200D0A202020202020313A207373203A3D202754656E273B0D0A2020
+        20202020323A207373203A3D20275477656E7479273B0D0A202020202020333A
+        207373203A3D2027546869727479273B0D0A202020202020343A207373203A3D
+        2027466F727479273B0D0A202020202020353A207373203A3D20274669667479
+        273B0D0A202020202020363A207373203A3D20275369787479273B0D0A202020
+        202020373A207373203A3D2027536576656E7479273B0D0A202020202020383A
+        207373203A3D2027456967687479273B0D0A202020202020393A207373203A3D
+        20274E696E657479273B0D0A20202020656E643B202020200D0A202020200D0A
+        20202020636173652068756E6472656473206F660D0A202020202020303A2073
+        7373203A3D2027273B0D0A202020202020313A20737373203A3D20274F6E6520
+        48756E64726564273B0D0A202020202020323A20737373203A3D202754776F20
+        48756E64726564273B0D0A202020202020333A20737373203A3D202754687265
+        652048756E64726564273B0D0A202020202020343A20737373203A3D2027466F
+        75722048756E64726564273B0D0A202020202020353A20737373203A3D202746
+        6976652048756E64726564273B0D0A202020202020363A20737373203A3D2027
+        5369782048756E64726564273B0D0A202020202020373A20737373203A3D2027
+        536576656E2048756E64726564273B0D0A202020202020383A20737373203A3D
+        202745696768742048756E64726564273B0D0A202020202020393A2073737320
+        3A3D20274E696E652048756E64726564273B0D0A20202020656E643B20202020
+        0D0A202020200D0A2020202069662074656E73203D2031207468656E0D0A2020
+        2020626567696E0D0A20202020202073203A3D2027273B0D0A20202020202063
+        617365206F6E6573206F66202020200D0A2020202020202020303A207373203A
+        3D202754656E273B202020200D0A2020202020202020313A207373203A3D2027
+        456C6576656E273B0D0A2020202020202020323A207373203A3D20275477656C
+        66273B0D0A2020202020202020333A207373203A3D2027546869727465656E27
+        3B0D0A2020202020202020343A207373203A3D2027466F727465656E273B0D0A
+        2020202020202020353A207373203A3D20274669667465656E273B0D0A202020
+        2020202020363A207373203A3D20275369787465656E273B0D0A202020202020
+        2020373A207373203A3D2027536576656E7465656E273B0D0A20202020202020
+        20383A207373203A3D2027456967687465656E273B0D0A202020202020202039
+        3A207373203A3D20274E696E657465656E273B0D0A202020202020656E643B20
+        202020200D0A20202020656E643B20200D0A0D0A20202020726573756C74203A
+        3D2027273B0D0A20202020696620737373203C3E202727207468656E0D0A2020
+        2020202020726573756C74203A3D20726573756C74202B207373733B0D0A2020
+        202069662028287373203C3E20272729206F72202873203C3E20272729292061
+        6E642028737373203C3E20272729207468656E0D0A2020202020202072657375
+        6C74203A3D20726573756C74202B20272027202B2020416E64537472202B2027
+        20273B20200D0A0D0A202020206966207373203C3E202727207468656E0D0A20
+        202020202020726573756C74203A3D20726573756C74202B2073733B0D0A2020
+        202069662073203C3E202727207468656E0D0A20202020202020726573756C74
+        203A3D20726573756C74202B20272027202B20733B0D0A2020656E643B202020
+        2020200D0A656E643B0D0A0001060A54726150726F6772616D094368696C6454
+        79706502150E497346756E6374696F6E54797065090B50726F6772616D4E616D
+        65060E4E756D626572546F537472696E670B50726F6772616D54797065070A74
+        7446756E6374696F6E06536F75726365142606000066756E6374696F6E204E75
+        6D626572546F537472696E67284E756D203A20646F75626C653B20446F6C6C61
+        725374722C2043656E74537472202C205072656669782C205375666669782C20
+        4C616E67203A20537472696E67293A20537472696E673B0D0A56617220206D69
+        6C6C696F6E732C2074686F7573616E64732C20756E6974732C20646F6C6C6172
+        732C2063656E7473203A20696E74656765723B0D0A20202020204D696C6C696F
+        6E5374722C2054686F7573616E645374722C20416E64537472203A2053747269
+        6E673B0D0A626567696E0D0A2020646F6C6C617273203A3D206E756D20646976
+        20313B0D0A202063656E7473203A3D20726F756E642866726163286E756D2920
+        2A20313030293B0D0A2020202020200D0A20206D696C6C696F6E73203A3D2064
+        6F6C6C6172732064697620313030303030303B0D0A202074686F7573616E6473
+        203A3D2028646F6C6C617273206D6F6420313030303030302920646976203130
+        30303B200D0A2020756E697473203A3D20646F6C6C617273206D6F6420313030
+        303B0D0A2020526573756C74203A3D2027273B0D0A0D0A20206966205265706F
+        72742E506172616D65746572735B274C616E67275D203D20274127207468656E
+        20416E64537472203A3D2027D988270D0A2020656C736520416E64537472203A
+        3D2027416E64273B0D0A20206966205265706F72742E506172616D6574657273
+        5B274C616E67275D203D20274127207468656E20204D696C6C696F6E53747220
+        3A3D20272027202B2027D985D984D98AD988D986270D0A2020656C7365204D69
+        6C6C696F6E537472203A3D2027204D696C6C696F6E273B0D0A20206966205265
+        706F72742E506172616D65746572735B274C616E67275D203D20274127207468
+        656E202054686F7573616E64537472203A3D20272027202B2027D8A3D984D981
+        270D0A2020656C73652054686F7573616E64537472203A3D20272054686F7573
+        616E64273B20200D0A20206966206D696C6C696F6E73203E2030207468656E0D
+        0A2020626567696E0D0A20202020526573756C74203A3D20526573756C74202B
+        204E756D546F537472286D696C6C696F6E7329202B204D696C6C696F6E537472
+        3B0D0A2020656E643B0D0A20200D0A2020696620286D696C6C696F6E73203E20
+        302920616E64202874686F7573616E6473203E203029207468656E0D0A202020
+        2020726573756C74203A3D20726573756C74202B20272027202B20416E645374
+        72202B202720273B0D0A20200D0A202069662074686F7573616E6473203E2030
+        207468656E0D0A2020626567696E0D0A20202020526573756C74203A3D205265
+        73756C74202B204E756D546F5374722874686F7573616E647329202B2054686F
+        7573616E645374723B20200D0A2020656E643B2020200D0A20200D0A20206966
+        2028756E697473203E20302920616E642028726573756C74203C3E2027272920
+        7468656E0D0A2020202020726573756C74203A3D20726573756C74202B202720
+        27202B20416E64537472202B202720273B20200D0A0D0A2020696620756E6974
+        73203E2030207468656E0D0A2020626567696E202020200D0A20202020526573
+        756C74203A3D20526573756C74202B206E756D746F53747228756E697473293B
+        2020202020200D0A2020656E643B0D0A20200D0A2020696620726573756C7420
+        3C3E202727207468656E0D0A2020202020726573756C74203A3D20726573756C
+        74202B20272027202B20446F6C6C6172537472202B202720273B0D0A20202020
+        200D0A20206966202863656E7473203E20302920616E642028726573756C7420
+        3C3E20272729207468656E0D0A2020202020726573756C74203A3D2072657375
+        6C74202B20272027202B20416E64537472202B202720273B200D0A20200D0A20
+        2069662063656E7473203E2030207468656E0D0A2020626567696E0D0A202020
+        20526573756C74203A3D20526573756C74202B204E756D546F5374722863656E
+        7473293B0D0A20202020726573756C74203A3D20726573756C74202B20272027
+        202B2043656E74537472202B202720273B2020200D0A2020656E643B20200D0A
+        2020726573756C74203A3D20507265666978202B20272027202B20726573756C
+        74202B20272027202B205375666669783B20200D0A656E643B0D0A0001060F54
+        72614576656E7448616E646C65720B50726F6772616D4E616D6506116C547278
+        446174654F6E476574546578740B50726F6772616D54797065070B747450726F
+        63656475726506536F75726365067D70726F636564757265206C547278446174
+        654F6E476574546578742876617220546578743A20537472696E67293B0D0A62
+        6567696E0D0A20206966205265706F72742E506172616D65746572735B274C61
+        6E67275D203D20274527207468656E0D0A202054657874203A3D202744617465
+        203A273B0D0A656E643B0D0A0D436F6D706F6E656E744E616D6506086C547278
+        44617465094576656E744E616D6506094F6E47657454657874074576656E7449
+        4402350001060F5472614576656E7448616E646C65720B50726F6772616D4E61
+        6D65060F6C5472784E6F4F6E476574546578740B50726F6772616D5479706507
+        0B747450726F63656475726506536F75726365067D70726F636564757265206C
+        5472784E6F4F6E476574546578742876617220546578743A20537472696E6729
+        3B0D0A626567696E0D0A20206966205265706F72742E506172616D6574657273
+        5B274C616E67275D203D20274527207468656E0D0A202054657874203A3D2027
+        547278204E6F203A273B0D0A656E643B0D0A0D436F6D706F6E656E744E616D65
+        06066C5472784E6F094576656E744E616D6506094F6E47657454657874074576
+        656E74494402350001060F5472614576656E7448616E646C65720B50726F6772
+        616D4E616D65060D6C5174794F6E476574546578740B50726F6772616D547970
+        65070B747450726F63656475726506536F75726365067B70726F636564757265
+        206C5174794F6E476574546578742876617220546578743A20537472696E6729
+        3B0D0A626567696E0D0A20206966205265706F72742E506172616D6574657273
+        5B274C616E67275D203D20274527207468656E0D0A202054657874203A3D2027
+        5175616E74697479273B0D0A656E643B0D0A0D436F6D706F6E656E744E616D65
+        06046C517479094576656E744E616D6506094F6E47657454657874074576656E
+        74494402350001060F5472614576656E7448616E646C65720B50726F6772616D
+        4E616D6506126C4974656D4E616D654F6E476574546578740B50726F6772616D
+        54797065070B747450726F63656475726506536F75726365068170726F636564
+        757265206C4974656D4E616D654F6E476574546578742876617220546578743A
+        20537472696E67293B0D0A626567696E0D0A20206966205265706F72742E5061
+        72616D65746572735B274C616E67275D203D20274527207468656E0D0A202054
+        657874203A3D20274974656D204E616D65273B0D0A656E643B0D0A0D436F6D70
+        6F6E656E744E616D6506096C4974656D4E616D65094576656E744E616D650609
+        4F6E47657454657874074576656E74494402350001060F5472614576656E7448
+        616E646C65720B50726F6772616D4E616D65060F6C5469746C654F6E47657454
+        6578740B50726F6772616D54797065070B747450726F63656475726506536F75
+        726365069270726F636564757265206C5469746C654F6E476574546578742876
+        617220546578743A20537472696E67293B0D0A626567696E0D0A202069662052
+        65706F72742E506172616D65746572735B274C616E67275D203D202745272074
+        68656E20626567696E0D0A202020202054657874203A3D202753616C65732049
+        6E766F696365270D0A2020656E643B0D0A656E643B0D0A0D436F6D706F6E656E
+        744E616D6506066C5469746C65094576656E744E616D6506094F6E4765745465
+        7874074576656E74494402350000}
+    end
+    object ppParameterList1: TppParameterList
+      object ppParameter1: TppParameter
+        DataType = dtString
+        Value = ''
+      end
+    end
+  end
+  object DS_DetatilsTemp: TDataSource
+    DataSet = SDS_Details_Temp2
+    Left = 399
+    Top = 441
+  end
+  object ppDBPipeline1: TppDBPipeline
+    DataSource = DS_DetatilsTemp
+    UserName = 'Details_Temp'
+    Left = 427
+    Top = 441
+    object ppDBPipeline1ppField1: TppField
+      FieldAlias = 'CompanyCode'
+      FieldName = 'CompanyCode'
+      FieldLength = 4
+      DisplayWidth = 4
+      Position = 0
+    end
+    object ppDBPipeline1ppField2: TppField
+      FieldAlias = 'BranchCode'
+      FieldName = 'BranchCode'
+      FieldLength = 4
+      DisplayWidth = 4
+      Position = 1
+    end
+    object ppDBPipeline1ppField3: TppField
+      FieldAlias = 'TrxNo'
+      FieldName = 'TrxNo'
+      FieldLength = 8
+      DisplayWidth = 8
+      Position = 2
+    end
+    object ppDBPipeline1ppField4: TppField
+      FieldAlias = 'TrxType'
+      FieldName = 'TrxType'
+      FieldLength = 4
+      DisplayWidth = 4
+      Position = 3
+    end
+    object ppDBPipeline1ppField5: TppField
+      FieldAlias = 'YearID'
+      FieldName = 'YearID'
+      FieldLength = 4
+      DisplayWidth = 4
+      Position = 4
+    end
+    object ppDBPipeline1ppField6: TppField
+      FieldAlias = 'PeriodID'
+      FieldName = 'PeriodID'
+      FieldLength = 2
+      DisplayWidth = 2
+      Position = 5
+    end
+    object ppDBPipeline1ppField7: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TrxLineNo'
+      FieldName = 'TrxLineNo'
+      FieldLength = 0
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 6
+    end
+    object ppDBPipeline1ppField8: TppField
+      FieldAlias = 'Barcode'
+      FieldName = 'Barcode'
+      FieldLength = 30
+      DisplayWidth = 30
+      Position = 7
+    end
+    object ppDBPipeline1ppField9: TppField
+      FieldAlias = 'ItemCode'
+      FieldName = 'ItemCode'
+      FieldLength = 25
+      DisplayWidth = 25
+      Position = 8
+    end
+    object ppDBPipeline1ppField10: TppField
+      FieldAlias = 'ItemService'
+      FieldName = 'ItemService'
+      FieldLength = 3
+      DisplayWidth = 3
+      Position = 9
+    end
+    object ppDBPipeline1ppField11: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'Quantity'
+      FieldName = 'Quantity'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 10
+    end
+    object ppDBPipeline1ppField12: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'ItemPrice'
+      FieldName = 'ItemPrice'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 11
+    end
+    object ppDBPipeline1ppField13: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'Discount'
+      FieldName = 'Discount'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 12
+    end
+    object ppDBPipeline1ppField14: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'DiscountRatio'
+      FieldName = 'DiscountRatio'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 13
+    end
+    object ppDBPipeline1ppField15: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'NetPrice'
+      FieldName = 'NetPrice'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 14
+    end
+    object ppDBPipeline1ppField16: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'CostPrice'
+      FieldName = 'CostPrice'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 15
+    end
+    object ppDBPipeline1ppField17: TppField
+      FieldAlias = 'ItemUnitCode'
+      FieldName = 'ItemUnitCode'
+      FieldLength = 6
+      DisplayWidth = 6
+      Position = 16
+    end
+    object ppDBPipeline1ppField18: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'UnitTransValue'
+      FieldName = 'UnitTransValue'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 17
+    end
+    object ppDBPipeline1ppField19: TppField
+      FieldAlias = 'TrxDetailDescA'
+      FieldName = 'TrxDetailDescA'
+      FieldLength = 4000
+      DisplayWidth = 4000
+      Position = 18
+    end
+    object ppDBPipeline1ppField20: TppField
+      FieldAlias = 'TrxDetailDescE'
+      FieldName = 'TrxDetailDescE'
+      FieldLength = 4000
+      DisplayWidth = 4000
+      Position = 19
+    end
+    object ppDBPipeline1ppField21: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'SourceDocLineNo'
+      FieldName = 'SourceDocLineNo'
+      FieldLength = 0
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 20
+    end
+    object ppDBPipeline1ppField22: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TaxPercent'
+      FieldName = 'TaxPercent'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 21
+    end
+    object ppDBPipeline1ppField23: TppField
+      Alignment = taRightJustify
+      FieldAlias = 'TaxValue'
+      FieldName = 'TaxValue'
+      FieldLength = 4
+      DataType = dtDouble
+      DisplayWidth = 19
+      Position = 22
+    end
+    object ppDBPipeline1ppField24: TppField
+      FieldAlias = 'SectionNameA'
+      FieldName = 'SectionNameA'
+      FieldLength = 75
+      DisplayWidth = 75
+      Position = 23
+    end
+    object ppDBPipeline1ppField25: TppField
+      FieldAlias = 'SectionCode'
+      FieldName = 'SectionCode'
+      FieldLength = 6
+      DisplayWidth = 6
+      Position = 24
+    end
+    object ppDBPipeline1ppField26: TppField
+      FieldAlias = 'SectionNameE'
+      FieldName = 'SectionNameE'
+      FieldLength = 75
+      DisplayWidth = 75
+      Position = 25
+    end
+    object ppDBPipeline1ppField27: TppField
+      FieldAlias = 'PrinterPath'
+      FieldName = 'PrinterPath'
+      FieldLength = 200
+      DisplayWidth = 200
+      Position = 26
+    end
+    object ppDBPipeline1ppField28: TppField
+      FieldAlias = 'ItemGroupNameAr'
+      FieldName = 'ItemGroupNameAr'
+      FieldLength = 255
+      DisplayWidth = 255
+      Position = 27
+    end
+    object ppDBPipeline1ppField29: TppField
+      FieldAlias = 'ItemGroupNameEn'
+      FieldName = 'ItemGroupNameEn'
+      FieldLength = 255
+      DisplayWidth = 255
+      Position = 28
+    end
+    object ppDBPipeline1ppField30: TppField
+      FieldAlias = 'ItemGroupCode'
+      FieldName = 'ItemGroupCode'
+      FieldLength = 6
+      DisplayWidth = 6
+      Position = 29
+    end
+    object ppDBPipeline1ppField31: TppField
+      FieldAlias = 'ItemNameAr'
+      FieldName = 'ItemNameAr'
+      FieldLength = 255
+      DisplayWidth = 255
+      Position = 30
+    end
+    object ppDBPipeline1ppField32: TppField
+      FieldAlias = 'ItemNameEn'
+      FieldName = 'ItemNameEn'
+      FieldLength = 255
+      DisplayWidth = 255
+      Position = 31
     end
   end
 end
